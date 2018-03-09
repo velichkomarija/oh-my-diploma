@@ -12,7 +12,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-       // initAllPreference();
+        initAllPreference();
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -32,7 +32,7 @@ public class SplashActivity extends AppCompatActivity {
         Context context = SplashActivity.this;
         PreferencesLocal preferencesLocal = new PreferencesLocal();
         //триггеры
-        preferencesLocal.addProperty( "PREF_NUM_SOUND",null,context);
+        preferencesLocal.addProperty( "PREF_NUM_SOUND","1",context);
         preferencesLocal.addProperty( "PREF_NUM_IMAGE","none",context);
         //данные о пользователе
         preferencesLocal.addProperty("PREF_NAME","none",context);

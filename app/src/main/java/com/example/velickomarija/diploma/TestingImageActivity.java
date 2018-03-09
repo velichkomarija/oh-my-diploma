@@ -11,7 +11,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class TestingImageActivity extends AppCompatActivity {
-    TextView mTimer;
     public Intent intent;
     PreferencesLocal preferencesLocal = new PreferencesLocal();
 
@@ -53,14 +52,12 @@ public class TestingImageActivity extends AppCompatActivity {
     }
 
     private void time(int startTime) {
-        mTimer = (TextView) findViewById(R.id.textViewTimer);
         CountDownTimer start = new CountDownTimer(startTime, 1000) {
             public void onTick(long milliesUntilFinished) {
-                mTimer.setText(String.valueOf(milliesUntilFinished / 1000));
+                //do nothing
             }
 
             public void onFinish() {
-                mTimer.setText("Время вышло!");
                 startActivity(intent);
             }
         }.start();

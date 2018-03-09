@@ -133,29 +133,6 @@
 
         </TableLayout>
 
-        <ImageView
-            android:id="@+id/imageView14"
-            android:layout_width="50dp"
-            android:layout_height="120dp"
-            android:layout_marginVertical="50dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/ic_timer_black_24dp"
-            tools:layout_editor_absoluteX="774dp"
-            tools:layout_editor_absoluteY="49dp" />
-
-        <TextView
-            android:id="@+id/textViewTimer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:text="@string/timer"
-            android:textColor="@color/black"
-            android:textSize="35sp"
-            android:textStyle="bold"
-            tools:layout_editor_absoluteX="774dp"
-            tools:layout_editor_absoluteY="219dp" />
-
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
