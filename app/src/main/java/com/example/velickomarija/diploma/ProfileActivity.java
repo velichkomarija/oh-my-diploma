@@ -6,20 +6,29 @@ import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class ProfileActivity extends AppCompatActivity {
 
     RadioGroup radioGroup;
     PreferencesLocal pref = new PreferencesLocal();
+    TextView textName, textMale, textEducation, textAge, textEtc, start;
+    RadioButton radioButton1, radioButton2;
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        float size = TextUtils.textSize(getBaseContext());
+        initParam(size);
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -40,6 +49,28 @@ public class ProfileActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void initParam(float size){
+        textName=(TextView) findViewById(R.id.nameTextView);
+        textMale = (TextView) findViewById(R.id.maleTextView);
+        textAge = (TextView) findViewById(R.id.ageTextView);
+        textEducation = (TextView) findViewById(R.id.educationTextView);
+        radioButton1 = (RadioButton) findViewById(R.id.male);
+        radioButton2 = (RadioButton) findViewById(R.id.famale);
+        textEtc = (TextView) findViewById(R.id.etcTextView);
+        start = (TextView) findViewById(R.id.startProfileTextView);
+        button = (Button) findViewById(R.id.nextButton);
+
+        button.setTextSize(size);
+        textName.setTextSize(size);
+        textMale.setTextSize(size);
+        textAge.setTextSize(size);
+        start.setTextSize(size);
+        textEducation.setTextSize(size);
+        textEtc.setTextSize(size);
+        radioButton1.setTextSize(size);
+        radioButton2.setTextSize(size);
     }
 
     // щелчок кнопки
@@ -107,7 +138,6 @@ public class ProfileActivity extends AppCompatActivity {
 
     public void onClickToRegistrProfile(View view) {
         view.setClickable(false);
-        //view.setBackgroundColor(Color.GRAY);
         boolean nameFlag = saveName(view);
         boolean ageFlag = saveAge(view);
         boolean educationFlag = saveEducation(view);
@@ -116,7 +146,6 @@ public class ProfileActivity extends AppCompatActivity {
             startActivity(intent);
         }
         view.setClickable(true);
-        //view.setBackgroundColor(Color.parseColor("#37bc51"));
     }
 
     //диалоговое окно на ошибку
@@ -132,6 +161,7 @@ public class ProfileActivity extends AppCompatActivity {
                                 dialog.cancel();
                             }
                         });
+        builder.setMessage(Html.fromHtml("<font color='#000000'>"+text+"</font>"));
         AlertDialog alert = builder.create();
         alert.show();
     }

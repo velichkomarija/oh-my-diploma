@@ -10,7 +10,8 @@
         android:largeScreens="true"
         android:normalScreens="true"
         android:smallScreens="false"
-        android:xlargeScreens="true" />
+        android:xlargeScreens="true"
+        android:anyDensity="true"/>
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -40,9 +41,6 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".TestingSoundActivity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".TestingEnterSoundActivity23"
             android:screenOrientation="landscape" />
         <activity
             android:name=".TestingEnterImageActivity"
