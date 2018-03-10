@@ -6,20 +6,40 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class TestingSoundActivity extends AppCompatActivity {
 
     PreferencesLocal preferencesLocal = new PreferencesLocal();
     Algoritms algoritms = new Algoritms();
+    InputMethodManager imm;
+
+    TextView textView;
+    EditText editText;
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_testing_sound);
         // settings = getSharedPreferences(PREFS_FILE, MODE_PRIVATE);
+        float size = TextUtils.textSize(getBaseContext());
+
+        imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+
+        textView = (TextView) findViewById(R.id.textSoundRepeat);
+        editText = (EditText) findViewById(R.id.editTextResultTest1);
+        button = (Button) findViewById(R.id.button_next);
+        textView.setTextSize(size);
+        editText.setTextSize(size);
+        button.setTextSize(size);
     }
 
     @Override
@@ -51,6 +71,7 @@ public class TestingSoundActivity extends AppCompatActivity {
                             }
                         }
                 );
+        builder.setMessage(Html.fromHtml("<font color='#000000'>" + text + "</font>"));
         AlertDialog alert = builder.create();
         alert.show();
     }
@@ -63,9 +84,8 @@ public class TestingSoundActivity extends AppCompatActivity {
         if (!(preferencesLocal.getProperty("PREF_NUM_SOUND").equals("none"))) {
             try {
                 numParam = Integer.parseInt(preferencesLocal.getProperty("PREF_NUM_SOUND"));
-            }
-            catch (Exception e){
-                Toast toast = Toast.makeText(getApplicationContext(),preferencesLocal.getProperty("PREF_NUM_SOUND"),Toast.LENGTH_LONG);
+            } catch (Exception e) {
+                Toast toast = Toast.makeText(getApplicationContext(), preferencesLocal.getProperty("PREF_NUM_SOUND"), Toast.LENGTH_LONG);
                 toast.show();
             }
         }
@@ -85,28 +105,28 @@ public class TestingSoundActivity extends AppCompatActivity {
 
             String result = algoritms.AlgorithmSoundMemoryC2(par1, par2, par3);
             preferencesLocal.addProperty("PREF_C2", result, TestingSoundActivity.this);
-            preferencesLocal.addProperty("PREF_NUM_IMAGE","1",TestingSoundActivity.this);
+            preferencesLocal.addProperty("PREF_NUM_IMAGE", "1", TestingSoundActivity.this);
 
-            showDialog(TestingEnterImageActivity.class,"Вы уверены в ответе?");
+            showDialog(TestingEnterImageActivity.class, "Вы уверены в ответе?");
         }
 
         if (numParam == 2) {
             preferencesLocal.addProperty("PREF_SOUNDRESULT2", resString, TestingSoundActivity.this);
             preferencesLocal.addProperty("PREF_NUM_SOUND", "3", TestingSoundActivity.this);
 
-            showDialog(TestingEnterSoundActivity.class,"Вы уверены в ответе?");
+            showDialog(TestingEnterSoundActivity.class, "Вы уверены в ответе?");
         }
 
         if (numParam == 1) {
-            if(resString.equals(11)){
+            if (resString.equals(11)) {
                 preferencesLocal.addProperty("PREF_C1", "10", TestingSoundActivity.this);
-            }else{
+            } else {
                 preferencesLocal.addProperty("PREF_C1", resString, TestingSoundActivity.this);
             }
             preferencesLocal.addProperty("PREF_SOUNDRESULT1", resString, TestingSoundActivity.this);
             preferencesLocal.addProperty("PREF_NUM_SOUND", "2", TestingSoundActivity.this);
 
-            showDialog(TestingEnterSoundActivity.class,"Вы уверены в ответе?");
+            showDialog(TestingEnterSoundActivity.class, "Вы уверены в ответе?");
         }
         view.setClickable(true);
     }

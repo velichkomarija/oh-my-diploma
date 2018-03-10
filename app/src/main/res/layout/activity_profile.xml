@@ -34,22 +34,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:labelFor="@id/nameInputField"
-                android:text="@string/name"
                 android:padding="10dp"
-                android:textAlignment="center"/>
+                android:text="@string/name"
+                android:textAlignment="center" />
 
             <EditText
                 android:id="@+id/nameInputField"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="15dp"
+                android:background="@drawable/stroke"
                 android:imeOptions="flagNoExtractUi"
                 android:inputType="textPersonName"
                 android:padding="5dp"
                 android:selectAllOnFocus="false"
                 android:singleLine="true"
                 android:textColor="@color/black"
-                android:background="@drawable/stroke"
                 android:visibility="visible" />
 
         </LinearLayout>
@@ -81,16 +81,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="20dp"
                     android:checked="true"
-                    android:textColor="@color/black"
-                    android:text="@string/male"/>
+                    android:text="@string/male"
+                    android:textColor="@color/black" />
 
                 <RadioButton
                     android:id="@+id/famale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="20dp"
-                    android:textColor="@color/black"
-                    android:text="@string/famale"/>
+                    android:text="@string/famale"
+                    android:textColor="@color/black" />
 
             </RadioGroup>
         </LinearLayout>
@@ -107,19 +107,19 @@
                 android:layout_height="wrap_content"
                 android:labelFor="@id/ageInputField"
                 android:padding="10dp"
-                android:text="@string/age"/>
+                android:text="@string/age" />
 
             <EditText
                 android:id="@+id/ageInputField"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="15dp"
+                android:background="@drawable/stroke"
                 android:imeOptions="flagNoExtractUi"
                 android:inputType="text|number"
                 android:padding="5dp"
-                android:textColor="@color/black"
-                android:background="@drawable/stroke"
-                android:singleLine="true" />
+                android:singleLine="true"
+                android:textColor="@color/black" />
 
         </LinearLayout>
 
@@ -135,19 +135,19 @@
                 android:layout_height="wrap_content"
                 android:labelFor="@id/educationInputField"
                 android:padding="10dp"
-                android:text="@string/education"/>
+                android:text="@string/education" />
 
             <EditText
                 android:id="@+id/educationInputField"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="15dp"
+                android:background="@drawable/stroke"
                 android:imeOptions="flagNoExtractUi"
                 android:inputType="textPersonName"
                 android:padding="5dp"
-                android:textColor="@color/black"
-                android:background="@drawable/stroke"
-                android:singleLine="true" />
+                android:singleLine="true"
+                android:textColor="@color/black" />
 
         </LinearLayout>
 
@@ -163,19 +163,19 @@
                 android:layout_height="wrap_content"
                 android:labelFor="@id/educationInputField"
                 android:padding="10dp"
-                android:text="@string/etc"/>
+                android:text="@string/etc" />
 
             <EditText
                 android:id="@+id/etcInputField"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="15dp"
+                android:background="@drawable/stroke"
                 android:imeOptions="flagNoExtractUi"
                 android:inputType="textPersonName"
                 android:padding="5dp"
-                android:textColor="@color/black"
-                android:background="@drawable/stroke"
-                android:singleLine="true" />
+                android:singleLine="true"
+                android:textColor="@color/black" />
 
         </LinearLayout>
 
@@ -184,12 +184,12 @@
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
             android:onClick="onClickToRegistrProfile"
             android:padding="20dp"
             android:text="@string/next"
-            android:textColor="@color/white"
-            android:layout_marginBottom="5dp"
             android:textAlignment="center"
+            android:textColor="@color/white"
             android:visibility="visible" />
     </LinearLayout>
 </RelativeLayout>
