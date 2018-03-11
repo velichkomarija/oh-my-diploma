@@ -66,7 +66,12 @@ public class ProfileActivity extends AppCompatActivity {
         textName.setTextSize(size);
         textMale.setTextSize(size);
         textAge.setTextSize(size);
-        start.setTextSize(size);
+        if(getResources().getDisplayMetrics().density>=2.5f){
+            start.setTextSize(size);
+        }
+        else {
+            start.setTextSize(size * 1.5f);
+        }
         textEducation.setTextSize(size);
         textEtc.setTextSize(size);
         radioButton1.setTextSize(size);

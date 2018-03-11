@@ -21,8 +21,8 @@ public class TestingEnterImageActivity extends AppCompatActivity {
         float size = TextUtils.textSize(getBaseContext());
         textView =  (TextView) findViewById(R.id.start_text);
         button = (Button) findViewById(R.id.button_next);
-        button.setTextSize(size);
-        textView.setTextSize(size);
+        button.setTextSize(size*1.4f);
+        textView.setTextSize(size*1.4f);
     }
 
     public void onBackPressed() {

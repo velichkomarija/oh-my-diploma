@@ -9,13 +9,17 @@ public class TextUtils {
         float textSize;
         DisplayMetrics metrics = context.getResources().getDisplayMetrics();
         float density = metrics.density;
-        float width = metrics.widthPixels*metrics.scaledDensity;
+        float width = metrics.widthPixels * metrics.scaledDensity;
         if (density >= 3.0f) {
-            textSize = width/300;
+            textSize = width / 350;
+        } else if (density < 3.0f && density > 2.0f) {
+            textSize = width / 275;
         } else if (density == 2.0f) {
-            textSize = width/125;
+            textSize = width / 175;
+        } else if (density < 2.0f && density > 1.5f) {
+            textSize = width / 150;
         } else {
-            textSize = width/75;
+            textSize = width / 75;
         }
         return textSize;
     }

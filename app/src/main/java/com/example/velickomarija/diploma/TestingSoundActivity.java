@@ -37,9 +37,9 @@ public class TestingSoundActivity extends AppCompatActivity {
         textView = (TextView) findViewById(R.id.textSoundRepeat);
         editText = (EditText) findViewById(R.id.editTextResultTest1);
         button = (Button) findViewById(R.id.button_next);
-        textView.setTextSize(size);
-        editText.setTextSize(size);
-        button.setTextSize(size);
+        textView.setTextSize(size*1.4f);
+        editText.setTextSize(size*1.4f);
+        button.setTextSize(size*1.4f);
     }
 
     @Override
