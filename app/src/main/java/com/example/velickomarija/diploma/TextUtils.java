@@ -19,7 +19,7 @@ public class TextUtils {
         } else if (density < 2.0f && density > 1.5f) {
             textSize = width / 150;
         } else {
-            textSize = width / 75;
+            textSize = width / 100;
         }
         return textSize;
     }

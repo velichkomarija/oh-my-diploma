@@ -35,7 +35,7 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="timer">60</string>
-    <string name="readyResult">Г\nО\nТ\nО\nВ\nО</string>
+    <string name="readyResult">ГОТОВО</string>
     <string name="pauseOne">Первая интерферферирующая пауза</string>
     <string name="data">Данные о пользователе</string>
     <string name="resultSound123">Результаты первых \nтрех слуховых проб(слух)</string>
