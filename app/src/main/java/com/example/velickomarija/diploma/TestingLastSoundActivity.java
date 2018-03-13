@@ -6,17 +6,30 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class TestingLastSoundActivity extends AppCompatActivity {
 
     PreferencesLocal preferencesLocal = new PreferencesLocal();
     Algoritms algoritms = new Algoritms();
+    TextView textView;
+    Button button;
+    EditText editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_testing_last_sound);
+
+        editText = (EditText) findViewById(R.id.editTextResultTest1);
+        textView = (TextView) findViewById(R.id.textSoundRepeat);
+        button = (Button) findViewById(R.id.button_next);
+        float size = TextUtils.textSize(getBaseContext());
+        textView.setTextSize(size*1.4f);
+        editText.setTextSize(size*1.4f);
+        button.setTextSize(size*1.4f);
     }
 
     @Override
