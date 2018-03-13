@@ -174,7 +174,8 @@ public class Algoritms {
 
     private Map<Integer, String> textToMap(String text) {
         Map<Integer, String> map = new HashMap<>();
-        String[] strArray = text.split(" ");
+        String newText = text.replace(",", " ");
+        String[] strArray = newText.split(" ");
         for (int i = 0; i < strArray.length; i++) {
             map.put(i + 1, strArray[i]);
         }
