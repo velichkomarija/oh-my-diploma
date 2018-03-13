@@ -7,6 +7,8 @@ import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 public class TestingSoundNWordsActivity extends AppCompatActivity {
@@ -14,6 +16,7 @@ public class TestingSoundNWordsActivity extends AppCompatActivity {
     TextView mTimer;
     public Intent intent;
     MediaPlayer mPlayer;
+    Animation animation;
     boolean clk = false;
     Algoritms algoritms = new Algoritms();
     PreferencesLocal preferencesLocal = new PreferencesLocal();
@@ -22,6 +25,7 @@ public class TestingSoundNWordsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_testing_sound_nwords);
+        animation = AnimationUtils.loadAnimation(this,R.anim.anim);
         intent = new Intent(this, TestingNewWordsActivity.class);
         timing();
     }
@@ -68,5 +72,6 @@ public class TestingSoundNWordsActivity extends AppCompatActivity {
 
     public void onClickToPluseAction(View view) {
         clk = true;
+        view.startAnimation(animation);
     }
 }
