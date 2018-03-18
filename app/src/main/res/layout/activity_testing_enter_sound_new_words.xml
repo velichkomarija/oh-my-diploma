@@ -22,11 +22,11 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:padding="5dp"
+            android:layout_marginTop="5dp"
+            android:padding="15dp"
             android:text="@string/enterTestingNewWords"
             android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="18sp"
+            android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold" />
 
         <Button
@@ -36,15 +36,14 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="5dp"
-            android:layout_marginHorizontal="180dp"
-            android:width="250dp"
+            android:layout_marginBottom="15dp"
             android:gravity="center"
             android:onClick="onClickToGoTestingSoundNewWords"
             android:paddingVertical="10dp"
             android:text="@string/next"
+            android:padding="15dp"
+            android:textColor="@color/white"
             android:textAlignment="center"
-            android:textSize="18sp"
             android:visibility="visible" />
 
     </RelativeLayout>

@@ -5,11 +5,16 @@ import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 public class TestingEnterSoundNWordsActivity extends AppCompatActivity {
 
     Intent intent;
+    TextView textView;
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +22,11 @@ public class TestingEnterSoundNWordsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_testing_enter_sound_new_words);
         intent = new Intent(this, TestingSoundNWordsActivity.class);
 
+        textView = (TextView) findViewById(R.id.startTextSoundNewWordsView);
+        button = (Button) findViewById(R.id.soundNewWordsSoundButton);
+        float size = TextUtils.textSize(getBaseContext());
+        textView.setTextSize(size*1.3f);
+        button.setTextSize(size*1.3f);
     }
 
     public void onClickToGoTestingSoundNewWords(View view) {
@@ -48,6 +58,7 @@ public class TestingEnterSoundNWordsActivity extends AppCompatActivity {
                             }
                         }
                 );
+        builder.setMessage(Html.fromHtml("<font color='#000000'>"+text+"</font>"));
         AlertDialog alert = builder.create();
         alert.show();
     }
