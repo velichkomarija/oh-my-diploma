@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,23 +7,14 @@
     android:keepScreenOn="true"
     tools:context="com.example.velickomarija.diploma.TestingLastImageActivity">
 
-    <TextView
-        android:id="@+id/textViewTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:padding="10dp"
-        android:text="@string/lastImage"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+
 
     <ScrollView
         android:id="@+id/testingImageVeriantScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
+        <RelativeLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -35,9 +26,20 @@
                 android:id="@+id/tableLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_marginTop="50dp"
+                android:layout_centerInParent="true"
                 android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textViewTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:layout_marginTop="25dp"
+                        android:textAlignment="center"
+                        android:text="@string/lastImage"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
 
                 <TableRow
                     android:id="@+id/tableRow1"
@@ -51,7 +53,7 @@
                     <ImageButton
                         android:id="@+id/imageButton1"
                         style="@android:style/Widget.DeviceDefault.ImageButton"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@color/white"
                         android:onClick="clickSymbol1"
@@ -85,17 +87,6 @@
                         android:padding="5dp"
                         app:srcCompat="@drawable/symbol4n" />
 
-                </TableRow>
-
-                <TableRow
-                    android:id="@+id/tableRow2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginTop="20dp"
-                    android:gravity="left|center_vertical|center_horizontal"
-                    android:orientation="horizontal">
-
                     <ImageButton
                         android:id="@+id/imageButton5"
                         android:layout_width="wrap_content"
@@ -104,6 +95,17 @@
                         android:onClick="clickSymbol5"
                         android:padding="5dp"
                         app:srcCompat="@drawable/symbol5n" />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
 
                     <ImageButton
                         android:id="@+id/imageButton6"
@@ -133,16 +135,6 @@
                         android:padding="5dp"
                         app:srcCompat="@drawable/symbol8n" />
 
-                </TableRow>
-
-                <TableRow
-                    android:id="@+id/tableRow3"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginTop="20dp"
-                    android:gravity="left|center_vertical"
-                    android:orientation="horizontal">
 
                     <ImageButton
                         android:id="@+id/imageButton9"
@@ -162,6 +154,18 @@
                         android:padding="5dp"
                         app:srcCompat="@drawable/symbol10n" />
 
+                </TableRow>
+
+
+                <TableRow
+                    android:id="@+id/tableRow3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
                     <ImageButton
                         android:id="@+id/imageButton11"
                         android:layout_width="wrap_content"
@@ -179,17 +183,6 @@
                         android:onClick="clickSymbol12"
                         android:padding="5dp"
                         app:srcCompat="@drawable/symbol12n" />
-
-                </TableRow>
-
-                <TableRow
-                    android:id="@+id/tableRow4"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginTop="20dp"
-                    android:gravity="left|center_vertical|center_horizontal"
-                    android:orientation="horizontal">
 
                     <ImageButton
                         android:id="@+id/imageButton13"
@@ -219,6 +212,18 @@
                         android:padding="5dp"
                         app:srcCompat="@drawable/symbol15n" />
 
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left|center_vertical|center_horizontal"
+                    android:orientation="horizontal">
+
+
                     <ImageButton
                         android:id="@+id/imageButton16"
                         android:layout_width="wrap_content"
@@ -227,17 +232,6 @@
                         android:onClick="clickSymbol16"
                         android:padding="5dp"
                         app:srcCompat="@drawable/symbol16n" />
-
-                </TableRow>
-
-                <TableRow
-                    android:id="@+id/tableRow5"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginTop="20dp"
-                    android:gravity="left|center_vertical|center_horizontal"
-                    android:orientation="horizontal">
 
                     <ImageButton
                         android:id="@+id/imageButton17"
@@ -275,11 +269,10 @@
                         android:padding="5dp"
                         app:srcCompat="@drawable/symbol20n" />
 
-
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/tableRow6"
+                    android:id="@+id/tableRow5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="10dp"
@@ -295,26 +288,26 @@
                         android:onClick="clickSymbol21"
                         android:padding="5dp"
                         app:srcCompat="@drawable/symbol21n" />
+
                 </TableRow>
 
-            </TableLayout>
 
             <Button
                 android:id="@+id/button"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="80dp"
-                android:layout_marginVertical="75dp"
-                android:layout_weight="1"
+                android:layout_margin="20dp"
                 android:onClick="onClickToGoTestingImage2"
                 android:text="@string/readyResult"
                 android:textAlignment="center"
+                android:textColor="@color/white"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 android:visibility="visible" />
 
-        </LinearLayout>
+            </TableLayout>
+        </RelativeLayout>
     </ScrollView>
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
