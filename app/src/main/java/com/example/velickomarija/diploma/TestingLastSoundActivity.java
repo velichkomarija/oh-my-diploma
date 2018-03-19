@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -61,6 +62,7 @@ public class TestingLastSoundActivity extends AppCompatActivity {
                             }
                         }
                 );
+        builder.setMessage(Html.fromHtml("<font color='#000000'>"+text+"</font>"));
         AlertDialog alert = builder.create();
         alert.show();
     }
