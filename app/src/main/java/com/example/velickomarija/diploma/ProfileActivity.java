@@ -113,7 +113,7 @@ public class ProfileActivity extends AppCompatActivity {
         String stringAge = ageBox.getText().toString();
         try {
             Integer age = Integer.parseInt(stringAge);
-            if (age <= 0 || age > 100) {
+            if (age <= 7 || age > 100) {
                 throw new Exception();
             }
             pref.addProperty("PREF_AGE", stringAge, ProfileActivity.this);
