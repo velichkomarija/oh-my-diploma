@@ -8,7 +8,6 @@
     tools:context="com.example.velickomarija.diploma.TestingLastImageActivity">
 
 
-
     <ScrollView
         android:id="@+id/testingImageVeriantScrollView"
         android:layout_width="match_parent"
@@ -29,17 +28,17 @@
                 android:layout_centerInParent="true"
                 android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/textViewTitle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="10dp"
-                        android:layout_marginTop="25dp"
-                        android:textAlignment="center"
-                        android:text="@string/lastImage"
-                        android:textColor="@color/black"
-                        android:textSize="24sp"
-                        android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/textViewTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:padding="10dp"
+                    android:text="@string/lastImage"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
                 <TableRow
                     android:id="@+id/tableRow1"
@@ -220,7 +219,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="10dp"
                     android:layout_marginTop="20dp"
-                    android:gravity="left|center_vertical|center_horizontal"
+                    android:gravity="center_horizontal"
                     android:orientation="horizontal">
 
 
@@ -277,7 +276,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="10dp"
                     android:layout_marginTop="20dp"
-                    android:gravity="left|center_vertical|center_horizontal"
+                    android:gravity="center_horizontal"
                     android:orientation="horizontal">
 
                     <ImageButton
@@ -292,19 +291,19 @@
                 </TableRow>
 
 
-            <Button
-                android:id="@+id/button"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:onClick="onClickToGoTestingImage2"
-                android:text="@string/readyResult"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                android:visibility="visible" />
+                <Button
+                    android:id="@+id/button"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:onClick="onClickToGoTestingImage2"
+                    android:text="@string/readyResult"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
 
             </TableLayout>
         </RelativeLayout>
