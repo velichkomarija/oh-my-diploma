@@ -64,18 +64,18 @@ public class Algoritms {
 
     static {
         generalImage = new HashMap<>();
-        generalImage.put(1, 10);
-        generalImage.put(2, 18);
+        generalImage.put(1, 1);
+        generalImage.put(2, 22);
         generalImage.put(3, 7);
-        generalImage.put(4, 19);
-        generalImage.put(5, 3);
-        generalImage.put(6, 1);
-        generalImage.put(7, 16);
+        generalImage.put(4, 10);
+        generalImage.put(5, 27);
+        generalImage.put(6, 18);
+        generalImage.put(7, 30);
         generalImage.put(8, 12);
-        generalImage.put(9, 8);
-        generalImage.put(10, 14);
-        generalImage.put(11, 20);
-        generalImage.put(12, 5);
+        generalImage.put(9, 14);
+        generalImage.put(10, 34);
+        generalImage.put(11, 32);
+        generalImage.put(12, 24);
     }
 
     private static final Map<Integer, Integer> newFigure;
@@ -145,18 +145,18 @@ public class Algoritms {
 
     private void reloadMapDigit() {
         generalImage.clear();
-        generalImage.put(1, 10);
-        generalImage.put(2, 18);
+        generalImage.put(1, 1);
+        generalImage.put(2, 22);
         generalImage.put(3, 7);
-        generalImage.put(4, 19);
-        generalImage.put(5, 3);
-        generalImage.put(6, 1);
-        generalImage.put(7, 16);
+        generalImage.put(4, 10);
+        generalImage.put(5, 27);
+        generalImage.put(6, 18);
+        generalImage.put(7, 30);
         generalImage.put(8, 12);
-        generalImage.put(9, 8);
-        generalImage.put(10, 14);
-        generalImage.put(11, 20);
-        generalImage.put(12, 5);
+        generalImage.put(9, 14);
+        generalImage.put(10, 34);
+        generalImage.put(11, 32);
+        generalImage.put(12, 24);
     }
 
     private void reloadMapNewFigure() {

@@ -46,7 +46,7 @@
                         android:background="@color/white"
                         android:onClick="clickSymbol1"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/symbol1n" />
+                        app:srcCompat="@drawable/symbol1" />
 
                     <ImageButton
                         android:id="@+id/imageButton2"
@@ -55,7 +55,7 @@
                         android:background="@color/white"
                         android:onClick="clickSymbol2"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/symbol2n" />
+                        app:srcCompat="@drawable/symbol7r" />
 
                     <ImageButton
                         android:id="@+id/imageButton3"
@@ -64,7 +64,7 @@
                         android:background="@color/white"
                         android:onClick="clickSymbol3"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/symbol3n" />
+                        app:srcCompat="@drawable/symbol8r" />
 
                     <ImageButton
                         android:id="@+id/imageButton4"
@@ -73,7 +73,7 @@
                         android:background="@color/white"
                         android:onClick="clickSymbol4"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/symbol4n" />
+                        app:srcCompat="@drawable/symbol2i" />
 
                     <ImageButton
                         android:id="@+id/imageButton5"
@@ -82,7 +82,7 @@
                         android:background="@color/white"
                         android:onClick="clickSymbol5"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/symbol5n" />
+                        app:srcCompat="@drawable/symbol5r" />
 
                 </TableRow>
 
@@ -102,7 +102,7 @@
                         android:background="@color/white"
                         android:onClick="clickSymbol6"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/symbol6n" />
+                        app:srcCompat="@drawable/symbol9i" />
 
                     <ImageButton
                         android:id="@+id/imageButton7"
@@ -111,7 +111,7 @@
                         android:background="@color/white"
                         android:onClick="clickSymbol7"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/symbol7n" />
+                        app:srcCompat="@drawable/symbol3" />
 
                     <ImageButton
                         android:id="@+id/imageButton8"
@@ -121,7 +121,7 @@
                         android:background="@color/white"
                         android:onClick="clickSymbol8"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/symbol8n" />
+                        app:srcCompat="@drawable/symbol5i" />
 
 
                     <ImageButton
@@ -131,7 +131,7 @@
                         android:background="@color/white"
                         android:onClick="clickSymbol9"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/symbol9n" />
+                        app:srcCompat="@drawable/symbol12r" />
 
                     <ImageButton
                         android:id="@+id/imageButton10"
@@ -140,7 +140,7 @@
                         android:background="@color/white"
                         android:onClick="clickSymbol10"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/symbol10n" />
+                        app:srcCompat="@drawable/symbol4" />
 
                 </TableRow>
 
@@ -161,7 +161,7 @@
                         android:background="@color/white"
                         android:onClick="clickSymbol11"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/symbol11n" />
+                        app:srcCompat="@drawable/symbol7i" />
 
                     <ImageButton
                         android:id="@+id/imageButton12"
@@ -170,7 +170,7 @@
                         android:background="@color/white"
                         android:onClick="clickSymbol12"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/symbol12n" />
+                        app:srcCompat="@drawable/symbol8" />
 
                     <ImageButton
                         android:id="@+id/imageButton13"
@@ -179,7 +179,7 @@
                         android:background="@color/white"
                         android:onClick="clickSymbol13"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/symbol13n" />
+                        app:srcCompat="@drawable/symbol11i" />
 
                     <ImageButton
                         android:id="@+id/imageButton14"
@@ -188,7 +188,7 @@
                         android:background="@color/white"
                         android:onClick="clickSymbol14"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/symbol14n" />
+                        app:srcCompat="@drawable/symbol9" />
 
                     <ImageButton
                         android:id="@+id/imageButton15"
@@ -198,7 +198,7 @@
                         android:background="@color/white"
                         android:onClick="clickSymbol15"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/symbol15n" />
+                        app:srcCompat="@drawable/symbol1r" />
 
                 </TableRow>
 
@@ -219,7 +219,7 @@
                         android:background="@color/white"
                         android:onClick="clickSymbol16"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/symbol16n" />
+                        app:srcCompat="@drawable/symbol3i" />
 
                     <ImageButton
                         android:id="@+id/imageButton17"
@@ -228,7 +228,7 @@
                         android:background="@color/white"
                         android:onClick="clickSymbol17"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/symbol17n" />
+                        app:srcCompat="@drawable/symbol4i" />
 
                     <ImageButton
                         android:id="@+id/imageButton18"
@@ -237,7 +237,7 @@
                         android:background="@color/white"
                         android:onClick="clickSymbol18"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/symbol18n" />
+                        app:srcCompat="@drawable/symbol6" />
 
                     <ImageButton
                         android:id="@+id/imageButton19"
@@ -246,7 +246,7 @@
                         android:background="@color/white"
                         android:onClick="clickSymbol19"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/symbol19n" />
+                        app:srcCompat="@drawable/symbol3r" />
 
                     <ImageButton
                         android:id="@+id/imageButton20"
@@ -255,7 +255,7 @@
                         android:background="@color/white"
                         android:onClick="clickSymbol20"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/symbol20n" />
+                        app:srcCompat="@drawable/symbol11r" />
 
                 </TableRow>
 
@@ -275,10 +275,177 @@
                         android:background="@color/white"
                         android:onClick="clickSymbol21"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/symbol21n" />
+                        app:srcCompat="@drawable/symbol8i" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton22"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:onClick="clickSymbol22"
+                        android:padding="5dp"
+                        app:srcCompat="@drawable/symbol2" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton23"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:onClick="clickSymbol23"
+                        android:padding="5dp"
+                        app:srcCompat="@drawable/symbol9r" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:onClick="clickSymbol24"
+                        android:padding="5dp"
+                        app:srcCompat="@drawable/symbol12" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton25"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:onClick="clickSymbol25"
+                        android:padding="5dp"
+                        app:srcCompat="@drawable/symbol6r" />
 
                 </TableRow>
 
+                <TableRow
+                    android:id="@+id/tableRow6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/imageButton26"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:onClick="clickSymbol26"
+                        android:padding="5dp"
+                        app:srcCompat="@drawable/symbol10r" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton27"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:onClick="clickSymbol27"
+                        android:padding="5dp"
+                        app:srcCompat="@drawable/symbol5" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton28"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:onClick="clickSymbol28"
+                        android:padding="5dp"
+                        app:srcCompat="@drawable/symbol4r" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton29"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:onClick="clickSymbol29"
+                        android:padding="5dp"
+                        app:srcCompat="@drawable/symbol1i" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton30"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:onClick="clickSymbol30"
+                        android:padding="5dp"
+                        app:srcCompat="@drawable/symbol7" />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow7"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/imageButton31"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:onClick="clickSymbol31"
+                        android:padding="5dp"
+                        app:srcCompat="@drawable/symbol2r" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton32"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:onClick="clickSymbol32"
+                        android:padding="5dp"
+                        app:srcCompat="@drawable/symbol11" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton33"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:onClick="clickSymbol33"
+                        android:padding="5dp"
+                        app:srcCompat="@drawable/symbol12i" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton34"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:onClick="clickSymbol34"
+                        android:padding="5dp"
+                        app:srcCompat="@drawable/symbol10" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton35"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:onClick="clickSymbol35"
+                        android:padding="5dp"
+                        app:srcCompat="@drawable/symbol10i" />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/imageButton36"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:onClick="clickSymbol36"
+                        android:padding="5dp"
+                        app:srcCompat="@drawable/symbol6i" />
+
+                </TableRow>
 
                 <Button
                     android:id="@+id/button"
