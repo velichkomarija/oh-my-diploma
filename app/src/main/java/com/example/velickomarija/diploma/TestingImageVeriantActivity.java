@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,6 +17,7 @@ import java.util.Map;
 public class TestingImageVeriantActivity extends AppCompatActivity {
 
     Algoritms algoritms = new Algoritms();
+    TextView textViewTitle1;
     int parsedColor = Color.parseColor("#37bc51");
     PreferencesLocal preferencesLocal = new PreferencesLocal();
     boolean btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14,
@@ -339,16 +341,8 @@ public class TestingImageVeriantActivity extends AppCompatActivity {
         ImageButton imageButton36 = (ImageButton) findViewById(R.id.imageButton36);
         imageButton36.setImageResource(R.drawable.symbol5i);
     }
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_testing_image_veriant);
-        if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("3")) {
-            reverseElement1();
-        }
-        if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("1")) {
-            reverseElement2();
-        }
+
+    private void getFalseButton(){
         btn1 = false;
         btn2 = false;
         btn3 = false;
@@ -385,6 +379,26 @@ public class TestingImageVeriantActivity extends AppCompatActivity {
         btn34 = false;
         btn35 = false;
         btn36 = false;
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_testing_image_veriant);
+        textViewTitle1 = (TextView) findViewById(R.id.textViewTit);
+        textViewTitle1.setText("Отметье фигуры, которые Вы запомнили");
+        if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("3")) {
+            reverseElement1();
+        }
+        if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("1")) {
+            reverseElement2();
+        }
+        if(preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("4")){
+            textViewTitle1.setText("Давайте вспомним фигуры, которые\n мы запомниали и отметим их");
+            reverseElement3();
+        }
+
+     getFalseButton();
     }
 
     private void activityTOGo(Class cl) {
@@ -684,6 +698,14 @@ public class TestingImageVeriantActivity extends AppCompatActivity {
             showDialog(TestingLastSoundActivity.class, "Вы уверены в ответе?");
             preferencesLocal.addProperty("PREF_NUM_IMAGE", "none", TestingImageVeriantActivity.this);
         }
+
+        if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("4")) {
+            preferencesLocal.addProperty("PREF_LASTIMAGERESULT1", resString, TestingImageVeriantActivity.this);
+            showDialog(TestingLastImageActivity.class, "Вы уверены в ответе?");
+           //todo второе отсроченное
+           // preferencesLocal.addProperty("PREF_NUM_IMAGE", "2", TestingImageVeriantActivity.this);
+        }
+
         view.setClickable(true);
     }
 

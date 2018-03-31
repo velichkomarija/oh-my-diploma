@@ -77,6 +77,7 @@ public class TestingNewWordsActivity extends AppCompatActivity {
         }
         preferencesLocal.addProperty("PREF_C4", res, TestingNewWordsActivity.this);
         view.setClickable(true);
-        showDialog(TestingLastImageActivity.class, "Вы уверены в ответе?");
+      //  preferencesLocal.addProperty("PREF_NUM_IMAGE", "4", TestingNewWordsActivity.this);
+        showDialog(TestingImageVeriantActivity.class, "Вы уверены в ответе?");
     }
 }
