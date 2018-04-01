@@ -270,17 +270,17 @@ public class TestingLastImageActivity extends AppCompatActivity {
     }
 
     public void clickSymbol22(View view) {
-        ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton10);
+        ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton22);
         btn22 = clicSymbolN(imageButton, btn22);
     }
 
     public void clickSymbol23(View view) {
-        ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton9);
+        ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton23);
         btn23 = clicSymbolN(imageButton, btn23);
     }
 
     public void clickSymbol24(View view) {
-        ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton8);
+        ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton24);
         btn24 = clicSymbolN(imageButton, btn24);
     }
 
