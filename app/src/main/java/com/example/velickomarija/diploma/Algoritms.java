@@ -306,7 +306,7 @@ public class Algoritms {
                     error++;
                 }
             }
-            
+
             res = 0;
 
             for (int j = 0; j < resArray.length; j++) {

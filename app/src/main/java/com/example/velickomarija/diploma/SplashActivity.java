@@ -39,6 +39,7 @@ public class SplashActivity extends AppCompatActivity {
         preferencesLocal.addProperty("PREF_AGE","none",context);
         preferencesLocal.addProperty("PREF_EDUCATION","none",context);
         preferencesLocal.addProperty("PREF_MALE","none",context);
+        preferencesLocal.addProperty("PREF_ETC_INFORMATION","none",context);
         //результат первых трех проб в слуховой памяти
         preferencesLocal.addProperty(" PREF_SOUNDRESULT1","none",context);
         preferencesLocal.addProperty(" PREF_SOUNDRESULT2","none",context);

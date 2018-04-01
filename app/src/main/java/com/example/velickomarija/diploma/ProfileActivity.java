@@ -105,6 +105,15 @@ public class ProfileActivity extends AppCompatActivity {
         pref.addProperty("PREF_MALE", text, ProfileActivity.this);
     }
 
+    private void saveEtcInformation(){
+        EditText etcInformationBox = (EditText) findViewById(R.id.etcInputField);
+        try{
+            String etcInformation = etcInformationBox.getText().toString();
+            pref.addProperty("PREF_ETC_INFORMATION", etcInformation, ProfileActivity.this);
+        }catch (Exception e){
+            pref.addProperty("PREF_ETC_INFORMATION"," ", ProfileActivity.this);
+        }
+    }
 
     private boolean saveAge(View view) {
         //получаем возраст
@@ -146,6 +155,7 @@ public class ProfileActivity extends AppCompatActivity {
         boolean nameFlag = saveName(view);
         boolean ageFlag = saveAge(view);
         boolean educationFlag = saveEducation(view);
+        saveEtcInformation();
         if (nameFlag == true && ageFlag == true && educationFlag == true) {
             Intent intent = new Intent(this, TestingEnterSoundActivity.class);
             startActivity(intent);
