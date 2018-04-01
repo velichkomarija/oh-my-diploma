@@ -5,6 +5,7 @@ import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Timer;
@@ -52,9 +53,13 @@ public class TestingImageActivity extends AppCompatActivity {
     }
 
     private void time(int startTime) {
-        CountDownTimer start = new CountDownTimer(startTime, 1000) {
+        CountDownTimer start = new CountDownTimer(startTime, 15000) {
+
             public void onTick(long milliesUntilFinished) {
-                //do nothing
+                Toast toast = Toast.makeText(TestingImageActivity.this,
+                        "Программа работает, она не зависла!",
+                        Toast.LENGTH_LONG);
+                toast.show();
             }
 
             public void onFinish() {
