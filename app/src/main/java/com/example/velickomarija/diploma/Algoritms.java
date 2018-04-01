@@ -273,40 +273,53 @@ public class Algoritms {
     //подсчет слов на узновании из новых
     public String AlgorithmFindOldWorldsInNew(String text) {
         int res = 0;
+        int error = 0;
+        String resString;
         int[] resArray = new int[11];
-        String[] strArray = text.split(" ");
-        for (int i = 0; i < strArray.length; i++) {
-            res = Integer.parseInt(strArray[i]);
-            if ((0 <= res) && (res <= 300)) {
-                resArray[0] = 1;
-            } else if ((300 < res) && (res <= 500)) {
-                resArray[1] = 1;
-            } else if ((640 <= res) && (res <= 800)) {
-                resArray[2] = 1;
-            } else if ((1000 <= res) && (res <= 1200)) {
-                resArray[3] = 1;
-            } else if ((1350 <= res) && (res <= 1510)) {
-                resArray[4] = 1;
-            } else if ((1900 <= res) && (res <= 2070)) {
-                resArray[5] = 1;
-            } else if ((2410 <= res) && (res <= 2600)) {
-                resArray[6] = 1;
-            } else if ((2800 <= res) && (res <= 2950)) {
-                resArray[7] = 1;
-            } else if ((3340 <= res) && (res <= 3500)) {
-                resArray[8] = 1;
-            } else if ((3500 < res) && (res <= 3680)) {
-                resArray[9] = 1;
-            } else if ((4000 <= res) && (res <= 4200)) {
-                resArray[10] = 1;
+        try {
+            String[] strArray = text.split(" ");
+            for (int i = 0; i < strArray.length; i++) {
+                res = Integer.parseInt(strArray[i]);
+                if ((0 <= res) && (res <= 300)) {
+                    resArray[0] = 1;
+                } else if ((300 < res) && (res <= 500)) {
+                    resArray[1] = 1;
+                } else if ((640 <= res) && (res <= 800)) {
+                    resArray[2] = 1;
+                } else if ((1000 <= res) && (res <= 1200)) {
+                    resArray[3] = 1;
+                } else if ((1350 <= res) && (res <= 1510)) {
+                    resArray[4] = 1;
+                } else if ((1900 <= res) && (res <= 2070)) {
+                    resArray[5] = 1;
+                } else if ((2410 <= res) && (res <= 2600)) {
+                    resArray[6] = 1;
+                } else if ((2800 <= res) && (res <= 2950)) {
+                    resArray[7] = 1;
+                } else if ((3340 <= res) && (res <= 3500)) {
+                    resArray[8] = 1;
+                } else if ((3500 < res) && (res <= 3680)) {
+                    resArray[9] = 1;
+                } else if ((4000 <= res) && (res <= 4200)) {
+                    resArray[10] = 1;
+                } else {
+                    error++;
+                }
             }
+            
+            res = 0;
+
+            for (int j = 0; j < resArray.length; j++) {
+                res += resArray[j];
+            }
+            res = res - error;
+            res = zeroAdapter(res);
+            //без учета максимальной 10
+            resString = String.valueOf(res);
         }
-        res = 0;
-        for (int j = 0; j < resArray.length; j++) {
-            res += resArray[j];
+        catch (Exception e){
+            resString = "0";
         }
-        //без учета максимальной 10
-        String resString = String.valueOf(res);
         return resString;
     }
 
