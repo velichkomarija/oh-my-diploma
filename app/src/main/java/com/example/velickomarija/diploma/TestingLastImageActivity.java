@@ -32,80 +32,56 @@ public class TestingLastImageActivity extends AppCompatActivity {
 
     private void reverseElement() {
         //general image
-        ImageButton imageButton1 = (ImageButton) findViewById(R.id.imageButton1);
-        imageButton1.setImageResource(R.drawable.symbol11);
-        ImageButton imageButton7 = (ImageButton) findViewById(R.id.imageButton7);
-        imageButton7.setImageResource(R.drawable.symbol5);
-        ImageButton imageButton10 = (ImageButton) findViewById(R.id.imageButton10);
-        imageButton10.setImageResource(R.drawable.symbol2);
-        ImageButton imageButton12 = (ImageButton) findViewById(R.id.imageButton12);
-        imageButton12.setImageResource(R.drawable.symbol9);
-        ImageButton imageButton14 = (ImageButton) findViewById(R.id.imageButton14);
-        imageButton14.setImageResource(R.drawable.symbol10);
-        ImageButton imageButton18 = (ImageButton) findViewById(R.id.imageButton18);
-        imageButton18.setImageResource(R.drawable.symbol1);
-        ImageButton imageButton22 = (ImageButton) findViewById(R.id.imageButton22);
-        imageButton22.setImageResource(R.drawable.symbol12);
-        ImageButton imageButton24 = (ImageButton) findViewById(R.id.imageButton24);
-        imageButton24.setImageResource(R.drawable.symbol6);
-        ImageButton imageButton27 = (ImageButton) findViewById(R.id.imageButton27);
-        imageButton27.setImageResource(R.drawable.symbol4);
-        ImageButton imageButton30 = (ImageButton) findViewById(R.id.imageButton30);
-        imageButton30.setImageResource(R.drawable.symbol7);
-        ImageButton imageButton32 = (ImageButton) findViewById(R.id.imageButton32);
-        imageButton32.setImageResource(R.drawable.symbol8);
-        ImageButton imageButton34 = (ImageButton) findViewById(R.id.imageButton34);
-        imageButton34.setImageResource(R.drawable.symbol3);
+        ImageButton imageButton2 = (ImageButton) findViewById(R.id.imageButton2);
+        imageButton2.setImageResource(R.drawable.symbol21n);
+        ImageButton imageButton4 = (ImageButton) findViewById(R.id.imageButton4);
+        imageButton4.setImageResource(R.drawable.symbol17n);
+        ImageButton imageButton6 = (ImageButton) findViewById(R.id.imageButton6);
+        imageButton6.setImageResource(R.drawable.symbol6n);
+        ImageButton imageButton9 = (ImageButton) findViewById(R.id.imageButton9);
+        imageButton9.setImageResource(R.drawable.symbol11n);
+        ImageButton imageButton11 = (ImageButton) findViewById(R.id.imageButton11);
+        imageButton11.setImageResource(R.drawable.symbol9n);
+        ImageButton imageButton13 = (ImageButton) findViewById(R.id.imageButton13);
+        imageButton13.setImageResource(R.drawable.symbol13n);
+        ImageButton imageButton15 = (ImageButton) findViewById(R.id.imageButton15);
+        imageButton15.setImageResource(R.drawable.symbol4n);
+        ImageButton imageButton17 = (ImageButton) findViewById(R.id.imageButton17);
+        imageButton17.setImageResource(R.drawable.symbol15n);
+        ImageButton imageButton21 = (ImageButton) findViewById(R.id.imageButton21);
+        imageButton21.setImageResource(R.drawable.symbol2n);
+        ImageButton imageButton23 = (ImageButton) findViewById(R.id.imageButton23);
+        imageButton23.setImageResource(R.drawable.symbol3extra);
 
         //else image
-        ImageButton imageButton2 = (ImageButton) findViewById(R.id.imageButton2);
-        imageButton2.setImageResource(R.drawable.symbol11r);
+        ImageButton imageButton1 = (ImageButton) findViewById(R.id.imageButton1);
+        imageButton1.setImageResource(R.drawable.symbol1nn);
         ImageButton imageButton3 = (ImageButton) findViewById(R.id.imageButton3);
-        imageButton3.setImageResource(R.drawable.symbol9r);
-        ImageButton imageButton4 = (ImageButton) findViewById(R.id.imageButton4);
-        imageButton4.setImageResource(R.drawable.symbol3r);
+        imageButton3.setImageResource(R.drawable.symbol2nn);
         ImageButton imageButton5 = (ImageButton) findViewById(R.id.imageButton5);
-        imageButton5.setImageResource(R.drawable.symbol6i);
-        ImageButton imageButton6 = (ImageButton) findViewById(R.id.imageButton6);
-        imageButton6.setImageResource(R.drawable.symbol3i);
+        imageButton5.setImageResource(R.drawable.symbol3nn);
+        ImageButton imageButton7 = (ImageButton) findViewById(R.id.imageButton7);
+        imageButton7.setImageResource(R.drawable.symbol4nn);
         ImageButton imageButton8 = (ImageButton) findViewById(R.id.imageButton8);
-        imageButton8.setImageResource(R.drawable.symbol4i);
-        ImageButton imageButton9 = (ImageButton) findViewById(R.id.imageButton9);
-        imageButton9.setImageResource(R.drawable.symbol10i);
-        ImageButton imageButton11 = (ImageButton) findViewById(R.id.imageButton11);
-        imageButton11.setImageResource(R.drawable.symbol12r);
-        ImageButton imageButton13 = (ImageButton) findViewById(R.id.imageButton13);
-        imageButton13.setImageResource(R.drawable.symbol12i);
-        ImageButton imageButton15 = (ImageButton) findViewById(R.id.imageButton15);
-        imageButton15.setImageResource(R.drawable.symbol9i);
+        imageButton8.setImageResource(R.drawable.symbol5nn);
+        ImageButton imageButton10 = (ImageButton) findViewById(R.id.imageButton10);
+        imageButton10.setImageResource(R.drawable.symbol6nn);
+        ImageButton imageButton12 = (ImageButton) findViewById(R.id.imageButton12);
+        imageButton12.setImageResource(R.drawable.symbol7nn);
+        ImageButton imageButton14 = (ImageButton) findViewById(R.id.imageButton14);
+        imageButton14.setImageResource(R.drawable.symbol8nn);
         ImageButton imageButton16 = (ImageButton) findViewById(R.id.imageButton16);
-        imageButton16.setImageResource(R.drawable.symbol10r);
-        ImageButton imageButton17 = (ImageButton) findViewById(R.id.imageButton17);
-        imageButton17.setImageResource(R.drawable.symbol11i);
+        imageButton16.setImageResource(R.drawable.symbol9nn);
+        ImageButton imageButton18 = (ImageButton) findViewById(R.id.imageButton18);
+        imageButton18.setImageResource(R.drawable.symbol10nn);
         ImageButton imageButton19 = (ImageButton) findViewById(R.id.imageButton19);
-        imageButton19.setImageResource(R.drawable.symbol7r);
+        imageButton19.setImageResource(R.drawable.symbol11nn);
+
         ImageButton imageButton20 = (ImageButton) findViewById(R.id.imageButton20);
-        imageButton20.setImageResource(R.drawable.symbol1r);
-        ImageButton imageButton21 = (ImageButton) findViewById(R.id.imageButton21);
-        imageButton21.setImageResource(R.drawable.symbol8r);
-        ImageButton imageButton23 = (ImageButton) findViewById(R.id.imageButton23);
-        imageButton23.setImageResource(R.drawable.symbol2r);
-        ImageButton imageButton25 = (ImageButton) findViewById(R.id.imageButton25);
-        imageButton25.setImageResource(R.drawable.symbol5r);
-        ImageButton imageButton26 = (ImageButton) findViewById(R.id.imageButton26);
-        imageButton26.setImageResource(R.drawable.symbol6r);
-        ImageButton imageButton28 = (ImageButton) findViewById(R.id.imageButton28);
-        imageButton28.setImageResource(R.drawable.symbol8i);
-        ImageButton imageButton29 = (ImageButton) findViewById(R.id.imageButton29);
-        imageButton29.setImageResource(R.drawable.symbol4r);
-        ImageButton imageButton31 = (ImageButton) findViewById(R.id.imageButton31);
-        imageButton31.setImageResource(R.drawable.symbol7i);
-        ImageButton imageButton33 = (ImageButton) findViewById(R.id.imageButton36);
-        imageButton33.setImageResource(R.drawable.symbol5i);
-        ImageButton imageButton35 = (ImageButton) findViewById(R.id.imageButton35);
-        imageButton35.setImageResource(R.drawable.symbol2i);
-        ImageButton imageButton36 = (ImageButton) findViewById(R.id.imageButton36);
-        imageButton36.setImageResource(R.drawable.symbol1i);
+        imageButton20.setImageResource(R.drawable.symbol1extra);
+        ImageButton imageButton24 = (ImageButton) findViewById(R.id.imageButton24);
+        imageButton24.setImageResource(R.drawable.symbol2extra);
+
     }
 
     @Override
@@ -114,7 +90,9 @@ public class TestingLastImageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_testing_last_image);
         if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("6")) {
             textViewTitle1 = (TextView) findViewById(R.id.textViewTitle);
-            textViewTitle1.setText("Давайте вспомним фигуры, которые\n мы НЕ запомниали и отметим их");
+            textViewTitle1.setText("Сейчас необходимо отметить те " +
+                    "\nфигуры, которые были новыми в предыдущей таблице");
+            reverseElement();
         }
         btn1 = false;
         btn2 = false;
@@ -293,17 +271,17 @@ public class TestingLastImageActivity extends AppCompatActivity {
 
     public void clickSymbol22(View view) {
         ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton10);
-        btn10 = clicSymbolN(imageButton, btn10);
+        btn22 = clicSymbolN(imageButton, btn22);
     }
 
     public void clickSymbol23(View view) {
         ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton9);
-        btn9 = clicSymbolN(imageButton, btn9);
+        btn23 = clicSymbolN(imageButton, btn23);
     }
 
     public void clickSymbol24(View view) {
         ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton8);
-        btn8 = clicSymbolN(imageButton, btn8);
+        btn24 = clicSymbolN(imageButton, btn24);
     }
 
     private void showDialog(final Class cl, String text) {
@@ -331,28 +309,21 @@ public class TestingLastImageActivity extends AppCompatActivity {
     }
 
     public void onClickToGoTestingImage2(View view) {
-        view.setClickable(false);
+        String resString = "";
         Map<Integer, Boolean> map = new HashMap<>();
         btnArray = getArrayButtons();
         for (int i = 0; i < 24; i++) {
             map.put(i + 1, btnArray[i]);
         }
-        //todo организовать отдельную функцию
-        int res = algoritms.AlgorithmImageMemoryZ1(map);
-        String resString = String.valueOf(res);
-        if (resString.equals("12") || resString.equals("11")) {
-            resString = "10";
-        }
+        resString = algoritms.AlgotihmImageNew(map);
 
         if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("5")) {
            preferencesLocal.addProperty("PREF_LASTIMAGERESULT2", resString, TestingLastImageActivity.this);
             showDialog(TestingLastImageActivity.class, "Вы уверены в ответе?");
-            preferencesLocal.addProperty("PREF_IMAGE1", "2", TestingLastImageActivity.this);
+            preferencesLocal.addProperty("PREF_NUM_IMAGE", "6", TestingLastImageActivity.this);
         } else if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("6")) {
-            resString = algoritms.AlgotihmImageNew(map);
             preferencesLocal.addProperty("PREF_Z4", resString, TestingLastImageActivity.this);
             showDialog(PauseThreeActivity.class, "Вы уверены в ответе?");
         }
-        view.setClickable(true);
     }
 }

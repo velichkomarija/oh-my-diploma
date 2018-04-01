@@ -1,5 +1,6 @@
 package com.example.velickomarija.diploma;
 
+import android.test.mock.MockApplication;
 import android.text.BoringLayout;
 
 import java.util.ArrayList;
@@ -91,7 +92,7 @@ public class Algoritms {
         newFigure.put(7, 15);
         newFigure.put(8, 17);
         newFigure.put(9, 21);
-
+        newFigure.put(10, 23);
     }
 
     private static final ArrayList<String> newWords;
@@ -157,19 +158,6 @@ public class Algoritms {
         generalImage.put(10, 34);
         generalImage.put(11, 32);
         generalImage.put(12, 24);
-    }
-
-    private void reloadMapNewFigure() {
-        newFigure.clear();
-        newFigure.put(1, 2);
-        newFigure.put(2, 4);
-        newFigure.put(3, 6);
-        newFigure.put(4, 9);
-        newFigure.put(5, 11);
-        newFigure.put(6, 13);
-        newFigure.put(7, 15);
-        newFigure.put(8, 17);
-        newFigure.put(9, 21);
     }
 
     private Map<Integer, String> textToMap(String text) {
@@ -350,8 +338,7 @@ public class Algoritms {
                 }
             }
         }
-        reloadMapNewFigure();
+       // reloadMapNewFigure();
         return String.valueOf(sum);
     }
-
 }

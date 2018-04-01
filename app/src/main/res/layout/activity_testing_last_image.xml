@@ -57,7 +57,7 @@
                         android:background="@color/white"
                         android:onClick="clickSymbol1"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/symbol1n" />
+                        app:srcCompat="@drawable/symbol1" />
 
                     <ImageButton
                         android:id="@+id/imageButton2"
@@ -75,7 +75,7 @@
                         android:background="@color/white"
                         android:onClick="clickSymbol3"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/symbol3n" />
+                        app:srcCompat="@drawable/symbol2" />
 
                     <ImageButton
                         android:id="@+id/imageButton4"
@@ -93,7 +93,7 @@
                         android:background="@color/white"
                         android:onClick="clickSymbol5"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/symbol5n" />
+                        app:srcCompat="@drawable/symbol3" />
 
                 </TableRow>
 
@@ -122,7 +122,7 @@
                         android:background="@color/white"
                         android:onClick="clickSymbol7"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/symbol7n" />
+                        app:srcCompat="@drawable/symbol4" />
 
                     <ImageButton
                         android:id="@+id/imageButton8"
@@ -132,7 +132,7 @@
                         android:background="@color/white"
                         android:onClick="clickSymbol8"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/symbol8n" />
+                        app:srcCompat="@drawable/symbol5" />
 
 
                     <ImageButton
@@ -151,7 +151,7 @@
                         android:background="@color/white"
                         android:onClick="clickSymbol10"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/symbol10n" />
+                        app:srcCompat="@drawable/symbol6" />
 
                 </TableRow>
 
@@ -181,7 +181,7 @@
                         android:background="@color/white"
                         android:onClick="clickSymbol12"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/symbol12n" />
+                        app:srcCompat="@drawable/symbol7" />
 
                     <ImageButton
                         android:id="@+id/imageButton13"
@@ -199,7 +199,7 @@
                         android:background="@color/white"
                         android:onClick="clickSymbol14"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/symbol14n" />
+                        app:srcCompat="@drawable/symbol8" />
 
                     <ImageButton
                         android:id="@+id/imageButton15"
@@ -230,7 +230,7 @@
                         android:background="@color/white"
                         android:onClick="clickSymbol16"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/symbol16n" />
+                        app:srcCompat="@drawable/symbol9" />
 
                     <ImageButton
                         android:id="@+id/imageButton17"
@@ -248,7 +248,7 @@
                         android:background="@color/white"
                         android:onClick="clickSymbol18"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/symbol18n" />
+                        app:srcCompat="@drawable/symbol10" />
 
                     <ImageButton
                         android:id="@+id/imageButton19"
@@ -257,7 +257,7 @@
                         android:background="@color/white"
                         android:onClick="clickSymbol19"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/symbol19n" />
+                        app:srcCompat="@drawable/symbol11" />
 
                     <ImageButton
                         android:id="@+id/imageButton20"
@@ -266,7 +266,7 @@
                         android:background="@color/white"
                         android:onClick="clickSymbol20"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/symbol20n" />
+                        app:srcCompat="@drawable/symbol12" />
 
                 </TableRow>
 
@@ -293,7 +293,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@color/white"
-                        android:onClick="clickSymbol21"
+                        android:onClick="clickSymbol22"
                         android:padding="5dp"
                         app:srcCompat="@drawable/symbol2extra" />
 
@@ -302,7 +302,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@color/white"
-                        android:onClick="clickSymbol21"
+                        android:onClick="clickSymbol23"
                         android:padding="5dp"
                         app:srcCompat="@drawable/symbol3extra" />
 
@@ -311,7 +311,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@color/white"
-                        android:onClick="clickSymbol21"
+                        android:onClick="clickSymbol24"
                         android:padding="5dp"
                         app:srcCompat="@drawable/symbol1extra" />
 

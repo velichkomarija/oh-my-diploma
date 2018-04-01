@@ -342,7 +342,7 @@ public class TestingImageVeriantActivity extends AppCompatActivity {
         imageButton36.setImageResource(R.drawable.symbol5i);
     }
 
-    private void getFalseButton(){
+    private void getFalseButton() {
         btn1 = false;
         btn2 = false;
         btn3 = false;
@@ -393,12 +393,12 @@ public class TestingImageVeriantActivity extends AppCompatActivity {
         if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("1")) {
             reverseElement2();
         }
-        if(preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("4")){
+        if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("4")) {
             textViewTitle1.setText("Давайте вспомним фигуры, которые\n мы запомниали и отметим их");
             reverseElement3();
         }
 
-     getFalseButton();
+        getFalseButton();
     }
 
     private void activityTOGo(Class cl) {
@@ -662,7 +662,6 @@ public class TestingImageVeriantActivity extends AppCompatActivity {
     }
 
     public void onClickToGoTestingImage2(View view) {
-        view.setClickable(false);
         Map<Integer, Boolean> map = new HashMap<>();
         btnArray = getArrayButtons();
         for (int i = 0; i < 36; i++) {
@@ -681,14 +680,10 @@ public class TestingImageVeriantActivity extends AppCompatActivity {
             }
             preferencesLocal.addProperty("PREF_RESULTIMAGE1", resString, TestingImageVeriantActivity.this);
             showDialog(TestingEnterImageActivity.class, "Вы уверены в ответе?");
-        }
-
-        if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("3")) {
+        } else if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("3")) {
             preferencesLocal.addProperty("PREF_RESULTIMAGE2", resString, TestingImageVeriantActivity.this);
             showDialog(TestingEnterImageActivity.class, "Вы уверены в ответе?");
-        }
-
-        if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("1")) {
+        } else if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("1")) {
             preferencesLocal.addProperty("PREF_RESULTIMAGE3", resString, TestingImageVeriantActivity.this);
             String par1 = preferencesLocal.getProperty("PREF_RESULTIMAGE1");
             String par2 = preferencesLocal.getProperty("PREF_RESULTIMAGE2");
@@ -696,17 +691,13 @@ public class TestingImageVeriantActivity extends AppCompatActivity {
             String result = algoritms.AlgorithmSoundMemoryC2(par1, par2, par3);
             preferencesLocal.addProperty("PREF_Z2", result, TestingImageVeriantActivity.this);
             showDialog(TestingLastSoundActivity.class, "Вы уверены в ответе?");
-            preferencesLocal.addProperty("PREF_NUM_IMAGE", "none", TestingImageVeriantActivity.this);
-        }
-
-        if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("4")) {
+            preferencesLocal.addProperty("PREF_NUM_IMAGE", "4", TestingImageVeriantActivity.this);
+        } else if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("4")) {
             preferencesLocal.addProperty("PREF_LASTIMAGERESULT1", resString, TestingImageVeriantActivity.this);
-            showDialog(TestingLastImageActivity.class, "Вы уверены в ответе?");
-           //todo второе отсроченное
-           // preferencesLocal.addProperty("PREF_NUM_IMAGE", "2", TestingImageVeriantActivity.this);
+            showDialog(PauseTwoActivity.class, "Вы уверены в ответе?");
+            //todo второе отсроченное
+            preferencesLocal.addProperty("PREF_NUM_IMAGE", "5", TestingImageVeriantActivity.this);
         }
-
-        view.setClickable(true);
     }
 
 }
