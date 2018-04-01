@@ -8,10 +8,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +25,7 @@ public class ProfileActivity extends AppCompatActivity {
     PreferencesLocal pref = new PreferencesLocal();
     TextView textName, textMale, textEducation, textAge, textEtc, start;
     RadioButton radioButton1, radioButton2;
+    Spinner spinner;
     Button button;
 
     @Override
@@ -51,8 +56,8 @@ public class ProfileActivity extends AppCompatActivity {
         });
     }
 
-    private void initParam(float size){
-        textName=(TextView) findViewById(R.id.nameTextView);
+    private void initParam(float size) {
+        textName = (TextView) findViewById(R.id.nameTextView);
         textMale = (TextView) findViewById(R.id.maleTextView);
         textAge = (TextView) findViewById(R.id.ageTextView);
         textEducation = (TextView) findViewById(R.id.educationTextView);
@@ -60,16 +65,17 @@ public class ProfileActivity extends AppCompatActivity {
         radioButton2 = (RadioButton) findViewById(R.id.famale);
         textEtc = (TextView) findViewById(R.id.etcTextView);
         start = (TextView) findViewById(R.id.startProfileTextView);
+        spinner = (Spinner) findViewById(R.id.educationInputField);
+        spinner.setSelection(0);
         button = (Button) findViewById(R.id.nextButton);
 
         button.setTextSize(size);
         textName.setTextSize(size);
         textMale.setTextSize(size);
         textAge.setTextSize(size);
-        if(getResources().getDisplayMetrics().density>=2.5f){
+        if (getResources().getDisplayMetrics().density >= 2.5f) {
             start.setTextSize(size);
-        }
-        else {
+        } else {
             start.setTextSize(size * 1.5f);
         }
         textEducation.setTextSize(size);
@@ -105,13 +111,13 @@ public class ProfileActivity extends AppCompatActivity {
         pref.addProperty("PREF_MALE", text, ProfileActivity.this);
     }
 
-    private void saveEtcInformation(){
+    private void saveEtcInformation() {
         EditText etcInformationBox = (EditText) findViewById(R.id.etcInputField);
-        try{
+        try {
             String etcInformation = etcInformationBox.getText().toString();
             pref.addProperty("PREF_ETC_INFORMATION", etcInformation, ProfileActivity.this);
-        }catch (Exception e){
-            pref.addProperty("PREF_ETC_INFORMATION"," ", ProfileActivity.this);
+        } catch (Exception e) {
+            pref.addProperty("PREF_ETC_INFORMATION", " ", ProfileActivity.this);
         }
     }
 
@@ -133,30 +139,18 @@ public class ProfileActivity extends AppCompatActivity {
         return flag;
     }
 
-    private boolean saveEducation(View view) {
+    private void saveEducation() {
         //получаем образование
-        boolean flag = true;
-        EditText educationBox = (EditText) findViewById(R.id.educationInputField);
-        try {
-            String education = educationBox.getText().toString();
-            if (education.equals(null) || education.equals("")) {
-                throw new Exception();
-            }
-            pref.addProperty("PREF_EDUCATION", education, ProfileActivity.this);
-        } catch (Exception e) {
-            showDialog(view, "Поле Образование не заполнено");
-            flag = false;
-        }
-        return flag;
+        String selected = spinner.getSelectedItem().toString();
+        pref.addProperty("PREF_EDUCATION", selected, ProfileActivity.this);
     }
 
     public void onClickToRegistrProfile(View view) {
         view.setClickable(false);
         boolean nameFlag = saveName(view);
         boolean ageFlag = saveAge(view);
-        boolean educationFlag = saveEducation(view);
         saveEtcInformation();
-        if (nameFlag == true && ageFlag == true && educationFlag == true) {
+        if (nameFlag == true && ageFlag == true) {
             Intent intent = new Intent(this, TestingEnterSoundActivity.class);
             startActivity(intent);
         }
@@ -176,7 +170,7 @@ public class ProfileActivity extends AppCompatActivity {
                                 dialog.cancel();
                             }
                         });
-        builder.setMessage(Html.fromHtml("<font color='#000000'>"+text+"</font>"));
+        builder.setMessage(Html.fromHtml("<font color='#000000'>" + text + "</font>"));
         AlertDialog alert = builder.create();
         alert.show();
     }

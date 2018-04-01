@@ -140,7 +140,7 @@
                 android:padding="10dp"
                 android:text="@string/education" />
 
-            <EditText
+            <Spinner
                 android:id="@+id/educationInputField"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -150,7 +150,9 @@
                 android:inputType="textPersonName"
                 android:padding="5dp"
                 android:singleLine="true"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:spinnerMode="dialog"
+                android:entries="@array/edu"/>
 
         </LinearLayout>
 
