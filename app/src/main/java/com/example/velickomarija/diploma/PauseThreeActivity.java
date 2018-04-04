@@ -1,10 +1,11 @@
 package com.example.velickomarija.diploma;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import com.example.velickomarija.diploma.models.PreferencesLocal;
 
 public class PauseThreeActivity extends AppCompatActivity {
 

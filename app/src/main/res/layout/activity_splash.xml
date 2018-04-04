@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:theme="@style/Theme.Design.Light.NoActionBar"
     android:layout_height="match_parent"
-    tools:context="com.example.velickomarija.diploma.SplashActivity">
+    android:theme="@style/Theme.Design.Light.NoActionBar"
+    tools:context="com.example.velickomarija.diploma.views.common.SplashActivity">
 
     <ImageView
         android:id="@+id/imageView13"

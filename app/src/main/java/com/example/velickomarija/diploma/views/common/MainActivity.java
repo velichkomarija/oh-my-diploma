@@ -1,14 +1,16 @@
-package com.example.velickomarija.diploma;
+package com.example.velickomarija.diploma.views.common;
 
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.AttributeSet;
-import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.velickomarija.diploma.R;
+import com.example.velickomarija.diploma.models.TextUtils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
         text = (TextView) this.findViewById(R.id.startTextView);
         button = (Button) this.findViewById(R.id.nextButton);
         float size = TextUtils.textSize(getBaseContext());
-        text.setTextSize(size*1.1f);
-        button.setTextSize(size*1.1f);
+        text.setTextSize(size * 1.1f);
+        button.setTextSize(size * 1.1f);
     }
 
     @Override
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickToRegistrationUser(View view) {
-        Intent intent = new Intent(this,ProfileActivity.class);
+        Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
     }
 

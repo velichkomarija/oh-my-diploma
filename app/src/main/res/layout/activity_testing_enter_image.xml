@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/TestingEnterImageConstLayout"
     android:layout_width="match_parent"
-    android:keepScreenOn="true"
     android:layout_height="match_parent"
-    tools:context="com.example.velickomarija.diploma.TestingEnterImageActivity">
+    android:keepScreenOn="true"
+    tools:context="com.example.velickomarija.diploma.views.image.TestingEnterImageActivity">
 
     <RelativeLayout
         android:id="@+id/testingEnterImageRelaviveLayout"
@@ -40,12 +40,12 @@
             android:layout_marginBottom="15dp"
             android:gravity="center"
             android:onClick="onClickToGoTestingImage"
+            android:padding="15dp"
             android:paddingVertical="10dp"
             android:text="@string/image"
-            android:padding="15dp"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:visibility="visible"  />
+            android:visibility="visible" />
 
     </RelativeLayout>
 

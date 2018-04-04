@@ -1,4 +1,4 @@
-package com.example.velickomarija.diploma;
+package com.example.velickomarija.diploma.views.sound;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -11,9 +11,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.velickomarija.diploma.R;
+import com.example.velickomarija.diploma.models.Algorithms;
+import com.example.velickomarija.diploma.models.PreferencesLocal;
+import com.example.velickomarija.diploma.models.TextUtils;
+import com.example.velickomarija.diploma.views.image.TestingImageVeriantActivity;
+
 public class TestingNewWordsActivity extends AppCompatActivity {
 
-    Algoritms algoritms = new Algoritms();
+    Algorithms algorithms = new Algorithms();
     PreferencesLocal preferencesLocal = new PreferencesLocal();
     TextView textView;
     Button button;
@@ -71,7 +77,7 @@ public class TestingNewWordsActivity extends AppCompatActivity {
         view.setClickable(false);
         EditText textBox = (EditText) findViewById(R.id.editTextResultTestNew);
         String text = textBox.getText().toString();
-        String res = algoritms.AlgorihmSoundNewWords(text);
+        String res = algorithms.algorithmSoundNewWords(text);
         if (res.equals("11") || res.equals("12")) {
             res = "10";
         }

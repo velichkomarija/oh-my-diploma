@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.velickomarija.diploma.models.PreferencesLocal;
+import com.example.velickomarija.diploma.views.sound.TestingEnterSoundNWordsActivity;
+
 public class PauseOneActivity extends AppCompatActivity {
 
     PreferencesLocal preferencesLocal = new PreferencesLocal();
@@ -16,7 +19,7 @@ public class PauseOneActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pause_one);
-        preferencesLocal.addProperty("PREF_IMAGE1","none",PauseOneActivity.this);
+        preferencesLocal.addProperty("PREF_IMAGE1", "none", PauseOneActivity.this);
 
 
         //tableR1 = (TableRow) tableLayout.findViewById(R.id.pauseOneTableRow1);

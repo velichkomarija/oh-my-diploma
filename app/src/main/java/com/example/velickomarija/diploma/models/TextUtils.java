@@ -1,4 +1,4 @@
-package com.example.velickomarija.diploma;
+package com.example.velickomarija.diploma.models;
 
 import android.content.Context;
 import android.util.DisplayMetrics;

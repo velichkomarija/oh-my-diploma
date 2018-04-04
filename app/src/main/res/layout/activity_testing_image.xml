@@ -5,16 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:keepScreenOn="true"
-    tools:context="com.example.velickomarija.diploma.TestingImageActivity">
+    tools:context="com.example.velickomarija.diploma.views.image.TestingImageActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
+        android:layout_centerInParent="true"
         android:gravity="center"
         android:orientation="horizontal"
-        android:layout_centerInParent="true"
         tools:layout_editor_absoluteX="703dp"
         tools:layout_editor_absoluteY="7dp">
 

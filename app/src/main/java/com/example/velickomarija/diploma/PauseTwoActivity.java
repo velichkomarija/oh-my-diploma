@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.velickomarija.diploma.models.PreferencesLocal;
+import com.example.velickomarija.diploma.views.image.TestingLastImageActivity;
+
 public class PauseTwoActivity extends AppCompatActivity {
 
     PreferencesLocal preferencesLocal = new PreferencesLocal();

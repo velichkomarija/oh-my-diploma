@@ -1,19 +1,11 @@
-package com.example.velickomarija.diploma;
-
-import android.test.mock.MockApplication;
-import android.text.BoringLayout;
+package com.example.velickomarija.diploma.models;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
-import java.util.concurrent.atomic.AtomicReference;
 
-/**
- * Created by velic on 08.01.2018.
- */
 
-public class Algoritms {
+public class Algorithms {
 
     private static final Map<Integer, String> generalWordsMap;
 
@@ -179,7 +171,7 @@ public class Algoritms {
     }
 
     //подсчет С1 на первой пробе + подсчеты сумм на пробе 2,3
-    public int AlgorithmSoundMemoryC1(String text) {
+    public int algorithmSoundMemoryC1(String text) {
         Map<Integer, String> map;
         int sum = 0;
         boolean flag = false;
@@ -211,7 +203,7 @@ public class Algoritms {
     }
 
     //подсчет Z1 на первой пробе + подсчеты сумм на пробе 2,3
-    public int AlgorithmImageMemoryZ1(Map<Integer, Boolean> map) {
+    public int algorithmImageMemoryZ1(Map<Integer, Boolean> map) {
         int sum = 0;
 
         for (Map.Entry<Integer, Boolean> item : map.entrySet()) {
@@ -227,7 +219,7 @@ public class Algoritms {
     }
 
     //подсчет С2 и Z2
-    public String AlgorithmSoundMemoryC2(String p1, String p2, String p3) {
+    public String algorithmSoundMemoryC2(String p1, String p2, String p3) {
         //вычисления по таблице результатов с подсчетом вычетов и проб
         int res = 0;
         int par1 = Integer.parseInt(p1);
@@ -271,7 +263,7 @@ public class Algoritms {
     }
 
     //подсчет слов на узновании из новых
-    public String AlgorithmFindOldWorldsInNew(String text) {
+    public String algorithmFindOldWorldsInNew(String text) {
         int res = 0;
         int error = 0;
         String resString;
@@ -316,15 +308,14 @@ public class Algoritms {
             res = zeroAdapter(res);
             //без учета максимальной 10
             resString = String.valueOf(res);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             resString = "0";
         }
         return resString;
     }
 
     //подсчет запоминания новых слов
-    public String AlgorihmSoundNewWords(String text) {
+    public String algorithmSoundNewWords(String text) {
         int res = 0;
         String[] strArray = text.split(" ");
         for (int i = 0; i < strArray.length; i++) {
@@ -340,7 +331,7 @@ public class Algoritms {
     }
 
     //подсчет новых фигур
-    public String AlgotihmImageNew(Map<Integer, Boolean> map) {
+    public String algotithmImageNew(Map<Integer, Boolean> map) {
         int sum = 0;
 
         for (Map.Entry<Integer, Boolean> item : map.entrySet()) {
@@ -351,7 +342,7 @@ public class Algoritms {
                 }
             }
         }
-       // reloadMapNewFigure();
+        // reloadMapNewFigure();
         return String.valueOf(sum);
     }
 }

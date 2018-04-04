@@ -1,15 +1,14 @@
-package com.example.velickomarija.diploma;
+package com.example.velickomarija.diploma.views.image;
 
 import android.content.Intent;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.view.View;
 import android.widget.Toast;
 
-import java.text.SimpleDateFormat;
-import java.util.Timer;
-import java.util.TimerTask;
+import com.example.velickomarija.diploma.R;
+import com.example.velickomarija.diploma.models.PreferencesLocal;
 
 public class TestingImageActivity extends AppCompatActivity {
     public Intent intent;
@@ -53,12 +52,15 @@ public class TestingImageActivity extends AppCompatActivity {
     }
 
     private void time(int startTime) {
-        CountDownTimer start = new CountDownTimer(startTime, 15000) {
 
+        CountDownTimer start = new CountDownTimer(startTime, 15000) {
             public void onTick(long milliesUntilFinished) {
                 Toast toast = Toast.makeText(TestingImageActivity.this,
                         "Программа работает, она не зависла!",
                         Toast.LENGTH_LONG);
+                View view = toast.getView();
+                toast.getView().setPadding(10, 10, 10, 10);
+                view.setBackgroundResource(R.color.colorAccent);
                 toast.show();
             }
 

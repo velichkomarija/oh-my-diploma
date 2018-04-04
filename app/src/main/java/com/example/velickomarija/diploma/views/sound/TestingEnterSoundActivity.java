@@ -1,17 +1,17 @@
-package com.example.velickomarija.diploma;
+package com.example.velickomarija.diploma.views.sound;
 
-import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.AttributeSet;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.velickomarija.diploma.R;
+import com.example.velickomarija.diploma.models.PreferencesLocal;
+import com.example.velickomarija.diploma.models.TextUtils;
 
 public class TestingEnterSoundActivity extends AppCompatActivity {
 

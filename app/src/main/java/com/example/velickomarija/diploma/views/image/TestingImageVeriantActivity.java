@@ -1,4 +1,4 @@
-package com.example.velickomarija.diploma;
+package com.example.velickomarija.diploma.views.image;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -11,12 +11,18 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.velickomarija.diploma.PauseTwoActivity;
+import com.example.velickomarija.diploma.R;
+import com.example.velickomarija.diploma.views.sound.TestingLastSoundActivity;
+import com.example.velickomarija.diploma.models.Algorithms;
+import com.example.velickomarija.diploma.models.PreferencesLocal;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class TestingImageVeriantActivity extends AppCompatActivity {
 
-    Algoritms algoritms = new Algoritms();
+    Algorithms algorithms = new Algorithms();
     TextView textViewTitle1;
     int parsedColor = Color.parseColor("#37bc51");
     PreferencesLocal preferencesLocal = new PreferencesLocal();
@@ -668,7 +674,7 @@ public class TestingImageVeriantActivity extends AppCompatActivity {
             map.put(i + 1, btnArray[i]);
         }
 
-        int res = algoritms.AlgorithmImageMemoryZ1(map);
+        int res = algorithms.algorithmImageMemoryZ1(map);
         String resString = String.valueOf(res);
 
 
@@ -688,7 +694,7 @@ public class TestingImageVeriantActivity extends AppCompatActivity {
             String par1 = preferencesLocal.getProperty("PREF_RESULTIMAGE1");
             String par2 = preferencesLocal.getProperty("PREF_RESULTIMAGE2");
             String par3 = preferencesLocal.getProperty("PREF_RESULTIMAGE3");
-            String result = algoritms.AlgorithmSoundMemoryC2(par1, par2, par3);
+            String result = algorithms.algorithmSoundMemoryC2(par1, par2, par3);
             preferencesLocal.addProperty("PREF_Z2", result, TestingImageVeriantActivity.this);
             showDialog(TestingLastSoundActivity.class, "Вы уверены в ответе?");
             preferencesLocal.addProperty("PREF_NUM_IMAGE", "4", TestingImageVeriantActivity.this);

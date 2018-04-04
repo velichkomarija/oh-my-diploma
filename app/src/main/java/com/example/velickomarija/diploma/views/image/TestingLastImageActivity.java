@@ -1,4 +1,4 @@
-package com.example.velickomarija.diploma;
+package com.example.velickomarija.diploma.views.image;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -11,13 +11,18 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.velickomarija.diploma.PauseThreeActivity;
+import com.example.velickomarija.diploma.R;
+import com.example.velickomarija.diploma.models.Algorithms;
+import com.example.velickomarija.diploma.models.PreferencesLocal;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class TestingLastImageActivity extends AppCompatActivity {
 
     //todo проверить
-    Algoritms algoritms = new Algoritms();
+    Algorithms algorithms = new Algorithms();
     int parsedColor = Color.parseColor("#37bc51");
     PreferencesLocal preferencesLocal = new PreferencesLocal();
     boolean btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14, btn15,
@@ -303,7 +308,7 @@ public class TestingLastImageActivity extends AppCompatActivity {
                             }
                         }
                 );
-        builder.setMessage(Html.fromHtml("<font color='#000000'>"+text+"</font>"));
+        builder.setMessage(Html.fromHtml("<font color='#000000'>" + text + "</font>"));
         AlertDialog alert = builder.create();
         alert.show();
     }
@@ -315,10 +320,10 @@ public class TestingLastImageActivity extends AppCompatActivity {
         for (int i = 0; i < 24; i++) {
             map.put(i + 1, btnArray[i]);
         }
-        resString = algoritms.AlgotihmImageNew(map);
+        resString = algorithms.algotithmImageNew(map);
 
         if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("5")) {
-           preferencesLocal.addProperty("PREF_LASTIMAGERESULT2", resString, TestingLastImageActivity.this);
+            preferencesLocal.addProperty("PREF_LASTIMAGERESULT2", resString, TestingLastImageActivity.this);
             showDialog(TestingLastImageActivity.class, "Вы уверены в ответе?");
             preferencesLocal.addProperty("PREF_NUM_IMAGE", "6", TestingLastImageActivity.this);
         } else if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("6")) {

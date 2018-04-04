@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/testingEnterConstLayout"
     android:layout_width="match_parent"
-    android:keepScreenOn="true"
     android:layout_height="match_parent"
-    tools:context="com.example.velickomarija.diploma.TestingEnterSoundActivity">
+    android:keepScreenOn="true"
+    tools:context="com.example.velickomarija.diploma.views.sound.TestingEnterSoundActivity">
 
     <RelativeLayout
         android:id="@+id/testingEnterLinearLayout"

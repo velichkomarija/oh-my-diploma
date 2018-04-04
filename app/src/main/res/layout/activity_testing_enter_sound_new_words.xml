@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:keepScreenOn="true"
-    tools:context="com.example.velickomarija.diploma.TestingEnterSoundNWordsActivity">
+    tools:context="com.example.velickomarija.diploma.views.sound.TestingEnterSoundNWordsActivity">
 
     <RelativeLayout
         android:id="@+id/testingEnterSoundNewLinearLayout"
@@ -39,11 +39,11 @@
             android:layout_marginBottom="15dp"
             android:gravity="center"
             android:onClick="onClickToGoTestingSoundNewWords"
+            android:padding="15dp"
             android:paddingVertical="10dp"
             android:text="@string/next"
-            android:padding="15dp"
-            android:textColor="@color/white"
             android:textAlignment="center"
+            android:textColor="@color/white"
             android:visibility="visible" />
 
     </RelativeLayout>

@@ -1,8 +1,7 @@
-package com.example.velickomarija.diploma;
+package com.example.velickomarija.diploma.views.sound;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,10 +13,16 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.velickomarija.diploma.R;
+import com.example.velickomarija.diploma.models.Algorithms;
+import com.example.velickomarija.diploma.models.PreferencesLocal;
+import com.example.velickomarija.diploma.models.TextUtils;
+import com.example.velickomarija.diploma.views.image.TestingEnterImageActivity;
+
 public class TestingSoundActivity extends AppCompatActivity {
 
     PreferencesLocal preferencesLocal = new PreferencesLocal();
-    Algoritms algoritms = new Algoritms();
+    Algorithms algorithms = new Algorithms();
     InputMethodManager imm;
 
     TextView textView;
@@ -92,7 +97,7 @@ public class TestingSoundActivity extends AppCompatActivity {
 
         EditText textBox = (EditText) findViewById(R.id.editTextResultTest1);
         String text = textBox.getText().toString();
-        int res = algoritms.AlgorithmSoundMemoryC1(text);//верно
+        int res = algorithms.algorithmSoundMemoryC1(text);//верно
         String resString = String.valueOf(res);
 
         if (numParam == 3) {
@@ -103,7 +108,7 @@ public class TestingSoundActivity extends AppCompatActivity {
             String par2 = preferencesLocal.getProperty("PREF_SOUNDRESULT2");
             String par3 = preferencesLocal.getProperty("PREF_SOUNDRESULT3");
 
-            String result = algoritms.AlgorithmSoundMemoryC2(par1, par2, par3);
+            String result = algorithms.algorithmSoundMemoryC2(par1, par2, par3);
             preferencesLocal.addProperty("PREF_C2", result, TestingSoundActivity.this);
             preferencesLocal.addProperty("PREF_NUM_IMAGE", "1", TestingSoundActivity.this);
 

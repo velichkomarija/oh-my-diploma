@@ -1,7 +1,6 @@
-package com.example.velickomarija.diploma;
+package com.example.velickomarija.diploma.views.sound;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +10,10 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
+import com.example.velickomarija.diploma.R;
+import com.example.velickomarija.diploma.models.Algorithms;
+import com.example.velickomarija.diploma.models.PreferencesLocal;
+
 public class TestingSoundNWordsActivity extends AppCompatActivity {
 
     TextView mTimer;
@@ -18,7 +21,7 @@ public class TestingSoundNWordsActivity extends AppCompatActivity {
     MediaPlayer mPlayer;
     Animation animation;
     boolean clk = false;
-    Algoritms algoritms = new Algoritms();
+    Algorithms algorithms = new Algorithms();
     PreferencesLocal preferencesLocal = new PreferencesLocal();
 
     @Override
@@ -63,7 +66,7 @@ public class TestingSoundNWordsActivity extends AppCompatActivity {
 
             public void onFinish() {
                 String str = stringBuffer.toString();
-                String res = algoritms.AlgorithmFindOldWorldsInNew(str);
+                String res = algorithms.algorithmFindOldWorldsInNew(str);
                 preferencesLocal.addProperty("PREF_RESULTOLDWORDS", res, TestingSoundNWordsActivity.this);
                 startActivity(intent);
             }

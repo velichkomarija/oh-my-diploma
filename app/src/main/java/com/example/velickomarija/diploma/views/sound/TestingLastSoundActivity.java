@@ -1,4 +1,4 @@
-package com.example.velickomarija.diploma;
+package com.example.velickomarija.diploma.views.sound;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -11,10 +11,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.velickomarija.diploma.PauseOneActivity;
+import com.example.velickomarija.diploma.R;
+import com.example.velickomarija.diploma.models.Algorithms;
+import com.example.velickomarija.diploma.models.PreferencesLocal;
+import com.example.velickomarija.diploma.models.TextUtils;
+
 public class TestingLastSoundActivity extends AppCompatActivity {
 
     PreferencesLocal preferencesLocal = new PreferencesLocal();
-    Algoritms algoritms = new Algoritms();
+    Algorithms algorithms = new Algorithms();
     TextView textView;
     Button button;
     EditText editText;
@@ -71,7 +77,7 @@ public class TestingLastSoundActivity extends AppCompatActivity {
         view.setClickable(false);
         EditText textBox = (EditText) findViewById(R.id.editTextResultTest1);
         String text = textBox.getText().toString();
-        int res = algoritms.AlgorithmSoundMemoryC1(text);
+        int res = algorithms.algorithmSoundMemoryC1(text);
         String resString = String.valueOf(res);
         preferencesLocal.addProperty("PREF_SOUNDLASTRESULT1", resString, TestingLastSoundActivity.this);
         view.setClickable(true);

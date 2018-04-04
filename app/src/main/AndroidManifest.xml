@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:activity="http://schemas.android.com/apk/res-auto"
     package="com.example.velickomarija.diploma">
 
     <uses-sdk
@@ -29,7 +30,7 @@
         android:resizeableActivity="false"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SplashActivity"
+            android:name=".views.common.SplashActivity"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,43 +39,46 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ProfileActivity"
+            android:name=".views.common.ProfileActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".TestingEnterSoundActivity"
+            android:name=".views.sound.TestingEnterSoundActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".TestingSoundActivity"
+            android:name=".views.sound.TestingSoundActivity"
+            android:windowSoftInputMode="stateHidden"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".TestingEnterImageActivity"
+            android:name=".views.image.TestingEnterImageActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".TestingImageActivity"
+            android:name=".views.image.TestingImageActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".MainActivity"
+            android:name=".views.common.MainActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".TestingImageVeriantActivity"
+            android:name=".views.image.TestingImageVeriantActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".TestingEnterSoundNWordsActivity"
+            android:name=".views.sound.TestingEnterSoundNWordsActivity"
             android:screenOrientation="landscape" />
         <activity
             android:name=".PauseOneActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".TestingSoundNWordsActivity"
+            android:name=".views.sound.TestingSoundNWordsActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".TestingNewWordsActivity"
+            android:name=".views.sound.TestingNewWordsActivity"
+            android:windowSoftInputMode="stateHidden"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".TestingLastSoundActivity"
+            android:name=".views.sound.TestingLastSoundActivity"
+            android:windowSoftInputMode="stateHidden"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".TestingLastImageActivity"
+            android:name=".views.image.TestingLastImageActivity"
             android:screenOrientation="landscape" />
         <activity
             android:name=".PauseTwoActivity"

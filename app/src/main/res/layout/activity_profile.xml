@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:keepScreenOn="true"
-    tools:context="com.example.velickomarija.diploma.ProfileActivity">
+    tools:context="com.example.velickomarija.diploma.views.common.ProfileActivity">
 
     <LinearLayout
         android:id="@+id/profileLinearLayout"
@@ -19,11 +19,11 @@
             android:id="@+id/startProfileTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="5dp"
             android:text="@string/enter_profile_text"
             android:textAlignment="center"
             android:textColor="#047fd1"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="15dp"
             android:textStyle="bold" />
 
         <LinearLayout
@@ -146,13 +146,13 @@
                 android:layout_height="match_parent"
                 android:layout_marginEnd="15dp"
                 android:background="@drawable/stroke"
+                android:entries="@array/edu"
                 android:imeOptions="flagNoExtractUi"
                 android:inputType="textPersonName"
                 android:padding="5dp"
                 android:singleLine="true"
-                android:textColor="@color/black"
                 android:spinnerMode="dialog"
-                android:entries="@array/edu"/>
+                android:textColor="@color/black" />
 
         </LinearLayout>
 
