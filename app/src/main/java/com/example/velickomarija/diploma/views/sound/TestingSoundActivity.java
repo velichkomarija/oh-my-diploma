@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.velickomarija.diploma.PauseOneActivity;
 import com.example.velickomarija.diploma.R;
 import com.example.velickomarija.diploma.models.Algorithms;
 import com.example.velickomarija.diploma.models.PreferencesLocal;
@@ -42,8 +43,11 @@ public class TestingSoundActivity extends AppCompatActivity {
         editText.setTextSize(size*1.4f);
         button.setTextSize(size*1.4f);
 
-        if(preferencesLocal.getProperty("PREF_NUM_SOUND").equals("4")){
+        if(preferencesLocal.getProperty("PREF_NUM_SOUND").equals("5")){
             textView.setText(R.string.textNewWords);
+        }
+        if(preferencesLocal.getProperty("PREF_NUM_SOUND").equals("4")){
+            textView.setText(R.string.textSoundLast);
         }
     }
 
@@ -99,18 +103,22 @@ public class TestingSoundActivity extends AppCompatActivity {
         int res = algorithms.algorithmSoundMemoryC1(text);//верно
         String resString = String.valueOf(res);
 
-        //todo
-        //todo
-        //todo
-        if(numParam == 4){
+        if(numParam == 5){
             resString = algorithms.algorithmSoundNewWords(text);
             if (resString.equals("11") || resString.equals("12")) {
                 resString = "10";
             }
             preferencesLocal.addProperty("PREF_C4", resString, TestingSoundActivity.this);
-            preferencesLocal.addProperty("PREF_NUM_SOUND", "5", TestingSoundActivity.this);
+            preferencesLocal.addProperty("PREF_NUM_SOUND", "6", TestingSoundActivity.this);
 
             showDialog(TestingImageVeriantActivity.class, "Вы уверены в ответе?");
+        }
+
+        if(numParam == 4){
+            preferencesLocal.addProperty("PREF_SOUNDLASTRESULT1", resString, TestingSoundActivity.this);
+            preferencesLocal.addProperty("PREF_NUM_SOUND", "5", TestingSoundActivity.this);
+
+            showDialog(PauseOneActivity.class, "Вы уверены в ответе?");
         }
 
         if (numParam == 3) {

@@ -13,9 +13,9 @@ import android.widget.TextView;
 
 import com.example.velickomarija.diploma.PauseTwoActivity;
 import com.example.velickomarija.diploma.R;
-import com.example.velickomarija.diploma.views.sound.TestingLastSoundActivity;
 import com.example.velickomarija.diploma.models.Algorithms;
 import com.example.velickomarija.diploma.models.PreferencesLocal;
+import com.example.velickomarija.diploma.views.sound.TestingSoundActivity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -696,7 +696,7 @@ public class TestingImageVeriantActivity extends AppCompatActivity {
             String par3 = preferencesLocal.getProperty("PREF_RESULTIMAGE3");
             String result = algorithms.algorithmSoundMemoryC2(par1, par2, par3);
             preferencesLocal.addProperty("PREF_Z2", result, TestingImageVeriantActivity.this);
-            showDialog(TestingLastSoundActivity.class, "Вы уверены в ответе?");
+            showDialog(TestingSoundActivity.class, "Вы уверены в ответе?");
             preferencesLocal.addProperty("PREF_NUM_IMAGE", "4", TestingImageVeriantActivity.this);
         } else if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("4")) {
             preferencesLocal.addProperty("PREF_LASTIMAGERESULT1", resString, TestingImageVeriantActivity.this);
