@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.example.velickomarija.diploma.PauseThreeActivity;
 import com.example.velickomarija.diploma.R;
 import com.example.velickomarija.diploma.models.Algorithms;
+import com.example.velickomarija.diploma.models.Functions;
 import com.example.velickomarija.diploma.models.PreferencesLocal;
 
 import java.util.HashMap;
@@ -25,10 +26,11 @@ public class TestingLastImageActivity extends AppCompatActivity {
     Algorithms algorithms = new Algorithms();
     int parsedColor = Color.parseColor("#37bc51");
     PreferencesLocal preferencesLocal = new PreferencesLocal();
+    TextView textViewTitle1;
+
     boolean btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14, btn15,
             btn16, btn17, btn18, btn19, btn20, btn21, btn22, btn23, btn24;
     boolean[] btnArray = new boolean[24];
-    TextView textViewTitle1;
 
     @Override
     public void onBackPressed() {
@@ -93,12 +95,15 @@ public class TestingLastImageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_testing_last_image);
+
         if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("6")) {
+
             textViewTitle1 = (TextView) findViewById(R.id.textViewTitle);
             textViewTitle1.setText("Сейчас необходимо отметить те " +
                     "\nфигуры, которые были новыми в предыдущей таблице");
             reverseElement();
         }
+
         btn1 = false;
         btn2 = false;
         btn3 = false;
@@ -123,11 +128,6 @@ public class TestingLastImageActivity extends AppCompatActivity {
         btn22 = false;
         btn23 = false;
         btn24 = false;
-    }
-
-    private void activityTOGo(Class cl) {
-        Intent intent = new Intent(this, cl);
-        startActivity(intent);
     }
 
     private boolean[] getArrayButtons() {
@@ -289,46 +289,35 @@ public class TestingLastImageActivity extends AppCompatActivity {
         btn24 = clicSymbolN(imageButton, btn24);
     }
 
-    private void showDialog(final Class cl, String text) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(TestingLastImageActivity.this);
-        builder.setTitle("Важное сообщение!")
-                .setMessage(text)
-                .setIcon(R.drawable.ic_error_black_24dp)
-                .setCancelable(false).setPositiveButton("Да, продолжить",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                        activityTOGo(cl);
-                    }
-                })
-                .setNegativeButton("Отмена",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        }
-                );
-        builder.setMessage(Html.fromHtml("<font color='#000000'>" + text + "</font>"));
-        AlertDialog alert = builder.create();
-        alert.show();
-    }
-
     public void onClickToGoTestingImage2(View view) {
+
         String resString = "";
         Map<Integer, Boolean> map = new HashMap<>();
         btnArray = getArrayButtons();
+
         for (int i = 0; i < 24; i++) {
             map.put(i + 1, btnArray[i]);
         }
         resString = algorithms.algotithmImageNew(map);
 
         if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("5")) {
-            preferencesLocal.addProperty("PREF_LASTIMAGERESULT2", resString, TestingLastImageActivity.this);
-            showDialog(TestingLastImageActivity.class, "Вы уверены в ответе?");
-            preferencesLocal.addProperty("PREF_NUM_IMAGE", "6", TestingLastImageActivity.this);
+
+            preferencesLocal.addProperty("PREF_LASTIMAGERESULT2",
+                    resString,
+                    TestingLastImageActivity.this);
+            Functions.showDialog(TestingLastImageActivity.class, "Вы уверены в ответе?", view);
+
+            preferencesLocal.addProperty("PREF_NUM_IMAGE",
+                    "6",
+                    TestingLastImageActivity.this);
+
         } else if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("6")) {
-            preferencesLocal.addProperty("PREF_Z4", resString, TestingLastImageActivity.this);
-            showDialog(PauseThreeActivity.class, "Вы уверены в ответе?");
+
+            preferencesLocal.addProperty("PREF_Z4",
+                    resString,
+                    TestingLastImageActivity.this);
+
+            Functions.showDialog(PauseThreeActivity.class, "Вы уверены в ответе?", view);
         }
     }
 }

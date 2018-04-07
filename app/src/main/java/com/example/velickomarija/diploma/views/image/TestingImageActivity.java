@@ -35,25 +35,31 @@ public class TestingImageActivity extends AppCompatActivity {
         }
 
         if (numParam == 3) {
-            preferencesLocal.addProperty("PREF_NUM_IMAGE", "1", TestingImageActivity.this);
+            preferencesLocal.addProperty("PREF_NUM_IMAGE",
+                    "1",
+                    TestingImageActivity.this);
             time(30000);
         }
 
         if (numParam == 2) {
-            preferencesLocal.addProperty("PREF_NUM_IMAGE", "3", TestingImageActivity.this);
+            preferencesLocal.addProperty("PREF_NUM_IMAGE",
+                    "3",
+                    TestingImageActivity.this);
             time(45000);
         }
 
         if (numParam == 1) {
-            preferencesLocal.addProperty("PREF_NUM_IMAGE", "2", TestingImageActivity.this);
+            preferencesLocal.addProperty("PREF_NUM_IMAGE",
+                    "2",
+                    TestingImageActivity.this);
             time(60000);
         }
 
     }
 
     private void time(int startTime) {
-
         CountDownTimer start = new CountDownTimer(startTime, 15000) {
+
             public void onTick(long milliesUntilFinished) {
                 Toast toast = Toast.makeText(TestingImageActivity.this,
                         "Программа работает, она не зависла!",

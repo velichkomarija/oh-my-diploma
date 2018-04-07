@@ -123,7 +123,6 @@ public class TestingSoundActivity extends AppCompatActivity {
 
         if (numParam == 3) {
             preferencesLocal.addProperty("PREF_SOUNDRESULT3", resString, TestingSoundActivity.this);
-            preferencesLocal.addProperty("PREF_NUM_SOUND", "1", TestingSoundActivity.this);
 
             String par1 = preferencesLocal.getProperty("PREF_SOUNDRESULT1");
             String par2 = preferencesLocal.getProperty("PREF_SOUNDRESULT2");
@@ -132,7 +131,7 @@ public class TestingSoundActivity extends AppCompatActivity {
             String result = algorithms.algorithmSoundMemoryC2(par1, par2, par3);
             preferencesLocal.addProperty("PREF_C2", result, TestingSoundActivity.this);
             preferencesLocal.addProperty("PREF_NUM_SOUND", "4", TestingSoundActivity.this);
-            preferencesLocal.addProperty("PREF_NUM_IMAGE", "1", TestingSoundActivity.this);
+            preferencesLocal.addProperty("PREF_NUM_IMAGE", "2", TestingSoundActivity.this);
             showDialog(TestingEnterImageActivity.class, "Вы уверены в ответе?");
         }
 
