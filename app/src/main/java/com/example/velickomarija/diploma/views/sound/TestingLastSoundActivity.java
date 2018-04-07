@@ -74,13 +74,11 @@ public class TestingLastSoundActivity extends AppCompatActivity {
     }
 
     public void onClickToGoLastSound(View view) {
-        view.setClickable(false);
         EditText textBox = (EditText) findViewById(R.id.editTextResultTest1);
         String text = textBox.getText().toString();
         int res = algorithms.algorithmSoundMemoryC1(text);
         String resString = String.valueOf(res);
         preferencesLocal.addProperty("PREF_SOUNDLASTRESULT1", resString, TestingLastSoundActivity.this);
-        view.setClickable(true);
         showDialog(PauseOneActivity.class,"Вы уверены в ответе?");
     }
 }

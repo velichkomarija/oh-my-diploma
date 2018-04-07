@@ -147,7 +147,6 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     public void onClickToRegistrProfile(View view) {
-        view.setClickable(false);
         boolean nameFlag = saveName(view);
         boolean ageFlag = saveAge(view);
         saveEtcInformation();
@@ -155,7 +154,6 @@ public class ProfileActivity extends AppCompatActivity {
             Intent intent = new Intent(this, TestingEnterSoundActivity.class);
             startActivity(intent);
         }
-        view.setClickable(true);
     }
 
     //диалоговое окно на ошибку

@@ -28,8 +28,8 @@ public class TestingSoundNWordsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_testing_sound_nwords);
-        animation = AnimationUtils.loadAnimation(this,R.anim.anim);
-        intent = new Intent(this, TestingNewWordsActivity.class);
+        animation = AnimationUtils.loadAnimation(this, R.anim.anim);
+        intent = new Intent(this, TestingSoundActivity.class);
         timing();
     }
 
