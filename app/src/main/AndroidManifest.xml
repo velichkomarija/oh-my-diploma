@@ -31,7 +31,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".views.questionnaire.QuestionOneActivity"
+            android:name=".views.QuestionEnterActivity"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -81,6 +81,9 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".views.common.SplashActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".views.questionnaire.QuestionOneActivity"
             android:screenOrientation="landscape" />
     </application>
 

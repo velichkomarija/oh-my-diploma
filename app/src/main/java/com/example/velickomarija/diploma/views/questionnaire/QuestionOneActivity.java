@@ -65,6 +65,10 @@ public class QuestionOneActivity extends AppCompatActivity {
         });
     }
 
+    public void onBackPressed() {
+        // do nothing
+    }
+
     // щелчок кнопки
     public void onClick(View view) {
         // очистить все переключатели
