@@ -7,6 +7,20 @@ import java.util.Map;
 
 public class Algorithms {
 
+    private static final String resQuestion1 = "Вы склонны составлять планы и" +
+            " действовать в соответствии с ними.";
+
+    private static final String resQuestion2 = "Вы стремитесь разобраться в воспринимаемом." +
+            " Интерпретируете свой опыт в зависимости от текущей ситуации. " +
+            "Нечасто реализуете сложные и детальные планы";
+
+    private static final String resQuestion3 = "Вы практикуете творческий и оригинальный подход" +
+            " без большого внимания к последствиям деятельности. У вас нет склонности " +
+            "корректировать поведение.";
+
+    private static final String resQuestion4 = "У Вас нет склонности инициировать планы и " +
+            "интерпретировать опыт. Вы ориентируетесь на повседневные дела и реагируете на текущие ситуации.";
+
     private static final Map<Integer, String> generalWordsMap;
 
     static {
@@ -105,6 +119,31 @@ public class Algorithms {
         newWords.add("ПАЛЬТО");
     }
 
+    private static final Map<String, String> keyQuestions1;
+
+    static {
+        keyQuestions1 = new HashMap<>();
+        keyQuestions1.put("H4B4", "Стабильный режим деятельности");
+        keyQuestions1.put("H4B3", "Режим деятельности/восприятия");
+        keyQuestions1.put("H4B2", "Режим восприятия/деятельности");
+        keyQuestions1.put("H4B1", "Стабильный режим восприятия");
+
+        keyQuestions1.put("H3B4", "Режим деятельности/стимулирования");
+        keyQuestions1.put("H3B3", "Режим деятельности, зависящий от контекста");
+        keyQuestions1.put("H3B2", "Режим восприятия, зависящий от контекста");
+        keyQuestions1.put("H3B1", "Режим восприятия/приспособления");
+
+        keyQuestions1.put("H2B4", "Режим стимулирования/деятельности");
+        keyQuestions1.put("H2B3", "Режим стимулирования, зависящий от контекста");
+        keyQuestions1.put("H2B2", "Режим приспособления, зависящий от контекста");
+        keyQuestions1.put("H2B1", "Режим восприятия, зависящий от контекста");
+
+        keyQuestions1.put("H1B4", "Стабильный режим стимулирования");
+        keyQuestions1.put("H1B3", "Режим стимулирования/приспособления");
+        keyQuestions1.put("H1B2", "Режим приспособления/ стимулирования");
+        keyQuestions1.put("H1B1", "Стабильный режим приспособления");
+    }
+
     private void reloadArrayList() {
         newWords.clear();
         newWords.add("ПОТОЛОК");
@@ -162,7 +201,54 @@ public class Algorithms {
         return map;
     }
 
-    int zeroAdapter(int digit) {
+    private String createTestResult(int B, int H) {
+        String BN = null;
+        String HN = null;
+
+        if (B < 27) {
+            BN = "B1";
+        } else if (B >= 27 && B < 37) {
+            BN = "B2";
+        } else if (B >= 37 && B < 47) {
+            BN = "B3";
+        } else if (B >= 47) {
+            BN = "B4";
+        }
+
+        if (H < 27) {
+            HN = "H1";
+        } else if (H >= 27 && H < 37) {
+            HN = "H2";
+        } else if (H >= 37 && H < 47) {
+            HN = "H3";
+        } else if (H >= 47) {
+            HN = "H4";
+        }
+
+        return HN.concat(BN);
+    }
+
+    private String getFullResult(String str) {
+        String result = "";
+
+        if (str.contains("деятельности")) {
+            result = result.concat(resQuestion1);
+        }
+        if (str.contains("восприятия")) {
+            result = result.concat(resQuestion2);
+        }
+        if (str.contains("стимулирования")) {
+            result = result.concat(resQuestion3);
+        }
+        if (str.contains("приспособления")) {
+            result = result.concat(resQuestion4);
+        }
+        return str.
+                concat("\n").
+                concat(result);
+    }
+
+    private int zeroAdapter(int digit) {
         if (digit < 0) {
             return 0;
         } else {
@@ -344,5 +430,38 @@ public class Algorithms {
         }
         // reloadMapNewFigure();
         return String.valueOf(sum);
+    }
+
+    //подсчет результатов первого опросника
+    public String algorithmQuestion1(int[] array) {
+        int B = 0;
+        int H = 0;
+
+        for (int i = 0; i < array.length; i++) {
+            if ((i == 1) ||
+                    (i == 2) ||
+                    (i == 5) ||
+                    (i == 6) ||
+                    (i == 7) ||
+                    (i == 11) ||
+                    (i == 13) ||
+                    (i == 14) ||
+                    (i == 17) ||
+                    (i == 18)) {
+                B = B + array[i];
+            } else {
+                H = H + array[i];
+            }
+        }
+
+        String res = createTestResult(B, H);
+
+        for (Map.Entry<String, String> entry : keyQuestions1.entrySet()) {
+            if (entry.getKey().equals(res)) {
+                res = entry.getValue();
+            }
+        }
+
+        return  getFullResult(res);
     }
 }
