@@ -41,6 +41,7 @@ public class TestingSoundNWordsActivity extends AppCompatActivity {
     private void timing() {
         mTimer = (TextView) findViewById(R.id.textViewTime);
         CountDownTimer start = new CountDownTimer(6000, 1000) {
+
             public void onTick(long milliesUntilFinished) {
                 mTimer.setText(String.valueOf(milliesUntilFinished / 1000));
             }
@@ -57,6 +58,7 @@ public class TestingSoundNWordsActivity extends AppCompatActivity {
         mPlayer = MediaPlayer.create(this, R.raw.test_40sec);
         mPlayer.start();
         final CountDownTimer start = new CountDownTimer(42000, 100) {
+
             public void onTick(long milliesUntilFinished) {
                 if (clk) {
                     clk = false;
@@ -67,13 +69,15 @@ public class TestingSoundNWordsActivity extends AppCompatActivity {
             public void onFinish() {
                 String str = stringBuffer.toString();
                 String res = algorithms.algorithmFindOldWorldsInNew(str);
-                preferencesLocal.addProperty("PREF_RESULTOLDWORDS", res, TestingSoundNWordsActivity.this);
+                preferencesLocal.addProperty("PREF_RESULTOLDWORDS",
+                        res,
+                        TestingSoundNWordsActivity.this);
                 startActivity(intent);
             }
         }.start();
     }
 
-    public void onClickToPluseAction(View view) {
+    public void onClickToPlusAction(View view) {
         clk = true;
         view.startAnimation(animation);
     }

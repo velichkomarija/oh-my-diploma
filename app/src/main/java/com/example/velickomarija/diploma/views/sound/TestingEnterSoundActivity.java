@@ -25,11 +25,13 @@ public class TestingEnterSoundActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_testing_enter);
+
         textView = (TextView) findViewById(R.id.start_text);
         startButton = (Button) findViewById(R.id.button_next);
+
         float size = TextUtils.textSize(getBaseContext());
-        textView.setTextSize(size*1.2f);
-        startButton.setTextSize(size*1.2f);
+        textView.setTextSize(size * 1.2f);
+        startButton.setTextSize(size * 1.2f);
 
         if (preferencesLocal.getProperty("PREF_NUM_SOUND").equals("2") ||
                 preferencesLocal.getProperty("PREF_NUM_SOUND").equals("3")) {
@@ -50,8 +52,10 @@ public class TestingEnterSoundActivity extends AppCompatActivity {
         mPlayer = MediaPlayer.create(this, sound);
         mPlayer.start();
         textView.setText("Воспроизведение аудиозаписи");
-        textView.setTextSize(TextUtils.textSize(getBaseContext())*3);
+        textView.setTextSize(TextUtils.textSize(getBaseContext()) * 3);
+
         CountDownTimer start = new CountDownTimer(time, 500) {
+
             public void onTick(long milliesUntilFinished) {
                 //do nothing
             }
@@ -59,13 +63,14 @@ public class TestingEnterSoundActivity extends AppCompatActivity {
             public void onFinish() {
                 startActivity(intent);
             }
+
         }.start();
     }
 
     public void onClickToGoTesting(View view) {
-
         startButton.setEnabled(false);
         startButton.setVisibility(View.INVISIBLE);
+
         if (preferencesLocal.getProperty("PREF_NUM_SOUND").equals("2") ||
                 preferencesLocal.getProperty("PREF_NUM_SOUND").equals("3")) {
             sound(R.raw.test_15sec, 15500);

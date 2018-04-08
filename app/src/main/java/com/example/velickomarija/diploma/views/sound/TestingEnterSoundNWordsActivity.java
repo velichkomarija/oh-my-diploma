@@ -11,11 +11,11 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.velickomarija.diploma.R;
+import com.example.velickomarija.diploma.models.Functions;
 import com.example.velickomarija.diploma.models.TextUtils;
 
 public class TestingEnterSoundNWordsActivity extends AppCompatActivity {
 
-    Intent intent;
     TextView textView;
     Button button;
 
@@ -23,47 +23,25 @@ public class TestingEnterSoundNWordsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_testing_enter_sound_new_words);
-        intent = new Intent(this, TestingSoundNWordsActivity.class);
 
         textView = (TextView) findViewById(R.id.startTextSoundNewWordsView);
         button = (Button) findViewById(R.id.soundNewWordsSoundButton);
+
         float size = TextUtils.textSize(getBaseContext());
         textView.setTextSize(size*1.3f);
         button.setTextSize(size*1.3f);
     }
 
     public void onClickToGoTestingSoundNewWords(View view) {
-        showDialog(view, "Будте внимательны, через 5 секунд будет воспроизведена запись для " +
-                "узнования слов, если готовы нажмите Продолжить");
+        Functions.showDialog(TestingSoundNWordsActivity.class,
+                "Будте внимательны, через 5 секунд будет воспроизведена запись для " +
+                "узнования слов, если готовы нажмите Продолжить",
+                view);
     }
 
     @Override
     public void onBackPressed() {
         // do nothing
-    }
-
-    private void showDialog(View v, String text) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(TestingEnterSoundNWordsActivity.this);
-        builder.setTitle("Важное сообщение!")
-                .setMessage(text)
-                .setIcon(R.drawable.ic_error_black_24dp)
-                .setCancelable(false).setPositiveButton("Продолжить",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                        startActivity(intent);
-                    }
-                })
-                .setNegativeButton("Отмена",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        }
-                );
-        builder.setMessage(Html.fromHtml("<font color='#000000'>"+text+"</font>"));
-        AlertDialog alert = builder.create();
-        alert.show();
     }
 }
 
