@@ -85,6 +85,7 @@
                     android:layout_marginHorizontal="20dp"
                     android:checked="true"
                     android:text="@string/male"
+                    android:buttonTint="@color/colorAccent"
                     android:textColor="@color/black" />
 
                 <RadioButton
@@ -93,6 +94,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="20dp"
                     android:text="@string/famale"
+                    android:buttonTint="@color/colorAccent"
                     android:textColor="@color/black" />
 
             </RadioGroup>

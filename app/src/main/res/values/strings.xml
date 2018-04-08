@@ -70,4 +70,6 @@
     <string name="resultNImage1">Результата непроизвольного\nзапоминания новых фигур(Z4)</string>
     <string name="resultOldImage1a">Результат выбора\nзаученных изображений</string>
     <string name="etc">Другая информация</string>
+    <string name="questionEx">Пример вопроса:\nКак дела?\nХорошо</string>
+    <string name="nextQuestion">Следующий вопрос</string>
 </resources>
