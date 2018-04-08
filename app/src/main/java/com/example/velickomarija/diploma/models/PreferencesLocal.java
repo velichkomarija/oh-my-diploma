@@ -1,12 +1,8 @@
 package com.example.velickomarija.diploma.models;
 
-import android.content.ContentProvider;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-/**
- * Created by velic on 11.01.2018.
- */
 
 public class PreferencesLocal {
 

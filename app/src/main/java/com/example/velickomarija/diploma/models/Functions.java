@@ -30,6 +30,7 @@ public class Functions {
         alert.show();
     }
 
+    //диалоговое окно на ложное нажатие
     public static void showDialog(final Class cl, String text, final View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
         builder.setTitle("Важное сообщение!")

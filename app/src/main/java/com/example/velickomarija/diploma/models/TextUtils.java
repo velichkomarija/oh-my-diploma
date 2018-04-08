@@ -3,7 +3,9 @@ package com.example.velickomarija.diploma.models;
 import android.content.Context;
 import android.util.DisplayMetrics;
 
-//todo
+/*
+    Работа с размером экрана
+ */
 public class TextUtils {
     public static float textSize(Context context) {
         float textSize;
