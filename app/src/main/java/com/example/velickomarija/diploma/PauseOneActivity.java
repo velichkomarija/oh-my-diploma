@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.velickomarija.diploma.models.PreferencesLocal;
+import com.example.velickomarija.diploma.views.QuestionEnterActivity;
 import com.example.velickomarija.diploma.views.sound.TestingEnterSoundNWordsActivity;
 
 public class PauseOneActivity extends AppCompatActivity {
@@ -73,7 +74,8 @@ public class PauseOneActivity extends AppCompatActivity {
 
     public void onClickToGoTestingSoundNewWords(View view) {
         view.setClickable(false);
-        Intent intent = new Intent(this, TestingEnterSoundNWordsActivity.class);
+        Intent intent = new Intent(this,
+                QuestionEnterActivity.class);
         view.setClickable(true);
         startActivity(intent);
     }

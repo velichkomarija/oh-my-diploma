@@ -14,6 +14,7 @@ import com.example.velickomarija.diploma.models.Algorithms;
 import com.example.velickomarija.diploma.models.Functions;
 import com.example.velickomarija.diploma.models.TextUtils;
 import com.example.velickomarija.diploma.views.common.SplashActivity;
+import com.example.velickomarija.diploma.views.sound.TestingEnterSoundNWordsActivity;
 
 public class QuestionOneActivity extends AppCompatActivity {
 
@@ -101,8 +102,7 @@ public class QuestionOneActivity extends AppCompatActivity {
 
             arrayResult[number - 2] = res;
             res = -1;
-        }
-        else {
+        } else {
             button.setClickable(false);
             button.setText(R.string.next_test);
             image.setImageResource(R.mipmap.result);
@@ -115,6 +115,7 @@ public class QuestionOneActivity extends AppCompatActivity {
     }
 
     public void onClickNextQuestion(View view) {
+
         if (res == -1) {
             Functions.showErrorDialog(view, "Ничего не выбрано!");
         } else {
@@ -122,8 +123,10 @@ public class QuestionOneActivity extends AppCompatActivity {
             radioGroup.clearCheck();
             goToNextQuestion(countQuestions);
         }
-        if(countQuestions == 22){
-            startActivity(new Intent(QuestionOneActivity.this, SplashActivity.class));
+
+        if (countQuestions == 22) {
+            startActivity(new Intent(QuestionOneActivity.this,
+                    TestingEnterSoundNWordsActivity.class));
         }
     }
 }
