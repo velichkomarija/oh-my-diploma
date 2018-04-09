@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
         button = (Button) this.findViewById(R.id.nextButton);
 
         float size = TextUtils.textSize(getBaseContext());
-        text.setTextSize(size * 1.1f);
-        button.setTextSize(size * 1.1f);
+        text.setTextSize(size * 1.15f);
+        button.setTextSize(size * 1.4f);
     }
 
     @Override

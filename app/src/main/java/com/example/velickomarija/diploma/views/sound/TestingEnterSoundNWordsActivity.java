@@ -24,8 +24,8 @@ public class TestingEnterSoundNWordsActivity extends AppCompatActivity {
         button = (Button) findViewById(R.id.soundNewWordsSoundButton);
 
         float size = TextUtils.textSize(getBaseContext());
-        textView.setTextSize(size*1.3f);
-        button.setTextSize(size*1.3f);
+        textView.setTextSize(size*1.2f);
+        button.setTextSize(size*1.4f);
     }
 
     public void onClickToGoTestingSoundNewWords(View view) {

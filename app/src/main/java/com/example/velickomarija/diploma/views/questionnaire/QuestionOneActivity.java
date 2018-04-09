@@ -13,7 +13,6 @@ import com.example.velickomarija.diploma.R;
 import com.example.velickomarija.diploma.models.Algorithms;
 import com.example.velickomarija.diploma.models.Functions;
 import com.example.velickomarija.diploma.models.TextUtils;
-import com.example.velickomarija.diploma.views.common.SplashActivity;
 import com.example.velickomarija.diploma.views.sound.TestingEnterSoundNWordsActivity;
 
 public class QuestionOneActivity extends AppCompatActivity {

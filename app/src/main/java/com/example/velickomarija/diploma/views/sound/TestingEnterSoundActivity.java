@@ -30,8 +30,8 @@ public class TestingEnterSoundActivity extends AppCompatActivity {
         startButton = (Button) findViewById(R.id.button_next);
 
         float size = TextUtils.textSize(getBaseContext());
-        textView.setTextSize(size * 1.2f);
-        startButton.setTextSize(size * 1.2f);
+        textView.setTextSize(size * 1.35f);
+        startButton.setTextSize(size * 1.4f);
 
         if (preferencesLocal.getProperty("PREF_NUM_SOUND").equals("2") ||
                 preferencesLocal.getProperty("PREF_NUM_SOUND").equals("3")) {

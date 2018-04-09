@@ -22,7 +22,6 @@ public class PauseOneActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pause_one);
         preferencesLocal.addProperty("PREF_IMAGE1", "none", PauseOneActivity.this);
 
-
         //tableR1 = (TableRow) tableLayout.findViewById(R.id.pauseOneTableRow1);
         textData = (TextView) findViewById(R.id.textViewData);
         StringBuffer stringBuffer = new StringBuffer();
