@@ -7,8 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.velickomarija.diploma.models.PreferencesLocal;
-import com.example.velickomarija.diploma.views.QuestionEnterActivity;
-import com.example.velickomarija.diploma.views.sound.TestingEnterSoundNWordsActivity;
+import com.example.velickomarija.diploma.views.questionnaire.QuestionEnterActivity;
 
 public class PauseOneActivity extends AppCompatActivity {
 

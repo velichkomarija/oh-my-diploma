@@ -1,19 +1,16 @@
-package com.example.velickomarija.diploma.views;
+package com.example.velickomarija.diploma.views.questionnaire;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.velickomarija.diploma.R;
 import com.example.velickomarija.diploma.models.TextUtils;
-import com.example.velickomarija.diploma.views.image.TestingImageActivity;
-import com.example.velickomarija.diploma.views.questionnaire.QuestionOneActivity;
 
-public class QuestionEnterActivity extends AppCompatActivity {
-
+public class QuestionEnter2Activity extends AppCompatActivity {
     TextView textView;
     Button button;
 
@@ -26,7 +23,8 @@ public class QuestionEnterActivity extends AppCompatActivity {
         textView = (TextView) findViewById(R.id.start_text);
         button = (Button) findViewById(R.id.go_testing);
         button.setTextSize(size * 1.4f);
-        textView.setTextSize(size * 1.15f);
+        textView.setText(R.string.enterTwoQuestionnarie);
+        textView.setTextSize(size * 1.4f);
     }
 
     public void onBackPressed() {
@@ -34,7 +32,7 @@ public class QuestionEnterActivity extends AppCompatActivity {
     }
 
     public void onClickToGoAnswerQuestion(View view) {
-        Intent intent = new Intent(this, QuestionOneActivity.class);
+        Intent intent = new Intent(this, QuestionTwoActivity.class);
         startActivity(intent);
     }
 }

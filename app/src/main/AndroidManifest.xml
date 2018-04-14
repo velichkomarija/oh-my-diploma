@@ -30,7 +30,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".views.common.SplashActivity"
+            android:name=".views.questionnaire.QuestionEnter2Activity"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -79,10 +79,14 @@
             android:name=".PauseThreeActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".views.QuestionEnterActivity"
+            android:name=".views.questionnaire.QuestionEnterActivity"
             android:screenOrientation="landscape" />
         <activity
             android:name=".views.questionnaire.QuestionOneActivity"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".views.questionnaire.QuestionTwoActivity"
             android:screenOrientation="landscape" />
     </application>
 
