@@ -1,5 +1,6 @@
 package com.example.velickomarija.diploma.views.questionnaire;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -20,8 +21,7 @@ public class QuestionTwoActivity extends AppCompatActivity {
     ImageView image;
     Algorithms algorithm = new Algorithms();
     int[] arrayResult = new int[40];
-    int res = -1;
-    boolean toGo = false;
+    float size;
     Animation animation;
     int countQuestions = 1;
 
@@ -30,14 +30,14 @@ public class QuestionTwoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questionnaire_two);
         animation = AnimationUtils.loadAnimation(this, R.anim.question_anim);
-        float size = TextUtils.textSize(getBaseContext());
+        size = TextUtils.textSize(getBaseContext());
         textView = (TextView) findViewById(R.id.questionText);
         image = (ImageView) findViewById(R.id.image);
         buttonMinus = (Button) findViewById(R.id.button_minus);
         buttonPlus = (Button) findViewById(R.id.button_plus);
         textView.setTextSize(size * 1.5f);
-        buttonMinus.setTextSize(size*1.3f);
-        buttonPlus.setTextSize(size*1.3f);
+        buttonMinus.setTextSize(size * 1.3f);
+        buttonPlus.setTextSize(size * 1.3f);
     }
 
     public void onBackPressed() {
@@ -45,12 +45,14 @@ public class QuestionTwoActivity extends AppCompatActivity {
     }
 
     public void onClickNextQuestionPlus(View view) {
+        arrayResult[countQuestions - 1] = 1;
         countQuestions++;
         view.startAnimation(animation);
         goToNextQuestion(countQuestions);
     }
 
     public void onClickNextQuestionMinus(View view) {
+        arrayResult[countQuestions - 1] = 0;
         countQuestions++;
         view.startAnimation(animation);
         goToNextQuestion(countQuestions);
@@ -70,19 +72,13 @@ public class QuestionTwoActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            arrayResult[number - 2] = res;
-            res = -1;
         } else {
-            /*
-            button.setClickable(false);
-            button.setText(R.string.next_test);
-            image.setImageResource(R.mipmap.result);
-            String result = algorithm.algorithmQuestion1(arrayResult);
-            radioGroup.setVisibility(View.INVISIBLE);
-            textView.setText(result);
-            toGo = true;
-            button.setClickable(true);
-            */
+            buttonMinus.setVisibility(View.INVISIBLE);
+            buttonPlus.setVisibility(View.INVISIBLE);
+            String result = algorithm.algorithmQuestion2(arrayResult);
+            Intent intent = new Intent(this, ResultTwoQuestionActivity.class);
+            intent.putExtra("result", result);
+            startActivity(intent);
         }
     }
 }

@@ -21,6 +21,34 @@ public class Algorithms {
     private static final String resQuestion4 = "У Вас нет склонности инициировать планы и " +
             "интерпретировать опыт. Вы ориентируетесь на повседневные дела и реагируете на текущие ситуации.";
 
+    private static final String resQuestion11 = "Предметно-действенное мышление свойственно людям дела." +
+            " Они усваивают информацию через движения. Обычно они обладают хорошей координацией " +
+            "движений. Их руками создан весь окружающий нас предметный мир. Они водят машины, стоят " +
+            "у станков, собирают компьютеры. Без них невозможно реализовать самую блестящую идею. " +
+            "Этим мышление важно для спортсменов, танцоров, артистов.";
+
+    private static final String resQuestion22 = "Абстрактно-символическим мышлением обладают многие " +
+            "ученые – физики-теоретики, математики, экономисты, программисты, аналитики. " +
+            "Они могут усваивать информацию с помощью математических кодов, формул и операций, " +
+            "которые нельзя ни потрогать, ни представить. Благодаря особенностям " +
+            "такого мышления на основе гипотез сделаны многие открытия во всех областях науки.";
+
+    private static final String resQuestion33 = "Словесно-логическое мышление отличает людей с ярко" +
+            " выраженным вербальным (словесным) интеллектом. Благодаря развитому " +
+            "словесно-логическому мышлению ученый, преподаватель, переводчик, писатель, филолог," +
+            " журналист могут сформулировать свои мысли и донести их до людей. " +
+            "Это умение необходимо руководителям, политикам и общественным деятелям.";
+
+    private static final String resQuestion44 = "Наглядно-образным мышлением обладают люди с " +
+            "художественным складом ума, которые могут представить и то, что было, и то, что будет," +
+            " и то, чего никогда не было и не будет – художники, поэты, писатели, режиссеры. " +
+            "Архитектор, конструктор, дизайнер, художник, режиссер должны обладать " +
+            "развитым наглядно-образным мышлением.";
+
+    private static final String resQuestion55 = "Креативность – это способность мыслить творчески," +
+            " находить нестандартные решения задачи. Это редкое и ничем не заменимое качество," +
+            " отличающее людей, талантливых в любой сфере деятельности.";
+
     private static final Map<Integer, String> generalWordsMap;
 
     static {
@@ -462,6 +490,115 @@ public class Algorithms {
             }
         }
 
-        return  getFullResult(res);
+        return getFullResult(res);
     }
+
+    //перечень типов памяти для второго опросника
+    private String getFullResult(int[] array) {
+        StringBuffer result = new StringBuffer();
+        result.append("Предметно-действенное мышление. ")
+                .append(getLevel(array[0]))
+                .append("\n")
+                .append("Абстрактно-символическое мышление. ")
+                .append(getLevel(array[1]))
+                .append("\n")
+                .append("Словесно-логическое мышление. ")
+                .append(getLevel(array[2]))
+                .append("\n")
+                .append("Наглядно-образное мышление. ")
+                .append(getLevel(array[3]))
+                .append("\n")
+                .append("Креативность (творческое мышление). ")
+                .append(getLevel(array[4]))
+                .append("\n");
+
+        return result.toString();
+    }
+
+    //функция вычисления уровня развития типа мышления
+    private String getLevel(int number) {
+        if (0 <= number && number <= 2) {
+            return "Уровень - низкий.";
+        }
+        if (3 <= number && number <= 5) {
+            return "Уровень - средний.";
+        } else {
+            return "Уровень - высокий.";
+        }
+    }
+
+    //подсчет результатов второго опросника
+    public String algorithmQuestion2(int[] array) {
+        int[] mind = new int[5];
+
+
+        for (int i = 0; i < array.length; i++) {
+            if ((i == 0) ||
+                    (i == 5) ||
+                    (i == 10) ||
+                    (i == 15) ||
+                    (i == 20) ||
+                    (i == 25) ||
+                    (i == 30) ||
+                    (i == 35)) {
+                mind[0] = mind[0] + array[i];
+            }
+            if ((i == 1) ||
+                    (i == 6) ||
+                    (i == 11) ||
+                    (i == 16) ||
+                    (i == 21) ||
+                    (i == 26) ||
+                    (i == 31) ||
+                    (i == 36)) {
+                mind[1] = mind[1] + array[i];
+            }
+            if ((i == 2) ||
+                    (i == 7) ||
+                    (i == 12) ||
+                    (i == 17) ||
+                    (i == 22) ||
+                    (i == 27) ||
+                    (i == 32) ||
+                    (i == 37)) {
+                mind[2] = mind[2] + array[i];
+            }
+            if ((i == 3) ||
+                    (i == 8) ||
+                    (i == 13) ||
+                    (i == 18) ||
+                    (i == 23) ||
+                    (i == 28) ||
+                    (i == 33) ||
+                    (i == 38)) {
+                mind[3] = mind[3] + array[i];
+            } else {
+                mind[4] = mind[4] + array[i];
+            }
+        }
+
+        return getFullResult(getFullResult(mind));
+    }
+
+
+    public static String getResQuestion11() {
+        return resQuestion11;
+    }
+
+    public static String getResQuestion22() {
+        return resQuestion22;
+    }
+
+    public static String getResQuestion33() {
+        return resQuestion33;
+    }
+
+    public static String getResQuestion44() {
+        return resQuestion44;
+    }
+
+    public static String getResQuestion55() {
+        return resQuestion55;
+    }
+
 }

@@ -84,10 +84,12 @@
         <activity
             android:name=".views.questionnaire.QuestionOneActivity"
             android:screenOrientation="landscape" />
-
         <activity
             android:name=".views.questionnaire.QuestionTwoActivity"
             android:screenOrientation="landscape" />
+        <activity
+            android:name=".views.questionnaire.ResultTwoQuestionActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
