@@ -30,7 +30,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".views.questionnaire.QuestionEnter2Activity"
+            android:name=".views.common.SplashActivity"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -90,6 +90,9 @@
         <activity
             android:name=".views.questionnaire.ResultTwoQuestionActivity"
             android:screenOrientation="portrait"></activity>
+
+        <activity android:name=".views.questionnaire.QuestionEnter2Activity"
+            android:screenOrientation="landscape"/>
     </application>
 
 </manifest>

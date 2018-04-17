@@ -26,7 +26,23 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
             android:text="" />
+
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_last_test"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_gravity="center"
+        android:onClick="onClickToGo"
+        android:padding="15dp"
+        android:text="@string/next"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:visibility="visible" />
 
     <ExpandableListView
         android:id="@+id/expListView"
@@ -37,4 +53,5 @@
         android:layout_marginHorizontal="20dp"
         android:divider="@color/colorPrimary"
         android:dividerHeight="2dp"></ExpandableListView>
+
 </LinearLayout>

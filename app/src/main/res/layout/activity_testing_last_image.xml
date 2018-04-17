@@ -317,7 +317,6 @@
 
                 </TableRow>
 
-
                 <Button
                     android:id="@+id/button"
                     style="@style/Widget.AppCompat.Button.Colored"

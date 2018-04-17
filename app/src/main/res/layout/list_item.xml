@@ -6,6 +6,5 @@
     android:paddingStart="10sp"
     android:textAppearance="?android:attr/textAppearanceListItem"
     android:gravity="center"
-    android:backgroundTint="@color/colorPrimaryLight"
     android:textSize="14sp"
     />

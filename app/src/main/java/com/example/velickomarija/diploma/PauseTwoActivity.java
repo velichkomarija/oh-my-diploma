@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.example.velickomarija.diploma.models.PreferencesLocal;
 import com.example.velickomarija.diploma.views.image.TestingLastImageActivity;
+import com.example.velickomarija.diploma.views.questionnaire.QuestionEnter2Activity;
 
 public class PauseTwoActivity extends AppCompatActivity {
 
@@ -41,7 +42,7 @@ public class PauseTwoActivity extends AppCompatActivity {
     public void onClickToGoTestingImageNew(View view) {
         view.setClickable(false);
         preferencesLocal.addProperty("PREF_IMAGE1", "1", PauseTwoActivity.this);
-        Intent intent = new Intent(this, TestingLastImageActivity.class);
+        Intent intent = new Intent(this,QuestionEnter2Activity.class);
         view.setClickable(true);
         startActivity(intent);
     }

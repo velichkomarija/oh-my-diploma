@@ -1,7 +1,10 @@
 package com.example.velickomarija.diploma.views.questionnaire;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.SimpleExpandableListAdapter;
 import android.widget.TextView;
@@ -9,6 +12,7 @@ import android.widget.TextView;
 import com.example.velickomarija.diploma.R;
 import com.example.velickomarija.diploma.models.Algorithms;
 import com.example.velickomarija.diploma.models.TextUtils;
+import com.example.velickomarija.diploma.views.image.TestingLastImageActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -63,37 +67,37 @@ public class ResultTwoQuestionActivity extends AppCompatActivity {
         // создаем коллекцию элементов для первой группы
         ArrayList<Map<String, String>> сhildDataItemList = new ArrayList<>();
         map = new HashMap<>();
-        map.put("monthName", algorithms.getResQuestion11());
+        map.put("name", algorithms.getResQuestion11());
         сhildDataItemList.add(map);
         сhildDataList.add(сhildDataItemList);
 
         сhildDataItemList = new ArrayList<>();
         map = new HashMap<>();
-        map.put("monthName", algorithms.getResQuestion22());
+        map.put("name", algorithms.getResQuestion22());
         сhildDataItemList.add(map);
         сhildDataList.add(сhildDataItemList);
 
         // создаем коллекцию элементов для третьей группы
         сhildDataItemList = new ArrayList<>();
         map = new HashMap<>();
-        map.put("monthName", algorithms.getResQuestion33());
+        map.put("name", algorithms.getResQuestion33());
         сhildDataItemList.add(map);
         сhildDataList.add(сhildDataItemList);
 
         сhildDataItemList = new ArrayList<>();
         map = new HashMap<>();
-        map.put("monthName", algorithms.getResQuestion44());
+        map.put("name", algorithms.getResQuestion44());
         сhildDataItemList.add(map);
         сhildDataList.add(сhildDataItemList);
 
         сhildDataItemList = new ArrayList<>();
         map = new HashMap<>();
-        map.put("monthName", algorithms.getResQuestion55());
+        map.put("name", algorithms.getResQuestion55());
         сhildDataItemList.add(map);
         сhildDataList.add(сhildDataItemList);
 
         // список атрибутов элементов для чтения
-        String childFrom[] = new String[]{"monthName"};
+        String childFrom[] = new String[]{"name"};
         // список ID view-элементов, в которые будет помещены атрибуты
         // элементов
         int childTo[] = new int[]{android.R.id.text1};
@@ -106,6 +110,11 @@ public class ResultTwoQuestionActivity extends AppCompatActivity {
 
         ExpandableListView expandableListView = (ExpandableListView) findViewById(R.id.expListView);
         expandableListView.setAdapter(adapter);
+    }
+
+    public void onClickToGo(View view) {
+        Intent intent = new Intent(this, TestingLastImageActivity.class);
+        startActivity(intent);
     }
 }
 
