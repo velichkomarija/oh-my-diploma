@@ -654,15 +654,9 @@ public class TestingImageVeriantActivity extends AppCompatActivity {
 
         if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("2")) {
 
-            if (resString.equals("12") || resString.equals("11")) {
-                preferencesLocal.addProperty("PREF_Z1",
-                        "10",
-                        TestingImageVeriantActivity.this);
-            } else {
-                preferencesLocal.addProperty("PREF_Z1",
-                        resString,
-                        TestingImageVeriantActivity.this);
-            }
+            preferencesLocal.addProperty("PREF_Z1",
+                    initResString(resString),
+                    TestingImageVeriantActivity.this);
 
             preferencesLocal.addProperty("PREF_RESULTIMAGE1",
                     resString,
@@ -706,6 +700,9 @@ public class TestingImageVeriantActivity extends AppCompatActivity {
             preferencesLocal.addProperty("PREF_LASTIMAGERESULT1",
                     resString,
                     TestingImageVeriantActivity.this);
+            preferencesLocal.addProperty("PREF_Z5",
+                    initResString(resString),
+                    TestingImageVeriantActivity.this);
             preferencesLocal.addProperty("PREF_NUM_IMAGE",
                     "5",
                     TestingImageVeriantActivity.this);
@@ -713,5 +710,12 @@ public class TestingImageVeriantActivity extends AppCompatActivity {
             Functions.showDialog(PauseTwoActivity.class, "Вы уверены в ответе?", view);
             //todo второе отсроченное
         }
+    }
+
+    private String initResString(String res) {
+        if (res.equals("11") || res.equals("12")) {
+            return "10";
+        }
+        return res;
     }
 }

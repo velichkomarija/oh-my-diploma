@@ -3,7 +3,6 @@ package com.example.velickomarija.diploma.models;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-
 public class PreferencesLocal {
 
     private static final String PREFS_FILE = "Account";

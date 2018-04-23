@@ -51,16 +51,22 @@ public class SplashActivity extends AppCompatActivity {
         preferencesLocal.addProperty("PREF_IMAGE1", "none", context);
         preferencesLocal.addProperty("PREF_IMAGE2", "none", context);
         preferencesLocal.addProperty("PREF_IMAGE3", "none", context);
-        //результат C1,C2,Z1,Z2
+        //результат C1,C2,C4,C6, Z1,Z2,Z4,Z6
         preferencesLocal.addProperty("PREF_C1", "none", context);
         preferencesLocal.addProperty("PREF_C2", "none", context);
+        preferencesLocal.addProperty("PREF_C4", "none", context);
+        preferencesLocal.addProperty("PREF_C6", "none", context);
         preferencesLocal.addProperty("PREF_Z1", "none", context);
         preferencesLocal.addProperty("PREF_Z2", "none", context);
+        preferencesLocal.addProperty("PREF_Z4", "none", context);
+        preferencesLocal.addProperty("PREF_Z6", "none", context);
         //Отсроченные
         preferencesLocal.addProperty("PREF_SOUNDLASTRESULT1", "none", context);
+        preferencesLocal.addProperty("PREF_С5", "none", context);
         preferencesLocal.addProperty("PREF_LASTIMAGERESULT2", "none", context);
         preferencesLocal.addProperty("PREF_SOUNDLASTRESULT2", "none", context);
         preferencesLocal.addProperty("PREF_LASTIMAGERESULT1", "none", context);
+        preferencesLocal.addProperty("PREF_Z5", "none", context);
         //Старые слова
         preferencesLocal.addProperty("PREF_RESULTOLDWORDS", "none", context);
     }

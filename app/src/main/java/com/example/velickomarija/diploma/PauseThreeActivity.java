@@ -34,7 +34,7 @@ public class PauseThreeActivity extends AppCompatActivity {
 
     public void onClickToGoTestingImageNew(View view) {
         view.setClickable(false);
-//        Intent intent = new Intent(this, TestingLastImageActivity.class);
+//        Intent intent = new Intent(this, TestingNextImageActivity.class);
         view.setClickable(true);
         //startActivity(intent);
     }

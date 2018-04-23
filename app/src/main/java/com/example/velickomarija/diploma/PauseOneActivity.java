@@ -62,7 +62,7 @@ public class PauseOneActivity extends AppCompatActivity {
         textResultImageZ2.setText(preferencesLocal.getProperty("PREF_Z2"));
 
         textResultSoundLast1 = (TextView) findViewById(R.id.textViewSoundLastResult);
-        textResultSoundLast1.setText(preferencesLocal.getProperty("PREF_SOUNDLASTRESULT1"));
+        textResultSoundLast1.setText(preferencesLocal.getProperty("PREF_C5"));
     }
 
     @Override

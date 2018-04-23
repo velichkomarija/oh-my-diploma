@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.velickomarija.diploma.models.PreferencesLocal;
-import com.example.velickomarija.diploma.views.image.TestingLastImageActivity;
 import com.example.velickomarija.diploma.views.questionnaire.QuestionEnter2Activity;
 
 public class PauseTwoActivity extends AppCompatActivity {
@@ -35,7 +34,7 @@ public class PauseTwoActivity extends AppCompatActivity {
         textViewResultSound.setText(preferencesLocal.getProperty("PREF_C4"));
 
         textViewResultImage1 = (TextView) findViewById(R.id.textViewResultLastImage1);
-        textViewResultImage1.setText(preferencesLocal.getProperty("PREF_LASTIMAGERESULT1"));
+        textViewResultImage1.setText(preferencesLocal.getProperty("PREF_Z5"));
 
     }
 

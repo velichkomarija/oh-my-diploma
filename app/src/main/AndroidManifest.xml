@@ -70,7 +70,7 @@
             android:name=".views.sound.TestingSoundNWordsActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".views.image.TestingLastImageActivity"
+            android:name=".views.image.TestingNextImageActivity"
             android:screenOrientation="landscape" />
         <activity
             android:name=".PauseTwoActivity"

@@ -580,7 +580,6 @@ public class Algorithms {
         return getFullResult(getFullResult(mind));
     }
 
-
     public static String getResQuestion11() {
         return resQuestion11;
     }

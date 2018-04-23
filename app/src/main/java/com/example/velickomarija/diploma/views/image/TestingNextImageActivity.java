@@ -1,12 +1,8 @@
 package com.example.velickomarija.diploma.views.image;
 
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Color;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Html;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -20,7 +16,7 @@ import com.example.velickomarija.diploma.models.PreferencesLocal;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TestingLastImageActivity extends AppCompatActivity {
+public class TestingNextImageActivity extends AppCompatActivity {
 
     //todo проверить
     Algorithms algorithms = new Algorithms();
@@ -304,18 +300,18 @@ public class TestingLastImageActivity extends AppCompatActivity {
 
             preferencesLocal.addProperty("PREF_LASTIMAGERESULT2",
                     resString,
-                    TestingLastImageActivity.this);
-            Functions.showDialog(TestingLastImageActivity.class, "Вы уверены в ответе?", view);
+                    TestingNextImageActivity.this);
+            Functions.showDialog(TestingNextImageActivity.class, "Вы уверены в ответе?", view);
 
             preferencesLocal.addProperty("PREF_NUM_IMAGE",
                     "6",
-                    TestingLastImageActivity.this);
+                    TestingNextImageActivity.this);
 
         } else if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("6")) {
 
             preferencesLocal.addProperty("PREF_Z4",
                     resString,
-                    TestingLastImageActivity.this);
+                    TestingNextImageActivity.this);
 
             Functions.showDialog(PauseThreeActivity.class, "Вы уверены в ответе?", view);
         }

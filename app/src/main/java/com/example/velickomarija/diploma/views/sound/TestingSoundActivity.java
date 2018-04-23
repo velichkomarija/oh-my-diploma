@@ -97,7 +97,9 @@ public class TestingSoundActivity extends AppCompatActivity {
             preferencesLocal.addProperty("PREF_NUM_SOUND",
                     "5",
                     TestingSoundActivity.this);
-
+            preferencesLocal.addProperty("PREF_C5",
+                    initResString(resString),
+                    TestingSoundActivity.this);
             Functions.showDialog(PauseOneActivity.class, "Вы уверены в ответе?", view);
         }
 
@@ -139,15 +141,9 @@ public class TestingSoundActivity extends AppCompatActivity {
 
         if (numParam == 1) {
 
-            if (resString.equals(11)) {
-                preferencesLocal.addProperty("PREF_C1",
-                        "10",
-                        TestingSoundActivity.this);
-            } else {
-                preferencesLocal.addProperty("PREF_C1",
-                        resString,
-                        TestingSoundActivity.this);
-            }
+            preferencesLocal.addProperty("PREF_C1",
+                    initResString(resString),
+                    TestingSoundActivity.this);
 
             preferencesLocal.addProperty("PREF_SOUNDRESULT1",
                     resString,
@@ -158,5 +154,12 @@ public class TestingSoundActivity extends AppCompatActivity {
 
             Functions.showDialog(TestingEnterSoundActivity.class, "Вы уверены в ответе?", view);
         }
+    }
+
+    private String initResString(String res) {
+        if (res.equals("11")) {
+            return "10";
+        }
+        return res;
     }
 }
