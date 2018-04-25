@@ -204,5 +204,9 @@
         одержание рассказа или фильма.</string>
     <string name="qq40">Высказывание 40.\nЯ не могу успокоиться, пока не доведу свою работу до
         совершенства.</string>
+    <string name="result">Результаты тестирования</string>
+    <string name="soundTotalResult">Результат тестирования слухоречевой памяти (максимально 50 баллов)</string>
+    <string name="resultTotalImage">Результат тестирования зрительной памяти (максимально 50 баллов)</string>
+    <string name="resultTotal">Общий результат</string>
 </resources>
 

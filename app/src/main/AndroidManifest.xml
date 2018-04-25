@@ -89,10 +89,11 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".views.questionnaire.ResultTwoQuestionActivity"
-            android:screenOrientation="portrait"></activity>
-
-        <activity android:name=".views.questionnaire.QuestionEnter2Activity"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.questionnaire.QuestionEnter2Activity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".ResultActivity"></activity>
     </application>
 
 </manifest>
