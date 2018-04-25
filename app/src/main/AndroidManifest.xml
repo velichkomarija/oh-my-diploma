@@ -93,7 +93,8 @@
         <activity
             android:name=".views.questionnaire.QuestionEnter2Activity"
             android:screenOrientation="landscape" />
-        <activity android:name=".ResultActivity"></activity>
+        <activity android:name=".ResultActivity"
+            android:screenOrientation="landscape"></activity>
     </application>
 
 </manifest>

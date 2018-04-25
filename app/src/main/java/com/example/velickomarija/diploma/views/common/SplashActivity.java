@@ -55,11 +55,11 @@ public class SplashActivity extends AppCompatActivity {
         preferencesLocal.addProperty("PREF_C1", "none", context);
         preferencesLocal.addProperty("PREF_C2", "none", context);
         preferencesLocal.addProperty("PREF_C4", "none", context);
-        preferencesLocal.addProperty("PREF_C6", "none", context);
+        preferencesLocal.addProperty("PREF_C6", "0", context);
         preferencesLocal.addProperty("PREF_Z1", "none", context);
         preferencesLocal.addProperty("PREF_Z2", "none", context);
         preferencesLocal.addProperty("PREF_Z4", "none", context);
-        preferencesLocal.addProperty("PREF_Z6", "none", context);
+        preferencesLocal.addProperty("PREF_Z6", "0", context);
         //Отсроченные
         preferencesLocal.addProperty("PREF_SOUNDLASTRESULT1", "none", context);
         preferencesLocal.addProperty("PREF_С5", "none", context);

@@ -1,5 +1,6 @@
 package com.example.velickomarija.diploma;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -34,8 +35,8 @@ public class PauseThreeActivity extends AppCompatActivity {
 
     public void onClickToGoTestingImageNew(View view) {
         view.setClickable(false);
-//        Intent intent = new Intent(this, TestingNextImageActivity.class);
+        Intent intent = new Intent(this, ResultActivity.class);
         view.setClickable(true);
-        //startActivity(intent);
+        startActivity(intent);
     }
 }
