@@ -642,7 +642,7 @@ public class TestingImageVeriantActivity extends AppCompatActivity {
         btn36 = clcSymbol(imageButton, btn36);
     }
 
-    public void onClickToGoTestingImage2(View view) {
+    public void onClickToGoNextTestingImage(View view) {
         Map<Integer, Boolean> map = new HashMap<>();
         btnArray = getArrayButtons();
         for (int i = 0; i < 36; i++) {

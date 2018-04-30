@@ -5,18 +5,14 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.velickomarija.diploma.R;
 import com.example.velickomarija.diploma.models.Algorithms;
 import com.example.velickomarija.diploma.models.TextUtils;
-import com.example.velickomarija.diploma.views.image.TestingImageActivity;
 
 public class QuestionTwoActivity extends AppCompatActivity {
 
@@ -33,7 +29,7 @@ public class QuestionTwoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questionnaire_two);
-        size = TextUtils.textSize(getBaseContext());
+        size = TextUtils.setNewTextSize(getBaseContext());
         textView = (TextView) findViewById(R.id.questionText);
         image = (ImageView) findViewById(R.id.image);
         buttonMinus = (Button) findViewById(R.id.button_minus);
@@ -77,7 +73,7 @@ public class QuestionTwoActivity extends AppCompatActivity {
         } else {
             buttonMinus.setVisibility(View.INVISIBLE);
             buttonPlus.setVisibility(View.INVISIBLE);
-            String result = algorithm.algorithmQuestion2(arrayResult);
+            String result = algorithm.algorithmQuestionTwo(arrayResult);
             Intent intent = new Intent(this, ResultTwoQuestionActivity.class);
             intent.putExtra("result", result);
             startActivity(intent);

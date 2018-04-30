@@ -68,7 +68,7 @@ public class TestingSoundNWordsActivity extends AppCompatActivity {
 
             public void onFinish() {
                 String str = stringBuffer.toString();
-                String res = algorithms.algorithmFindOldWorldsInNew(str);
+                String res = algorithms.algorithmFindOldWordsInNew(str);
                 preferencesLocal.addProperty("PREF_RESULTOLDWORDS",
                         res,
                         TestingSoundNWordsActivity.this);

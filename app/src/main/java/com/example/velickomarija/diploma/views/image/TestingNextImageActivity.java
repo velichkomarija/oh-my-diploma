@@ -285,7 +285,7 @@ public class TestingNextImageActivity extends AppCompatActivity {
         btn24 = clicSymbolN(imageButton, btn24);
     }
 
-    public void onClickToGoTestingImage2(View view) {
+    public void onClickToGoNextTestingImage(View view) {
 
         String resString = "";
         Map<Integer, Boolean> map = new HashMap<>();

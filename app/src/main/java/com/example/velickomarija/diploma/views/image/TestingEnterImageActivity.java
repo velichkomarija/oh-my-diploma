@@ -20,7 +20,7 @@ public class TestingEnterImageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_testing_enter_image);
 
-        float size = TextUtils.textSize(getBaseContext());
+        float size = TextUtils.setNewTextSize(getBaseContext());
         textView = (TextView) findViewById(R.id.start_text);
         button = (Button) findViewById(R.id.button_next);
         button.setTextSize(size * 1.4f);

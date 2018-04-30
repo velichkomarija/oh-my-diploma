@@ -19,7 +19,7 @@ public class QuestionEnter2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_enter);
 
-        float size = TextUtils.textSize(getBaseContext());
+        float size = TextUtils.setNewTextSize(getBaseContext());
         textView = (TextView) findViewById(R.id.start_text);
         button = (Button) findViewById(R.id.go_testing);
         button.setTextSize(size * 1.4f);

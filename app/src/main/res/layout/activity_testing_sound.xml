@@ -40,7 +40,7 @@
         android:layout_marginBottom="15dp"
         android:layout_marginHorizontal="180dp"
         android:gravity="center"
-        android:onClick="onClickToGoTesting23"
+        android:onClick="onClickToGoTestingNextSound"
         android:padding="15dp"
         android:text="@string/next"
         android:textAlignment="center"

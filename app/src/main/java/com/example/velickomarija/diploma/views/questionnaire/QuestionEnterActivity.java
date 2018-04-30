@@ -9,8 +9,6 @@ import android.widget.TextView;
 
 import com.example.velickomarija.diploma.R;
 import com.example.velickomarija.diploma.models.TextUtils;
-import com.example.velickomarija.diploma.views.image.TestingImageActivity;
-import com.example.velickomarija.diploma.views.questionnaire.QuestionOneActivity;
 
 public class QuestionEnterActivity extends AppCompatActivity {
 
@@ -22,7 +20,7 @@ public class QuestionEnterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_enter);
 
-        float size = TextUtils.textSize(getBaseContext());
+        float size = TextUtils.setNewTextSize(getBaseContext());
         textView = (TextView) findViewById(R.id.start_text);
         button = (Button) findViewById(R.id.go_testing);
         button.setTextSize(size * 1.4f);

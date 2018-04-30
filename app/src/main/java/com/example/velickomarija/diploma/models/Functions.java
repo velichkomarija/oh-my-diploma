@@ -41,7 +41,7 @@ public class Functions {
 
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.cancel();
-                        activityTOGo(cl, view);
+                        activityToGo(cl, view);
                     }
 
                 })
@@ -60,7 +60,7 @@ public class Functions {
     }
 
     //переход между активити
-    public static void activityTOGo(Class cl, View view) {
+    public static void activityToGo(Class cl, View view) {
         Intent intent = new Intent(view.getContext(), cl);
         view.getContext().startActivity(intent);
     }

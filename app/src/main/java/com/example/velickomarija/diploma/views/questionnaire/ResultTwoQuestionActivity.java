@@ -40,7 +40,7 @@ public class ResultTwoQuestionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_result_two_question);
 
         textView = (TextView) findViewById(R.id.questionResult);
-        float size = TextUtils.textSize(getBaseContext());
+        float size = TextUtils.setNewTextSize(getBaseContext());
         textView.setTextSize(size * 1.7f);
         Bundle arguments = getIntent().getExtras();
         String result = arguments.get("result").toString();

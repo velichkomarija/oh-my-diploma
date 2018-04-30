@@ -30,7 +30,7 @@ public class TestingSoundActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_testing_sound);
-        float size = TextUtils.textSize(getBaseContext());
+        float size = TextUtils.setNewTextSize(getBaseContext());
 
         textView = (TextView) findViewById(R.id.textSoundRepeat);
         editText = (EditText) findViewById(R.id.editTextResultTest1);
@@ -53,7 +53,7 @@ public class TestingSoundActivity extends AppCompatActivity {
         // do nothing
     }
 
-    public void onClickToGoTesting23(View view) {
+    public void onClickToGoTestingNextSound(View view) {
 
         int numParam = 1;
 

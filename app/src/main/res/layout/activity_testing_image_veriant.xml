@@ -465,7 +465,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="20dp"
-                    android:onClick="onClickToGoTestingImage2"
+                    android:onClick="onClickToGoNextTestingImage"
                     android:text="@string/readyResult"
                     android:textAlignment="center"
                     android:textColor="@color/white"

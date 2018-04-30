@@ -32,7 +32,7 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        float size = TextUtils.textSize(getBaseContext());
+        float size = TextUtils.setNewTextSize(getBaseContext());
         initParam(size);
 
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);

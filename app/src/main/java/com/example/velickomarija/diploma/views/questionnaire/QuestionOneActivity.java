@@ -32,7 +32,7 @@ public class QuestionOneActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questionnaire_one);
 
-        float size = TextUtils.textSize(getBaseContext());
+        float size = TextUtils.setNewTextSize(getBaseContext());
         textView = (TextView) findViewById(R.id.questionText);
         button = (Button) findViewById(R.id.button_end_test);
         image = (ImageView) findViewById(R.id.image);
@@ -105,7 +105,7 @@ public class QuestionOneActivity extends AppCompatActivity {
             button.setClickable(false);
             button.setText(R.string.next_test);
             image.setImageResource(R.mipmap.result);
-            String result = algorithm.algorithmQuestion1(arrayResult);
+            String result = algorithm.algorithmQuestionOne(arrayResult);
             radioGroup.setVisibility(View.INVISIBLE);
             textView.setText(result);
             toGo = true;

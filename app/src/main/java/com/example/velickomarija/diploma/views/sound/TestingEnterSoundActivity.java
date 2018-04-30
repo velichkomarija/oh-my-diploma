@@ -29,7 +29,7 @@ public class TestingEnterSoundActivity extends AppCompatActivity {
         textView = (TextView) findViewById(R.id.start_text);
         startButton = (Button) findViewById(R.id.button_next);
 
-        float size = TextUtils.textSize(getBaseContext());
+        float size = TextUtils.setNewTextSize(getBaseContext());
         textView.setTextSize(size * 1.35f);
         startButton.setTextSize(size * 1.4f);
 
@@ -52,7 +52,7 @@ public class TestingEnterSoundActivity extends AppCompatActivity {
         mPlayer = MediaPlayer.create(this, sound);
         mPlayer.start();
         textView.setText("Воспроизведение аудиозаписи");
-        textView.setTextSize(TextUtils.textSize(getBaseContext()) * 3);
+        textView.setTextSize(TextUtils.setNewTextSize(getBaseContext()) * 3);
 
         CountDownTimer start = new CountDownTimer(time, 500) {
 

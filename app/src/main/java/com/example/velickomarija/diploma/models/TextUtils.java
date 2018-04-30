@@ -7,7 +7,8 @@ import android.util.DisplayMetrics;
     Работа с размером экрана
  */
 public class TextUtils {
-    public static float textSize(Context context) {
+
+    public static float setNewTextSize(Context context) {
         float textSize;
         DisplayMetrics metrics = context.getResources().getDisplayMetrics();
         float density = metrics.density;

@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-
 public class Algorithms {
 
     private static final String resQuestion1 = "Вы склонны составлять планы и" +
@@ -377,7 +376,7 @@ public class Algorithms {
     }
 
     //подсчет слов на узновании из новых
-    public String algorithmFindOldWorldsInNew(String text) {
+    public String algorithmFindOldWordsInNew(String text) {
         int res = 0;
         int error = 0;
         String resString;
@@ -461,7 +460,7 @@ public class Algorithms {
     }
 
     //подсчет результатов первого опросника
-    public String algorithmQuestion1(int[] array) {
+    public String algorithmQuestionOne(int[] array) {
         int B = 0;
         int H = 0;
 
@@ -528,7 +527,7 @@ public class Algorithms {
     }
 
     //подсчет результатов второго опросника
-    public String algorithmQuestion2(int[] array) {
+    public String algorithmQuestionTwo(int[] array) {
         int[] mind = new int[5];
 
 
