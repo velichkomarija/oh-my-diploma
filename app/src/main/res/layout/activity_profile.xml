@@ -147,7 +147,6 @@
                 android:id="@+id/educationInputField"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginEnd="15dp"
                 style="@style/Platform.Widget.AppCompat.Spinner"
                 android:background="@drawable/stroke"
                 android:entries="@array/edu"

@@ -1,12 +1,8 @@
 package com.example.velickomarija.diploma.views.image;
 
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Color;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Html;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -21,7 +17,7 @@ import com.example.velickomarija.diploma.views.sound.TestingSoundActivity;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TestingImageVeriantActivity extends AppCompatActivity {
+public class TestingImageVariantActivity extends AppCompatActivity {
 
     Algorithms algorithms = new Algorithms();
     TextView textViewTitle1;
@@ -656,31 +652,31 @@ public class TestingImageVeriantActivity extends AppCompatActivity {
 
             preferencesLocal.addProperty("PREF_Z1",
                     initResString(resString),
-                    TestingImageVeriantActivity.this);
+                    TestingImageVariantActivity.this);
 
             preferencesLocal.addProperty("PREF_RESULTIMAGE1",
                     resString,
-                    TestingImageVeriantActivity.this);
+                    TestingImageVariantActivity.this);
             preferencesLocal.addProperty("PREF_NUM_IMAGE",
                     "3",
-                    TestingImageVeriantActivity.this);
+                    TestingImageVariantActivity.this);
             Functions.showDialog(TestingEnterImageActivity.class, "Вы уверены в ответе?", view);
 
         } else if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("3")) {
 
             preferencesLocal.addProperty("PREF_RESULTIMAGE2",
                     resString,
-                    TestingImageVeriantActivity.this);
+                    TestingImageVariantActivity.this);
             preferencesLocal.addProperty("PREF_NUM_IMAGE",
                     "1",
-                    TestingImageVeriantActivity.this);
+                    TestingImageVariantActivity.this);
             Functions.showDialog(TestingEnterImageActivity.class, "Вы уверены в ответе?", view);
 
         } else if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("1")) {
 
             preferencesLocal.addProperty("PREF_RESULTIMAGE3",
                     resString,
-                    TestingImageVeriantActivity.this);
+                    TestingImageVariantActivity.this);
 
             String par1 = preferencesLocal.getProperty("PREF_RESULTIMAGE1");
             String par2 = preferencesLocal.getProperty("PREF_RESULTIMAGE2");
@@ -689,23 +685,23 @@ public class TestingImageVeriantActivity extends AppCompatActivity {
 
             preferencesLocal.addProperty("PREF_Z2",
                     result,
-                    TestingImageVeriantActivity.this);
+                    TestingImageVariantActivity.this);
             Functions.showDialog(TestingSoundActivity.class, "Вы уверены в ответе?", view);
             preferencesLocal.addProperty("PREF_NUM_IMAGE",
                     "4",
-                    TestingImageVeriantActivity.this);
+                    TestingImageVariantActivity.this);
 
         } else {
 
             preferencesLocal.addProperty("PREF_LASTIMAGERESULT1",
                     resString,
-                    TestingImageVeriantActivity.this);
+                    TestingImageVariantActivity.this);
             preferencesLocal.addProperty("PREF_Z5",
                     initResString(resString),
-                    TestingImageVeriantActivity.this);
+                    TestingImageVariantActivity.this);
             preferencesLocal.addProperty("PREF_NUM_IMAGE",
                     "5",
-                    TestingImageVeriantActivity.this);
+                    TestingImageVariantActivity.this);
 
             Functions.showDialog(PauseTwoActivity.class, "Вы уверены в ответе?", view);
             //todo второе отсроченное

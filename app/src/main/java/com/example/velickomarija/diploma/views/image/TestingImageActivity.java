@@ -18,7 +18,7 @@ public class TestingImageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_testing_image);
-        intent = new Intent(this, TestingImageVeriantActivity.class);
+        intent = new Intent(this, TestingImageVariantActivity.class);
         timingTest();
     }
 

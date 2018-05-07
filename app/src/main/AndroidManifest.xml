@@ -58,7 +58,7 @@
             android:name=".views.common.MainActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".views.image.TestingImageVeriantActivity"
+            android:name=".views.image.TestingImageVariantActivity"
             android:screenOrientation="landscape" />
         <activity
             android:name=".views.sound.TestingEnterSoundNWordsActivity"

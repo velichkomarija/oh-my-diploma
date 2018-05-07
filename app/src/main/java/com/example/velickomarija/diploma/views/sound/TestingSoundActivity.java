@@ -15,7 +15,7 @@ import com.example.velickomarija.diploma.models.Functions;
 import com.example.velickomarija.diploma.models.PreferencesLocal;
 import com.example.velickomarija.diploma.models.TextUtils;
 import com.example.velickomarija.diploma.views.image.TestingEnterImageActivity;
-import com.example.velickomarija.diploma.views.image.TestingImageVeriantActivity;
+import com.example.velickomarija.diploma.views.image.TestingImageVariantActivity;
 
 public class TestingSoundActivity extends AppCompatActivity {
 
@@ -86,7 +86,7 @@ public class TestingSoundActivity extends AppCompatActivity {
                     "6",
                     TestingSoundActivity.this);
 
-            Functions.showDialog(TestingImageVeriantActivity.class, "Вы уверены в ответе?", view);
+            Functions.showDialog(TestingImageVariantActivity.class, "Вы уверены в ответе?", view);
         }
 
         if (numParam == 4) {
