@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.velickomarija.diploma.models.PreferencesLocal;
+import com.example.velickomarija.diploma.models.ResultCreator;
 
 public class ResultActivity extends AppCompatActivity {
 
@@ -34,6 +35,7 @@ public class ResultActivity extends AppCompatActivity {
         image.setText(results[1]);
         total.setText(results[2]);
 
+        ResultCreator.generateFileResult(ResultActivity.this);
     }
 
     private String[] countResult() {
@@ -77,6 +79,5 @@ public class ResultActivity extends AppCompatActivity {
 
         return result;
     }
-
 
 }
