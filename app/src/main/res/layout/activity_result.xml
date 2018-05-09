@@ -46,7 +46,7 @@
                     android:padding="15dp"
                     android:text="@string/data"
                     android:textColor="@color/black"
-                    android:textSize="20sp"
+                    android:textSize="14sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -57,7 +57,7 @@
                     android:padding="15dp"
                     android:text="@string/textData"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="14sp" />
             </TableRow>
 
             <TableRow
@@ -73,7 +73,7 @@
                     android:padding="15dp"
                     android:text="@string/soundTotalResult"
                     android:textColor="@color/black"
-                    android:textSize="20sp"
+                    android:textSize="14sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -84,7 +84,7 @@
                     android:padding="15dp"
                     android:text="@string/soundResult"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="14sp" />
             </TableRow>
 
             <TableRow
@@ -100,7 +100,7 @@
                     android:padding="15dp"
                     android:text="@string/resultTotalImage"
                     android:textColor="@color/black"
-                    android:textSize="20sp"
+                    android:textSize="14sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -111,7 +111,7 @@
                     android:padding="15dp"
                     android:text="@string/soundResultC1"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="14sp" />
             </TableRow>
 
             <TableRow
@@ -127,8 +127,8 @@
                     android:layout_weight="1"
                     android:padding="15dp"
                     android:text="@string/resultTotal"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="14sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -139,7 +139,7 @@
                     android:padding="15dp"
                     android:text="@string/soundResultC2"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="14sp" />
             </TableRow>
         </TableLayout>
     </LinearLayout>

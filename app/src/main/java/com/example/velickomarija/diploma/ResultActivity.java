@@ -35,14 +35,14 @@ public class ResultActivity extends AppCompatActivity {
         image.setText(results[1]);
         total.setText(results[2]);
 
-        ResultCreator.generateFileResult(ResultActivity.this);
+        ResultCreator.sendFile(ResultActivity.this);
     }
 
     private String[] countResult() {
         String[] result = new String[3];
         int resSound = 0;
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 6; i++) {
             String nameProperty = "PREF_C" + (i + 1);
             try {
                 resSound = resSound + Integer.parseInt(preferencesLocal.getProperty(nameProperty));
@@ -57,7 +57,7 @@ public class ResultActivity extends AppCompatActivity {
         result[0] = resString;
 
         int resImage = 0;
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 6; i++) {
             String nameProperty = "PREF_Z" + (i + 1);
             try {
                 resImage = resImage + Integer.parseInt(preferencesLocal.getProperty(nameProperty));

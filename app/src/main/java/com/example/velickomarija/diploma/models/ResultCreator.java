@@ -1,8 +1,8 @@
 package com.example.velickomarija.diploma.models;
 
 import android.content.Context;
-import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -11,40 +11,19 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.File;
-import java.io.FileWriter;
+import java.io.FileOutputStream;
+import java.io.InputStream;
 
 public class ResultCreator {
 
-    public static void generateFileResult(Context context) {
-        File fileName = null;
-        String sdState = android.os.Environment.getExternalStorageState();
-        if (sdState.equals(android.os.Environment.MEDIA_MOUNTED)) {
-            File sdDir = android.os.Environment.getExternalStorageDirectory();
-            fileName = new File(sdDir, "cache/result.txt");
-        } else {
-            fileName = context.getCacheDir();
-        }
-        if (!fileName.exists())
-            fileName.mkdirs();
-        try {
-            FileWriter f = new FileWriter(fileName);
-            f.write(generateFullResult());
-            f.flush();
-            f.close();
-            Uri file = Uri.fromFile(fileName);
-            sendFile("cache/result.txt", file);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+    final static PreferencesLocal preferencesLocal = new PreferencesLocal();
 
     public static String generateFullResult() {
         StringBuffer stringBuffer = new StringBuffer();
-        PreferencesLocal preferencesLocal = new PreferencesLocal();
         stringBuffer.append("Информация о тестируемом:")
                 .append(preferencesLocal.getProperty("PREF_NAME") + "/")
                 .append(preferencesLocal.getProperty("PREF_AGE") + "/")
-                .append(preferencesLocal.getProperty("PREF_EDUCATION"))
+                .append(preferencesLocal.getProperty("PREF_EDUCATION") + "/")
                 .append(preferencesLocal.getProperty("PREF_ETC_INFORMATION"))
                 .append("\n\n");
 
@@ -88,24 +67,55 @@ public class ResultCreator {
         return stringBuffer.toString();
     }
 
-    private static void sendFile(String file, Uri fileUri) {
+    private static String createNameFile(){
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer
+                .append(preferencesLocal.getProperty("PREF_NAME"))
+                .append((int)(Math.random()*1000))
+                .append(".txt");
+        return stringBuffer.toString();
+    }
+
+    public static void sendFile(final Context context){
         FirebaseStorage storage = FirebaseStorage.getInstance();
-        StorageReference rootRef = storage.getReference();
-        StorageReference mountainsRef = rootRef.child(file);
-        mountainsRef.putFile(fileUri)
-                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        // Get a URL to the uploaded content
-                        Uri downloadUrl = taskSnapshot.getDownloadUrl();
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception exception) {
-                        // Handle unsuccessful uploads
-                        // ...
-                    }
-                });
+
+        StorageReference storageRef = storage.getReference().child(createNameFile());
+
+        try {
+            InputStream stream = context.openFileInput(createFile(createNameFile(),context).getName());
+            UploadTask uploadTask = storageRef.putStream(stream);
+            uploadTask.addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception exception) {
+                    exception.printStackTrace();
+                    Toast.makeText(context, "Upload Failed!", Toast.LENGTH_SHORT).show();
+                }
+            }).addOnSuccessListener(new OnSuccessListener() {
+                @Override
+                public void onSuccess(Object o) {
+                    Toast.makeText(context, "Upload successful!", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    private static File createFile(String name, Context context){
+        FileOutputStream outputStream;
+
+        File file = new File(context.getFilesDir(), name);
+
+        try {
+            outputStream = context.openFileOutput(name, Context.MODE_PRIVATE);
+            outputStream.write(generateFullResult().
+                    getBytes());
+            outputStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(context, "какашка!", Toast.LENGTH_SHORT).show();
+        }
+        return file;
     }
 }
