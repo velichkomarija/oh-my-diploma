@@ -70,7 +70,7 @@ public class TestingSoundActivity extends AppCompatActivity {
 
         EditText textBox = (EditText) findViewById(R.id.editTextResultTest1);
         String text = textBox.getText().toString();
-        int res = algorithms.algorithmSoundMemoryC1(text);//верно
+        int res = algorithms.algorithmSoundMemoryC1(text, getBaseContext());//верно
         String resString = String.valueOf(res);
 
         if (numParam == 5) {

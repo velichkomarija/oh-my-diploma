@@ -1,10 +1,14 @@
 package com.example.velickomarija.diploma.models;
 
+import android.content.Context;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Algorithms {
+
+    PreferencesLocal preferencesLocal = new PreferencesLocal();
 
     private static final String resQuestion1 = "Вы склонны составлять планы и" +
             " действовать в соответствии с ними.";
@@ -284,11 +288,19 @@ public class Algorithms {
     }
 
     //подсчет С1 на первой пробе + подсчеты сумм на пробе 2,3
-    public int algorithmSoundMemoryC1(String text) {
+    public int algorithmSoundMemoryC1(String text, Context context) {
         Map<Integer, String> map;
         int sum = 0;
+        int mistakes;
         boolean flag = false;
         map = textToMap(text);
+
+        try {
+            mistakes = Integer.valueOf(preferencesLocal.getProperty("PREF_C6"));
+        } catch (Exception e) {
+            mistakes = 0;
+            e.printStackTrace();
+        }
 
         for (Map.Entry<Integer, String> item : map.entrySet()) {
             for (Map.Entry<Integer, String> word : generalWordsMap.entrySet()) {
@@ -300,6 +312,7 @@ public class Algorithms {
                 }
             }
             if (flag == false) {
+                mistakes++;
                 item.setValue("0");
             }
             flag = false;
@@ -312,6 +325,7 @@ public class Algorithms {
                 sum++;
             }
         }
+        preferencesLocal.addProperty("PREF_C6", String.valueOf(mistakes), context);
         return sum;
     }
 

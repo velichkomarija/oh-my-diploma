@@ -40,6 +40,9 @@ public class ResultCreator {
                 .append("Параметр C5: ")
                 .append(preferencesLocal.getProperty("PREF_C5"))
                 .append("\n")
+                .append("Параметр C6: ")
+                .append(preferencesLocal.getProperty("PREF_C6"))
+                .append("\n")
                 .append("Сумма: ")
                 .append(preferencesLocal.getProperty("PREF_TOTAL_SOUND"))
                 .append("\n\n");

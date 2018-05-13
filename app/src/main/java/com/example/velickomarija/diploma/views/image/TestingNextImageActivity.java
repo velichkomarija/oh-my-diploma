@@ -83,8 +83,7 @@ public class TestingNextImageActivity extends AppCompatActivity {
         ImageButton imageButton20 = (ImageButton) findViewById(R.id.imageButton20);
         imageButton20.setImageResource(R.drawable.symbol1extra);
         ImageButton imageButton24 = (ImageButton) findViewById(R.id.imageButton24);
-        imageButton24.setImageResource(R.drawable.symbol2extra);
-
+        imageButton24.setImageResource(R.drawable.symbol5i);
     }
 
     @Override

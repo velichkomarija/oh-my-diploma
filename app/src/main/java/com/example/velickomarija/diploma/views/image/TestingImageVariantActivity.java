@@ -693,7 +693,6 @@ public class TestingImageVariantActivity extends AppCompatActivity {
                     view,
                     "4");
 
-
         } else {
 
             preferencesLocal.addProperty("PREF_LASTIMAGERESULT1",
