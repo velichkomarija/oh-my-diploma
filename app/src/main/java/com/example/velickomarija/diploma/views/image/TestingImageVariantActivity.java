@@ -645,7 +645,7 @@ public class TestingImageVariantActivity extends AppCompatActivity {
             map.put(i + 1, btnArray[i]);
         }
 
-        int res = algorithms.algorithmImageMemoryZ1(map);
+        int res = algorithms.algorithmImageMemoryZ1(map, getBaseContext());
         String resString = String.valueOf(res);
 
         if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("2")) {

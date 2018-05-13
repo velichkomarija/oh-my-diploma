@@ -330,17 +330,32 @@ public class Algorithms {
     }
 
     //подсчет Z1 на первой пробе + подсчеты сумм на пробе 2,3
-    public int algorithmImageMemoryZ1(Map<Integer, Boolean> map) {
+    public int algorithmImageMemoryZ1(Map<Integer, Boolean> map, Context context) {
         int sum = 0;
+        boolean flag = false;
+        int mistakes;
+
+        try {
+            mistakes = Integer.valueOf(preferencesLocal.getProperty("PREF_Z6"));
+        } catch (Exception e) {
+            mistakes = 0;
+            e.printStackTrace();
+        }
 
         for (Map.Entry<Integer, Boolean> item : map.entrySet()) {
             for (Map.Entry<Integer, Integer> digit : generalImage.entrySet()) {
+                flag = false;
                 if ((item.getValue() == true) && item.getKey().equals(digit.getValue())) {
                     sum++;
+                    flag = true;
                     break;
                 }
             }
+            if(flag ==false){
+                mistakes++;
+            }
         }
+        preferencesLocal.addProperty("PREF_Z6", String.valueOf(mistakes), context);
         reloadMapDigit();
         return sum;
     }
