@@ -657,20 +657,22 @@ public class TestingImageVariantActivity extends AppCompatActivity {
             preferencesLocal.addProperty("PREF_RESULTIMAGE1",
                     resString,
                     TestingImageVariantActivity.this);
-            preferencesLocal.addProperty("PREF_NUM_IMAGE",
-                    "3",
-                    TestingImageVariantActivity.this);
-            Functions.showDialog(TestingEnterImageActivity.class, "Вы уверены в ответе?", view);
+
+            Functions.showDialogImage(TestingEnterImageActivity.class,
+                    "Вы уверены в ответе?",
+                    view,
+                    "3");
 
         } else if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("3")) {
 
             preferencesLocal.addProperty("PREF_RESULTIMAGE2",
                     resString,
                     TestingImageVariantActivity.this);
-            preferencesLocal.addProperty("PREF_NUM_IMAGE",
-                    "1",
-                    TestingImageVariantActivity.this);
-            Functions.showDialog(TestingEnterImageActivity.class, "Вы уверены в ответе?", view);
+
+            Functions.showDialogImage(TestingEnterImageActivity.class,
+                    "Вы уверены в ответе?",
+                    view,
+                    "1");
 
         } else if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("1")) {
 
@@ -686,10 +688,11 @@ public class TestingImageVariantActivity extends AppCompatActivity {
             preferencesLocal.addProperty("PREF_Z2",
                     result,
                     TestingImageVariantActivity.this);
-            Functions.showDialog(TestingSoundActivity.class, "Вы уверены в ответе?", view);
-            preferencesLocal.addProperty("PREF_NUM_IMAGE",
-                    "4",
-                    TestingImageVariantActivity.this);
+            Functions.showDialogImage(TestingSoundActivity.class,
+                    "Вы уверены в ответе?",
+                    view,
+                    "4");
+
 
         } else {
 
@@ -699,11 +702,11 @@ public class TestingImageVariantActivity extends AppCompatActivity {
             preferencesLocal.addProperty("PREF_Z5",
                     initResString(resString),
                     TestingImageVariantActivity.this);
-            preferencesLocal.addProperty("PREF_NUM_IMAGE",
-                    "5",
-                    TestingImageVariantActivity.this);
 
-            Functions.showDialog(PauseTwoActivity.class, "Вы уверены в ответе?", view);
+            Functions.showDialogImage(PauseTwoActivity.class,
+                    "Вы уверены в ответе?",
+                    view,
+                    "5");
             //todo второе отсроченное
         }
     }

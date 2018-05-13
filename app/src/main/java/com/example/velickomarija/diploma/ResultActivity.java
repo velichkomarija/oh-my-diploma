@@ -9,7 +9,7 @@ import com.example.velickomarija.diploma.models.ResultCreator;
 
 public class ResultActivity extends AppCompatActivity {
 
-    TextView data, sound, image, total;
+    TextView sound, image, total;
     PreferencesLocal preferencesLocal = new PreferencesLocal();
 
     @Override
@@ -18,7 +18,7 @@ public class ResultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_result);
 
         //todo доделать
-        data = findViewById(R.id.textViewData);
+       // data = findViewById(R.id.textViewData);
         sound = findViewById(R.id.textViewResultSound);
         image = findViewById(R.id.resultImage);
         total = findViewById(R.id.resultTotal);
@@ -30,7 +30,7 @@ public class ResultActivity extends AppCompatActivity {
 
         String[] results = countResult();
 
-        data.setText(stringBuffer.toString());
+      //  data.setText(stringBuffer.toString());
         sound.setText(results[0]);
         image.setText(results[1]);
         total.setText(results[2]);

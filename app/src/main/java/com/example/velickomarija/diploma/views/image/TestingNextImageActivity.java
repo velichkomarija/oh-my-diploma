@@ -301,11 +301,11 @@ public class TestingNextImageActivity extends AppCompatActivity {
             preferencesLocal.addProperty("PREF_LASTIMAGERESULT2",
                     resString,
                     TestingNextImageActivity.this);
-            Functions.showDialog(TestingNextImageActivity.class, "Вы уверены в ответе?", view);
 
-            preferencesLocal.addProperty("PREF_NUM_IMAGE",
-                    "6",
-                    TestingNextImageActivity.this);
+            Functions.showDialogImage(TestingNextImageActivity.class,
+                    "Вы уверены в ответе?",
+                    view,
+                    "6");
 
         } else if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("6")) {
 

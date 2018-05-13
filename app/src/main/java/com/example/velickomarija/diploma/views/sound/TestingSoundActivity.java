@@ -82,11 +82,11 @@ public class TestingSoundActivity extends AppCompatActivity {
             preferencesLocal.addProperty("PREF_C4",
                     resString,
                     TestingSoundActivity.this);
-            preferencesLocal.addProperty("PREF_NUM_SOUND",
-                    "6",
-                    TestingSoundActivity.this);
 
-            Functions.showDialog(TestingImageVariantActivity.class, "Вы уверены в ответе?", view);
+            Functions.showDialogSound(TestingImageVariantActivity.class,
+                    "Вы уверены в ответе?",
+                    view,
+                    "6");
         }
 
         if (numParam == 4) {
@@ -94,13 +94,15 @@ public class TestingSoundActivity extends AppCompatActivity {
             preferencesLocal.addProperty("PREF_SOUNDLASTRESULT1",
                     resString,
                     TestingSoundActivity.this);
-            preferencesLocal.addProperty("PREF_NUM_SOUND",
-                    "5",
-                    TestingSoundActivity.this);
+
             preferencesLocal.addProperty("PREF_C5",
                     initResString(resString),
                     TestingSoundActivity.this);
-            Functions.showDialog(PauseOneActivity.class, "Вы уверены в ответе?", view);
+
+            Functions.showDialogSound(PauseOneActivity.class,
+                    "Вы уверены в ответе?",
+                    view,
+                    "5");
         }
 
         if (numParam == 3) {
@@ -117,14 +119,15 @@ public class TestingSoundActivity extends AppCompatActivity {
             preferencesLocal.addProperty("PREF_C2",
                     result,
                     TestingSoundActivity.this);
-            preferencesLocal.addProperty("PREF_NUM_SOUND",
-                    "4",
-                    TestingSoundActivity.this);
+
             preferencesLocal.addProperty("PREF_NUM_IMAGE",
                     "2",
                     TestingSoundActivity.this);
 
-            Functions.showDialog(TestingEnterImageActivity.class, "Вы уверены в ответе?", view);
+            Functions.showDialogSound(TestingEnterImageActivity.class,
+                    "Вы уверены в ответе?",
+                    view,
+                    "4");
         }
 
         if (numParam == 2) {
@@ -132,11 +135,11 @@ public class TestingSoundActivity extends AppCompatActivity {
             preferencesLocal.addProperty("PREF_SOUNDRESULT2",
                     resString,
                     TestingSoundActivity.this);
-            preferencesLocal.addProperty("PREF_NUM_SOUND",
-                    "3",
-                    TestingSoundActivity.this);
 
-            Functions.showDialog(TestingEnterSoundActivity.class, "Вы уверены в ответе?", view);
+            Functions.showDialogSound(TestingEnterSoundActivity.class,
+                    "Вы уверены в ответе?",
+                    view,
+                    "3");
         }
 
         if (numParam == 1) {
@@ -148,11 +151,11 @@ public class TestingSoundActivity extends AppCompatActivity {
             preferencesLocal.addProperty("PREF_SOUNDRESULT1",
                     resString,
                     TestingSoundActivity.this);
-            preferencesLocal.addProperty("PREF_NUM_SOUND",
-                    "2",
-                    TestingSoundActivity.this);
 
-            Functions.showDialog(TestingEnterSoundActivity.class, "Вы уверены в ответе?", view);
+            Functions.showDialogSound(TestingEnterSoundActivity.class,
+                    "Вы уверены в ответе?",
+                    view,
+                    "2");
         }
     }
 
