@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.example.velickomarija.diploma.models.Algorithms;
 import com.example.velickomarija.diploma.models.PreferencesLocal;
 import com.example.velickomarija.diploma.models.ResultCreator;
 
@@ -11,6 +12,11 @@ public class ResultActivity extends AppCompatActivity {
 
     TextView sound, image, total;
     PreferencesLocal preferencesLocal = new PreferencesLocal();
+    Algorithms algorithms = new Algorithms();
+
+    public void onBackPressed() {
+        // do nothing
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,19 +24,20 @@ public class ResultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_result);
 
         //todo доделать
-       // data = findViewById(R.id.textViewData);
         sound = findViewById(R.id.textViewResultSound);
         image = findViewById(R.id.resultImage);
         total = findViewById(R.id.resultTotal);
 
-        StringBuffer stringBuffer = new StringBuffer();
-        stringBuffer.append(preferencesLocal.getProperty("PREF_NAME") + "/");
-        stringBuffer.append(preferencesLocal.getProperty("PREF_AGE") + "/");
-        stringBuffer.append(preferencesLocal.getProperty("PREF_EDUCATION"));
+        preferencesLocal.addProperty("PREF_C6",
+                algorithms.getCorrectionC6(preferencesLocal.getProperty("PREF_C6")),
+                getBaseContext());
+
+        preferencesLocal.addProperty("PREF_Z6",
+                algorithms.getCorrectionC6(preferencesLocal.getProperty("PREF_Z6")),
+                getBaseContext());
 
         String[] results = countResult();
 
-      //  data.setText(stringBuffer.toString());
         sound.setText(results[0]);
         image.setText(results[1]);
         total.setText(results[2]);

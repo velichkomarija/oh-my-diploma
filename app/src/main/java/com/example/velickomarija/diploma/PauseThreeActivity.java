@@ -13,6 +13,10 @@ public class PauseThreeActivity extends AppCompatActivity {
     PreferencesLocal preferencesLocal = new PreferencesLocal();
     TextView textData, resultOldImage, resultNewImage;
 
+    public void onBackPressed() {
+        // do nothing
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +34,7 @@ public class PauseThreeActivity extends AppCompatActivity {
         resultOldImage.setText(preferencesLocal.getProperty("PREF_LASTIMAGERESULT2"));
 
         resultNewImage = (TextView) findViewById(R.id.textViewResultNewImage);
-        resultNewImage.setText(preferencesLocal.getProperty("PREF_Z4"));
+        resultNewImage.setText(preferencesLocal.getProperty("PREF_Z5 "));
     }
 
     public void onClickToGoTestingImageNew(View view) {

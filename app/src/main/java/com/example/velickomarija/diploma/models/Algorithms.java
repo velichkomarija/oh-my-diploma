@@ -488,6 +488,15 @@ public class Algorithms {
         return String.valueOf(sum);
     }
 
+    //подсчет С6,Z6
+    public String getCorrectionC6(String str){
+        int res = 10 - Integer.parseInt(str);
+        if(res < 0){
+            return "0";
+        }
+        return String.valueOf(res);
+    }
+
     //подсчет результатов первого опросника
     public String algorithmQuestionOne(int[] array) {
         int B = 0;

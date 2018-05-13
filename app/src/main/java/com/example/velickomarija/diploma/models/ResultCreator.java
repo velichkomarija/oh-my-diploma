@@ -19,6 +19,8 @@ public class ResultCreator {
     final static PreferencesLocal preferencesLocal = new PreferencesLocal();
 
     public static String generateFullResult() {
+        Algorithms algorithms = new Algorithms();
+
         StringBuffer stringBuffer = new StringBuffer();
         stringBuffer.append("Информация о тестируемом:")
                 .append(preferencesLocal.getProperty("PREF_NAME") + "/")
@@ -59,6 +61,9 @@ public class ResultCreator {
                 .append("\n")
                 .append("Параметр Z5: ")
                 .append(preferencesLocal.getProperty("PREF_Z5"))
+                .append("\n")
+                .append("Параметр Z6: ")
+                .append(preferencesLocal.getProperty("PREF_Z6"))
                 .append("\n")
                 .append("Сумма: ")
                 .append(preferencesLocal.getProperty("PREF_TOTAL_IMAGE"))
