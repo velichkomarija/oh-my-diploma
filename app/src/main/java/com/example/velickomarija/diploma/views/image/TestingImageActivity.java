@@ -1,10 +1,14 @@
 package com.example.velickomarija.diploma.views.image;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.example.velickomarija.diploma.R;
@@ -61,18 +65,22 @@ public class TestingImageActivity extends AppCompatActivity {
         CountDownTimer start = new CountDownTimer(startTime, 15000) {
 
             public void onTick(long milliesUntilFinished) {
-                Toast toast = Toast.makeText(TestingImageActivity.this,
-                        "Программа работает, она не зависла!",
-                        Toast.LENGTH_LONG);
-                View view = toast.getView();
-                toast.getView().setPadding(10, 10, 10, 10);
-                view.setBackgroundResource(R.color.colorAccent);
-                toast.show();
+                showToast();
             }
 
             public void onFinish() {
                 startActivity(intent);
             }
         }.start();
+    }
+
+    private void showToast() {
+        Toast toast = Toast.makeText(TestingImageActivity.this,
+                "Программа работает, она не зависла!",
+                Toast.LENGTH_LONG);
+        View view = toast.getView();
+        toast.getView().setPadding(10, 10, 10, 10);
+        view.setBackgroundResource(R.color.colorAccent);
+        toast.show();
     }
 }

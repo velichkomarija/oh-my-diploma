@@ -91,7 +91,7 @@ public class QuestionTwoActivity extends AppCompatActivity {
         progressBar.setVisibility(View.VISIBLE);
         buttonMinus.setClickable(false);
         buttonPlus.setClickable(false);
-        CountDownTimer start = new CountDownTimer(1000, 250) {
+        CountDownTimer start = new CountDownTimer(600, 150) {
 
             int progress = 25;
 
