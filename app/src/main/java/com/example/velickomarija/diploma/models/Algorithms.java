@@ -6,9 +6,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Класс, описывающий алгоритмы обработки данных, полученных от пользователя.
+ */
 public class Algorithms {
 
-    PreferencesLocal preferencesLocal = new PreferencesLocal();
+    private PreferencesLocal preferencesLocal = new PreferencesLocal();
 
     private static final String resQuestion1 = "Вы склонны составлять планы и" +
             " действовать в соответствии с ними.";
@@ -175,6 +178,9 @@ public class Algorithms {
         keyQuestions1.put("H1B1", "Стабильный режим приспособления.");
     }
 
+    /**
+     * Метод, отвечающий за переинициализацию списка с ключевыми словами.
+     */
     private void reloadArrayList() {
         newWords.clear();
         newWords.add("ПОТОЛОК");
@@ -191,6 +197,9 @@ public class Algorithms {
         newWords.add("ПАЛЬТО");
     }
 
+    /**
+     * Метод, отвечающий за переинициализацию ключевых фигур.
+     */
     private void reloadMapWords() {
         generalWordsMap.clear();
         generalWordsMap.put(1, "КЛЕЙ");
@@ -206,6 +215,9 @@ public class Algorithms {
         generalWordsMap.put(11, "ПЫЛЬ");
     }
 
+    /**
+     * Метод, отвечающий за переинициализацию ключевых промежутков узнавания.
+     */
     private void reloadMapDigit() {
         generalImage.clear();
         generalImage.put(1, 1);
@@ -222,6 +234,12 @@ public class Algorithms {
         generalImage.put(12, 24);
     }
 
+    /**
+     * Метод, преобразовывающий строку в асоциативный список значений.
+     *
+     * @param text строка значений, полученных от пользователя.
+     * @return Ассоциативный список значений.
+     */
     private Map<Integer, String> textToMap(String text) {
         Map<Integer, String> map = new HashMap<>();
         String newText = text.replace(",", " ");
@@ -232,6 +250,13 @@ public class Algorithms {
         return map;
     }
 
+    /**
+     * Метод для подсчета первичных результатов первого опросника.
+     *
+     * @param B параметр верхнего головного мозга.
+     * @param H параметр нижнего головного мозга.
+     * @return Строка с первичными результатами опроса 1.
+     */
     private String createTestResult(int B, int H) {
         String BN = null;
         String HN = null;
@@ -259,6 +284,12 @@ public class Algorithms {
         return HN.concat(BN);
     }
 
+    /**
+     * Метод для подсчета конечного результата первого опросника.
+     *
+     * @param str строка первичных результатов.
+     * @return Строка с конечным результатом для отображения пользователю.
+     */
     private String getFullResult(String str) {
         String result = "";
 
@@ -279,6 +310,12 @@ public class Algorithms {
                 concat(result);
     }
 
+    /**
+     * Метод, обнуляющий результаты, если они отрицательные.
+     *
+     * @param digit результат пробы.
+     * @return Результат пробы, если не отрицательное число, 0 - если число было отрицательным.
+     */
     private int zeroAdapter(int digit) {
         if (digit < 0) {
             return 0;
@@ -287,7 +324,13 @@ public class Algorithms {
         }
     }
 
-    //подсчет С1 на первой пробе + подсчеты сумм на пробе 2,3
+    /**
+     * Метод, подсчитывающий первичные результаты слуховых проб.
+     *
+     * @param text    строка, введенная пользователем.
+     * @param context контекст выполнения пррограммы.
+     * @return Число верно воспроизведенных слов.
+     */
     public int algorithmSoundMemoryC1(String text, Context context) {
         Map<Integer, String> map;
         int sum = 0;
@@ -329,7 +372,13 @@ public class Algorithms {
         return sum;
     }
 
-    //подсчет Z1 на первой пробе + подсчеты сумм на пробе 2,3
+    /**
+     * Подсчет результатов первых трёх зрительных проб.
+     *
+     * @param map     данные, введенные от пользователя.
+     * @param context контекст выполнения приложения.
+     * @return Число верно воспроизведенных изображений.
+     */
     public int algorithmImageMemoryZ1(Map<Integer, Boolean> map, Context context) {
         int sum = 0;
         boolean flag = false;
@@ -351,7 +400,7 @@ public class Algorithms {
                     break;
                 }
             }
-            if(flag ==false){
+            if (flag == false) {
                 mistakes++;
             }
         }
@@ -360,7 +409,14 @@ public class Algorithms {
         return sum;
     }
 
-    //подсчет С2 и Z2
+    /**
+     * Подсчет параметров C2 и Z2.
+     *
+     * @param p1 результаты первой пробы.
+     * @param p2 результаты второй пробы.
+     * @param p3 результаты третьей пробы.
+     * @return Строка со значением параметра C2 или Z.
+     */
     public String algorithmSoundMemoryC2(String p1, String p2, String p3) {
         //вычисления по таблице результатов с подсчетом вычетов и проб
         int res = 0;
@@ -404,7 +460,12 @@ public class Algorithms {
         return String.valueOf(res);
     }
 
-    //подсчет слов на узновании из новых
+    /**
+     * Метод для подсчета верно узнаных старых слов из новых.
+     *
+     * @param text данные, введеные пользователем.
+     * @return Строка с результатами узнавания.
+     */
     public String algorithmFindOldWordsInNew(String text) {
         int res = 0;
         int error = 0;
@@ -456,7 +517,12 @@ public class Algorithms {
         return resString;
     }
 
-    //подсчет запоминания новых слов
+    /**
+     * Подсчет слов, которые непроизвольно запомнены пользователем.
+     *
+     * @param text данные, введеные пользователем.
+     * @return Строка с результатами узнаваниями.
+     */
     public String algorithmSoundNewWords(String text) {
         int res = 0;
         String[] strArray = text.split(" ");
@@ -472,7 +538,12 @@ public class Algorithms {
         return String.valueOf(res);
     }
 
-    //подсчет новых фигур
+    /**
+     * Метод, подсчитывающий результат узнавания новых фигур из старых.
+     *
+     * @param map данные о узнавании, полученные от пользователя.
+     * @return Строка результата узнавания.
+     */
     public String algotithmImageNew(Map<Integer, Boolean> map) {
         int sum = 0;
 
@@ -488,16 +559,26 @@ public class Algorithms {
         return String.valueOf(sum);
     }
 
-    //подсчет С6,Z6
-    public String getCorrectionC6(String str){
+    /**
+     * Метод, подсчитывающий ошибки воспроизведения. Параметры C6/Z6.
+     *
+     * @param str первичный результат C6/Z6.
+     * @return Скорректированное значение результата.
+     */
+    public String getCorrectionC6(String str) {
         int res = 10 - Integer.parseInt(str);
-        if(res < 0){
+        if (res < 0) {
             return "0";
         }
         return String.valueOf(res);
     }
 
-    //подсчет результатов первого опросника
+    /**
+     * Метод для обработки результатов первого опросника.
+     *
+     * @param array массив ответов пользователя.
+     * @return Строка с результатами для предъявления пользователю.
+     */
     public String algorithmQuestionOne(int[] array) {
         int B = 0;
         int H = 0;
@@ -530,7 +611,12 @@ public class Algorithms {
         return getFullResult(res);
     }
 
-    //перечень типов памяти для второго опросника
+    /**
+     * Метод, определяющий тип памяти по результатам второго опросника.
+     *
+     * @param array массив ответов пользователя.
+     * @return Строка с результатом для предъявления пользователю.
+     */
     private String getFullResult(int[] array) {
         StringBuffer result = new StringBuffer();
         result.append("Предметно-действенное мышление. ")
@@ -552,7 +638,12 @@ public class Algorithms {
         return result.toString();
     }
 
-    //функция вычисления уровня развития типа мышления
+    /**
+     * Метод для вычисления уровня развития определенного типа мышления для опросника 2.
+     *
+     * @param number количество ответов по данномй типу мышления.
+     * @return Строка с уровнем развития типа мышления.
+     */
     private String getLevel(int number) {
         if (0 <= number && number <= 2) {
             return "Уровень - низкий.";
@@ -564,7 +655,12 @@ public class Algorithms {
         }
     }
 
-    //подсчет результатов второго опросника
+    /**
+     * Метод, подсчитывающий результаты второго опросника.
+     *
+     * @param array массив ответов пользователя.
+     * @return Строка с результатами второго опросника.
+     */
     public String algorithmQuestionTwo(int[] array) {
         int[] mind = new int[5];
 
@@ -617,22 +713,47 @@ public class Algorithms {
         return getFullResult(getFullResult(mind));
     }
 
+    /**
+     * Метод, возвращающий расшифровку типа памяти.
+     *
+     * @return Строка с расшифровкой.
+     */
     public static String getResQuestion11() {
         return resQuestion11;
     }
 
+    /**
+     * Метод, возвращающий расшифровку типа памяти.
+     *
+     * @return Строка с расшифровкой.
+     */
     public static String getResQuestion22() {
         return resQuestion22;
     }
 
+    /**
+     * Метод, возвращающий расшифровку типа памяти.
+     *
+     * @return Строка с расшифровкой.
+     */
     public static String getResQuestion33() {
         return resQuestion33;
     }
 
+    /**
+     * Метод, возвращающий расшифровку типа памяти.
+     *
+     * @return Строка с расшифровкой.
+     */
     public static String getResQuestion44() {
         return resQuestion44;
     }
 
+    /**
+     * Метод, возвращающий расшифровку типа памяти.
+     *
+     * @return Строка с расшифровкой.
+     */
     public static String getResQuestion55() {
         return resQuestion55;
     }

@@ -10,9 +10,17 @@ import com.example.velickomarija.diploma.R;
 import com.example.velickomarija.diploma.views.image.TestingImageVariantActivity;
 import com.example.velickomarija.diploma.views.sound.TestingSoundActivity;
 
+/**
+ * Класс, определяющий базовый функционал переходов между активностями и сообщений-подсказок.
+ */
 public class Functions {
 
-    //диалоговое окно на ошибку
+    /**
+     * Метод, отображающий диалоговое окно в случае ошибочного действия пользователя.
+     *
+     * @param v    объект типа View.
+     * @param text текст сообщения об ошибке.
+     */
     public static void showErrorDialog(View v, String text) {
         AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
         builder.setTitle("Важное сообщение!")
@@ -32,7 +40,13 @@ public class Functions {
         alert.show();
     }
 
-    //диалоговое окно на ложное нажатие
+    /**
+     * Метод, отображающий окно-подтверждение действия пользователя.
+     *
+     * @param cl   параметр, указывающий на следующую активность для перехода.
+     * @param text текст сообщения-подтверждения.
+     * @param view объект класса View.
+     */
     public static void showDialog(final Class cl, String text, final View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
         builder.setTitle("Важное сообщение!")
@@ -61,7 +75,14 @@ public class Functions {
         alert.show();
     }
 
-    //диалоговое окно на ложное нажатие
+    /**
+     * Метод, отображающий окно-подтверждение на действие пользователя при тестировании зрительной памяти.
+     *
+     * @param cl   параметр, указывающий на следующую активность для перехода.
+     * @param text текст сообщения-подтверждения.
+     * @param view объект типа View.
+     * @param num  идентификатор следующей пробы.
+     */
     public static void showDialogImage(final Class cl, String text, final View view, final String num) {
         AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
         builder.setTitle("Важное сообщение!")
@@ -94,7 +115,14 @@ public class Functions {
         alert.show();
     }
 
-    //диалоговое окно на ложное нажатие
+    /**
+     * Метод, отображающий окно-подтверждение на действие пользователя при тестировании слухоречевой памяти.
+     *
+     * @param cl   параметр, указывающий на следующую активность для перехода.
+     * @param text текст сообщения-подтверждения.
+     * @param view объект типа View.
+     * @param num  идентификатор следующей пробы.
+     */
     public static void showDialogSound(final Class cl, String text, final View view, final String num) {
         AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
         builder.setTitle("Важное сообщение!")
@@ -127,7 +155,13 @@ public class Functions {
         alert.show();
     }
 
-    //переход между активити
+
+    /**
+     * Метод, реализующий переход к следующей активности.
+     *
+     * @param cl   параметр, указывающий на следующую активность для перехода.
+     * @param view объект типа View.
+     */
     public static void activityToGo(Class cl, View view) {
         Intent intent = new Intent(view.getContext(), cl);
         view.getContext().startActivity(intent);

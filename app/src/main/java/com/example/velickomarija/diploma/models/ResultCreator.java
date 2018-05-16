@@ -14,10 +14,18 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 
+/**
+ * Класс для генерации результатов тестирования.
+ */
 public class ResultCreator {
 
     final static PreferencesLocal preferencesLocal = new PreferencesLocal();
 
+    /**
+     * Метод, генерирующий полный результата тестирования для отправки в хранилище.
+     *
+     * @return Строка с результатом тестирования.
+     */
     public static String generateFullResult() {
 
         StringBuffer stringBuffer = new StringBuffer();
@@ -75,42 +83,59 @@ public class ResultCreator {
         return stringBuffer.toString();
     }
 
-    private static String createNameFile(){
+    /**
+     * Метод, генерирующий уникальное имя файла для отправки.
+     *
+     * @return Строка с названием файла.
+     */
+    private static String createNameFile() {
         StringBuffer stringBuffer = new StringBuffer();
         stringBuffer
                 .append(preferencesLocal.getProperty("PREF_NAME"))
-                .append((int)(Math.random()*1000))
+                .append((int) (Math.random() * 1000))
                 .append(".txt");
         return stringBuffer.toString();
     }
 
-    public static void sendFile(final Context context){
+    /**
+     * Метод, осуществляющий отправку файла в хранилище.
+     *
+     * @param context контекст выполнения программы.
+     */
+    public static void sendFile(final Context context) {
 
         FirebaseStorage storage = FirebaseStorage.getInstance();
         StorageReference storageRef = storage.getReference().child(createNameFile());
 
         try {
-            InputStream stream = context.openFileInput(createFile(createNameFile(),context).getName());
+            InputStream stream = context.openFileInput(createFile(createNameFile(), context).getName());
             UploadTask uploadTask = storageRef.putStream(stream);
             uploadTask.addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception exception) {
                     exception.printStackTrace();
-                    Toast.makeText(context, "Upload Failed!", Toast.LENGTH_SHORT).show();
+                    //      Toast.makeText(context, "Upload Failed!", Toast.LENGTH_SHORT).show();
                 }
             }).addOnSuccessListener(new OnSuccessListener() {
                 @Override
                 public void onSuccess(Object o) {
-                    Toast.makeText(context, "Upload successful!", Toast.LENGTH_SHORT).show();
+                    //   Toast.makeText(context, "Upload successful!", Toast.LENGTH_SHORT).show();
                 }
             });
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private static File createFile(String name, Context context){
+    /**
+     * Метод, создающий файл для отправки в хранилище. Файл также создается в памяти телефона.
+     *
+     * @param name    имя файла.
+     * @param context контекст выполнения приложения.
+     * @return Объект типа File.
+     */
+    private static File createFile(String name, Context context) {
         FileOutputStream outputStream;
 
         File file = new File(context.getFilesDir(), name);
@@ -122,7 +147,7 @@ public class ResultCreator {
             outputStream.close();
         } catch (Exception e) {
             e.printStackTrace();
-            Toast.makeText(context, "какашка!", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(context, "Ошибка!", Toast.LENGTH_SHORT).show();
         }
         return file;
     }
