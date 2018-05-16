@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.velickomarija.diploma.models.PreferencesLocal;
+import com.example.velickomarija.diploma.views.common.ResultActivity;
 
 public class PauseThreeActivity extends AppCompatActivity {
 

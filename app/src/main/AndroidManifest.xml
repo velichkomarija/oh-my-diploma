@@ -105,7 +105,7 @@
             android:name=".views.questionnaire.QuestionEnter2Activity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".ResultActivity"
+            android:name=".views.common.ResultActivity"
             android:screenOrientation="landscape" />
         <activity
             android:name=".views.common.FinishActivity"

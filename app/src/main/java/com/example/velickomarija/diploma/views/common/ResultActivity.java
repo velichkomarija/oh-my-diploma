@@ -1,4 +1,4 @@
-package com.example.velickomarija.diploma;
+package com.example.velickomarija.diploma.views.common;
 
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
@@ -8,22 +8,34 @@ import android.text.Html;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.velickomarija.diploma.R;
 import com.example.velickomarija.diploma.models.Algorithms;
 import com.example.velickomarija.diploma.models.Functions;
 import com.example.velickomarija.diploma.models.PreferencesLocal;
 import com.example.velickomarija.diploma.models.ResultCreator;
-import com.example.velickomarija.diploma.views.common.FinishActivity;
 
+/**
+ * Класс-активность, отображающая результаты тестирования.
+ */
 public class ResultActivity extends AppCompatActivity {
 
-    TextView sound, image, total;
-    PreferencesLocal preferencesLocal = new PreferencesLocal();
-    Algorithms algorithms = new Algorithms();
+    private TextView sound, image, total;
+    private PreferencesLocal preferencesLocal = new PreferencesLocal();
+    private Algorithms algorithms = new Algorithms();
 
+    /**
+     * Метод-обработчик нажатия на физическую кнопку "Назад".
+     */
     public void onBackPressed() {
         // do nothing
     }
 
+    /**
+     * Метод, вызываемый перед началом работы активности.
+     *
+     * @param savedInstanceState объект тпа Bundle, который может хранить состояние приложения
+     *                           при перерисовке активности.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +61,11 @@ public class ResultActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Метод, расчитывающий конечные результаты тестирования.
+     *
+     * @return Массив с результатами тестирования.
+     */
     private String[] countResult() {
         String[] result = new String[3];
         int resSound = 0;
@@ -91,6 +108,11 @@ public class ResultActivity extends AppCompatActivity {
         return result;
     }
 
+    /**
+     * Метод-обработчик нажатия кнопки "Продолжить".
+     *
+     * @param view объект класса View.
+     */
     public void onClickToExit(final View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
         builder.setTitle("Важное сообщение!")
