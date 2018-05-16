@@ -3,11 +3,17 @@ package com.example.velickomarija.diploma.models;
 import android.content.Context;
 import android.util.DisplayMetrics;
 
-/*
-    Работа с размером экрана
+/**
+ * Класс, для работы со шрифтами приложения.
  */
 public class TextUtils {
 
+    /**
+     * Класс, корректирующий размер шрифта в зависимости от плотности пикселей.
+     *
+     * @param context контекст выполнения программы.
+     * @return размер шрифта.
+     */
     public static float setNewTextSize(Context context) {
         float textSize;
         DisplayMetrics metrics = context.getResources().getDisplayMetrics();
@@ -17,7 +23,7 @@ public class TextUtils {
             textSize = width / 350;
         } else if (density < 3.0f && density > 2.5f) {
             textSize = width / 300;
-        } else if (density <= 2.5f&&density>2.0f) {
+        } else if (density <= 2.5f && density > 2.0f) {
             textSize = width / 250;
         } else if (density == 2.0f) {
             textSize = width / 175;
@@ -28,5 +34,4 @@ public class TextUtils {
         }
         return textSize;
     }
-
 }

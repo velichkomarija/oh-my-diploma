@@ -20,13 +20,19 @@ import com.example.velickomarija.diploma.models.TextUtils;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    RadioGroup radioGroup;
-    PreferencesLocal pref = new PreferencesLocal();
-    TextView textName, textMale, textEducation, textAge, textEtc, start;
-    RadioButton radioButton1, radioButton2;
-    Spinner spinner;
-    Button button;
+    private RadioGroup radioGroup;
+    private PreferencesLocal pref = new PreferencesLocal();
+    private TextView textName, textMale, textEducation, textAge, textEtc, start;
+    private RadioButton radioButton1, radioButton2;
+    private Spinner spinner;
+    private Button button;
 
+    /**
+     * Метод, вызываемый перед началом работы активности.
+     *
+     * @param savedInstanceState объект тпа Bundle, который может хранить состояние приложения
+     *                           при перерисовке активности.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +67,11 @@ public class ProfileActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Метод для инициализации размера шрифтов полей для заполнения.
+     *
+     * @param size размер шрифта.
+     */
     private void initParam(float size) {
         start = (TextView) findViewById(R.id.start_profile_text_view);
         textName = (TextView) findViewById(R.id.name_text_view);
@@ -93,12 +104,23 @@ public class ProfileActivity extends AppCompatActivity {
         radioButton2.setTextSize(size);
     }
 
-    // щелчок кнопки
+    /**
+     * Метод, обрабатывающий нажатия на радио-кнопки.
+     *
+     * @param view объект класса View.
+     */
     public void onClick(View view) {
         // очистить все переключатели
         radioGroup.clearCheck();
     }
 
+    /**
+     * Метод, сохраняющий значение параметра "ФИО тестируемого"
+     *
+     * @param view объект класса View.
+     * @return Булева переменная, отвечающая за признак заполненности поля.
+     * Если true - то поле заполнено, не заполнено - false.
+     */
     private boolean saveName(View view) {
         //получаем ФИО
         boolean flag = true;
@@ -122,11 +144,19 @@ public class ProfileActivity extends AppCompatActivity {
         return flag;
     }
 
+    /**
+     * Метод, отвечающий за обработку поля "Пол".
+     *
+     * @param text строка.
+     */
     private void saveMale(String text) {
         //получаем пол
         pref.addProperty("PREF_MALE", text, ProfileActivity.this);
     }
 
+    /**
+     * Метод, отвечающий за сохранение данных поля "Другая информация".
+     */
     private void saveEtcInformation() {
         //получаем другую информацию
         EditText etcInformationBox = (EditText) findViewById(R.id.etc_input_field);
@@ -144,6 +174,12 @@ public class ProfileActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Метод, проверяющий значение поля "Возраст".
+     *
+     * @param view объект класса View.
+     * @return Булева переменная, показывающая правильно заполнено поле (true) или нет (false).
+     */
     private boolean saveAge(View view) {
         //получаем возраст
         boolean flag = true;
@@ -167,6 +203,9 @@ public class ProfileActivity extends AppCompatActivity {
         return flag;
     }
 
+    /**
+     * Метод, сохраняющий информацию о поле "Образование".
+     */
     private void saveEducation() {
         //получаем образование
         String selected = spinner.getSelectedItem().toString();
@@ -175,6 +214,11 @@ public class ProfileActivity extends AppCompatActivity {
                 ProfileActivity.this);
     }
 
+    /**
+     * Метод-обработчик нажатия на кнопку "Далее".
+     *
+     * @param view объект класса View.
+     */
     public void onClickToRegistrateProfile(View view) {
         boolean nameFlag = saveName(view);
         boolean ageFlag = saveAge(view);

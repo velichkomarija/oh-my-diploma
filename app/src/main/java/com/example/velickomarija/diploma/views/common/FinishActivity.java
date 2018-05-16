@@ -9,8 +9,17 @@ import android.widget.TextView;
 import com.example.velickomarija.diploma.R;
 import com.example.velickomarija.diploma.models.TextUtils;
 
+/**
+ * Класс-активность выхода из приложения.
+ */
 public class FinishActivity extends AppCompatActivity {
 
+    /**
+     * Метод, вызываемый перед началом работы активности.
+     *
+     * @param savedInstanceState объект тпа Bundle, который может хранить состояние приложения
+     *                           при перерисовке активности.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +31,18 @@ public class FinishActivity extends AppCompatActivity {
         button.setTextSize(size * 1.4f);
     }
 
+    /**
+     * Метод обработчик нажатия аппаратной кнопки "Назад".
+     */
+    public void onBackPressed() {
+        // do nothing
+    }
+
+    /**
+     * Метод обработчик нажатия на кнопку "Выход".
+     *
+     * @param view объект класса View.
+     */
     public void onClickExit(View view) {
         finishAffinity();
     }

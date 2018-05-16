@@ -20,9 +20,17 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 
+/**
+ * Класс-активность, отвечающая за загрузку заставки приложения.
+ */
 public class SplashActivity extends AppCompatActivity {
 
-
+    /**
+     * Метод, вызываемый перед началом работы активности.
+     *
+     * @param savedInstanceState объект тпа Bundle, который может хранить состояние приложения
+     *                           при перерисовке активности.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,10 +47,16 @@ public class SplashActivity extends AppCompatActivity {
         }, 3000);
     }
 
+    /**
+     * Метод-обработчик нажатия на физическую кнопку "Назад".
+     */
     public void onBackPressed() {
         // do nothing
     }
 
+    /**
+     * Метод, выполняющий первичную инициализацию полей настроек приложения.
+     */
     private void initAllPreference() {
         Context context = SplashActivity.this;
         PreferencesLocal preferencesLocal = new PreferencesLocal();
@@ -82,6 +96,5 @@ public class SplashActivity extends AppCompatActivity {
         //Старые слова
         preferencesLocal.addProperty("PREF_RESULTOLDWORDS", "none", context);
     }
-
 }
 

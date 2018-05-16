@@ -12,11 +12,20 @@ import android.widget.TextView;
 import com.example.velickomarija.diploma.R;
 import com.example.velickomarija.diploma.models.TextUtils;
 
+/**
+ * Класс-активность, загружающая интерфейс приветственного окна приложения.
+ */
 public class MainActivity extends AppCompatActivity {
 
-    TextView text;
-    Button button;
+    private TextView text;
+    private Button button;
 
+    /**
+     * Метод, вызываемый перед началом работы активности.
+     *
+     * @param savedInstanceState объект тпа Bundle, который может хранить состояние приложения
+     *                           при перерисовке активности.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,16 +39,19 @@ public class MainActivity extends AppCompatActivity {
         button.setTextSize(size * 1.4f);
     }
 
-    @Override
-    public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
-        return super.onCreateView(parent, name, context, attrs);
-    }
-
+    /**
+     * Метод-обработчик нажатия на кнопку "Продолжить".
+     *
+     * @param view объект класса View.
+     */
     public void onClickToRegistrationUser(View view) {
         Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Метод обработчик нажатия аппаратной кнопки "Назад".
+     */
     public void onBackPressed() {
         // do nothing
     }
