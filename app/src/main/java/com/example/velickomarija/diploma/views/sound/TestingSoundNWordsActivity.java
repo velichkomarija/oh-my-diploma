@@ -14,16 +14,25 @@ import com.example.velickomarija.diploma.R;
 import com.example.velickomarija.diploma.models.Algorithms;
 import com.example.velickomarija.diploma.models.PreferencesLocal;
 
+/**
+ * Класс-активность для тестирования слухоречевой памяти.
+ */
 public class TestingSoundNWordsActivity extends AppCompatActivity {
 
-    TextView mTimer;
-    public Intent intent;
-    MediaPlayer mPlayer;
-    Animation animation;
-    boolean clk = false;
-    Algorithms algorithms = new Algorithms();
-    PreferencesLocal preferencesLocal = new PreferencesLocal();
+    private TextView mTimer;
+    private Intent intent;
+    private MediaPlayer mPlayer;
+    private Animation animation;
+    private boolean clk = false;
+    private Algorithms algorithms = new Algorithms();
+    private PreferencesLocal preferencesLocal = new PreferencesLocal();
 
+    /**
+     * Метод, вызываемый перед началом работы активности.
+     *
+     * @param savedInstanceState объект тпа Bundle, который может хранить состояние приложения
+     *                           при перерисовке активности.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,11 +42,17 @@ public class TestingSoundNWordsActivity extends AppCompatActivity {
         timing();
     }
 
+    /**
+     * Метод-обработчик нажатия на физическую кнопку "Назад".
+     */
     @Override
     public void onBackPressed() {
         // do nothing
     }
 
+    /**
+     * Метод обратного отсчета перед воспроизведением аудиозаписи.
+     */
     private void timing() {
         mTimer = (TextView) findViewById(R.id.text_view_time);
         CountDownTimer start = new CountDownTimer(6000, 1000) {
@@ -53,6 +68,9 @@ public class TestingSoundNWordsActivity extends AppCompatActivity {
         }.start();
     }
 
+    /**
+     * Метод для воспроизведения аудиозаписи.
+     */
     private void soundTiming() {
         final StringBuffer stringBuffer = new StringBuffer();
         mPlayer = MediaPlayer.create(this, R.raw.test_40sec);
@@ -77,6 +95,11 @@ public class TestingSoundNWordsActivity extends AppCompatActivity {
         }.start();
     }
 
+    /**
+     * Метод обработчик нажатия на кнопку "+"
+     *
+     * @param view объект класса View.
+     */
     public void onClickToPlusAction(View view) {
         clk = true;
         view.startAnimation(animation);

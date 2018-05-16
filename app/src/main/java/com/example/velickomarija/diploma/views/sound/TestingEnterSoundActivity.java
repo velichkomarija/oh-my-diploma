@@ -13,14 +13,24 @@ import com.example.velickomarija.diploma.R;
 import com.example.velickomarija.diploma.models.PreferencesLocal;
 import com.example.velickomarija.diploma.models.TextUtils;
 
+/**
+ * Класс-активность отображения инструкции к слухоречевым тестам
+ * и воспроизведения аудиозаписей со словами.
+ */
 public class TestingEnterSoundActivity extends AppCompatActivity {
 
-    MediaPlayer mPlayer;
-    Button startButton;
-    Intent intent;
-    PreferencesLocal preferencesLocal = new PreferencesLocal();
-    TextView textView;
+    private MediaPlayer mPlayer;
+    private Button startButton;
+    private Intent intent;
+    private PreferencesLocal preferencesLocal = new PreferencesLocal();
+    private TextView textView;
 
+    /**
+     * Метод, вызываемый перед началом работы активности.
+     *
+     * @param savedInstanceState объект тпа Bundle, который может хранить состояние приложения
+     *                           при перерисовке активности.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,11 +53,20 @@ public class TestingEnterSoundActivity extends AppCompatActivity {
         intent = new Intent(this, TestingSoundActivity.class);
     }
 
+    /**
+     * Метод-обработчик нажатия на физическую кнопку "Назад".
+     */
     @Override
     public void onBackPressed() {
         // do nothing
     }
 
+    /**
+     * Метод для воспроизведения аудиозаписи со словами для запоминания.
+     *
+     * @param sound аудиозапись со словами.
+     * @param time  время воспроизведения аудиозаписи.
+     */
     public void sound(int sound, long time) {
         mPlayer = MediaPlayer.create(this, sound);
         mPlayer.start();
@@ -67,6 +86,11 @@ public class TestingEnterSoundActivity extends AppCompatActivity {
         }.start();
     }
 
+    /**
+     * Метод-обработчик нажатия на кнопку "Продолжить".
+     *
+     * @param view объект класса View.
+     */
     public void onClickToGoTesting(View view) {
         startButton.setEnabled(false);
         startButton.setVisibility(View.INVISIBLE);

@@ -19,13 +19,19 @@ import com.example.velickomarija.diploma.views.image.TestingImageVariantActivity
 
 public class TestingSoundActivity extends AppCompatActivity {
 
-    PreferencesLocal preferencesLocal = new PreferencesLocal();
-    Algorithms algorithms = new Algorithms();
+    private PreferencesLocal preferencesLocal = new PreferencesLocal();
+    private Algorithms algorithms = new Algorithms();
 
-    TextView textView;
-    EditText editText;
-    Button button;
+    private TextView textView;
+    private EditText editText;
+    private Button button;
 
+    /**
+     * Метод, вызываемый перед началом работы активности.
+     *
+     * @param savedInstanceState объект тпа Bundle, который может хранить состояние приложения
+     *                           при перерисовке активности.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,11 +54,20 @@ public class TestingSoundActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Метод-обработчик нажатия на физическую кнопку "Назад".
+     */
     @Override
     public void onBackPressed() {
         // do nothing
     }
 
+
+    /**
+     * Метод-обработчик нажатия на кнопку "Продолжить".
+     *
+     * @param view объект класса View.
+     */
     public void onClickToGoTestingNextSound(View view) {
 
         int numParam = 1;
@@ -159,6 +174,12 @@ public class TestingSoundActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Метод для корректеровки результата.
+     *
+     * @param res первичный результат.
+     * @return Скорректированный результат.
+     */
     private String initResString(String res) {
         if (res.equals("11")) {
             return "10";
