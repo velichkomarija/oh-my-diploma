@@ -17,23 +17,35 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Класс-активность для отображения результаов второго опросника.
+ */
 public class ResultTwoQuestionActivity extends AppCompatActivity {
 
-    TextView textView;
-    Algorithms algorithms = new Algorithms();
+    private TextView textView;
+    private Algorithms algorithms = new Algorithms();
     // коллекция для групп
-    ArrayList<Map<String, String>> groupDataList = new ArrayList<>();
-    Map<String, String> map;
-    String[] title = new String[]{"Предметно-действенное мышление",
+    private ArrayList<Map<String, String>> groupDataList = new ArrayList<>();
+    private Map<String, String> map;
+    private String[] title = new String[]{"Предметно-действенное мышление",
             "Абстрактно-символическое мышление",
             "Словесно-логическое мышление",
             "Наглядно-образное мышление",
             "Креативность (творческое мышление)"};
 
+    /**
+     * Метод-обработчик нажатия на физическую кнопку "Назад".
+     */
     public void onBackPressed() {
         // do nothing
     }
 
+    /**
+     * Метод, вызываемый перед началом работы активности.
+     *
+     * @param savedInstanceState объект тпа Bundle, который может хранить состояние приложения
+     *                           при перерисовке активности.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -111,6 +123,11 @@ public class ResultTwoQuestionActivity extends AppCompatActivity {
         expandableListView.setAdapter(adapter);
     }
 
+    /**
+     * Метод-обработчик нажатия на кнопку "Продолжить".
+     *
+     * @param view объект класса View.
+     */
     public void onClickToGo(View view) {
         Intent intent = new Intent(this, TestingNextImageActivity.class);
         startActivity(intent);

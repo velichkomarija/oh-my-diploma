@@ -15,18 +15,27 @@ import com.example.velickomarija.diploma.models.Functions;
 import com.example.velickomarija.diploma.models.TextUtils;
 import com.example.velickomarija.diploma.views.sound.TestingEnterSoundNWordsActivity;
 
+/**
+ * Класс-активность для проведения опроса №1.
+ */
 public class QuestionOneActivity extends AppCompatActivity {
 
-    TextView textView;
-    RadioGroup radioGroup;
-    Button button;
-    ImageView image;
-    Algorithms algorithm = new Algorithms();
-    int[] arrayResult = new int[20];
-    int res = -1;
-    boolean toGo = false;
-    int countQuestions = 1;
+    private TextView textView;
+    private RadioGroup radioGroup;
+    private Button button;
+    private ImageView image;
+    private Algorithms algorithm = new Algorithms();
+    private int[] arrayResult = new int[20];
+    private int res = -1;
+    private boolean toGo = false;
+    private int countQuestions = 1;
 
+    /**
+     * Метод, вызываемый перед началом работы активности.
+     *
+     * @param savedInstanceState объект тпа Bundle, который может хранить состояние приложения
+     *                           при перерисовке активности.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,16 +84,28 @@ public class QuestionOneActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Метод-обработчик нажатия на физическую кнопку "Назад".
+     */
     public void onBackPressed() {
         // do nothing
     }
 
-    // щелчок кнопки
+    /**
+     * Метод-обработчик нажатия на радио-кнопки.
+     *
+     * @param view объект класса View.
+     */
     public void onClick(View view) {
         // очистить все переключатели
         radioGroup.clearCheck();
     }
 
+    /**
+     * Метод для загрузки следующего вопроса.
+     *
+     * @param number номер текущего вопроса.
+     */
     private void goToNextQuestion(int number) {
 
         if (number <= 20) {
@@ -113,6 +134,11 @@ public class QuestionOneActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Метод-обработчик нажатия на кнопку "Следующий вопрос".
+     *
+     * @param view объект класса View.
+     */
     public void onClickNextQuestion(View view) {
 
         if (res == -1) {

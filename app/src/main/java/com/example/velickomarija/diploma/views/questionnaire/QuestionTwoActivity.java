@@ -14,24 +14,31 @@ import com.example.velickomarija.diploma.R;
 import com.example.velickomarija.diploma.models.Algorithms;
 import com.example.velickomarija.diploma.models.TextUtils;
 
+/**
+ * Класс-активность для проведения опроса №2.
+ */
 public class QuestionTwoActivity extends AppCompatActivity {
 
-    TextView textView;
-    ProgressBar progressBar;
-    Button buttonPlus, buttonMinus;
-    ImageView image;
-    Algorithms algorithm = new Algorithms();
-    int[] arrayResult = new int[40];
-    float size;
-    int countQuestions = 1;
+    private TextView textView;
+    private ProgressBar progressBar;
+    private Button buttonPlus, buttonMinus;
+    private Algorithms algorithm = new Algorithms();
+    private int[] arrayResult = new int[40];
+    private float size;
+    private int countQuestions = 1;
 
+    /**
+     * Метод, вызываемый перед началом работы активности.
+     *
+     * @param savedInstanceState объект тпа Bundle, который может хранить состояние приложения
+     *                           при перерисовке активности.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questionnaire_two);
         size = TextUtils.setNewTextSize(getBaseContext());
         textView = (TextView) findViewById(R.id.question_text);
-        image = (ImageView) findViewById(R.id.image);
         buttonMinus = (Button) findViewById(R.id.button_minus);
         buttonPlus = (Button) findViewById(R.id.button_plus);
         progressBar = findViewById(R.id.progress);
@@ -42,20 +49,38 @@ public class QuestionTwoActivity extends AppCompatActivity {
         buttonPlus.setTextSize(size * 1.3f);
     }
 
+    /**
+     * Метод-обработчик нажатия на физическую кнопку "Назад".
+     */
     public void onBackPressed() {
         // do nothing
     }
 
+    /**
+     * Метод-обработчик нажатия на кнопку "Согласен".
+     *
+     * @param view объект класса View.
+     */
     public void onClickNextQuestionPlus(View view) {
         arrayResult[countQuestions - 1] = 1;
         clk(view);
     }
 
+    /**
+     * Метод-обработчик нажатия на кнопку "Не согласен".
+     *
+     * @param view объект класса View.
+     */
     public void onClickNextQuestionMinus(View view) {
         arrayResult[countQuestions - 1] = 0;
         clk(view);
     }
 
+    /**
+     * Метод загрузки следующего высказывания.
+     *
+     * @param number номер высказывания.
+     */
     private void goToNextQuestion(int number) {
 
         if (number <= 40) {
@@ -80,12 +105,20 @@ public class QuestionTwoActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Метод для загрузки нового высказывания.
+     *
+     * @param view номер высказывания.
+     */
     private void clk(View view) {
         time();
         countQuestions++;
         goToNextQuestion(countQuestions);
     }
 
+    /**
+     * Метод для обработки шкалы загрузки вопроса.
+     */
     private void time() {
         textView.setVisibility(View.INVISIBLE);
         progressBar.setVisibility(View.VISIBLE);

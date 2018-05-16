@@ -10,10 +10,19 @@ import android.widget.TextView;
 import com.example.velickomarija.diploma.R;
 import com.example.velickomarija.diploma.models.TextUtils;
 
+/**
+ * Класс-активность для вывода инструкции к опроснику №2.
+ */
 public class QuestionEnter2Activity extends AppCompatActivity {
-    TextView textView;
-    Button button;
+    private TextView textView;
+    private Button button;
 
+    /**
+     * Метод, вызываемый перед началом работы активности.
+     *
+     * @param savedInstanceState объект тпа Bundle, который может хранить состояние приложения
+     *                           при перерисовке активности.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,10 +36,18 @@ public class QuestionEnter2Activity extends AppCompatActivity {
         textView.setTextSize(size * 1.4f);
     }
 
+    /**
+     * Метод-обработчик нажатия на физическую кнопку "Назад".
+     */
     public void onBackPressed() {
         // do nothing
     }
 
+    /**
+     * Метод-обработчик нажатия на кнопку "Продолжить".
+     *
+     * @param view объект класса View.
+     */
     public void onClickToGoAnswerQuestion(View view) {
         Intent intent = new Intent(this, QuestionTwoActivity.class);
         startActivity(intent);
