@@ -15,8 +15,10 @@ public class TextUtils {
         float width = metrics.widthPixels * metrics.scaledDensity;
         if (density >= 3.0f) {
             textSize = width / 350;
-        } else if (density < 3.0f && density > 2.0f) {
-            textSize = width / 275;
+        } else if (density < 3.0f && density > 2.5f) {
+            textSize = width / 300;
+        } else if (density <= 2.5f&&density>2.0f) {
+            textSize = width / 250;
         } else if (density == 2.0f) {
             textSize = width / 175;
         } else if (density < 2.0f && density > 1.5f) {

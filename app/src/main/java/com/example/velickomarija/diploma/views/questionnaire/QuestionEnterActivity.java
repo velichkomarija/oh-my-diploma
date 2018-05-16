@@ -24,7 +24,7 @@ public class QuestionEnterActivity extends AppCompatActivity {
         textView = (TextView) findViewById(R.id.start_text);
         button = (Button) findViewById(R.id.go_testing);
         button.setTextSize(size * 1.4f);
-        textView.setTextSize(size * 1.15f);
+        textView.setTextSize(size);
     }
 
     public void onBackPressed() {

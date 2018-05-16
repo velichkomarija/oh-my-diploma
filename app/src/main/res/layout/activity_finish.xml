@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainConstLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    tools:context="com.example.velickomarija.diploma.views.common.FinishActivity">
+
+    <TextView
+        android:id="@+id/start_text_finish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:text="@string/finish_text"
+        android:textAlignment="center"
+        android:textColor="#047fd1"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/exit"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:onClick="onClickExit"
+        android:padding="15dp"
+        android:text="@string/exit"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:visibility="visible" />
+
+</RelativeLayout>

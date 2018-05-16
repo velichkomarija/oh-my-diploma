@@ -114,6 +114,27 @@
                     android:textColor="@color/black"
                     android:textSize="14sp" />
             </TableRow>
+
+            <TableRow
+                android:id="@+id/resultTableRow5"
+                android:layout_width="match_parent"
+                android:layout_marginTop="20sp"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/buttonNextPart"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="15dp"
+                    android:onClick="onClickToExit"
+                    android:padding="15dp"
+                    android:text="@string/exit"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:visibility="visible" />
+            </TableRow>
         </TableLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

@@ -16,11 +16,21 @@
 
     <uses-permission android:name="android.permission.WRITE_INTERNIAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_INTERNIAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission
         android:name="android.permission.DEVICE_POWER"
         tools:ignore="ProtectedPermissions" />
+
+    <meta-data
+        android:name="com.google.android.gms.version"
+        android:value="@integer/google_play_services_version" />
+    <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyCxSh6iFcDGoQbPe4gZR8GBRY_EJNmjdUs" />
+    />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -96,16 +106,10 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".ResultActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".views.common.FinishActivity"
             android:screenOrientation="landscape"></activity>
     </application>
-
-    <meta-data
-        android:name="com.google.android.gms.version"
-        android:value="@integer/google_play_services_version"
-        />
-    <meta-data
-        android:name="com.google.android.geo.API_KEY"
-        android:value="AIzaSyCxSh6iFcDGoQbPe4gZR8GBRY_EJNmjdUs" />
-        />
 
 </manifest>

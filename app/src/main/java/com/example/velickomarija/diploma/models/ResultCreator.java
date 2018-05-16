@@ -19,12 +19,12 @@ public class ResultCreator {
     final static PreferencesLocal preferencesLocal = new PreferencesLocal();
 
     public static String generateFullResult() {
-        Algorithms algorithms = new Algorithms();
 
         StringBuffer stringBuffer = new StringBuffer();
         stringBuffer.append("Информация о тестируемом:")
                 .append(preferencesLocal.getProperty("PREF_NAME") + "/")
                 .append(preferencesLocal.getProperty("PREF_AGE") + "/")
+                .append(preferencesLocal.getProperty("PREF_MALE") + "/")
                 .append(preferencesLocal.getProperty("PREF_EDUCATION") + "/")
                 .append(preferencesLocal.getProperty("PREF_ETC_INFORMATION"))
                 .append("\n\n");
@@ -85,8 +85,8 @@ public class ResultCreator {
     }
 
     public static void sendFile(final Context context){
-        FirebaseStorage storage = FirebaseStorage.getInstance();
 
+        FirebaseStorage storage = FirebaseStorage.getInstance();
         StorageReference storageRef = storage.getReference().child(createNameFile());
 
         try {
