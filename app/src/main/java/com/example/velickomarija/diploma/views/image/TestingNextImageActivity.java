@@ -16,23 +16,31 @@ import com.example.velickomarija.diploma.models.PreferencesLocal;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Класс-активность для узнавания фигур.
+ */
 public class TestingNextImageActivity extends AppCompatActivity {
 
-    //todo проверить
-    Algorithms algorithms = new Algorithms();
-    int parsedColor = Color.parseColor("#37bc51");
-    PreferencesLocal preferencesLocal = new PreferencesLocal();
-    TextView textViewTitle1;
+    private Algorithms algorithms = new Algorithms();
+    private int parsedColor = Color.parseColor("#37bc51");
+    private PreferencesLocal preferencesLocal = new PreferencesLocal();
+    private TextView textViewTitle1;
 
-    boolean btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14, btn15,
+    private boolean btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14, btn15,
             btn16, btn17, btn18, btn19, btn20, btn21, btn22, btn23, btn24;
-    boolean[] btnArray = new boolean[24];
+    private boolean[] btnArray = new boolean[24];
 
+    /**
+     * Метод-обработчик нажатия на физическую кнопку "Назад".
+     */
     @Override
     public void onBackPressed() {
         // do nothing
     }
 
+    /**
+     * Метод для перестановки фигур местами.
+     */
     private void reverseElement() {
         //general image
         ImageButton imageButton2 = (ImageButton) findViewById(R.id.imageButton2);
@@ -86,6 +94,12 @@ public class TestingNextImageActivity extends AppCompatActivity {
         imageButton24.setImageResource(R.drawable.symbol5i);
     }
 
+    /**
+     * Метод, вызываемый перед началом работы активности.
+     *
+     * @param savedInstanceState объект тпа Bundle, который может хранить состояние приложения
+     *                           при перерисовке активности.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -125,6 +139,11 @@ public class TestingNextImageActivity extends AppCompatActivity {
         btn24 = false;
     }
 
+    /**
+     * Метод, формирующий массив с результатами выбора пользователя.
+     *
+     * @return Массив состояния кнопок для подсчета результатов.
+     */
     private boolean[] getArrayButtons() {
         btnArray[0] = btn1;
         btnArray[1] = btn2;
@@ -153,6 +172,13 @@ public class TestingNextImageActivity extends AppCompatActivity {
         return btnArray;
     }
 
+    /**
+     * Метод-обработчик нажатия на кнопки с изображениями.
+     *
+     * @param imageButton кнопка с изображением.
+     * @param btn         булева переменная, хранящая состояние кнопки: true - кнопка нажата, false - кнопка не активна.
+     * @return Новое состояние кнопки. ( true - кнопка нажата, false - кнопка не активна).
+     */
     private boolean clicSymbolN(ImageButton imageButton, boolean btn) {
         if (btn == true) {
             imageButton.setBackgroundColor(Color.WHITE);
@@ -164,126 +190,251 @@ public class TestingNextImageActivity extends AppCompatActivity {
         return btn;
     }
 
+    /**
+     * Метод-обработчик выбора фигуры.
+     *
+     * @param view объект класса View.
+     */
     public void clickSymbol1(View view) {
         ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton1);
         btn1 = clicSymbolN(imageButton, btn1);
     }
 
+    /**
+     * Метод-обработчик выбора фигуры.
+     *
+     * @param view объект класса View.
+     */
     public void clickSymbol2(View view) {
         ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton2);
         btn2 = clicSymbolN(imageButton, btn2);
     }
 
+    /**
+     * Метод-обработчик выбора фигуры.
+     *
+     * @param view объект класса View.
+     */
     public void clickSymbol3(View view) {
         ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton3);
         btn3 = clicSymbolN(imageButton, btn3);
     }
 
+    /**
+     * Метод-обработчик выбора фигуры.
+     *
+     * @param view объект класса View.
+     */
     public void clickSymbol4(View view) {
         ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton4);
         btn4 = clicSymbolN(imageButton, btn4);
     }
 
+    /**
+     * Метод-обработчик выбора фигуры.
+     *
+     * @param view объект класса View.
+     */
     public void clickSymbol5(View view) {
         ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton5);
         btn5 = clicSymbolN(imageButton, btn5);
     }
 
+    /**
+     * Метод-обработчик выбора фигуры.
+     *
+     * @param view объект класса View.
+     */
     public void clickSymbol6(View view) {
         ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton6);
         btn6 = clicSymbolN(imageButton, btn6);
     }
 
+    /**
+     * Метод-обработчик выбора фигуры.
+     *
+     * @param view объект класса View.
+     */
     public void clickSymbol7(View view) {
         ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton7);
         btn7 = clicSymbolN(imageButton, btn7);
     }
 
+    /**
+     * Метод-обработчик выбора фигуры.
+     *
+     * @param view объект класса View.
+     */
     public void clickSymbol21(View view) {
         ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton21);
         btn21 = clicSymbolN(imageButton, btn21);
     }
 
+    /**
+     * Метод-обработчик выбора фигуры.
+     *
+     * @param view объект класса View.
+     */
     public void clickSymbol20(View view) {
         ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton20);
         btn20 = clicSymbolN(imageButton, btn20);
     }
 
+    /**
+     * Метод-обработчик выбора фигуры.
+     *
+     * @param view объект класса View.
+     */
     public void clickSymbol19(View view) {
         ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton19);
         btn19 = clicSymbolN(imageButton, btn19);
     }
 
+    /**
+     * Метод-обработчик выбора фигуры.
+     *
+     * @param view объект класса View.
+     */
     public void clickSymbol18(View view) {
         ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton18);
         btn18 = clicSymbolN(imageButton, btn18);
     }
 
+    /**
+     * Метод-обработчик выбора фигуры.
+     *
+     * @param view объект класса View.
+     */
     public void clickSymbol17(View view) {
         ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton17);
         btn17 = clicSymbolN(imageButton, btn17);
     }
 
+    /**
+     * Метод-обработчик выбора фигуры.
+     *
+     * @param view объект класса View.
+     */
     public void clickSymbol16(View view) {
         ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton16);
         btn16 = clicSymbolN(imageButton, btn16);
     }
 
+    /**
+     * Метод-обработчик выбора фигуры.
+     *
+     * @param view объект класса View.
+     */
     public void clickSymbol15(View view) {
         ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton15);
         btn15 = clicSymbolN(imageButton, btn15);
     }
 
+    /**
+     * Метод-обработчик выбора фигуры.
+     *
+     * @param view объект класса View.
+     */
     public void clickSymbol14(View view) {
         ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton14);
         btn14 = clicSymbolN(imageButton, btn14);
     }
 
+    /**
+     * Метод-обработчик выбора фигуры.
+     *
+     * @param view объект класса View.
+     */
     public void clickSymbol13(View view) {
         ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton13);
         btn13 = clicSymbolN(imageButton, btn13);
     }
 
+    /**
+     * Метод-обработчик выбора фигуры.
+     *
+     * @param view объект класса View.
+     */
     public void clickSymbol12(View view) {
         ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton12);
         btn12 = clicSymbolN(imageButton, btn12);
     }
 
+    /**
+     * Метод-обработчик выбора фигуры.
+     *
+     * @param view объект класса View.
+     */
     public void clickSymbol11(View view) {
         ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton11);
         btn11 = clicSymbolN(imageButton, btn11);
     }
 
+    /**
+     * Метод-обработчик выбора фигуры.
+     *
+     * @param view объект класса View.
+     */
     public void clickSymbol10(View view) {
         ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton10);
         btn10 = clicSymbolN(imageButton, btn10);
     }
 
+    /**
+     * Метод-обработчик выбора фигуры.
+     *
+     * @param view объект класса View.
+     */
     public void clickSymbol9(View view) {
         ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton9);
         btn9 = clicSymbolN(imageButton, btn9);
     }
 
+    /**
+     * Метод-обработчик выбора фигуры.
+     *
+     * @param view объект класса View.
+     */
     public void clickSymbol8(View view) {
         ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton8);
         btn8 = clicSymbolN(imageButton, btn8);
     }
 
+    /**
+     * Метод-обработчик выбора фигуры.
+     *
+     * @param view объект класса View.
+     */
     public void clickSymbol22(View view) {
         ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton22);
         btn22 = clicSymbolN(imageButton, btn22);
     }
 
+    /**
+     * Метод-обработчик выбора фигуры.
+     *
+     * @param view объект класса View.
+     */
     public void clickSymbol23(View view) {
         ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton23);
         btn23 = clicSymbolN(imageButton, btn23);
     }
 
+    /**
+     * Метод-обработчик выбора фигуры.
+     *
+     * @param view объект класса View.
+     */
     public void clickSymbol24(View view) {
         ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton24);
         btn24 = clicSymbolN(imageButton, btn24);
     }
 
+    /**
+     * Метод-обработчик нажатия на кнопку "Готово". Выполняет методы по подсчету результатов.
+     *
+     * @param view объект класса View.
+     */
     public void onClickToGoNextTestingImage(View view) {
 
         String resString = "";

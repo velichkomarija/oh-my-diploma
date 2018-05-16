@@ -1,23 +1,28 @@
 package com.example.velickomarija.diploma.views.image;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.AttributeSet;
 import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.example.velickomarija.diploma.R;
 import com.example.velickomarija.diploma.models.PreferencesLocal;
 
+/**
+ * Класс-актикити, отвечающий за отображение фигур для запоминания.
+ */
 public class TestingImageActivity extends AppCompatActivity {
-    public Intent intent;
-    PreferencesLocal preferencesLocal = new PreferencesLocal();
+    private Intent intent;
+    private PreferencesLocal preferencesLocal = new PreferencesLocal();
 
+    /**
+     * Метод, вызываемый перед началом работы активности.
+     *
+     * @param savedInstanceState объект тпа Bundle, который может хранить состояние приложения
+     *                           при перерисовке активности.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,11 +31,17 @@ public class TestingImageActivity extends AppCompatActivity {
         timingTest();
     }
 
+    /**
+     * Метод-обработчик нажатия на физическую кнопку "Назад".
+     */
     @Override
     public void onBackPressed() {
         // do nothing
     }
 
+    /**
+     * Метод, запускающий таймер для задержки интерфейса.
+     */
     private void timingTest() {
         int numParam = 1;
 
@@ -61,6 +72,12 @@ public class TestingImageActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Метод, отвечающий, за отображение всплывающего окна - подсказки о состоянии работы программы.
+     * После истечения времени задержки интерфейса функция обеспечивает переход к следующей активности.
+     *
+     * @param startTime время, отведенное на запоминание фигур.
+     */
     private void time(int startTime) {
         CountDownTimer start = new CountDownTimer(startTime, 15000) {
 
@@ -74,6 +91,9 @@ public class TestingImageActivity extends AppCompatActivity {
         }.start();
     }
 
+    /**
+     * Метод для отрисовки всплывающего окна.
+     */
     private void showToast() {
         Toast toast = Toast.makeText(TestingImageActivity.this,
                 "Программа работает, она не зависла!",
