@@ -35,7 +35,7 @@ public class ProfileActivity extends AppCompatActivity {
         float size = TextUtils.setNewTextSize(getBaseContext());
         initParam(size);
 
-        radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+        radioGroup = (RadioGroup) findViewById(R.id.radio_group);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -62,20 +62,20 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void initParam(float size) {
-        start = (TextView) findViewById(R.id.startProfileTextView);
-        textName = (TextView) findViewById(R.id.nameTextView);
-        textMale = (TextView) findViewById(R.id.maleTextView);
-        textAge = (TextView) findViewById(R.id.ageTextView);
-        textEtc = (TextView) findViewById(R.id.etcTextView);
-        textEducation = (TextView) findViewById(R.id.educationTextView);
+        start = (TextView) findViewById(R.id.start_profile_text_view);
+        textName = (TextView) findViewById(R.id.name_text_view);
+        textMale = (TextView) findViewById(R.id.male_text_view);
+        textAge = (TextView) findViewById(R.id.age_text_view);
+        textEtc = (TextView) findViewById(R.id.etc_text_view);
+        textEducation = (TextView) findViewById(R.id.education_text_view);
 
         radioButton1 = (RadioButton) findViewById(R.id.male);
         radioButton2 = (RadioButton) findViewById(R.id.famale);
 
-        spinner = (Spinner) findViewById(R.id.educationInputField);
+        spinner = (Spinner) findViewById(R.id.education_input_field);
         spinner.setSelection(0);
 
-        button = (Button) findViewById(R.id.nextButton);
+        button = (Button) findViewById(R.id.next_button);
 
         button.setTextSize(size);
         textName.setTextSize(size);
@@ -102,7 +102,7 @@ public class ProfileActivity extends AppCompatActivity {
     private boolean saveName(View view) {
         //получаем ФИО
         boolean flag = true;
-        EditText nameBox = (EditText) findViewById(R.id.nameInputField);
+        EditText nameBox = (EditText) findViewById(R.id.name_input_field);
         try {
             String name = nameBox.getText().toString();
 
@@ -129,7 +129,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     private void saveEtcInformation() {
         //получаем другую информацию
-        EditText etcInformationBox = (EditText) findViewById(R.id.etcInputField);
+        EditText etcInformationBox = (EditText) findViewById(R.id.etc_input_field);
         try {
             String etcInformation = etcInformationBox.getText().toString();
 
@@ -147,7 +147,7 @@ public class ProfileActivity extends AppCompatActivity {
     private boolean saveAge(View view) {
         //получаем возраст
         boolean flag = true;
-        EditText ageBox = (EditText) findViewById(R.id.ageInputField);
+        EditText ageBox = (EditText) findViewById(R.id.age_input_field);
         String stringAge = ageBox.getText().toString();
 
         try {

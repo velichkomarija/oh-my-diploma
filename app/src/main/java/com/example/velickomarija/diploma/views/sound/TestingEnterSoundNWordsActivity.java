@@ -20,7 +20,7 @@ public class TestingEnterSoundNWordsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_testing_enter_sound_new_words);
 
-        textView = (TextView) findViewById(R.id.startTextSoundNewWordsView);
+        textView = (TextView) findViewById(R.id.start_text_sound_new_words_view);
         button = (Button) findViewById(R.id.soundNewWordsSoundButton);
 
         float size = TextUtils.setNewTextSize(getBaseContext());

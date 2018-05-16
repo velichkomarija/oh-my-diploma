@@ -35,7 +35,7 @@ public class TestingEnterSoundActivity extends AppCompatActivity {
 
         if (preferencesLocal.getProperty("PREF_NUM_SOUND").equals("2") ||
                 preferencesLocal.getProperty("PREF_NUM_SOUND").equals("3")) {
-            textView.setText(R.string.enter_testing_manifest23);
+            textView.setText(R.string.enter_testing_manifest_sound);
         } else {
             textView.setText(R.string.enter_testing_manifest);
         }

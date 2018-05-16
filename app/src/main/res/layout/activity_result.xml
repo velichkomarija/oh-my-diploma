@@ -17,7 +17,7 @@
         tools:layout_editor_absoluteY="8dp">
 
         <TextView
-            android:id="@+id/startTextView"
+            android:id="@+id/start_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -44,18 +44,18 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:padding="5dp"
-                    android:text="@string/soundTotalResult"
+                    android:text="@string/sound_total_result"
                     android:textColor="@color/black"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textViewResultSound"
+                    android:id="@+id/text_view_result_sound"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:padding="5dp"
-                    android:text="@string/soundResult"
+                    android:text="@string/sound_result"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
             </TableRow>
@@ -71,18 +71,18 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:padding="5dp"
-                    android:text="@string/resultTotalImage"
+                    android:text="@string/result_total_image"
                     android:textColor="@color/black"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/resultImage"
+                    android:id="@+id/result_Image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:padding="5dp"
-                    android:text="@string/soundResultC1"
+                    android:text="@string/sound_result_C1"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
             </TableRow>
@@ -99,18 +99,18 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:padding="5dp"
-                    android:text="@string/resultTotal"
+                    android:text="@string/result_total"
                     android:textColor="@android:color/holo_red_dark"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/resultTotal"
+                    android:id="@+id/result_Total"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:padding="5dp"
-                    android:text="@string/soundResultC2"
+                    android:text="@string/sound_result_C2"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
             </TableRow>

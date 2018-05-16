@@ -17,14 +17,14 @@
         tools:layout_editor_absoluteY="0dp">
 
         <TextView
-            android:id="@+id/startTextSoundNewWordsView"
+            android:id="@+id/start_text_sound_new_words_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="5dp"
             android:padding="15dp"
-            android:text="@string/enterTestingNewWords"
+            android:text="@string/enter_testing_new_words"
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold" />

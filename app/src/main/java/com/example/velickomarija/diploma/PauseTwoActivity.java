@@ -19,7 +19,7 @@ public class PauseTwoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pause_two);
 
-        textData = (TextView) findViewById(R.id.textViewData);
+        textData = (TextView) findViewById(R.id.text_view_data);
         StringBuffer stringBuffer = new StringBuffer();
         stringBuffer.append(preferencesLocal.getProperty("PREF_NAME") + "/");
         stringBuffer.append(preferencesLocal.getProperty("PREF_AGE") + "/");
@@ -27,13 +27,13 @@ public class PauseTwoActivity extends AppCompatActivity {
         textData.setText(stringBuffer.toString());
         stringBuffer.replace(0, stringBuffer.length(), "");
 
-        resultNewWordsInOld = (TextView) findViewById(R.id.textViewResultSoundNWords);
+        resultNewWordsInOld = (TextView) findViewById(R.id.text_view_result_sound_new_words);
         resultNewWordsInOld.setText(preferencesLocal.getProperty("PREF_RESULTOLDWORDS"));
 
-        textViewResultSound = (TextView) findViewById(R.id.textViewResultSoundC4);
+        textViewResultSound = (TextView) findViewById(R.id.text_view_result_sound_C4);
         textViewResultSound.setText(preferencesLocal.getProperty("PREF_C4"));
 
-        textViewResultImage1 = (TextView) findViewById(R.id.textViewResultLastImage1);
+        textViewResultImage1 = (TextView) findViewById(R.id.text_view_result_last_image1);
         textViewResultImage1.setText(preferencesLocal.getProperty("PREF_Z5"));
 
     }

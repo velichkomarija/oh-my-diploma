@@ -23,7 +23,7 @@ public class QuestionEnter2Activity extends AppCompatActivity {
         textView = (TextView) findViewById(R.id.start_text);
         button = (Button) findViewById(R.id.go_testing);
         button.setTextSize(size * 1.4f);
-        textView.setText(R.string.enterTwoQuestionnarie);
+        textView.setText(R.string.enter_two_questionnarie);
         textView.setTextSize(size * 1.4f);
     }
 

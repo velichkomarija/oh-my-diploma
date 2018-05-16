@@ -39,7 +39,7 @@ public class TestingSoundNWordsActivity extends AppCompatActivity {
     }
 
     private void timing() {
-        mTimer = (TextView) findViewById(R.id.textViewTime);
+        mTimer = (TextView) findViewById(R.id.text_view_time);
         CountDownTimer start = new CountDownTimer(6000, 1000) {
 
             public void onTick(long milliesUntilFinished) {

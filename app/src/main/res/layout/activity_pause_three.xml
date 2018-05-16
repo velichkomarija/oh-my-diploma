@@ -17,12 +17,12 @@
         tools:layout_editor_absoluteY="8dp">
 
         <TextView
-            android:id="@+id/startTextView"
+            android:id="@+id/start_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:paddingBottom="5dp"
-            android:text="@string/pauseThree"
+            android:text="@string/pause_three"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
@@ -49,10 +49,10 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textViewData"
+                    android:id="@+id/text_view_data"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/textData"
+                    android:text="@string/text_data"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
             </TableRow>
@@ -67,16 +67,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingEnd="15dp"
-                    android:text="@string/resultOldImage1a"
+                    android:text="@string/result_old_image_1"
                     android:textColor="@color/black"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textViewResultOldImage"
+                    android:id="@+id/text_view_result_old_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/imageResultZ2"
+                    android:text="@string/image_result_Z2"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
             </TableRow>
@@ -91,16 +91,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingEnd="15dp"
-                    android:text="@string/resultNImage1"
+                    android:text="@string/result_new_image"
                     android:textColor="@color/black"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textViewResultNewImage"
+                    android:id="@+id/text_view_result_new_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/soundResultC1"
+                    android:text="@string/sound_result_C1"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
             </TableRow>

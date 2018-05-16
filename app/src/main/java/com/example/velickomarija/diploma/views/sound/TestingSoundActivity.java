@@ -32,8 +32,8 @@ public class TestingSoundActivity extends AppCompatActivity {
         setContentView(R.layout.activity_testing_sound);
         float size = TextUtils.setNewTextSize(getBaseContext());
 
-        textView = (TextView) findViewById(R.id.textSoundRepeat);
-        editText = (EditText) findViewById(R.id.editTextResultTest1);
+        textView = (TextView) findViewById(R.id.text_sound_repeat);
+        editText = (EditText) findViewById(R.id.edit_text_result_test1);
 
         button = (Button) findViewById(R.id.button_next);
         textView.setTextSize(size * 1.3f);
@@ -41,10 +41,10 @@ public class TestingSoundActivity extends AppCompatActivity {
         button.setTextSize(size * 1.4f);
 
         if (preferencesLocal.getProperty("PREF_NUM_SOUND").equals("5")) {
-            textView.setText(R.string.textNewWords);
+            textView.setText(R.string.text_new_words);
         }
         if (preferencesLocal.getProperty("PREF_NUM_SOUND").equals("4")) {
-            textView.setText(R.string.textSoundLast);
+            textView.setText(R.string.text_sound_last);
         }
     }
 
@@ -68,7 +68,7 @@ public class TestingSoundActivity extends AppCompatActivity {
             }
         }
 
-        EditText textBox = (EditText) findViewById(R.id.editTextResultTest1);
+        EditText textBox = (EditText) findViewById(R.id.edit_text_result_test1);
         String text = textBox.getText().toString();
         int res = algorithms.algorithmSoundMemoryC1(text, getBaseContext());//верно
         String resString = String.valueOf(res);

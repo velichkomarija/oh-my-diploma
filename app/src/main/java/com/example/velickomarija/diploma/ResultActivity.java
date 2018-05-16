@@ -29,9 +29,9 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        sound = findViewById(R.id.textViewResultSound);
-        image = findViewById(R.id.resultImage);
-        total = findViewById(R.id.resultTotal);
+        sound = findViewById(R.id.text_view_result_sound);
+        image = findViewById(R.id.result_Image);
+        total = findViewById(R.id.result_Total);
 
         preferencesLocal.addProperty("PREF_C6",
                 algorithms.getCorrectionC6(preferencesLocal.getProperty("PREF_C6")),

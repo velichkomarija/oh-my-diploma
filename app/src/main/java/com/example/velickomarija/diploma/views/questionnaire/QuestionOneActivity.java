@@ -33,13 +33,13 @@ public class QuestionOneActivity extends AppCompatActivity {
         setContentView(R.layout.activity_questionnaire_one);
 
         float size = TextUtils.setNewTextSize(getBaseContext());
-        textView = (TextView) findViewById(R.id.questionText);
+        textView = (TextView) findViewById(R.id.question_text);
         button = (Button) findViewById(R.id.button_end_test);
         image = (ImageView) findViewById(R.id.image);
         textView.setTextSize(size * 1.3f);
         button.setTextSize(size * 1.3f);
 
-        radioGroup = (RadioGroup) findViewById(R.id.radioQuestion);
+        radioGroup = (RadioGroup) findViewById(R.id.radio_question);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {

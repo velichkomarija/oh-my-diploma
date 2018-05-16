@@ -22,7 +22,7 @@ public class PauseThreeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pause_three);
 
-        textData = (TextView) findViewById(R.id.textViewData);
+        textData = (TextView) findViewById(R.id.text_view_data);
         StringBuffer stringBuffer = new StringBuffer();
         stringBuffer.append(preferencesLocal.getProperty("PREF_NAME") + "/");
         stringBuffer.append(preferencesLocal.getProperty("PREF_AGE") + "/");
@@ -30,10 +30,10 @@ public class PauseThreeActivity extends AppCompatActivity {
         textData.setText(stringBuffer.toString());
         stringBuffer.replace(0, stringBuffer.length(), "");
 
-        resultOldImage = (TextView) findViewById(R.id.textViewResultOldImage);
+        resultOldImage = (TextView) findViewById(R.id.text_view_result_old_image);
         resultOldImage.setText(preferencesLocal.getProperty("PREF_LASTIMAGERESULT2"));
 
-        resultNewImage = (TextView) findViewById(R.id.textViewResultNewImage);
+        resultNewImage = (TextView) findViewById(R.id.text_view_result_new_image);
         resultNewImage.setText(preferencesLocal.getProperty("PREF_Z5 "));
     }
 

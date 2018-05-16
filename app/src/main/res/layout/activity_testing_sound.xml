@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/testingSoundConstLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:keepScreenOn="true"
     tools:context="com.example.velickomarija.diploma.views.sound.TestingSoundActivity">
 
     <TextView
-        android:id="@+id/textSoundRepeat"
+        android:id="@+id/text_sound_repeat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:paddingHorizontal="15dp"
-        android:text="@string/textSound"
+        android:text="@string/text_sound"
         android:textAlignment="center"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/editTextResultTest1"
+        android:id="@+id/edit_text_result_test1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"

@@ -7,7 +7,6 @@
     tools:context="com.example.velickomarija.diploma.views.sound.TestingSoundNWordsActivity">
 
     <RelativeLayout
-        android:id="@+id/testingSoundNewLinearLayout"
         android:layout_width="682dp"
         android:layout_height="match_parent"
         android:layout_weight="2"
@@ -17,10 +16,9 @@
         tools:layout_editor_absoluteY="0dp">
 
         <TextView
-            android:id="@+id/textViewTime"
+            android:id="@+id/text_view_time"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_alignBottom="@+id/soundNewWordsSoundButton"
             android:layout_alignParentStart="true"
             android:layout_margin="80dp"
             android:gravity="center"
@@ -32,7 +30,7 @@
             tools:text="6" />
 
         <Button
-            android:id="@+id/soundNewWordsSoundButton"
+            android:id="@+id/sound_new_words_sound_btn"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

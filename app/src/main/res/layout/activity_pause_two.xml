@@ -17,12 +17,12 @@
         tools:layout_editor_absoluteY="8dp">
 
         <TextView
-            android:id="@+id/startTextView"
+            android:id="@+id/start_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:paddingBottom="5dp"
-            android:text="@string/pauseTwo"
+            android:text="@string/pause_two"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
@@ -49,10 +49,10 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textViewData"
+                    android:id="@+id/text_view_data"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/textData"
+                    android:text="@string/text_data"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
             </TableRow>
@@ -67,16 +67,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingEnd="15dp"
-                    android:text="@string/resultSoundNWords"
+                    android:text="@string/result_sound_new_words"
                     android:textColor="@color/black"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textViewResultSoundNWords"
+                    android:id="@+id/text_view_result_sound_new_words"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/imageResultZ2"
+                    android:text="@string/image_result_Z2"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
             </TableRow>
@@ -91,16 +91,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingEnd="15dp"
-                    android:text="@string/resultNWords1"
+                    android:text="@string/result_new_words"
                     android:textColor="@color/black"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textViewResultSoundC4"
+                    android:id="@+id/text_view_result_sound_C4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/soundResultC1"
+                    android:text="@string/sound_result_C1"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
             </TableRow>
@@ -115,17 +115,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingEnd="15dp"
-                    android:text="@string/resultOldImage1"
+                    android:text="@string/result_old_image"
                     android:textColor="@color/black"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textViewResultLastImage1"
+                    android:id="@+id/text_view_result_last_image1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:text="@string/soundResultC2"
+                    android:text="@string/sound_result_C2"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
             </TableRow>

@@ -9,7 +9,6 @@
     <string name="famale">Женский</string>
     <string name="malefamale">Пол</string>
     <string name="name">ФИО</string>
-    <string name="Продолжить">Button</string>
     <string name="next">Продолжить</string>
     <string name="age">Возраст</string>
     <string name="education">Образование</string>
@@ -20,9 +19,9 @@
         Определите оптимальную для себя громкость.
      </string>
     <string name="sound">Начать прослушивание</string>
-    <string name="textSound">Введите через ПРОБЕЛ слова, которые запомнили, желательно с учетом
+    <string name="text_sound">Введите через ПРОБЕЛ слова, которые запомнили, желательно с учетом
         порядка воспроизведения</string>
-    <string name="enter_testing_manifest23"> Сейчас Вы снова услышите слова для запоминания, введите через ПРОБЕЛ
+    <string name="enter_testing_manifest_sound"> Сейчас Вы снова услышите слова для запоминания, введите через ПРОБЕЛ
         слова, которые запомнили.\n\nЕсли готовы нажмите кнопку.
     </string>
     <string name="enter_testing_image_manifest">Протестируем зрительную память.\n Вам будет
@@ -30,55 +29,51 @@
         выберете из списка все, которые запомнили.</string>
     <string name="image">Начать просмотр</string>
     <string name="title_activity_splash">SplashActivity</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="timer">60</string>
-    <string name="readyResult">ГОТОВО</string>
-    <string name="pauseOne">Первая интерферферирующая пауза</string>
+    <string name="ready_result">ГОТОВО</string>
+    <string name="pause_one">Первая интерферферирующая пауза</string>
     <string name="data">Данные о пользователе</string>
-    <string name="resultSound123">Результаты первых \nтрех слуховых проб(слух)</string>
-    <string name="resultSoundC1">Результат С1</string>
-    <string name="resultSoundC2">Результат С2</string>
-    <string name="resultImage123">Результаты первых \nтрех визуальных проб(картинки)</string>
-    <string name="resultImageZ1">Результат Z1</string>
-    <string name="textData">Иванов Иван/45/Высшее</string>
-    <string name="soundResult">10/9/8</string>
-    <string name="soundResultC1">10</string>
-    <string name="soundResultC2">10</string>
-    <string name="resultImage">10/10/10</string>
-    <string name="imageResultZ1">10</string>
-    <string name="resultImageZ2">Результат Z2</string>
-    <string name="imageResultZ2">10</string>
-    <string name="enterTestingNewWords">Продолжим тестирование. Сейчас Вы услышите старые слова вперемешку с новыми.
+    <string name="result_sound123">Результаты первых \nтрех слуховых проб(слух)</string>
+    <string name="result_sound_C1">Результат С1</string>
+    <string name="result_sound_C2">Результат С2</string>
+    <string name="result_image_123">Результаты первых \nтрех визуальных проб(картинки)</string>
+    <string name="result_image_Z1">Результат Z1</string>
+    <string name="text_data">Иванов Иван/45/Высшее</string>
+    <string name="sound_result">10/9/8</string>
+    <string name="sound_result_C1">10</string>
+    <string name="sound_result_C2">10</string>
+    <string name="result_image">10/10/10</string>
+    <string name="image_result_Z1">10</string>
+    <string name="result_image_Z2">Результат Z2</string>
+    <string name="image_result_Z2">10</string>
+    <string name="enter_testing_new_words">Продолжим тестирование. Сейчас Вы услышите старые слова вперемешку с новыми.
         Перед Вами будет кнопка, на которую следует нажать, как только услышите слово, которое заучивали
         ранее в ходе тестирования. Будьте внимательны, слова читаются без больших пауз.\n За каждое
         неправильное узнавание баллы будут вычитаются.
     </string>
     <string name="pluse">+</string>
-    <string name="textNewWords">В прошлом задании Вам воспроизведены новые слова. Если Вы запомнили
+    <string name="text_new_words">В прошлом задании Вам воспроизведены новые слова. Если Вы запомнили
     какие-нибудь из них, то впишите их в поле, если нет - оставьте пустым и нажмите кнопку.</string>
-    <string name="lastImage">В этой таблице представлены хорошо\n знакомые фигуры, которые
+    <string name="last_image">В этой таблице представлены хорошо\n знакомые фигуры, которые
         Вы запоминали и новые\n фигуры. Выберите только новые фигуры.</string>
-    <string name="textSoundLast">Давайте вспомним слова, которые заучивали ранее. Пожалуйста
+    <string name="text_sound_last">Давайте вспомним слова, которые заучивали ранее. Пожалуйста
         введите их в поле.</string>
-    <string name="imageResultLastSound1">Результат первого \nотсроченного тестирования(слух)</string>
-    <string name="pauseTwo">Вторая интерферирующая пауза</string>
-    <string name="resultSoundNWords">Результат узнавания старых\nслов среди новых</string>
-    <string name="resultNWords1">Результат непроизвольного\nзапоминания новых слов(C4)</string>
-    <string name="resultOldImage1">Результат первого\nотсроченного воспроизведения\n(картинки)</string>
-    <string name="pauseThree">Третья интерферирующая пауза</string>
-    <string name="resultNImage1">Результата непроизвольного\nзапоминания новых фигур(Z4)</string>
-    <string name="resultOldImage1a">Результат выбора\nзаученных изображений</string>
+    <string name="image_result_last_sound">Результат первого \nотсроченного тестирования(слух)</string>
+    <string name="pause_two">Вторая интерферирующая пауза</string>
+    <string name="result_sound_new_words">Результат узнавания старых\nслов среди новых</string>
+    <string name="result_new_words">Результат непроизвольного\nзапоминания новых слов(C4)</string>
+    <string name="result_old_image">Результат первого\nотсроченного воспроизведения\n(картинки)</string>
+    <string name="pause_three">Третья интерферирующая пауза</string>
+    <string name="result_new_image">Результата непроизвольного\nзапоминания новых фигур(Z4)</string>
+    <string name="result_old_image_1">Результат выбора\nзаученных изображений</string>
     <string name="etc">Другая информация</string>
+    <string name="next_question">Следующий вопрос</string>
 
-    <string name="questionEx">Пример вопроса:\nКак дела?\nХорошо</string>
-    <string name="nextQuestion">Следующий вопрос</string>
-    <string name="enterOneQuestionnarie">Давайте немного отвлечемся!\n\nСейчас Вам необходимо
+    <string name="enter_one_questionnarie">Давайте немного отвлечемся!\n\nСейчас Вам необходимо
         ответить на 20 вопросов. Для каждого вопроса
         будет предложено пять вариантов ответа, в которых \n«1» означает, что вы совершенно не
         согласны с утверждением;\n«2» показывает, что вы отчасти не согласны;\n«3» - нейтральный
         ответ;\n«4» - отчасти согласны;\n«5» - что вы полностью согласны с утверждением.</string>
-    <string name="doTesting">Приступить</string>
+    <string name="do_testing">Приступить</string>
     <string name="next_test">Продолжить тестирование</string>
 
     <!-- Опросник 1 -->
@@ -130,7 +125,7 @@
     </string>
 
     <!-- Опросник 2 -->
-    <string name="enterTwoQuestionnarie">Давайте немного отвлечемся!\n\nУ каждого человека
+    <string name="enter_two_questionnarie">Давайте немного отвлечемся!\n\nУ каждого человека
         преобладает определенный тип мышления. Данный опросник поможет вам определить тип своего
         мышления. Если Вы согласны с высказыванием, то нажмите плюс, если нет – минус.</string>
     <string name="qq1">1. Мне легче что-либо сделать самому, чем объяснить
@@ -177,9 +172,9 @@
         совершенства.</string>
 
     <string name="result">Результаты тестирования</string>
-    <string name="soundTotalResult">Результат тестирования слухоречевой памяти\n(максимально 50 баллов)</string>
-    <string name="resultTotalImage">Результат тестирования зрительной памяти\n(максимально 50 баллов)</string>
-    <string name="resultTotal">Общий результат</string>
+    <string name="sound_total_result">Результат тестирования слухоречевой памяти\n(максимально 50 баллов)</string>
+    <string name="result_total_image">Результат тестирования зрительной памяти\n(максимально 50 баллов)</string>
+    <string name="result_total">Общий результат</string>
     <string name="finish_text">Спасибо за участие в тестировании! Ваши результаты помогут составить
         статистику и выработать методы коррекции обнаруженных деффектов</string>
     <string name="exit">Выход</string>

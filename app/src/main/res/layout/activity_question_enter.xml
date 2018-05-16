@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/testingEnterQuestConstLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:keepScreenOn="true">
 
     <RelativeLayout
-        android:id="@+id/testingEnterLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="2"
@@ -23,7 +21,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:padding="15dp"
-            android:text="@string/enterOneQuestionnarie"
+            android:text="@string/enter_one_questionnarie"
             android:textAlignment="inherit"
             android:textColor="#047fd1"
             android:textStyle="bold" />
@@ -40,7 +38,7 @@
             android:gravity="center"
             android:onClick="onClickToGoAnswerQuestion"
             android:padding="15dp"
-            android:text="@string/doTesting"
+            android:text="@string/do_testing"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:visibility="visible" />

@@ -30,7 +30,7 @@ public class QuestionTwoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questionnaire_two);
         size = TextUtils.setNewTextSize(getBaseContext());
-        textView = (TextView) findViewById(R.id.questionText);
+        textView = (TextView) findViewById(R.id.question_text);
         image = (ImageView) findViewById(R.id.image);
         buttonMinus = (Button) findViewById(R.id.button_minus);
         buttonPlus = (Button) findViewById(R.id.button_plus);
