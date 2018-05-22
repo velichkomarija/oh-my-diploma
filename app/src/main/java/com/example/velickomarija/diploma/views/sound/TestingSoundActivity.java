@@ -8,7 +8,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.velickomarija.diploma.PauseOneActivity;
 import com.example.velickomarija.diploma.R;
 import com.example.velickomarija.diploma.models.Algorithms;
 import com.example.velickomarija.diploma.models.Functions;
@@ -16,6 +15,7 @@ import com.example.velickomarija.diploma.models.PreferencesLocal;
 import com.example.velickomarija.diploma.models.TextUtils;
 import com.example.velickomarija.diploma.views.image.TestingEnterImageActivity;
 import com.example.velickomarija.diploma.views.image.TestingImageVariantActivity;
+import com.example.velickomarija.diploma.views.questionnaire.QuestionEnterActivity;
 
 public class TestingSoundActivity extends AppCompatActivity {
 
@@ -114,7 +114,7 @@ public class TestingSoundActivity extends AppCompatActivity {
                     initResString(resString),
                     TestingSoundActivity.this);
 
-            Functions.showDialogSound(PauseOneActivity.class,
+            Functions.showDialogSound(   QuestionEnterActivity.class,
                     "Вы уверены в ответе?",
                     view,
                     "5");

@@ -36,6 +36,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launch"
         android:label="@string/app_name"
+        android:name=".MyApplication"
         android:resizeableActivity="false"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -75,19 +76,10 @@
             android:name=".views.sound.TestingEnterSoundNWordsActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".PauseOneActivity"
-            android:screenOrientation="landscape" />
-        <activity
             android:name=".views.sound.TestingSoundNWordsActivity"
             android:screenOrientation="landscape" />
         <activity
             android:name=".views.image.TestingNextImageActivity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".PauseTwoActivity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".PauseThreeActivity"
             android:screenOrientation="landscape" />
         <activity
             android:name=".views.questionnaire.QuestionEnterActivity"

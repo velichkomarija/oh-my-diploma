@@ -12,6 +12,7 @@ import com.example.velickomarija.diploma.R;
 import com.example.velickomarija.diploma.models.Algorithms;
 import com.example.velickomarija.diploma.models.Functions;
 import com.example.velickomarija.diploma.models.PreferencesLocal;
+import com.example.velickomarija.diploma.views.common.ResultActivity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -463,7 +464,7 @@ public class TestingNextImageActivity extends AppCompatActivity {
                     resString,
                     TestingNextImageActivity.this);
 
-            Functions.showDialog(PauseThreeActivity.class, "Вы уверены в ответе?", view);
+            Functions.showDialog(ResultActivity.class, "Вы уверены в ответе?", view);
         }
     }
 }

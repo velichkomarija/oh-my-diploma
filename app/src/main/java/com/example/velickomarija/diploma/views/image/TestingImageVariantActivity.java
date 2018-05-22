@@ -12,6 +12,7 @@ import com.example.velickomarija.diploma.R;
 import com.example.velickomarija.diploma.models.Algorithms;
 import com.example.velickomarija.diploma.models.Functions;
 import com.example.velickomarija.diploma.models.PreferencesLocal;
+import com.example.velickomarija.diploma.views.questionnaire.QuestionEnter2Activity;
 import com.example.velickomarija.diploma.views.sound.TestingSoundActivity;
 
 import java.util.HashMap;
@@ -925,7 +926,7 @@ public class TestingImageVariantActivity extends AppCompatActivity {
                     initResString(resString),
                     TestingImageVariantActivity.this);
 
-            Functions.showDialogImage(PauseTwoActivity.class,
+            Functions.showDialogImage(QuestionEnter2Activity.class,
                     "Вы уверены в ответе?",
                     view,
                     "5");

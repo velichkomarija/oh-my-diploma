@@ -191,7 +191,6 @@ public class ProfileActivity extends AppCompatActivity {
             if (age <= 7 || age > 100) {
                 throw new Exception();
             }
-
             pref.addProperty("PREF_AGE",
                     stringAge,
                     ProfileActivity.this);

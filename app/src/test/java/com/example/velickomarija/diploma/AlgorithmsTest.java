@@ -23,6 +23,9 @@ public class AlgorithmsTest {
     int par3 = 8;
 
 
+    /**
+     * Тестовый метод для перевода результатов выбора фигур в ассоциативный список результатов.
+     */
     @Test
     public void testToMapInteger() {
         Map<Integer, Integer> map = new HashMap<>();
@@ -37,6 +40,9 @@ public class AlgorithmsTest {
         }
     }
 
+    /**
+     * Тестовый метод для перевода результатов воспроизведения слов в ассоциативный список результатов.
+     */
     @Test
     public void textToMap() {
         int j = 0;
@@ -54,8 +60,11 @@ public class AlgorithmsTest {
         }
     }
 
+    /**
+     * Тестовый метод подсчета параметра C1
+     */
     @Test
-    public void AlgorithmSoundMemory() {
+    public void AlgorithmSoundMemoryC1() {
         Map<Integer, String> map = new HashMap<>();
         int sum = 0;
         boolean flag = false;
@@ -92,6 +101,7 @@ public class AlgorithmsTest {
         assertEquals(sum, 11);
     }
 
+
     int zeroAdapter(int digit) {
         if (digit < 0) {
             return 0;
@@ -100,9 +110,12 @@ public class AlgorithmsTest {
         }
     }
 
+    /**
+     * Тестовый метод подсчета параметра C2
+     */
     @Test
     //подсчет С2
-    public void AlgorithmSoundMemoryC2() {
+    public void AlgorithmSoundImageMemoryC2Z2() {
         //вычисления по таблице результатов с подсчетом вычетов и проб
         int res = 0;
         int regular1 = par1 - par2;
@@ -128,6 +141,9 @@ public class AlgorithmsTest {
         assertEquals(res, 6);
     }
 
+    /**
+     * Тестовый метод подсчета параметра Z1
+     */
     @Test
     //подсчет Z1
     public void AlgorithmImageMemoryZ1() {
@@ -163,6 +179,70 @@ public class AlgorithmsTest {
             }
         }
         assertEquals(sum, 12);
+    }
+
+    @Test
+    public void AlgorithmSoundMemoryC4() {
+
+    }
+
+    @Test
+    public void AlgorithmSoundMemoryC5() {
+
+    }
+
+    @Test
+    public void AlgorithmSoundMemoryC6() {
+
+    }
+
+    @Test
+    public void AlgorithmImageMemoryZ4() {
+
+    }
+
+    @Test
+    public void AlgorithmImageMemoryZ5() {
+
+    }
+
+    @Test
+    public void AlgorithmImageMemoryZ6() {
+
+    }
+
+    @Test
+    public void SpecialTest1() {
+
+    }
+
+    @Test
+    public void SpecialTest2() {
+
+    }
+
+    @Test
+    public void SpecialTest3() {
+
+    }
+
+    @Test
+    public void algorithmQuestionOne() {
+
+    }
+
+    @Test
+    public void getFullResult(){
+
+    }
+
+    @Test
+    public void getLevel(){
+
+    }
+
+    @Test
+    public void algorithmQuestionTwo(){
 
     }
 }
