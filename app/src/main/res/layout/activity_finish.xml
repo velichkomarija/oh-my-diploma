@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:keepScreenOn="true"
-    tools:context="com.example.velickomarija.diploma.views.common.FinishActivity">
+    tools:context="com.velickomarija.diploma.views.common.FinishActivity">
 
     <TextView
         android:id="@+id/start_text_finish"

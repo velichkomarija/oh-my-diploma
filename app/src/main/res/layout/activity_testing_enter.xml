@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:keepScreenOn="true"
-    tools:context="com.example.velickomarija.diploma.views.sound.TestingEnterSoundActivity">
+    tools:context="com.velickomarija.diploma.views.sound.TestingEnterSoundActivity">
 
     <RelativeLayout
         android:id="@+id/testingEnterLinearLayout"

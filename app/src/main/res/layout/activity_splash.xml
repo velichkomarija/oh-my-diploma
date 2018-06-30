@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/Theme.Design.Light.NoActionBar"
-    tools:context="com.example.velickomarija.diploma.views.common.SplashActivity">
+    tools:context="com.velickomarija.diploma.views.common.SplashActivity">
 
     <ImageView
         android:id="@+id/image"

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:keepScreenOn="true"
-    tools:context="com.example.velickomarija.diploma.PauseOneActivity">
+    tools:context="com.velickomarija.diploma.PauseOneActivity">
 
     <LinearLayout
         android:id="@+id/pauseOneLinearLayout"

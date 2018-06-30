@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.velickomarija.diploma.views.questionnaire.QuestionOneActivity">
+    tools:context="com.velickomarija.diploma.views.questionnaire.QuestionOneActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
