@@ -1,7 +1,7 @@
 package com.velickomarija.diploma.views.common;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -23,12 +23,19 @@ public class FinishActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_finish);
+        setContentView(R.layout.enter_test_fragment);
         float size = TextUtils.setNewTextSize(getBaseContext());
-        TextView textView = findViewById(R.id.start_text_finish);
-        Button button = findViewById(R.id.exit);
+        TextView textView = findViewById(R.id.start_text_view);
+        textView.setText(R.string.finish_text);
+        Button button = findViewById(R.id.next_button);
+        button.setText(R.string.exit);
         textView.setTextSize(size * 2.0f);
-        button.setTextSize(size * 1.4f);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finishAffinity();
+            }
+        });
     }
 
     /**
@@ -36,14 +43,5 @@ public class FinishActivity extends AppCompatActivity {
      */
     public void onBackPressed() {
         // do nothing
-    }
-
-    /**
-     * Метод обработчик нажатия на кнопку "Выход".
-     *
-     * @param view объект класса View.
-     */
-    public void onClickExit(View view) {
-        finishAffinity();
     }
 }

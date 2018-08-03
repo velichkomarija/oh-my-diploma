@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    android:orientation="vertical"
+    tools:context="com.velickomarija.diploma.views.common.UserActivity">
+
+    <TextView
+        android:id="@+id/start_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_8sdp"
+        android:text="@string/enter_text"
+        android:textAlignment="center"
+        android:textColor="#047fd1"
+        android:textSize="@dimen/_18sdp"
+        android:textStyle="normal" />
+
+    <Button
+        android:id="@+id/next_button"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:padding="@dimen/_16sdp"
+        android:text="@string/next"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_18sdp"
+        android:textStyle="normal"
+        android:visibility="visible" />
+
+</LinearLayout>
