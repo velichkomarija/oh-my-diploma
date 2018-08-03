@@ -25,6 +25,7 @@ public class EnterFragment extends Fragment implements INavigation {
                 replaceFragment("PROFILE", new ProfileFragment());
             }
         });
+
         return view;
     }
 

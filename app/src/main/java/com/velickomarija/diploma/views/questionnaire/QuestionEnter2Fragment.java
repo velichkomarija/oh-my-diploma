@@ -17,17 +17,14 @@ import com.velickomarija.diploma.R;
 public class QuestionEnter2Fragment extends Fragment implements INavigation {
     private static final String TAG = "QUESTION_SECOND_ENTER";
 
-    private TextView textView;
-    private Button button;
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.testing_enter_fragment, container, false);
-        textView = (TextView) view.findViewById(R.id.start_text);
+        TextView textView = (TextView) view.findViewById(R.id.start_text);
         textView.setText(R.string.enter_two_questionnarie);
 
-        button = (Button) view.findViewById(R.id.button_next);
+        Button button = (Button) view.findViewById(R.id.button_next);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

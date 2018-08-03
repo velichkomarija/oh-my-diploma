@@ -28,13 +28,15 @@ public class ProfileFragment extends Fragment implements INavigation {
     private RadioButton radioButton1, radioButton2;
     private Spinner spinner;
     private EditText ageBox, nameBox;
-    private Button button;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.profile_fragment, container, false);
         initAllPreference();
+
+        radioButton1 = (RadioButton) view.findViewById(R.id.male);
+        radioButton2 = (RadioButton) view.findViewById(R.id.famale);
 
         radioGroup = (RadioGroup) view.findViewById(R.id.radio_group);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -61,16 +63,11 @@ public class ProfileFragment extends Fragment implements INavigation {
             }
         });
 
-        radioButton1 = (RadioButton) view.findViewById(R.id.male);
-        radioButton2 = (RadioButton) view.findViewById(R.id.famale);
-
         ageBox = (EditText) view.findViewById(R.id.age_input);
         nameBox = (EditText) view.findViewById(R.id.name_input_field);
 
         spinner = (Spinner) view.findViewById(R.id.education_input_field);
         spinner.setSelection(0);
-
-        button = (Button) view.findViewById(R.id.next_button);
 
         ((Button) view.findViewById(R.id.next_button)).setOnClickListener(new View.OnClickListener() {
             @Override

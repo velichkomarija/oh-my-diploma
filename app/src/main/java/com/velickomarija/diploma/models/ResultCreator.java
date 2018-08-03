@@ -2,6 +2,7 @@ package com.velickomarija.diploma.models;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -19,6 +20,7 @@ import java.io.InputStream;
 public class ResultCreator {
 
     final static PreferencesLocal preferencesLocal = new PreferencesLocal();
+    private static final String TAG = "RESULT_CREATOR";
 
     /**
      * Метод, генерирующий полный результата тестирования для отправки в хранилище.
@@ -93,6 +95,7 @@ public class ResultCreator {
                 .append(preferencesLocal.getProperty("PREF_NAME"))
                 .append((int) (Math.random() * 1000))
                 .append(".txt");
+
         return stringBuffer.toString();
     }
 
@@ -114,14 +117,15 @@ public class ResultCreator {
                 public void onFailure(@NonNull Exception exception) {
                     exception.printStackTrace();
                     //      Toast.makeText(context, "Upload Failed!", Toast.LENGTH_SHORT).show();
+                    Log.d(TAG, "Upload Failed!");
                 }
             }).addOnSuccessListener(new OnSuccessListener() {
                 @Override
                 public void onSuccess(Object o) {
                     //   Toast.makeText(context, "Upload successful!", Toast.LENGTH_SHORT).show();
+                    Log.d(TAG, "Upload successful!");
                 }
             });
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -138,7 +142,6 @@ public class ResultCreator {
         FileOutputStream outputStream;
 
         File file = new File(context.getFilesDir(), name);
-
         try {
             outputStream = context.openFileOutput(name, Context.MODE_PRIVATE);
             outputStream.write(generateFullResult().
@@ -146,8 +149,10 @@ public class ResultCreator {
             outputStream.close();
         } catch (Exception e) {
             e.printStackTrace();
+            Log.d(TAG, "File was not create!");
             //Toast.makeText(context, "Ошибка!", Toast.LENGTH_SHORT).show();
         }
+
         return file;
     }
 }

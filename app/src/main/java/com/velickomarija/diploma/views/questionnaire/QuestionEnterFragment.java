@@ -16,15 +16,12 @@ import com.velickomarija.diploma.R;
 public class QuestionEnterFragment extends Fragment implements INavigation {
     private static final String TAG = "QUESTION_ENTER";
 
-    private TextView textView;
-    private Button button;
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.question_enter_fragment_small_font, container, false);
 
-        button = (Button) view.findViewById(R.id.go_testing);
+        Button button = (Button) view.findViewById(R.id.go_testing);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

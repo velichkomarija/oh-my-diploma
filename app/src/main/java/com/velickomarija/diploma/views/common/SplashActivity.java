@@ -1,13 +1,11 @@
 package com.velickomarija.diploma.views.common;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
 import com.velickomarija.diploma.R;
-import com.velickomarija.diploma.models.PreferencesLocal;
 
 /**
  * Класс-активность, отвечающая за загрузку заставки приложения.

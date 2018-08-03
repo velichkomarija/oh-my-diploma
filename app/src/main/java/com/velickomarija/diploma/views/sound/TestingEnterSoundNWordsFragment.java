@@ -25,7 +25,7 @@ public class TestingEnterSoundNWordsFragment extends Fragment implements INaviga
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.testing_enter_fragment, container, false);
 
-        ((TextView)view.findViewById(R.id.start_text)).setText(R.string.enter_testing_new_words);
+        ((TextView) view.findViewById(R.id.start_text)).setText(R.string.enter_testing_new_words);
 
         button = (Button) view.findViewById(R.id.button_next);
         button.setOnClickListener(new View.OnClickListener() {
@@ -38,7 +38,7 @@ public class TestingEnterSoundNWordsFragment extends Fragment implements INaviga
                 builder.setTitle("Важное сообщение!")
                         .setMessage(text)
                         .setIcon(R.drawable.ic_error_black_24dp)
-                        .setCancelable(false).setPositiveButton("Да, продолжить",
+                        .setCancelable(false).setPositiveButton(getString(R.string.yes_go),
                         new DialogInterface.OnClickListener() {
 
                             public void onClick(DialogInterface dialog, int id) {
@@ -46,7 +46,7 @@ public class TestingEnterSoundNWordsFragment extends Fragment implements INaviga
                             }
 
                         })
-                        .setNegativeButton("Отмена",
+                        .setNegativeButton(getString(R.string.cancel),
                                 new DialogInterface.OnClickListener() {
 
                                     public void onClick(DialogInterface dialog, int id) {

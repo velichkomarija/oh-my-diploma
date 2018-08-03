@@ -27,8 +27,9 @@ import java.util.Map;
 
 public class TestingImageVariantFragment extends Fragment implements INavigation {
     private static final String TAG = "TESTING_IMAGE_VARIANT";
+
     private Algorithms algorithms = new Algorithms();
-    private TextView textViewTitle1;
+    private TextView title;
     private int parsedColor = Color.parseColor("#37bc51");
     private PreferencesLocal preferencesLocal = new PreferencesLocal();
 
@@ -57,8 +58,8 @@ public class TestingImageVariantFragment extends Fragment implements INavigation
 
         initButtons(view);
 
-        textViewTitle1 = (TextView) view.findViewById(R.id.textViewTit);
-        textViewTitle1.setText("Отметье фигуры, которые Вы запомнили");
+        title = (TextView) view.findViewById(R.id.textViewTit);
+        title.setText("Отметьте фигуры, которые Вы запомнили");
 
         if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("3")) {
             reverseElement1();
@@ -67,7 +68,7 @@ public class TestingImageVariantFragment extends Fragment implements INavigation
             reverseElement2();
         }
         if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("4")) {
-            textViewTitle1.setText("Давайте вспомним фигуры, которые\n мы запомниали и отметим их");
+            title.setText("Давайте вспомним фигуры, которые\n мы запомниали, и отметим их");
             reverseElement3();
         }
 
@@ -651,7 +652,7 @@ public class TestingImageVariantFragment extends Fragment implements INavigation
                     resString,
                     getContext());
 
-            showDialogImage("Вы уверены в ответе?",
+            showDialogImage(getString(R.string.message_title),
                     "3",
                     "TESTING_ENTER_IMAGE",
                     new TestingEnterImageFragment()
@@ -663,7 +664,7 @@ public class TestingImageVariantFragment extends Fragment implements INavigation
                     resString,
                     getContext());
 
-            showDialogImage("Вы уверены в ответе?",
+            showDialogImage(getString(R.string.message_title),
                     "1",
                     "TESTING_ENTER_IMAGE",
                     new TestingEnterImageFragment()
@@ -683,7 +684,7 @@ public class TestingImageVariantFragment extends Fragment implements INavigation
             preferencesLocal.addProperty("PREF_Z2",
                     result,
                     getContext());
-            showDialogImage("Вы уверены в ответе?",
+            showDialogImage(getString(R.string.message_title),
                     "4",
                     "TESTING_SOUND",
                     new TestingSoundFragment());
@@ -697,7 +698,7 @@ public class TestingImageVariantFragment extends Fragment implements INavigation
                     initResString(resString),
                     getContext());
 
-            showDialogImage("Вы уверены в ответе?",
+            showDialogImage(getString(R.string.message_title),
                     "5",
                     "QUESTION_SECOND_ENTER",
                     new QuestionEnter2Fragment()
@@ -716,10 +717,10 @@ public class TestingImageVariantFragment extends Fragment implements INavigation
      */
     public void showDialogImage(String text, final String num, final String tag, final Fragment fragment) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setTitle("Важное сообщение!")
+        builder.setTitle(R.string.important_message)
                 .setMessage(text)
                 .setIcon(R.drawable.ic_error_black_24dp)
-                .setCancelable(false).setPositiveButton("Да, продолжить",
+                .setCancelable(false).setPositiveButton(getString(R.string.yes_go),
                 new DialogInterface.OnClickListener() {
 
                     public void onClick(DialogInterface dialog, int id) {
@@ -731,7 +732,7 @@ public class TestingImageVariantFragment extends Fragment implements INavigation
                     }
 
                 })
-                .setNegativeButton("Отмена",
+                .setNegativeButton(getString(R.string.cancel),
                         new DialogInterface.OnClickListener() {
 
                             public void onClick(DialogInterface dialog, int id) {

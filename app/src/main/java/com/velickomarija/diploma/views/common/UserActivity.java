@@ -28,7 +28,7 @@ public class UserActivity extends AppCompatActivity implements INavigation {
         fragmentTransaction.replace(R.id.container, fragment, tag);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commitAllowingStateLoss();
-}
+    }
 
     /**
      * Метод обработчик нажатия аппаратной кнопки "Назад".

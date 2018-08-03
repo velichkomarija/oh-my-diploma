@@ -2,6 +2,7 @@ package com.velickomarija.diploma.models;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 /**
  * Класс-обертка на класс SharedPreferences. Необходим для избавления от дублирования кода.
@@ -9,6 +10,7 @@ import android.content.SharedPreferences;
 public class PreferencesLocal {
 
     private static final String PREFS_FILE = "Account";
+    private static final String TAG = "PREFERENCE";
     private static SharedPreferences settings = null;
     private static SharedPreferences.Editor editor = null;
     private static Context context = null;
@@ -44,6 +46,7 @@ public class PreferencesLocal {
         }
         editor.putString(name, value);
         editor.commit();
+        Log.d(TAG, name.concat(": ").concat(value));
     }
 
     /**

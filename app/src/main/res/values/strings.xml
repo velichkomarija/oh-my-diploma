@@ -178,5 +178,11 @@
     <string name="finish_text">Спасибо за участие в тестировании! Ваши результаты помогут составить
     статистику и выработать методы коррекции обнаруженных проблем.</string>
     <string name="exit">Выход</string>
+    <string name="important_message">Важное сообщение!</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="yes_go">Да, продолжить</string>
+    <string name="cancel">Отмена</string>
+    <string name="message_title">Вы уверены в ответе?</string>
 </resources>
 

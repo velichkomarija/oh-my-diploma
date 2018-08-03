@@ -24,13 +24,17 @@ public class FinishActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.enter_test_fragment);
+
         float size = TextUtils.setNewTextSize(getBaseContext());
-        TextView textView = findViewById(R.id.start_text_view);
-        textView.setText(R.string.finish_text);
-        Button button = findViewById(R.id.next_button);
-        button.setText(R.string.exit);
-        textView.setTextSize(size * 2.0f);
-        button.setOnClickListener(new View.OnClickListener() {
+
+        TextView text = findViewById(R.id.start_text_view);
+        text.setText(R.string.finish_text);
+        text.setTextSize(size * 2.0f);
+
+        Button exitButton = findViewById(R.id.next_button);
+        exitButton.setText(R.string.exit);
+
+        exitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finishAffinity();

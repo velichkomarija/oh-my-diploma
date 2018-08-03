@@ -27,6 +27,7 @@ public class TestingImageFragment extends Fragment implements INavigation {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.testing_image_fragment, container, false);
         timingTest();
+
         return view;
     }
 

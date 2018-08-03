@@ -93,7 +93,7 @@ public class TestingSoundFragment extends Fragment implements INavigation {
 
             showDialogSound(new TestingImageVariantFragment(),
                     "TESTING_IMAGE_VARIANT",
-                    "Вы уверены в ответе?",
+                    getString(R.string.message_title),
                     view,
                     "6");
         }
@@ -110,7 +110,7 @@ public class TestingSoundFragment extends Fragment implements INavigation {
 
             showDialogSound(new QuestionEnterFragment(),
                     "QUESTION_ENTER",
-                    "Вы уверены в ответе?",
+                    getString(R.string.message_title),
                     view,
                     "5");
         }
@@ -136,7 +136,7 @@ public class TestingSoundFragment extends Fragment implements INavigation {
 
             showDialogSound(new TestingEnterImageFragment(),
                     "TESTING_ENTER_IMAGE",
-                    "Вы уверены в ответе?",
+                    getString(R.string.message_title),
                     view,
                     "4");
         }
@@ -149,7 +149,7 @@ public class TestingSoundFragment extends Fragment implements INavigation {
 
             showDialogSound(new TestingEnterSoundFragment(),
                     "TESTING_ENTER_SOUND",
-                    "Вы уверены в ответе?",
+                    getString(R.string.message_title),
                     view,
                     "3");
         }
@@ -166,7 +166,7 @@ public class TestingSoundFragment extends Fragment implements INavigation {
 
             showDialogSound(new TestingEnterSoundFragment(),
                     "TESTING_ENTER_SOUND",
-                    "Вы уверены в ответе?",
+                    getString(R.string.message_title),
                     view,
                     "2");
         }
@@ -196,7 +196,7 @@ public class TestingSoundFragment extends Fragment implements INavigation {
         builder.setTitle("Важное сообщение!")
                 .setMessage(text)
                 .setIcon(R.drawable.ic_error_black_24dp)
-                .setCancelable(false).setPositiveButton("Да, продолжить",
+                .setCancelable(false).setPositiveButton(getString(R.string.yes_go),
                 new DialogInterface.OnClickListener() {
 
                     public void onClick(DialogInterface dialog, int id) {
@@ -209,7 +209,7 @@ public class TestingSoundFragment extends Fragment implements INavigation {
 
                     }
                 })
-                .setNegativeButton("Отмена",
+                .setNegativeButton(R.string.cancel,
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 dialog.cancel();

@@ -390,7 +390,7 @@ public class TestingNextImageFragment extends Fragment implements INavigation {
                     resString,
                     getContext());
 
-            showDialogImage("Вы уверены в ответе?", "6", TAG, new TestingNextImageFragment());
+            showDialogImage(getString(R.string.message_title), "6", TAG, new TestingNextImageFragment());
 
         } else if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("6")) {
 
@@ -398,7 +398,7 @@ public class TestingNextImageFragment extends Fragment implements INavigation {
                     resString,
                     getContext());
 
-            showDialogImage("Вы уверены в ответе?", "6", "RESULT_FRAGMENT", new ResultFragment());
+            showDialogImage(getString(R.string.message_title), "6", "RESULT_FRAGMENT", new ResultFragment());
         }
     }
 
@@ -412,10 +412,10 @@ public class TestingNextImageFragment extends Fragment implements INavigation {
 
     public void showDialogImage(String text, final String num, final String tag, final Fragment fragment) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setTitle("Важное сообщение!")
+        builder.setTitle(R.string.important_message)
                 .setMessage(text)
                 .setIcon(R.drawable.ic_error_black_24dp)
-                .setCancelable(false).setPositiveButton("Да, продолжить",
+                .setCancelable(false).setPositiveButton(getString(R.string.yes_go),
                 new DialogInterface.OnClickListener() {
 
                     public void onClick(DialogInterface dialog, int id) {
@@ -427,7 +427,7 @@ public class TestingNextImageFragment extends Fragment implements INavigation {
                     }
 
                 })
-                .setNegativeButton("Отмена",
+                .setNegativeButton(getString(R.string.cancel),
                         new DialogInterface.OnClickListener() {
 
                             public void onClick(DialogInterface dialog, int id) {

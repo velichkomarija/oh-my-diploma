@@ -19,11 +19,10 @@ import com.velickomarija.diploma.models.Functions;
 import com.velickomarija.diploma.models.PreferencesLocal;
 import com.velickomarija.diploma.models.ResultCreator;
 
-public class ResultFragment extends Fragment implements INavigation {
+public class ResultFragment extends Fragment {
     private final static String TAG = "RESULT_FRAGMENT";
     private PreferencesLocal preferencesLocal = new PreferencesLocal();
     private Algorithms algorithms = new Algorithms();
-    private TextView sound, image, total;
 
     /**
      * Метод-обработчик нажатия на физическую кнопку "Назад".
@@ -37,10 +36,6 @@ public class ResultFragment extends Fragment implements INavigation {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.result_fragment, container, false);
 
-        sound = view.findViewById(R.id.text_view_result_sound);
-        image = view.findViewById(R.id.result_Image);
-        total = view.findViewById(R.id.result_Total);
-
         preferencesLocal.addProperty("PREF_C6",
                 algorithms.getCorrectionC6(preferencesLocal.getProperty("PREF_C6")),
                 getContext());
@@ -51,9 +46,9 @@ public class ResultFragment extends Fragment implements INavigation {
 
         String[] results = countResult();
 
-        sound.setText(results[0]);
-        image.setText(results[1]);
-        total.setText(results[2]);
+        ((TextView) view.findViewById(R.id.text_view_result_sound)).setText(results[0]);
+        ((TextView) view.findViewById(R.id.result_Image)).setText(results[1]);
+        ((TextView) view.findViewById(R.id.result_Total)).setText(results[2]);
 
         ((Button) view.findViewById(R.id.buttonNextPart)).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,11 +58,6 @@ public class ResultFragment extends Fragment implements INavigation {
         });
 
         return view;
-    }
-
-    @Override
-    public void replaceFragment(String tag, Fragment fragment) {
-
     }
 
     /**
@@ -124,10 +114,12 @@ public class ResultFragment extends Fragment implements INavigation {
      */
     public void onClickToExit(final View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
-        builder.setTitle("Важное сообщение!")
-                .setMessage("Отправить результаты для получения общей статистики?")
+        String textMsg = "Отправить результаты для получения общей статистики?";
+
+        builder.setTitle(R.string.important_message)
+                .setMessage(textMsg)
                 .setIcon(R.drawable.ic_error_black_24dp)
-                .setCancelable(false).setPositiveButton("Да",
+                .setCancelable(false).setPositiveButton(getString(R.string.yes),
                 new DialogInterface.OnClickListener() {
 
                     public void onClick(DialogInterface dialog, int id) {
@@ -136,7 +128,7 @@ public class ResultFragment extends Fragment implements INavigation {
                     }
 
                 })
-                .setNegativeButton("Нет",
+                .setNegativeButton(getString(R.string.no),
                         new DialogInterface.OnClickListener() {
 
                             public void onClick(DialogInterface dialog, int id) {
@@ -147,7 +139,7 @@ public class ResultFragment extends Fragment implements INavigation {
                         }
                 );
         builder.setMessage(Html.fromHtml("<font color='#000000'>" +
-                "Отправить результаты для получения общей статистики?" +
+                textMsg +
                 "</font>"));
         AlertDialog alert = builder.create();
         alert.show();
