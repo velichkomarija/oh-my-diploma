@@ -108,8 +108,8 @@ public class TestingSoundFragment extends Fragment implements INavigation {
                     initResString(resString),
                     getContext());
 
-            showDialogSound(new QuestionEnterFragment(),
-                    "QUESTION_ENTER",
+            showDialogSound(new TestingEnterSoundNWordsFragment(),
+                    "TESTING_SOUND_ENTER_N_WORDS",
                     getString(R.string.message_title),
                     view,
                     "5");

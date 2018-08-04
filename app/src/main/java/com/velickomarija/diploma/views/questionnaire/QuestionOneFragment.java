@@ -17,6 +17,7 @@ import com.velickomarija.diploma.R;
 import com.velickomarija.diploma.models.Algorithms;
 import com.velickomarija.diploma.models.Functions;
 import com.velickomarija.diploma.views.sound.TestingEnterSoundNWordsFragment;
+import com.velickomarija.diploma.views.sound.TestingSoundFragment;
 
 public class QuestionOneFragment extends Fragment implements INavigation {
     private static final String TAG = "QUESTION_ONE";
@@ -148,7 +149,7 @@ public class QuestionOneFragment extends Fragment implements INavigation {
         }
 
         if (countQuestions == 22) {
-            replaceFragment("TESTING_SOUND_ENTER_N_WORDS", new TestingEnterSoundNWordsFragment());
+            replaceFragment("TESTING_SOUND", new TestingSoundFragment());
         }
     }
 

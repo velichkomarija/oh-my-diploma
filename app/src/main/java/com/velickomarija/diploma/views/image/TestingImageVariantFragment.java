@@ -20,6 +20,7 @@ import com.velickomarija.diploma.R;
 import com.velickomarija.diploma.models.Algorithms;
 import com.velickomarija.diploma.models.PreferencesLocal;
 import com.velickomarija.diploma.views.questionnaire.QuestionEnter2Fragment;
+import com.velickomarija.diploma.views.questionnaire.QuestionEnterFragment;
 import com.velickomarija.diploma.views.sound.TestingSoundFragment;
 
 import java.util.HashMap;
@@ -686,8 +687,8 @@ public class TestingImageVariantFragment extends Fragment implements INavigation
                     getContext());
             showDialogImage(getString(R.string.message_title),
                     "4",
-                    "TESTING_SOUND",
-                    new TestingSoundFragment());
+                    "QUESTION_ENTER",
+                    new QuestionEnterFragment());
 
         } else {
 
