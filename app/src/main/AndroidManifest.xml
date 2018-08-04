@@ -51,9 +51,6 @@
         </activity>
 
         <activity
-            android:name=".views.common.FinishActivity"
-            android:screenOrientation="landscape" />
-        <activity
             android:name=".views.common.UserActivity"
             android:screenOrientation="landscape" />
     </application>

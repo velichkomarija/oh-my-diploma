@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.text.Html;
 import android.view.LayoutInflater;
@@ -19,7 +20,7 @@ import com.velickomarija.diploma.models.Functions;
 import com.velickomarija.diploma.models.PreferencesLocal;
 import com.velickomarija.diploma.models.ResultCreator;
 
-public class ResultFragment extends Fragment {
+public class ResultFragment extends Fragment implements INavigation {
     private final static String TAG = "RESULT_FRAGMENT";
     private PreferencesLocal preferencesLocal = new PreferencesLocal();
     private Algorithms algorithms = new Algorithms();
@@ -119,21 +120,22 @@ public class ResultFragment extends Fragment {
         builder.setTitle(R.string.important_message)
                 .setMessage(textMsg)
                 .setIcon(R.drawable.ic_error_black_24dp)
-                .setCancelable(false).setPositiveButton(getString(R.string.yes),
-                new DialogInterface.OnClickListener() {
+                .setCancelable(false).
+                setPositiveButton(getString(R.string.yes),
+                        new DialogInterface.OnClickListener() {
 
-                    public void onClick(DialogInterface dialog, int id) {
-                        ResultCreator.sendFile(getContext());
-                        Functions.activityToGo(FinishActivity.class, view);
-                    }
+                            public void onClick(DialogInterface dialog, int id) {
+                                ResultCreator.sendFile(getContext());
+                                replaceFragment("FINISH_FRAGMENT", new FinishFragment());
+                            }
 
-                })
+                        })
                 .setNegativeButton(getString(R.string.no),
                         new DialogInterface.OnClickListener() {
 
                             public void onClick(DialogInterface dialog, int id) {
                                 dialog.cancel();
-                                Functions.activityToGo(FinishActivity.class, view);
+                                replaceFragment("FINISH_FRAGMENT", new FinishFragment());
                             }
 
                         }
@@ -143,5 +145,13 @@ public class ResultFragment extends Fragment {
                 "</font>"));
         AlertDialog alert = builder.create();
         alert.show();
+    }
+
+    @Override
+    public void replaceFragment(String tag, Fragment fragment) {
+        FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.container, fragment, tag);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commitAllowingStateLoss();
     }
 }
