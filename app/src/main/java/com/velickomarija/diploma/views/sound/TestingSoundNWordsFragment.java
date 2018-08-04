@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.velickomarija.diploma.INavigation;
@@ -25,6 +26,7 @@ public class TestingSoundNWordsFragment extends Fragment implements INavigation 
     private MediaPlayer mPlayer;
     private Animation animation;
     private boolean clk = false;
+    private Button button;
     private Algorithms algorithms = new Algorithms();
     private PreferencesLocal preferencesLocal = new PreferencesLocal();
 
@@ -35,7 +37,7 @@ public class TestingSoundNWordsFragment extends Fragment implements INavigation 
         animation = AnimationUtils.loadAnimation(getContext(), R.anim.anim);
         timing(view);
 
-        Button button = view.findViewById(R.id.sound_new_words_sound_btn);
+        button = view.findViewById(R.id.sound_new_words_sound_btn);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,14 +51,18 @@ public class TestingSoundNWordsFragment extends Fragment implements INavigation 
 
     private void timing(View view) {
         mTimer = (TextView) view.findViewById(R.id.text_view_time);
-        CountDownTimer start = new CountDownTimer(6000, 1000) {
 
+        final ImageView image = (ImageView) view.findViewById(R.id.image_sound);
+        CountDownTimer start = new CountDownTimer(6000, 1000) {
             public void onTick(long milliesUntilFinished) {
+                button.setVisibility(View.GONE);
                 mTimer.setText(String.valueOf(milliesUntilFinished / 1000));
             }
 
             public void onFinish() {
-                mTimer.setText("Запись");
+                mTimer.setVisibility(View.GONE);
+                image.setVisibility(View.VISIBLE);
+                button.setVisibility(View.VISIBLE);
                 soundTiming();
             }
         }.start();

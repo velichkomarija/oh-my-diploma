@@ -6,10 +6,12 @@ import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.ImageViewCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.velickomarija.diploma.INavigation;
@@ -22,8 +24,9 @@ public class TestingEnterSoundFragment extends Fragment implements INavigation {
 
     private MediaPlayer mPlayer;
     private Button startButton;
+    private ImageView image;
     private PreferencesLocal preferencesLocal = new PreferencesLocal();
-    private TextView textView;
+    private TextView textNotation;
 
     public TestingEnterSoundFragment() {
     }
@@ -33,21 +36,24 @@ public class TestingEnterSoundFragment extends Fragment implements INavigation {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.testing_enter_fragment, container, false);
 
-        textView = (TextView) view.findViewById(R.id.start_text);
+        textNotation = (TextView) view.findViewById(R.id.start_text);
         startButton = (Button) view.findViewById(R.id.button_next);
+        image = (ImageView) view.findViewById(R.id.image_sound);
 
         if (preferencesLocal.getProperty("PREF_NUM_SOUND").equals("2") ||
                 preferencesLocal.getProperty("PREF_NUM_SOUND").equals("3")) {
-            textView.setText(R.string.enter_testing_manifest_sound);
+            textNotation.setText(R.string.enter_testing_manifest_sound);
         } else {
-            textView.setText(R.string.enter_testing_manifest);
+            textNotation.setText(R.string.enter_testing_manifest);
         }
 
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startButton.setEnabled(false);
-                startButton.setVisibility(View.INVISIBLE);
+                startButton.setVisibility(View.GONE);
+                textNotation.setVisibility(View.GONE);
+                image.setVisibility(View.VISIBLE);
 
                 if (preferencesLocal.getProperty("PREF_NUM_SOUND").equals("2") ||
                         preferencesLocal.getProperty("PREF_NUM_SOUND").equals("3")) {
@@ -74,13 +80,24 @@ public class TestingEnterSoundFragment extends Fragment implements INavigation {
     public void sound(int sound, long time) {
         mPlayer = MediaPlayer.create(getContext(), sound);
         mPlayer.start();
-        textView.setText("Воспроизведение аудиозаписи");
-        textView.setTextSize(TextUtils.setNewTextSize(getContext()) * 3);
+        //  textNotation.setText("Воспроизведение аудиозаписи");
+        //  textNotation.setTextSize(TextUtils.setNewTextSize(getContext()) * 3);
 
         CountDownTimer start = new CountDownTimer(time, 500) {
+            int countSound = 1;
 
             public void onTick(long milliesUntilFinished) {
                 //do nothing
+                if (countSound == 3) {
+                    image.setImageResource(R.mipmap.ic_sound_finish);
+                    countSound = 1;
+                } else if (countSound == 2) {
+                    image.setImageResource(R.mipmap.ic_sound_next);
+                    countSound = 3;
+                } else {
+                    image.setImageResource(R.mipmap.ic_sound);
+                    countSound = 2;
+                }
             }
 
             public void onFinish() {

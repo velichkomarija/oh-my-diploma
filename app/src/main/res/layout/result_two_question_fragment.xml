@@ -31,11 +31,11 @@
         android:id="@+id/expListView"
         style="@android:style/Widget.Material.ExpandableListView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_margin="@dimen/_18sdp"
         android:divider="@color/colorPrimary"
         android:dividerHeight="@dimen/_1sdp"
-        android:minHeight="@dimen/_280sdp"></ExpandableListView>
+        android:minHeight="@dimen/_300sdp"></ExpandableListView>
 
     <Button
         android:id="@+id/btn_last_test"

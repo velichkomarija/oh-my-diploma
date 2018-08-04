@@ -53,8 +53,6 @@ public class QuestionTwoFragment extends Fragment implements INavigation {
         buttonPlus = (Button) view.findViewById(R.id.button_plus);
         progressBar = view.findViewById(R.id.progress);
 
-        progressBar.setVisibility(View.INVISIBLE);
-
         buttonMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,8 +89,8 @@ public class QuestionTwoFragment extends Fragment implements INavigation {
             }
 
         } else {
-            buttonMinus.setVisibility(View.INVISIBLE);
-            buttonPlus.setVisibility(View.INVISIBLE);
+            buttonMinus.setVisibility(View.GONE);
+            buttonPlus.setVisibility(View.GONE);
             String result = algorithm.algorithmQuestionTwo(arrayResult);
             preferencesLocal.addProperty("PREF_RESULT_SECOND_QUESTION",
                     result,
@@ -126,7 +124,7 @@ public class QuestionTwoFragment extends Fragment implements INavigation {
             }
 
             public void onFinish() {
-                progressBar.setVisibility(View.INVISIBLE);
+                progressBar.setVisibility(View.GONE);
                 textView.setVisibility(View.VISIBLE);
                 buttonMinus.setClickable(true);
                 buttonPlus.setClickable(true);

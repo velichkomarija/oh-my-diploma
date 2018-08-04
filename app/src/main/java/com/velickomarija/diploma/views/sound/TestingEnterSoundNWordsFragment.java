@@ -35,7 +35,7 @@ public class TestingEnterSoundNWordsFragment extends Fragment implements INaviga
                 String text = "Будте внимательны, через 5 секунд будет воспроизведена запись для " +
                         "узнования слов, если готовы нажмите Продолжить";
                 AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
-                builder.setTitle("Важное сообщение!")
+                builder.setTitle(getString(R.string.important_message))
                         .setMessage(text)
                         .setIcon(R.drawable.ic_error_black_24dp)
                         .setCancelable(false).setPositiveButton(getString(R.string.yes_go),

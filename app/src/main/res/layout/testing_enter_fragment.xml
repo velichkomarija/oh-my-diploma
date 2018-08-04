@@ -6,14 +6,30 @@
     android:keepScreenOn="true"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/start_text"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/_8sdp"
-        android:textAlignment="center"
-        android:textColor="#047fd1"
-        android:textSize="@dimen/_18sdp" />
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/start_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="1sp"
+            android:padding="@dimen/_8sdp"
+            android:textAlignment="center"
+            android:textColor="#047fd1"
+            android:textSize="@dimen/_18sdp" />
+
+        <ImageView
+            android:id="@+id/image_sound"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_175sdp"
+            android:padding="@dimen/_8sdp"
+            android:src="@mipmap/ic_sound"
+            android:visibility="gone" />
+
+    </RelativeLayout>
 
     <Button
         android:id="@+id/button_next"
