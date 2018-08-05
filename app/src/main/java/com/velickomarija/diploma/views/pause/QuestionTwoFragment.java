@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -22,6 +23,7 @@ public class QuestionTwoFragment extends Fragment implements INavigation {
     private static final String TAG = "QUESTION_TWO";
     private PreferencesLocal preferencesLocal = new PreferencesLocal();
     private ProgressBar progressBar;
+    private ImageView imageView;
     private Button buttonPlus, buttonMinus;
     private Algorithms algorithm = new Algorithms();
     private int[] arrayResult = new int[40];
@@ -52,6 +54,7 @@ public class QuestionTwoFragment extends Fragment implements INavigation {
         buttonMinus = (Button) view.findViewById(R.id.button_minus);
         buttonPlus = (Button) view.findViewById(R.id.button_plus);
         progressBar = view.findViewById(R.id.progress);
+        imageView = view.findViewById(R.id.image);
 
         buttonMinus.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,7 +114,9 @@ public class QuestionTwoFragment extends Fragment implements INavigation {
      */
     private void time() {
         textView.setVisibility(View.INVISIBLE);
+        imageView.setVisibility(View.INVISIBLE);
         progressBar.setVisibility(View.VISIBLE);
+
         buttonMinus.setClickable(false);
         buttonPlus.setClickable(false);
         CountDownTimer start = new CountDownTimer(600, 150) {
@@ -126,6 +131,7 @@ public class QuestionTwoFragment extends Fragment implements INavigation {
             public void onFinish() {
                 progressBar.setVisibility(View.GONE);
                 textView.setVisibility(View.VISIBLE);
+                imageView.setVisibility(View.VISIBLE);
                 buttonMinus.setClickable(true);
                 buttonPlus.setClickable(true);
             }

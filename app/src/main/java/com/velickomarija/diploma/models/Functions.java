@@ -38,14 +38,4 @@ public class Functions {
         alert.show();
     }
 
-    /**
-     * Метод, реализующий переход к следующей активности.
-     *
-     * @param cl   параметр, указывающий на следующую активность для перехода.
-     * @param view объект типа View.
-     */
-    public static void activityToGo(Class cl, View view) {
-        Intent intent = new Intent(view.getContext(), cl);
-        view.getContext().startActivity(intent);
-    }
 }
