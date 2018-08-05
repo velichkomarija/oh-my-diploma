@@ -73,9 +73,9 @@ public class TestingSoundNWordsFragment extends Fragment implements INavigation 
      */
     private void soundTiming() {
         final StringBuffer stringBuffer = new StringBuffer();
-        mPlayer = MediaPlayer.create(getContext(), R.raw.test_40sec);
+        mPlayer = MediaPlayer.create(getContext(), R.raw.test_60sec);
         mPlayer.start();
-        final CountDownTimer start = new CountDownTimer(42000, 100) {
+        final CountDownTimer start = new CountDownTimer(64000, 100) {
 
             public void onTick(long milliesUntilFinished) {
                 if (clk) {
@@ -86,7 +86,7 @@ public class TestingSoundNWordsFragment extends Fragment implements INavigation 
 
             public void onFinish() {
                 String str = stringBuffer.toString();
-                String res = algorithms.algorithmFindOldWordsInNew(str);
+                String res = algorithms.algorithmFindOldWordsInNew(str, getContext());
                 preferencesLocal.addProperty("PREF_RESULTOLDWORDS",
                         res,
                         getContext());

@@ -438,7 +438,7 @@ public class Algorithms {
      * @param text данные, введеные пользователем.
      * @return Строка с результатами узнавания.
      */
-    public String algorithmFindOldWordsInNew(String text) {
+    public String algorithmFindOldWordsInNew(String text, Context context) {
         int res = 0;
         int error = 0;
         String resString;
@@ -447,27 +447,27 @@ public class Algorithms {
             String[] strArray = text.split(" ");
             for (int i = 0; i < strArray.length; i++) {
                 res = Integer.parseInt(strArray[i]);
-                if ((0 <= res) && (res <= 300)) {
+                if ((0 <= res) && (res <= 400)) {
                     resArray[0] = 1;
-                } else if ((300 < res) && (res <= 500)) {
+                } else if ((400 < res) && (res <= 650)) {
                     resArray[1] = 1;
-                } else if ((640 <= res) && (res <= 800)) {
+                } else if ((950 <= res) && (res <= 1200)) {
                     resArray[2] = 1;
-                } else if ((1000 <= res) && (res <= 1200)) {
+                } else if ((1500 <= res) && (res <= 1750)) {
                     resArray[3] = 1;
-                } else if ((1350 <= res) && (res <= 1510)) {
+                } else if ((2050 <= res) && (res <= 2300)) {
                     resArray[4] = 1;
-                } else if ((1900 <= res) && (res <= 2070)) {
+                } else if ((2800 <= res) && (res <= 3050)) {
                     resArray[5] = 1;
-                } else if ((2410 <= res) && (res <= 2600)) {
+                } else if ((3600 <= res) && (res <= 3900)) {
                     resArray[6] = 1;
-                } else if ((2800 <= res) && (res <= 2950)) {
+                } else if ((4200 <= res) && (res <= 4750)) {
                     resArray[7] = 1;
-                } else if ((3340 <= res) && (res <= 3500)) {
+                } else if ((5000 <= res) && (res <= 5300)) {
                     resArray[8] = 1;
-                } else if ((3500 < res) && (res <= 3680)) {
+                } else if ((5300 < res) && (res <= 5600)) {
                     resArray[9] = 1;
-                } else if ((4000 <= res) && (res <= 4200)) {
+                } else if ((6100 <= res) && (res <= 6400)) {
                     resArray[10] = 1;
                 } else {
                     error++;
@@ -481,7 +481,14 @@ public class Algorithms {
             }
             res = res - error;
             res = zeroAdapter(res);
-            //без учета максимальной 10
+
+            int mistakes = Integer.valueOf(preferencesLocal.getProperty("PREF_C6"));
+            mistakes = mistakes + error;
+            preferencesLocal.addProperty("PREF_C6", String.valueOf(mistakes), context);
+
+            if (res > 10) {
+                res = 10;
+            }
             resString = String.valueOf(res);
         } catch (Exception e) {
             resString = "0";
