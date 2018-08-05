@@ -19,6 +19,7 @@ import com.velickomarija.diploma.INavigation;
 import com.velickomarija.diploma.R;
 import com.velickomarija.diploma.models.Functions;
 import com.velickomarija.diploma.models.PreferencesLocal;
+import com.velickomarija.diploma.views.pause.ShulteFragment;
 import com.velickomarija.diploma.views.sound.TestingEnterSoundFragment;
 
 public class ProfileFragment extends Fragment implements INavigation {
@@ -80,6 +81,7 @@ public class ProfileFragment extends Fragment implements INavigation {
 
                 if (nameFlag == true && ageFlag == true) {
                     replaceFragment("TESTING_ENTER_SOUND", new TestingEnterSoundFragment());
+                    //    replaceFragment("SHULTE", new ShulteFragment());
                 }
             }
         });

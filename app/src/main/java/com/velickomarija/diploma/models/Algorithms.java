@@ -72,35 +72,6 @@ public class Algorithms {
         generalWordsMap.put(11, "ПЫЛЬ");
     }
 
-    private static final Map<Integer, String> generalAndNewWordsMap;
-
-    static {
-        generalAndNewWordsMap = new HashMap<Integer, String>();
-        generalAndNewWordsMap.put(1, "ЗВЕЗДА");
-        generalAndNewWordsMap.put(2, "ПОТОЛОК");
-        generalAndNewWordsMap.put(3, "СЕНО");
-        generalAndNewWordsMap.put(4, "КЛЕЙ");
-        generalAndNewWordsMap.put(5, "ШУБА");
-        generalAndNewWordsMap.put(6, "МОЛОКО");
-        generalAndNewWordsMap.put(7, "КАТУШКА");
-        generalAndNewWordsMap.put(8, "ПЕСОК");
-        generalAndNewWordsMap.put(9, "ЦВЕТОК");
-        generalAndNewWordsMap.put(10, "БЕЛКА");
-        generalAndNewWordsMap.put(11, "ВАЗА");
-        generalAndNewWordsMap.put(12, "МЫШЬ");
-        generalAndNewWordsMap.put(13, "ЛУЧ");
-        generalAndNewWordsMap.put(14, "ТКАНЬ");
-        generalAndNewWordsMap.put(15, "ЛЕСОК");
-        generalAndNewWordsMap.put(16, "КУБ");
-        generalAndNewWordsMap.put(17, "ШЕЛК");
-        generalAndNewWordsMap.put(18, "НИТКА");
-        generalAndNewWordsMap.put(19, "КОРОНА");
-        generalAndNewWordsMap.put(20, "ТРОН");
-        generalAndNewWordsMap.put(21, "ПАЛЬТО");
-        generalAndNewWordsMap.put(22, "ВЕЛОСИПЕД");
-        generalAndNewWordsMap.put(23, "ПЫЛЬ");
-    }
-
     private static final Map<Integer, Integer> generalImage;
 
     static {
@@ -198,7 +169,7 @@ public class Algorithms {
     }
 
     /**
-     * Метод, отвечающий за переинициализацию ключевых фигур.
+     * Метод, отвечающий за переинициализацию ключевых слов.
      */
     private void reloadMapWords() {
         generalWordsMap.clear();
@@ -355,7 +326,9 @@ public class Algorithms {
                 }
             }
             if (flag == false) {
-                mistakes++;
+                if (!item.getValue().equals("")) {
+                    mistakes++;
+                }
                 item.setValue("0");
             }
             flag = false;
@@ -363,7 +336,6 @@ public class Algorithms {
         //обновляем карту
         reloadMapWords();
         for (Map.Entry<Integer, String> newWord : map.entrySet()) {
-            // System.out.println(newWord.getKey() + " " + newWord.getValue());
             if (Integer.parseInt(newWord.getValue()) != 0) {
                 sum++;
             }

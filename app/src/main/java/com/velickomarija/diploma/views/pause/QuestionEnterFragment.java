@@ -1,4 +1,4 @@
-package com.velickomarija.diploma.views.questionnaire;
+package com.velickomarija.diploma.views.pause;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.velickomarija.diploma.INavigation;
 import com.velickomarija.diploma.R;

@@ -1,4 +1,4 @@
-package com.velickomarija.diploma.views.questionnaire;
+package com.velickomarija.diploma.views.pause;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -16,7 +16,6 @@ import com.velickomarija.diploma.INavigation;
 import com.velickomarija.diploma.R;
 import com.velickomarija.diploma.models.Algorithms;
 import com.velickomarija.diploma.models.Functions;
-import com.velickomarija.diploma.views.sound.TestingEnterSoundNWordsFragment;
 import com.velickomarija.diploma.views.sound.TestingSoundFragment;
 
 public class QuestionOneFragment extends Fragment implements INavigation {

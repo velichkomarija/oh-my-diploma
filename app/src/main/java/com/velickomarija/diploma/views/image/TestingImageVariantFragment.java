@@ -19,9 +19,8 @@ import com.velickomarija.diploma.INavigation;
 import com.velickomarija.diploma.R;
 import com.velickomarija.diploma.models.Algorithms;
 import com.velickomarija.diploma.models.PreferencesLocal;
-import com.velickomarija.diploma.views.questionnaire.QuestionEnter2Fragment;
-import com.velickomarija.diploma.views.questionnaire.QuestionEnterFragment;
-import com.velickomarija.diploma.views.sound.TestingSoundFragment;
+import com.velickomarija.diploma.views.pause.QuestionEnter2Fragment;
+import com.velickomarija.diploma.views.pause.QuestionEnterFragment;
 
 import java.util.HashMap;
 import java.util.Map;

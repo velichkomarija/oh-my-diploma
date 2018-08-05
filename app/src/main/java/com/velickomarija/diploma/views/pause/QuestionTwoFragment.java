@@ -1,4 +1,4 @@
-package com.velickomarija.diploma.views.questionnaire;
+package com.velickomarija.diploma.views.pause;
 
 import android.os.Bundle;
 import android.os.CountDownTimer;

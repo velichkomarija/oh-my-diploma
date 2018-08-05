@@ -21,7 +21,6 @@ import com.velickomarija.diploma.models.Algorithms;
 import com.velickomarija.diploma.models.PreferencesLocal;
 import com.velickomarija.diploma.views.image.TestingEnterImageFragment;
 import com.velickomarija.diploma.views.image.TestingImageVariantFragment;
-import com.velickomarija.diploma.views.questionnaire.QuestionEnterFragment;
 
 public class TestingSoundFragment extends Fragment implements INavigation {
     private static final String TAG = "TESTING_SOUND";
