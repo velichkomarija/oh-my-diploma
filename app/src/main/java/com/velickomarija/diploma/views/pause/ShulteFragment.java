@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import com.velickomarija.diploma.INavigation;
 import com.velickomarija.diploma.R;
 import com.velickomarija.diploma.models.PreferencesLocal;
+import com.velickomarija.diploma.views.common.ResultFragment;
 
 import org.w3c.dom.Text;
 
@@ -31,6 +33,7 @@ public class ShulteFragment extends Fragment implements INavigation {
     private LinearLayout table;
     int currentNumber = 1;
     boolean flag = true;
+    Button buttonNext;
     ArrayList<Integer> notShuffled;
 
     public ShulteFragment() {
@@ -118,6 +121,8 @@ public class ShulteFragment extends Fragment implements INavigation {
 
         title = view.findViewById(R.id.text_instruction);
         table = view.findViewById(R.id.table);
+
+        buttonNext = view.findViewById(R.id.go_last_testing);
         return view;
     }
 
@@ -160,6 +165,13 @@ public class ShulteFragment extends Fragment implements INavigation {
                         }
                     } else {
                         title.setText("Спасибо! Вы отлично справились!");
+                        buttonNext.setVisibility(View.VISIBLE);
+                        buttonNext.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                replaceFragment("RESULT_FRAGMENT", new ResultFragment());
+                            }
+                        });
                     }
                 }
             }
@@ -214,6 +226,9 @@ public class ShulteFragment extends Fragment implements INavigation {
 
     @Override
     public void replaceFragment(String tag, Fragment fragment) {
-
+        FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.container, fragment, tag);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commitAllowingStateLoss();
     }
 }

@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -77,6 +78,7 @@ public class TestingSoundFragment extends Fragment implements INavigation {
         }
 
         String text = editText.getText().toString();
+        Log.d(TAG, "Input text: " + text);
         int res = algorithms.algorithmSoundMemoryC1(text, getContext());//верно
         String resString = String.valueOf(res);
 

@@ -20,6 +20,7 @@ import com.velickomarija.diploma.R;
 import com.velickomarija.diploma.models.Algorithms;
 import com.velickomarija.diploma.models.PreferencesLocal;
 import com.velickomarija.diploma.views.common.ResultFragment;
+import com.velickomarija.diploma.views.pause.ShulteFragment;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -398,7 +399,8 @@ public class TestingNextImageFragment extends Fragment implements INavigation {
                     resString,
                     getContext());
 
-            showDialogImage(getString(R.string.message_title), "6", "RESULT_FRAGMENT", new ResultFragment());
+           // showDialogImage(getString(R.string.message_title), "6", "RESULT_FRAGMENT", new ResultFragment());
+            showDialogImage(getString(R.string.message_title), "6", "SHULTE", new ShulteFragment());
         }
     }
 
