@@ -4,11 +4,13 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ExpandableListView;
+import android.widget.LinearLayout;
 import android.widget.SimpleExpandableListAdapter;
 import android.widget.TextView;
 
@@ -30,12 +32,6 @@ public class ResultTwoQuestionFragment extends Fragment implements INavigation {
     private ArrayList<Map<String, String>> groupDataList = new ArrayList<>();
     private Map<String, String> map;
     private PreferencesLocal preferencesLocal = new PreferencesLocal();
-    private String[] title = new String[]{"Предметно-действенное мышление",
-            "Абстрактно-символическое мышление",
-            "Словесно-логическое мышление",
-            "Наглядно-образное мышление",
-            "Креативность (творческое мышление)"};
-
     private Button button;
 
     public ResultTwoQuestionFragment() {
@@ -56,75 +52,13 @@ public class ResultTwoQuestionFragment extends Fragment implements INavigation {
 
         textView = view.findViewById(R.id.question_result);
         final String result = preferencesLocal.getProperty("PREF_RESULT_SECOND_QUESTION");
-        for (String group : title) {
-            // заполняем список атрибутов для каждой группы
-            map = new HashMap<>();
-            map.put("groupName", group);
-            groupDataList.add(map);
-        }
         textView.setText(result);
 
-        // список атрибутов групп для чтения
-        String groupFrom[] = new String[]{"groupName"};
-        // список ID view-элементов, в которые будет помещены атрибуты групп
-        int groupTo[] = new int[]{android.R.id.text1};
-
-        // создаем общую коллекцию для коллекций элементов
-        ArrayList<ArrayList<Map<String, String>>> сhildDataList = new ArrayList<>();
-
-        // в итоге получится сhildDataList = ArrayList<сhildDataItemList>
-
-        // создаем коллекцию элементов для первой группы
-        ArrayList<Map<String, String>> сhildDataItemList = new ArrayList<>();
-        map = new HashMap<>();
-        map.put("name", algorithms.getResQuestion11());
-        сhildDataItemList.add(map);
-        сhildDataList.add(сhildDataItemList);
-
-        сhildDataItemList = new ArrayList<>();
-        map = new HashMap<>();
-        map.put("name", algorithms.getResQuestion22());
-        сhildDataItemList.add(map);
-        сhildDataList.add(сhildDataItemList);
-
-        // создаем коллекцию элементов для третьей группы
-        сhildDataItemList = new ArrayList<>();
-        map = new HashMap<>();
-        map.put("name", algorithms.getResQuestion33());
-        сhildDataItemList.add(map);
-        сhildDataList.add(сhildDataItemList);
-
-        сhildDataItemList = new ArrayList<>();
-        map = new HashMap<>();
-        map.put("name", algorithms.getResQuestion44());
-        сhildDataItemList.add(map);
-        сhildDataList.add(сhildDataItemList);
-
-        сhildDataItemList = new ArrayList<>();
-        map = new HashMap<>();
-        map.put("name", algorithms.getResQuestion55());
-        сhildDataItemList.add(map);
-        сhildDataList.add(сhildDataItemList);
-
-        // список атрибутов элементов для чтения
-        String childFrom[] = new String[]{"name"};
-        // список ID view-элементов, в которые будет помещены атрибуты
-        // элементов
-        int childTo[] = new int[]{android.R.id.text1};
-
-        SimpleExpandableListAdapter adapter = new SimpleExpandableListAdapter(
-                getContext(),
-                groupDataList,
-                R.layout.list_item,
-                groupFrom,
-                groupTo,
-                сhildDataList,
-                R.layout.list_item_chld,
-                childFrom,
-                childTo);
-
-        ExpandableListView expandableListView = (ExpandableListView) view.findViewById(R.id.expListView);
-        expandableListView.setAdapter(adapter);
+        setClickListener((CardView) view.findViewById(R.id.card_title_1), (CardView) view.findViewById(R.id.card_1));
+        setClickListener((CardView) view.findViewById(R.id.card_title_2), (CardView) view.findViewById(R.id.card_2));
+        setClickListener((CardView) view.findViewById(R.id.card_title_3), (CardView) view.findViewById(R.id.card_3));
+        setClickListener((CardView) view.findViewById(R.id.card_title_4), (CardView) view.findViewById(R.id.card_4));
+        setClickListener((CardView) view.findViewById(R.id.card_title_5), (CardView) view.findViewById(R.id.card_5));
 
         button = view.findViewById(R.id.btn_last_test);
         button.setOnClickListener(new View.OnClickListener() {
@@ -134,6 +68,19 @@ public class ResultTwoQuestionFragment extends Fragment implements INavigation {
             }
         });
         return view;
+    }
+
+    private void setClickListener(final CardView parent, final CardView child) {
+        parent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (child.getVisibility() == View.GONE) {
+                    child.setVisibility(View.VISIBLE);
+                } else {
+                    child.setVisibility(View.GONE);
+                }
+            }
+        });
     }
 
     @Override
