@@ -48,7 +48,8 @@ public class TestingSoundFragment extends Fragment implements INavigation {
         if (preferencesLocal.getProperty("PREF_NUM_SOUND").equals("5")) {
             textView.setText(R.string.text_new_words);
         }
-        if (preferencesLocal.getProperty("PREF_NUM_SOUND").equals("4")) {
+        if (preferencesLocal.getProperty("PREF_NUM_SOUND").equals("4") ||
+                preferencesLocal.getProperty("PREF_NUM_SOUND").equals("6")) {
             textView.setText(R.string.text_sound_last);
         }
 
@@ -81,6 +82,22 @@ public class TestingSoundFragment extends Fragment implements INavigation {
         int res = algorithms.algorithmSoundMemoryC1(text, getContext());//верно
         String resString = String.valueOf(res);
 
+        if (numParam == 6) {
+            preferencesLocal.addProperty("PREF_SOUNDLASTRESULT2",
+                    resString,
+                    getContext());
+
+            preferencesLocal.addProperty("PREF_C5",
+                    initResString(resString),
+                    getContext());
+
+            showDialogSound(new TestingImageVariantFragment(),
+                    "TESTING_IMAGE_VARIANT",
+                    getString(R.string.message_title),
+                    view,
+                    "7");
+        }
+
         if (numParam == 5) {
 
             resString = algorithms.algorithmSoundNewWords(text);
@@ -102,10 +119,6 @@ public class TestingSoundFragment extends Fragment implements INavigation {
 
             preferencesLocal.addProperty("PREF_SOUNDLASTRESULT1",
                     resString,
-                    getContext());
-
-            preferencesLocal.addProperty("PREF_C5",
-                    initResString(resString),
                     getContext());
 
             showDialogSound(new TestingEnterSoundNWordsFragment(),

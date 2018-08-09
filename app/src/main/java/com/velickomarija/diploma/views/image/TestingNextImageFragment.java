@@ -386,9 +386,10 @@ public class TestingNextImageFragment extends Fragment implements INavigation {
 
         if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("5")) {
 
-            preferencesLocal.addProperty("PREF_LASTIMAGERESULT2",
-                    resString,
-                    getContext());
+            //TODO что куда писать?
+            //preferencesLocal.addProperty("PREF_LASTIMAGERESULT2",
+            //         resString,
+            //        getContext());
 
             showDialogImage(getString(R.string.message_title), "6", TAG, new TestingNextImageFragment());
 
@@ -398,8 +399,8 @@ public class TestingNextImageFragment extends Fragment implements INavigation {
                     resString,
                     getContext());
 
-           // showDialogImage(getString(R.string.message_title), "6", "RESULT_FRAGMENT", new ResultFragment());
-            showDialogImage(getString(R.string.message_title), "6", "SHULTE", new ShulteFragment());
+            // showDialogImage(getString(R.string.message_title), "6", "RESULT_FRAGMENT", new ResultFragment());
+            showDialogImage(getString(R.string.message_title), "7", "SHULTE", new ShulteFragment());
         }
     }
 

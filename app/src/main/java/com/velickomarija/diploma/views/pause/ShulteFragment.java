@@ -17,6 +17,7 @@ import com.velickomarija.diploma.INavigation;
 import com.velickomarija.diploma.R;
 import com.velickomarija.diploma.models.PreferencesLocal;
 import com.velickomarija.diploma.views.common.ResultFragment;
+import com.velickomarija.diploma.views.sound.TestingSoundFragment;
 
 import org.w3c.dom.Text;
 
@@ -169,7 +170,7 @@ public class ShulteFragment extends Fragment implements INavigation {
                         buttonNext.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                replaceFragment("RESULT_FRAGMENT", new ResultFragment());
+                                replaceFragment("TESTING_SOUND", new TestingSoundFragment());
                             }
                         });
                     }

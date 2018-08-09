@@ -20,6 +20,7 @@ import com.velickomarija.diploma.INavigation;
 import com.velickomarija.diploma.R;
 import com.velickomarija.diploma.models.Algorithms;
 import com.velickomarija.diploma.models.PreferencesLocal;
+import com.velickomarija.diploma.views.common.ResultFragment;
 import com.velickomarija.diploma.views.pause.QuestionEnter2Fragment;
 import com.velickomarija.diploma.views.pause.QuestionEnterFragment;
 
@@ -68,7 +69,8 @@ public class TestingImageVariantFragment extends Fragment implements INavigation
         if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("1")) {
             reverseElement2();
         }
-        if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("4")) {
+        if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("4") ||
+                preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("5")) {
             title.setText("Давайте вспомним фигуры, которые\n мы запомниали, и отметим их");
             reverseElement3();
         }
@@ -691,21 +693,29 @@ public class TestingImageVariantFragment extends Fragment implements INavigation
                     "QUESTION_ENTER",
                     new QuestionEnterFragment());
 
-        } else {
-
-            preferencesLocal.addProperty("PREF_LASTIMAGERESULT1",
+        } else if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("7")) {
+            preferencesLocal.addProperty("PREF_LASTIMAGERESULT2",
                     resString,
                     getContext());
             preferencesLocal.addProperty("PREF_Z5",
                     initResString(resString),
                     getContext());
+            showDialogImage(getString(R.string.message_title),
+                    "8",
+                    "RESULT_FRAGMENT",
+                    new ResultFragment()
+            );
 
+        } else if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("4")) {
+            preferencesLocal.addProperty("PREF_LASTIMAGERESULT1",
+                    resString,
+                    getContext());
             showDialogImage(getString(R.string.message_title),
                     "5",
                     "QUESTION_SECOND_ENTER",
                     new QuestionEnter2Fragment()
             );
-            //todo второе отсроченное
+
         }
     }
 
