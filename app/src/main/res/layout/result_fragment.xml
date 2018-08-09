@@ -36,7 +36,7 @@
                 android:padding="@dimen/_8sdp"
                 android:text="@string/sound_total_result"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_18sdp" />
+                android:textSize="@dimen/_16sdp" />
 
             <TextView
                 android:id="@+id/text_view_result_sound"
@@ -64,7 +64,7 @@
                 android:padding="@dimen/_8sdp"
                 android:text="@string/result_total_image"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_18sdp" />
+                android:textSize="@dimen/_16sdp" />
 
             <TextView
                 android:id="@+id/result_Image"
@@ -94,7 +94,7 @@
                 android:layout_gravity="center"
                 android:text="@string/result_total"
                 android:textColor="@android:color/holo_red_dark"
-                android:textSize="@dimen/_18sdp" />
+                android:textSize="@dimen/_16sdp" />
 
             <TextView
                 android:id="@+id/result_Total"
@@ -113,7 +113,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_8sdp"
-            android:padding="@dimen/_12sdp"
+            android:paddingBottom="@dimen/_12sdp"
+            android:paddingLeft="@dimen/_24sdp"
+            android:paddingRight="@dimen/_24sdp"
+            android:paddingTop="@dimen/_12sdp"
             android:text="@string/exit"
             android:layout_gravity="center"
             android:textAllCaps="false"

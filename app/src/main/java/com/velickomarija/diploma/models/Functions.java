@@ -21,7 +21,7 @@ public class Functions {
      */
     public static void showErrorDialog(View v, String text) {
         AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
-        builder.setTitle("Важное сообщение!")
+        builder.setTitle(v.getContext().getString(R.string.important_message))
                 .setMessage(text)
                 .setIcon(R.drawable.ic_error_black_24dp)
                 .setCancelable(false)

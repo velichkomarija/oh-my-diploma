@@ -38,7 +38,6 @@ public class FinishFragment extends Fragment {
         return view;
     }
 
-
     /**
      * Метод обработчик нажатия аппаратной кнопки "Назад".
      */

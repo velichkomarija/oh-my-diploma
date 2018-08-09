@@ -18,18 +18,21 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="@dimen/_18sdp"
-
             android:text="@string/shulte_enter"
             android:textAlignment="center"
-            android:textSize="@dimen/_16sdp" />
+            android:textSize="@dimen/_18sdp" />
 
         <Button
+            style="@style/Widget.AppCompat.Button.Colored"
             android:id="@+id/go_last_testing"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@color/colorAccent"
-            android:padding="@dimen/_12sdp"
+            android:paddingBottom="@dimen/_12sdp"
+            android:paddingLeft="@dimen/_24sdp"
+            android:paddingRight="@dimen/_24sdp"
+            android:paddingTop="@dimen/_12sdp"
             android:text="@string/next"
             android:textAlignment="center"
             android:textAllCaps="false"
@@ -50,7 +53,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-
             android:orientation="horizontal">
 
             <TextView

@@ -28,7 +28,6 @@ public class TestingSoundFragment extends Fragment implements INavigation {
 
     private PreferencesLocal preferencesLocal = new PreferencesLocal();
     private Algorithms algorithms = new Algorithms();
-
     private TextView textView;
     private EditText editText;
     private Button button;
@@ -194,7 +193,7 @@ public class TestingSoundFragment extends Fragment implements INavigation {
 
     public void showDialogSound(final Fragment fragment, final String tag, String text, final View view, final String num) {
         AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
-        builder.setTitle("Важное сообщение!")
+        builder.setTitle(getString(R.string.important_message))
                 .setMessage(text)
                 .setIcon(R.drawable.ic_error_black_24dp)
                 .setCancelable(false).setPositiveButton(getString(R.string.yes_go),

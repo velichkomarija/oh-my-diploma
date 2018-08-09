@@ -6,6 +6,7 @@
     android:keepScreenOn="true">
 
     <ScrollView
+        android:id="@+id/scroll_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true">

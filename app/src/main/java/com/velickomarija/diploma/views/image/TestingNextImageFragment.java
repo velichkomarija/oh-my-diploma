@@ -74,7 +74,6 @@ public class TestingNextImageFragment extends Fragment implements INavigation {
                 onClickToGoNextTestingImage();
             }
         });
-
         return view;
     }
 

@@ -29,8 +29,8 @@
                 android:id="@+id/question_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_18sdp"
                 android:layout_gravity="center"
+                android:layout_margin="@dimen/_18sdp"
                 android:text="@string/qq1"
                 android:textSize="@dimen/_18sdp" />
         </LinearLayout>
@@ -61,12 +61,14 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_28sdp"
             android:layout_weight="1"
-            android:padding="@dimen/_18sdp"
+            android:paddingBottom="@dimen/_12sdp"
+            android:paddingLeft="@dimen/_24sdp"
+            android:paddingRight="@dimen/_24sdp"
+            android:paddingTop="@dimen/_12sdp"
             android:text="+ (согласен)"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="@dimen/_18sdp" />
-
 
         <Button
             android:id="@+id/button_minus"
@@ -75,7 +77,10 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_28sdp"
             android:layout_weight="1"
-            android:padding="@dimen/_18sdp"
+            android:paddingBottom="@dimen/_12sdp"
+            android:paddingLeft="@dimen/_24sdp"
+            android:paddingRight="@dimen/_24sdp"
+            android:paddingTop="@dimen/_12sdp"
             android:text="- (не согласен)"
             android:textAllCaps="false"
             android:textColor="@color/white"

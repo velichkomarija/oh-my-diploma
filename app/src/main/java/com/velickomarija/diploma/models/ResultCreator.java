@@ -93,7 +93,7 @@ public class ResultCreator {
         StringBuffer stringBuffer = new StringBuffer();
         stringBuffer
                 .append(preferencesLocal.getProperty("PREF_NAME"))
-                .append((int) (Math.random() * 1000))
+                .append((int) (Math.random() * 10000))
                 .append(".txt");
 
         return stringBuffer.toString();
@@ -150,7 +150,6 @@ public class ResultCreator {
         } catch (Exception e) {
             e.printStackTrace();
             Log.d(TAG, "File was not create!");
-            //Toast.makeText(context, "Ошибка!", Toast.LENGTH_SHORT).show();
         }
 
         return file;

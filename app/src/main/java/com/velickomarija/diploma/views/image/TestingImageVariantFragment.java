@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.velickomarija.diploma.INavigation;
@@ -81,6 +82,7 @@ public class TestingImageVariantFragment extends Fragment implements INavigation
                 onClickToGoNextTestingImage();
             }
         });
+
         return view;
     }
 
@@ -720,18 +722,18 @@ public class TestingImageVariantFragment extends Fragment implements INavigation
         builder.setTitle(R.string.important_message)
                 .setMessage(text)
                 .setIcon(R.drawable.ic_error_black_24dp)
-                .setCancelable(false).setPositiveButton(getString(R.string.yes_go),
-                new DialogInterface.OnClickListener() {
+                .setCancelable(false)
+                .setPositiveButton(getString(R.string.yes_go),
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                PreferencesLocal preferencesLocal = new PreferencesLocal();
+                                preferencesLocal.addProperty("PREF_NUM_IMAGE",
+                                        num,
+                                        getContext());
+                                replaceFragment(tag, fragment);
+                            }
 
-                    public void onClick(DialogInterface dialog, int id) {
-                        PreferencesLocal preferencesLocal = new PreferencesLocal();
-                        preferencesLocal.addProperty("PREF_NUM_IMAGE",
-                                num,
-                                getContext());
-                        replaceFragment(tag, fragment);
-                    }
-
-                })
+                        })
                 .setNegativeButton(getString(R.string.cancel),
                         new DialogInterface.OnClickListener() {
 

@@ -27,10 +27,7 @@ import java.util.Map;
 public class ResultTwoQuestionFragment extends Fragment implements INavigation {
     private static final String TAG = "RESULT_TWO_QUESTION";
     private TextView textView;
-    private Algorithms algorithms = new Algorithms();
     // коллекция для групп
-    private ArrayList<Map<String, String>> groupDataList = new ArrayList<>();
-    private Map<String, String> map;
     private PreferencesLocal preferencesLocal = new PreferencesLocal();
     private Button button;
 

@@ -26,7 +26,6 @@ public class ProfileFragment extends Fragment implements INavigation {
     private static final String TAG = "PROFILE";
     private RadioGroup radioGroup;
     private PreferencesLocal pref = new PreferencesLocal();
-    private RadioButton radioButton1, radioButton2;
     private Spinner spinner;
     private EditText ageBox, nameBox;
 
@@ -36,8 +35,8 @@ public class ProfileFragment extends Fragment implements INavigation {
         View view = inflater.inflate(R.layout.profile_fragment, container, false);
         initAllPreference();
 
-        radioButton1 = (RadioButton) view.findViewById(R.id.male);
-        radioButton2 = (RadioButton) view.findViewById(R.id.famale);
+        RadioButton radioButton1 = (RadioButton) view.findViewById(R.id.male);
+        RadioButton radioButton2 = (RadioButton) view.findViewById(R.id.famale);
 
         radioGroup = (RadioGroup) view.findViewById(R.id.radio_group);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
