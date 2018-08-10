@@ -171,8 +171,7 @@
     <string name="sound_total_result">Результат тестирования слухоречевой памяти\n(максимально 50 баллов)</string>
     <string name="result_total_image">Результат тестирования зрительной памяти\n(максимально 50 баллов)</string>
     <string name="result_total">Общий результат</string>
-    <string name="finish_text">Спасибо за участие в тестировании! \n\nДля улучшения проекта,
-        Вы можете оставить отзыв, нажав кнопку Обратная связь.   </string>
+    <string name="finish_text">Спасибо за участие в тестировании! </string>
     <string name="exit">Выход</string>
     <string name="important_message">Важное сообщение!</string>
     <string name="yes">Да</string>
