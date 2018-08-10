@@ -61,7 +61,7 @@ public class TestingImageVariantFragment extends Fragment implements INavigation
         initButtons(view);
 
         title = (TextView) view.findViewById(R.id.textViewTit);
-        title.setText("Отметьте фигуры, которые Вы запомнили");
+        title.setText("Отметьте фигуры, которые Вы запомнили.");
 
         if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("3")) {
             reverseElement1();
@@ -70,7 +70,7 @@ public class TestingImageVariantFragment extends Fragment implements INavigation
             reverseElement2();
         }
         if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("4") ||
-                preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("5")) {
+                preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("7")) {
             title.setText("Давайте вспомним фигуры, которые\n мы запомниали, и отметим их");
             reverseElement3();
         }
@@ -645,8 +645,9 @@ public class TestingImageVariantFragment extends Fragment implements INavigation
 
         int res = algorithms.algorithmImageMemoryZ1(map, getContext());
         String resString = String.valueOf(res);
+        String numTesting = preferencesLocal.getProperty("PREF_NUM_IMAGE");
 
-        if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("2")) {
+        if (numTesting.equals("2")) {
 
             preferencesLocal.addProperty("PREF_Z1",
                     initResString(resString),
@@ -662,7 +663,7 @@ public class TestingImageVariantFragment extends Fragment implements INavigation
                     new TestingEnterImageFragment()
             );
 
-        } else if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("3")) {
+        } else if (numTesting.equals("3")) {
 
             preferencesLocal.addProperty("PREF_RESULTIMAGE2",
                     resString,
@@ -674,7 +675,7 @@ public class TestingImageVariantFragment extends Fragment implements INavigation
                     new TestingEnterImageFragment()
             );
 
-        } else if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("1")) {
+        } else if (numTesting.equals("1")) {
 
             preferencesLocal.addProperty("PREF_RESULTIMAGE3",
                     resString,
@@ -693,7 +694,8 @@ public class TestingImageVariantFragment extends Fragment implements INavigation
                     "QUESTION_ENTER",
                     new QuestionEnterFragment());
 
-        } else if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("7")) {
+        } else if (numTesting.equals("7")) {
+
             preferencesLocal.addProperty("PREF_LASTIMAGERESULT2",
                     resString,
                     getContext());
@@ -706,7 +708,8 @@ public class TestingImageVariantFragment extends Fragment implements INavigation
                     new ResultFragment()
             );
 
-        } else if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("4")) {
+        } else if (numTesting.equals("4")) {
+
             preferencesLocal.addProperty("PREF_LASTIMAGERESULT1",
                     resString,
                     getContext());

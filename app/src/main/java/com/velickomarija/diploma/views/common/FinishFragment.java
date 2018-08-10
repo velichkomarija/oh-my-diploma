@@ -18,16 +18,10 @@ public class FinishFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.enter_test_fragment, container, false);
+        View view = inflater.inflate(R.layout.finish_fragment, container, false);
 
-        TextView text = view.findViewById(R.id.start_text_view);
-
-        text.setText(R.string.finish_text);
-        float size = TextUtils.setNewTextSize(getContext());
-        text.setTextSize(size * 2.0f);
-
-        Button exitButton = view.findViewById(R.id.next_button);
-        exitButton.setText(R.string.exit);
+        Button exitButton = view.findViewById(R.id.exit_button);
+        Button feedbackButton = view.findViewById(R.id.feedback_button);
 
         exitButton.setOnClickListener(new View.OnClickListener() {
             @Override

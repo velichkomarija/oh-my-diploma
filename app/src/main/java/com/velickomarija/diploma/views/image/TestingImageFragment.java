@@ -96,7 +96,7 @@ public class TestingImageFragment extends Fragment implements INavigation {
      */
     private void showToast() {
         Toast toast = Toast.makeText(getContext(),
-                "Программа работает, она не зависла!",
+                "Программа работает.",
                 Toast.LENGTH_LONG);
         View view = toast.getView();
         toast.getView().setPadding(10, 10, 10, 10);

@@ -342,19 +342,6 @@ public class TestingNextImageFragment extends Fragment implements INavigation {
     }
 
     /**
-     * Метод для корректирования полученных результатов.
-     *
-     * @param res результат тестирования.
-     * @return Скорректированный результат тестирования.
-     */
-    private String initResString(String res) {
-        if (res.equals("11") || res.equals("12")) {
-            return "10";
-        }
-        return res;
-    }
-
-    /**
      * Метод-обработчик нажатия на кнопки с изображениями.
      *
      * @param imageButton кнопка с изображением.
@@ -386,10 +373,9 @@ public class TestingNextImageFragment extends Fragment implements INavigation {
 
         if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("5")) {
 
-            //TODO что куда писать?
-            //preferencesLocal.addProperty("PREF_LASTIMAGERESULT2",
-            //         resString,
-            //        getContext());
+            preferencesLocal.addProperty("PREF_FINDINGIMAGERESULT2",
+                    resString,
+                    getContext());
 
             showDialogImage(getString(R.string.message_title), "6", TAG, new TestingNextImageFragment());
 

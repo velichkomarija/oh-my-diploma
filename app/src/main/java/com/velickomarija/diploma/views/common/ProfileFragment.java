@@ -128,6 +128,8 @@ public class ProfileFragment extends Fragment implements INavigation {
         preferencesLocal.addProperty("PREF_Z5", "0", context);
         //Старые слова
         preferencesLocal.addProperty("PREF_RESULTOLDWORDS", "0", context);
+        //узнавание
+        preferencesLocal.addProperty("PREF_FINDINGIMAGERESULT2", "0", getContext());
     }
 
     /**

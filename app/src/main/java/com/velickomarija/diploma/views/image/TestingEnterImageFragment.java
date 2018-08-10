@@ -12,9 +12,11 @@ import android.widget.TextView;
 
 import com.velickomarija.diploma.INavigation;
 import com.velickomarija.diploma.R;
+import com.velickomarija.diploma.models.PreferencesLocal;
 
 public class TestingEnterImageFragment extends Fragment implements INavigation {
     private static final String TAG = "TESTING_ENTER_IMAGE";
+    private PreferencesLocal preferencesLocal = new PreferencesLocal();
 
     @Nullable
     @Override
@@ -22,7 +24,12 @@ public class TestingEnterImageFragment extends Fragment implements INavigation {
         View view = inflater.inflate(R.layout.testing_enter_fragment, container, false);
 
         TextView textView = (TextView) view.findViewById(R.id.start_text);
-        textView.setText(getString(R.string.enter_testing_image_manifest));
+        if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("2")) {
+            textView.setText(getString(R.string.enter_testing_image_manifest));
+        }else{
+            textView.setText(getString(R.string.enter_testing_image));
+        }
+
 
         Button button = (Button) view.findViewById(R.id.button_next);
         button.setText(getString(R.string.image));
