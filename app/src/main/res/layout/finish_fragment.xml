@@ -39,7 +39,7 @@
             android:textColor="@color/white"
             android:textSize="@dimen/_18sdp"
             android:textStyle="normal"
-            android:visibility="visible" />
+            android:visibility="gone" />
 
         <Button
             android:id="@+id/exit_button"
