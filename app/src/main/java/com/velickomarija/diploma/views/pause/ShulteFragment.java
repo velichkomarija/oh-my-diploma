@@ -150,6 +150,18 @@ public class ShulteFragment extends Fragment implements INavigation {
                         }
                         if (shulteNum == 3) {
                             shuffleNumbers();
+                            title.setText("То же задание.");
+                            currentNumber = 1;
+                            //reverse
+                        }
+                        if (shulteNum == 4) {
+                            shuffleNumbers();
+                            title.setText("И еще раз, пожалуйста.");
+                            currentNumber = 1;
+                            //reverse
+                        }
+                        if (shulteNum == 5) {
+                            shuffleNumbers();
                             title.setText("А теперь нажимайте все числа в обратном порядке. От 25 до 1.");
                             currentNumber = 25;
                             flag = false;

@@ -23,6 +23,7 @@ import com.velickomarija.diploma.models.ResultCreator;
 public class ResultFragment extends Fragment implements INavigation {
     private final static String TAG = "RESULT_FRAGMENT";
     private PreferencesLocal preferencesLocal = new PreferencesLocal();
+
     /**
      * Метод-обработчик нажатия на физическую кнопку "Назад".
      */
@@ -36,11 +37,11 @@ public class ResultFragment extends Fragment implements INavigation {
         View view = inflater.inflate(R.layout.result_fragment, container, false);
         Algorithms algorithms = new Algorithms();
         preferencesLocal.addProperty("PREF_C6",
-                algorithms.getCorrectionC6(preferencesLocal.getProperty("PREF_C6")),
+                algorithms.getCorrectionC6(preferencesLocal.getProperty("PREF_C6"), "PREF_REAL_C6", getContext()),
                 getContext());
 
         preferencesLocal.addProperty("PREF_Z6",
-                algorithms.getCorrectionC6(preferencesLocal.getProperty("PREF_Z6")),
+                algorithms.getCorrectionC6(preferencesLocal.getProperty("PREF_Z6"), "PREF_REAL_Z6", getContext()),
                 getContext());
 
         String[] results = countResult();

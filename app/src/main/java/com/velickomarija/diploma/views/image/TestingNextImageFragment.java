@@ -369,7 +369,7 @@ public class TestingNextImageFragment extends Fragment implements INavigation {
         for (int i = 0; i < 24; i++) {
             map.put(i + 1, btnArray[i]);
         }
-        resString = algorithms.algotithmImageNew(map);
+        resString = algorithms.algotithmImageNew(map, getContext());
 
         if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("5")) {
 

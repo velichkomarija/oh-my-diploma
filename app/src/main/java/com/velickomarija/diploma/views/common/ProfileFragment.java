@@ -100,7 +100,7 @@ public class ProfileFragment extends Fragment implements INavigation {
         preferencesLocal.addProperty("PREF_NAME", "none", context);
         preferencesLocal.addProperty("PREF_AGE", "none", context);
         preferencesLocal.addProperty("PREF_EDUCATION", "none", context);
-        preferencesLocal.addProperty("PREF_MALE", "none", context);
+        preferencesLocal.addProperty("PREF_MALE", "Мужской", context);
         preferencesLocal.addProperty("PREF_ETC_INFORMATION", "none", context);
         //результат первых трех проб в слуховой памяти
         preferencesLocal.addProperty(" PREF_SOUNDRESULT1", "0", context);
@@ -119,6 +119,9 @@ public class ProfileFragment extends Fragment implements INavigation {
         preferencesLocal.addProperty("PREF_Z2", "0", context);
         preferencesLocal.addProperty("PREF_Z4", "0", context);
         preferencesLocal.addProperty("PREF_Z6", "0", context);
+        //Реальные
+        preferencesLocal.addProperty("PREF_REAL_Z6", "0", context);
+        preferencesLocal.addProperty("PREF_REAL_C6", "0", context);
         //Отсроченные
         preferencesLocal.addProperty("PREF_SOUNDLASTRESULT1", "0", context);
         preferencesLocal.addProperty("PREF_С5", "0", context);

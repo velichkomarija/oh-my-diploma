@@ -79,6 +79,7 @@ public class Algorithms {
         newFigure.put(11, 24);
     }
 
+
     private static final ArrayList<String> newWords;
 
     static {
@@ -176,6 +177,22 @@ public class Algorithms {
         generalImage.put(10, 34);
         generalImage.put(11, 32);
         generalImage.put(12, 24);
+    }
+
+
+    private void reloadMapNewFigure() {
+        newFigure.clear();
+        newFigure.put(1, 2);
+        newFigure.put(2, 4);
+        newFigure.put(3, 6);
+        newFigure.put(4, 9);
+        newFigure.put(5, 11);
+        newFigure.put(6, 13);
+        newFigure.put(7, 15);
+        newFigure.put(8, 17);
+        newFigure.put(9, 21);
+        newFigure.put(10, 23);
+        newFigure.put(11, 24);
     }
 
     /**
@@ -345,7 +362,7 @@ public class Algorithms {
                     break;
                 }
             }
-            if ((flag == false)&&(item.getValue() == true)) {
+            if ((flag == false) && (item.getValue() == true)) {
                 mistakes++;
             }
         }
@@ -496,18 +513,33 @@ public class Algorithms {
      * @param map данные о узнавании, полученные от пользователя.
      * @return Строка результата узнавания.
      */
-    public String algotithmImageNew(Map<Integer, Boolean> map) {
+    public String algotithmImageNew(Map<Integer, Boolean> map, Context context) {
         int sum = 0;
+        boolean flag = false;
+        int mistakes;
+
+        try {
+            mistakes = Integer.valueOf(preferencesLocal.getProperty("PREF_Z6"));
+        } catch (Exception e) {
+            mistakes = 0;
+            e.printStackTrace();
+        }
 
         for (Map.Entry<Integer, Boolean> item : map.entrySet()) {
             for (Map.Entry<Integer, Integer> digit : newFigure.entrySet()) {
+                flag = false;
                 if ((item.getValue() == true) && item.getKey().equals(digit.getValue())) {
                     sum++;
+                    flag = true;
                     break;
                 }
             }
+            if ((flag == false) && (item.getValue() == true)) {
+                mistakes++;
+            }
         }
-        // reloadMapNewFigure();
+        preferencesLocal.addProperty("PREF_Z6", String.valueOf(mistakes), context);
+        reloadMapNewFigure();
         return String.valueOf(sum);
     }
 
@@ -517,7 +549,8 @@ public class Algorithms {
      * @param str первичный результат C6/Z6.
      * @return Скорректированное значение результата.
      */
-    public String getCorrectionC6(String str) {
+    public String getCorrectionC6(String str, String pref, Context context) {
+        preferencesLocal.addProperty(pref, str, context);
         int res = 10 - Integer.parseInt(str);
         if (res < 0) {
             return "0";
