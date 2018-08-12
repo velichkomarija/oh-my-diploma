@@ -76,6 +76,7 @@ public class Algorithms {
         newFigure.put(8, 17);
         newFigure.put(9, 21);
         newFigure.put(10, 23);
+        newFigure.put(11, 24);
     }
 
     private static final ArrayList<String> newWords;
@@ -344,7 +345,7 @@ public class Algorithms {
                     break;
                 }
             }
-            if (flag == false) {
+            if ((flag == false)&&(item.getValue() == true)) {
                 mistakes++;
             }
         }
