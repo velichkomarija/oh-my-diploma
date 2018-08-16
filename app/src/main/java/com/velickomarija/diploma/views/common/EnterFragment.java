@@ -10,6 +10,7 @@ import android.widget.Button;
 
 import com.velickomarija.diploma.INavigation;
 import com.velickomarija.diploma.R;
+import com.velickomarija.diploma.feedback.SchoolFeedbackFragment;
 
 public class EnterFragment extends Fragment implements INavigation {
     private static final String TAG = "ENTER_TESTING";
@@ -22,7 +23,8 @@ public class EnterFragment extends Fragment implements INavigation {
         ((Button) view.findViewById(R.id.next_button)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                replaceFragment("PROFILE", new ProfileFragment());
+                // replaceFragment("PROFILE", new ProfileFragment());
+                replaceFragment("SCHOOL_FEEDBACK", new SchoolFeedbackFragment());
             }
         });
 

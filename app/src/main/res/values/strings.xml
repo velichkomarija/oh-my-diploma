@@ -11,7 +11,7 @@
     <string name="name">ФИО</string>
     <string name="next">Продолжить</string>
     <string name="age">Возраст</string>
-    <string name="education">Образование</string>
+    <string name="education">Деятельность</string>
     <string name="error">ОШИБКА!</string>
     <string name="enter_testing_manifest">Приступим к тестированию. \n\nВам будет предложено 11 слов для запоминания.
     Прослушайте их и введите те слова, которые запомнили.\nПеред началом проверьте работоспособность динамиков (наушников).
@@ -208,6 +208,47 @@
         талантливых в любой сфере деятельности.</string>
     <string name="enter_testing_image"> После предъявления фигур - выберете из списка все, которые запомнили.</string>
     <string name="feedback">Обратная связь</string>
+
+    <!--Обратная связь-->
+    <string name="q_class">Укажите класс, в котором Вы учитесь</string>
+    <string name="q_subject">Укажите любимый предмет(-ы)</string>
+    <string name="q_hard_subject">Наиболее трудный для меня предмет(-ы)</string>
+    <string name="q_free_time">В свободное время я занимаюсь</string>
+    <string name="q_sport_type">Укажите вид спорта</string>
+    <string name="q_sport_type_time">Сколько лет вы занимаетесь спортом? </string>
+    <string name="q_art">Художественным творчеством</string>
+    <string name="q_dop_edu">Дополнительно обучаюсь</string>
+    <string name="q_etc">Другое</string>
+    <string name="q_memory">Я в целом считаю свою память</string>
+    <string name="excellent">Отличной</string>
+    <string name="good">Хорошей</string>
+    <string name="normal">Средней</string>
+    <string name="bad">Плохой</string>
+    <string name="q_first_imagination">Мое первое воспоминание относится к возрасту</string>
+    <string name="q_first_imagination_1">до 1 года</string>
+    <string name="q_first_imagination_2">2-3 года</string>
+    <string name="q_first_imagination_3">4-6 лет</string>
+    <string name="q_first_imagination_4">после 7 лет</string>
+    <string name="q_memory_type">Я лучше запоминаю</string>
+    <string name="q_memory_type_1">На слух</string>
+    <string name="q_memory_type_2">Зрительно</string>
+    <string name="q_memory_type_3">Моторно(мне необходимо написать или повторить движение)</string>
+    <string name="q_complicated">Сложность настоящего тестирования я оцениваю для себя как</string>
+    <string name="q_complicated_1">Высокую</string>
+    <string name="q_complicated_2">Среднюю</string>
+    <string name="q_complicated_3">Низкую</string>
+    <string name="subject_1">русский язык</string>
+    <string name="subject_2">иностранный язык</string>
+    <string name="subject_3">математика</string>
+    <string name="subject_4">литература</string>
+    <string name="subject_5">история</string>
+    <string name="subject_6">обществознание</string>
+    <string name="subject_7">биология</string>
+    <string name="subject_8">физика</string>
+    <string name="subject_9">химия</string>
+    <string name="subject_10">ОБЖ</string>
+    <string name="subject_11">физкультура</string>
+
 
 </resources>
 

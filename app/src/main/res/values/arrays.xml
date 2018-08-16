@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="edu">
-        <item>Нет</item>
-        <item>"Среднее профиссиональное</item>
-        <item>Общее основное (9 классов)</item>
-        <item>Среднее полное (11 классов)</item>
-        <item>Неоконченное высшее</item>
-        <item>Высшее</item>
+        <item>Учусь в школе</item>
+        <item>Учусь на дому</item>
+        <item>Учусь в колледже (техникуме)</item>
+        <item>Учусь в вузе</item>
+        <item>Не учусь</item>
+        <item>Работаю</item>
+        <item>Не работаю</item>
     </string-array>
 
 </resources>
