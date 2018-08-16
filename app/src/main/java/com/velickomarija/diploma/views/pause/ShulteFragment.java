@@ -16,10 +16,7 @@ import android.widget.TextView;
 import com.velickomarija.diploma.INavigation;
 import com.velickomarija.diploma.R;
 import com.velickomarija.diploma.models.PreferencesLocal;
-import com.velickomarija.diploma.views.common.ResultFragment;
 import com.velickomarija.diploma.views.sound.TestingSoundFragment;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Collections;

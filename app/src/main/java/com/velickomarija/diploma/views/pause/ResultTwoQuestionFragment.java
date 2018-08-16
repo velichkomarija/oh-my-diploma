@@ -9,20 +9,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ExpandableListView;
-import android.widget.LinearLayout;
-import android.widget.SimpleExpandableListAdapter;
 import android.widget.TextView;
 
 import com.velickomarija.diploma.INavigation;
 import com.velickomarija.diploma.R;
-import com.velickomarija.diploma.models.Algorithms;
 import com.velickomarija.diploma.models.PreferencesLocal;
 import com.velickomarija.diploma.views.image.TestingNextImageFragment;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class ResultTwoQuestionFragment extends Fragment implements INavigation {
     private static final String TAG = "RESULT_TWO_QUESTION";

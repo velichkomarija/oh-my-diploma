@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.velickomarija.diploma.INavigation;
 import com.velickomarija.diploma.R;
+import com.velickomarija.diploma.models.Constants;
 import com.velickomarija.diploma.models.PreferencesLocal;
 
 public class TestingImageFragment extends Fragment implements INavigation {
@@ -46,26 +47,26 @@ public class TestingImageFragment extends Fragment implements INavigation {
     private void timingTest() {
         int numParam = 1;
 
-        if (!(preferencesLocal.getProperty("PREF_NUM_IMAGE") == null)) {
-            numParam = Integer.parseInt(preferencesLocal.getProperty("PREF_NUM_IMAGE"));
+        if (!(preferencesLocal.getProperty(Constants.PREF_NUM_IMAGE) == null)) {
+            numParam = Integer.parseInt(preferencesLocal.getProperty(Constants.PREF_NUM_IMAGE));
         }
 
         if (numParam == 3) {
-            preferencesLocal.addProperty("PREF_NUM_IMAGE",
+            preferencesLocal.addProperty(Constants.PREF_NUM_IMAGE,
                     "1",
                     getContext());
             time(30000);
         }
 
         if (numParam == 2) {
-            preferencesLocal.addProperty("PREF_NUM_IMAGE",
+            preferencesLocal.addProperty(Constants.PREF_NUM_IMAGE,
                     "3",
                     getContext());
             time(45000);
         }
 
         if (numParam == 1) {
-            preferencesLocal.addProperty("PREF_NUM_IMAGE",
+            preferencesLocal.addProperty(Constants.PREF_NUM_IMAGE,
                     "2",
                     getContext());
             time(60000);

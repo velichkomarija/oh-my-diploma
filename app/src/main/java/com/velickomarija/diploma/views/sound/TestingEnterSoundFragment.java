@@ -6,7 +6,6 @@ import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.widget.ImageViewCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,8 +15,8 @@ import android.widget.TextView;
 
 import com.velickomarija.diploma.INavigation;
 import com.velickomarija.diploma.R;
+import com.velickomarija.diploma.models.Constants;
 import com.velickomarija.diploma.models.PreferencesLocal;
-import com.velickomarija.diploma.models.TextUtils;
 
 public class TestingEnterSoundFragment extends Fragment implements INavigation {
     private static final String TAG = "TESTING_ENTER_SOUND";
@@ -40,8 +39,8 @@ public class TestingEnterSoundFragment extends Fragment implements INavigation {
         startButton = (Button) view.findViewById(R.id.button_next);
         image = (ImageView) view.findViewById(R.id.image_sound);
 
-        if (preferencesLocal.getProperty("PREF_NUM_SOUND").equals("2") ||
-                preferencesLocal.getProperty("PREF_NUM_SOUND").equals("3")) {
+        if (preferencesLocal.getProperty(Constants.PREF_NUM_SOUND).equals("2") ||
+                preferencesLocal.getProperty(Constants.PREF_NUM_SOUND).equals("3")) {
             textNotation.setText(R.string.enter_testing_manifest_sound);
         } else {
             textNotation.setText(R.string.enter_testing_manifest);
@@ -55,8 +54,8 @@ public class TestingEnterSoundFragment extends Fragment implements INavigation {
                 textNotation.setVisibility(View.GONE);
                 image.setVisibility(View.VISIBLE);
 
-                if (preferencesLocal.getProperty("PREF_NUM_SOUND").equals("2") ||
-                        preferencesLocal.getProperty("PREF_NUM_SOUND").equals("3")) {
+                if (preferencesLocal.getProperty(Constants.PREF_NUM_SOUND).equals("2") ||
+                        preferencesLocal.getProperty(Constants.PREF_NUM_SOUND).equals("3")) {
                     sound(R.raw.test_15sec, 15500);
                 } else {
                     sound(R.raw.test_20sec, 20500);

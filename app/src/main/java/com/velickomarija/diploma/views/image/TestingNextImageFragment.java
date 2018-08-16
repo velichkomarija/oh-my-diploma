@@ -18,8 +18,8 @@ import android.widget.TextView;
 import com.velickomarija.diploma.INavigation;
 import com.velickomarija.diploma.R;
 import com.velickomarija.diploma.models.Algorithms;
+import com.velickomarija.diploma.models.Constants;
 import com.velickomarija.diploma.models.PreferencesLocal;
-import com.velickomarija.diploma.views.common.ResultFragment;
 import com.velickomarija.diploma.views.pause.ShulteFragment;
 
 import java.util.HashMap;
@@ -58,7 +58,7 @@ public class TestingNextImageFragment extends Fragment implements INavigation {
 
         initButtons(view);
 
-        if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("6")) {
+        if (preferencesLocal.getProperty(Constants.PREF_NUM_IMAGE).equals("6")) {
 
             textViewTitle1 = (TextView) view.findViewById(R.id.textViewTitle);
             textViewTitle1.setText("Сейчас необходимо отметить те " +
@@ -277,7 +277,6 @@ public class TestingNextImageFragment extends Fragment implements INavigation {
 
     }
 
-
     /**
      * Метод, обнуляющий счетчик нажатий на кнопки.
      */
@@ -371,17 +370,17 @@ public class TestingNextImageFragment extends Fragment implements INavigation {
         }
         resString = algorithms.algotithmImageNew(map, getContext());
 
-        if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("5")) {
+        if (preferencesLocal.getProperty(Constants.PREF_NUM_IMAGE).equals("5")) {
 
-            preferencesLocal.addProperty("PREF_FINDINGIMAGERESULT2",
+            preferencesLocal.addProperty(Constants.PREF_FINDINGIMAGERESULT,
                     resString,
                     getContext());
 
             showDialogImage(getString(R.string.message_title), "6", TAG, new TestingNextImageFragment());
 
-        } else if (preferencesLocal.getProperty("PREF_NUM_IMAGE").equals("6")) {
+        } else if (preferencesLocal.getProperty(Constants.PREF_NUM_IMAGE).equals("6")) {
 
-            preferencesLocal.addProperty("PREF_Z4",
+            preferencesLocal.addProperty(Constants.PREF_Z4,
                     resString,
                     getContext());
 
@@ -407,8 +406,7 @@ public class TestingNextImageFragment extends Fragment implements INavigation {
                 new DialogInterface.OnClickListener() {
 
                     public void onClick(DialogInterface dialog, int id) {
-                        PreferencesLocal preferencesLocal = new PreferencesLocal();
-                        preferencesLocal.addProperty("PREF_NUM_IMAGE",
+                        preferencesLocal.addProperty(Constants.PREF_NUM_IMAGE,
                                 num,
                                 getContext());
                         replaceFragment(tag, fragment);

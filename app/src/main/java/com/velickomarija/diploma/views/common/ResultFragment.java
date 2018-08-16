@@ -16,7 +16,7 @@ import android.widget.TextView;
 import com.velickomarija.diploma.INavigation;
 import com.velickomarija.diploma.R;
 import com.velickomarija.diploma.models.Algorithms;
-import com.velickomarija.diploma.models.Functions;
+import com.velickomarija.diploma.models.Constants;
 import com.velickomarija.diploma.models.PreferencesLocal;
 import com.velickomarija.diploma.models.ResultCreator;
 
@@ -36,12 +36,16 @@ public class ResultFragment extends Fragment implements INavigation {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.result_fragment, container, false);
         Algorithms algorithms = new Algorithms();
-        preferencesLocal.addProperty("PREF_C6",
-                algorithms.getCorrectionC6(preferencesLocal.getProperty("PREF_C6"), "PREF_REAL_C6", getContext()),
+        preferencesLocal.addProperty(Constants.PREF_C6,
+                algorithms.getCorrectionC6(preferencesLocal.getProperty(Constants.PREF_C6),
+                        Constants.PREF_REAL_C6,
+                        getContext()),
                 getContext());
 
-        preferencesLocal.addProperty("PREF_Z6",
-                algorithms.getCorrectionC6(preferencesLocal.getProperty("PREF_Z6"), "PREF_REAL_Z6", getContext()),
+        preferencesLocal.addProperty(Constants.PREF_Z6,
+                algorithms.getCorrectionC6(preferencesLocal.getProperty(Constants.PREF_Z6),
+                        Constants.PREF_REAL_Z6,
+                        getContext()),
                 getContext());
 
         String[] results = countResult();
@@ -78,7 +82,7 @@ public class ResultFragment extends Fragment implements INavigation {
             }
         }
         String resString = String.valueOf(resSound);
-        preferencesLocal.addProperty("PREF_TOTAL_SOUND",
+        preferencesLocal.addProperty(Constants.PREF_TOTAL_SOUND,
                 resString,
                 getContext());
         result[0] = resString;
@@ -93,13 +97,13 @@ public class ResultFragment extends Fragment implements INavigation {
             }
         }
         resString = String.valueOf(resImage);
-        preferencesLocal.addProperty("PREF_TOTAL_IMAGE",
+        preferencesLocal.addProperty(Constants.PREF_TOTAL_IMAGE,
                 resString,
                 getContext());
         result[1] = resString;
 
         resString = String.valueOf(resImage + resSound);
-        preferencesLocal.addProperty("PREF_TOTAL",
+        preferencesLocal.addProperty(Constants.PREF_TOTAL,
                 resString,
                 getContext());
         result[2] = resString;

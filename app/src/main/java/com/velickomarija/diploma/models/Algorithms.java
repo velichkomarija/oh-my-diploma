@@ -93,7 +93,7 @@ public class Algorithms {
         newWords.add("МЫШЬ");
         newWords.add("ТКАНЬ");
         newWords.add("ЛЕСОК");
-        newWords.add("ШЕЛК");
+        newWords.add("ШЁЛК");
         newWords.add("КОРОНА");
         newWords.add("ПАЛЬТО");
     }
@@ -137,7 +137,7 @@ public class Algorithms {
         newWords.add("МЫШЬ");
         newWords.add("ТКАНЬ");
         newWords.add("ЛЕСОК");
-        newWords.add("ШЕЛК");
+        newWords.add("ШЁЛК");
         newWords.add("КОРОНА");
         newWords.add("ПАЛЬТО");
     }
@@ -300,7 +300,7 @@ public class Algorithms {
         map = textToMap(text);
 
         try {
-            mistakes = Integer.valueOf(preferencesLocal.getProperty("PREF_C6"));
+            mistakes = Integer.valueOf(preferencesLocal.getProperty(Constants.PREF_C6));
         } catch (Exception e) {
             mistakes = 0;
             e.printStackTrace();
@@ -330,7 +330,8 @@ public class Algorithms {
                 sum++;
             }
         }
-        preferencesLocal.addProperty("PREF_C6", String.valueOf(mistakes), context);
+        preferencesLocal.addProperty(Constants.PREF_C6, String.valueOf(mistakes), context);
+
         return sum;
     }
 
@@ -347,7 +348,7 @@ public class Algorithms {
         int mistakes;
 
         try {
-            mistakes = Integer.valueOf(preferencesLocal.getProperty("PREF_Z6"));
+            mistakes = Integer.valueOf(preferencesLocal.getProperty(Constants.PREF_Z6));
         } catch (Exception e) {
             mistakes = 0;
             e.printStackTrace();
@@ -366,7 +367,7 @@ public class Algorithms {
                 mistakes++;
             }
         }
-        preferencesLocal.addProperty("PREF_Z6", String.valueOf(mistakes), context);
+        preferencesLocal.addProperty(Constants.PREF_Z6, String.valueOf(mistakes), context);
         reloadMapDigit();
         return sum;
     }
@@ -472,9 +473,9 @@ public class Algorithms {
             res = res - error;
             res = zeroAdapter(res);
 
-            int mistakes = Integer.valueOf(preferencesLocal.getProperty("PREF_C6"));
+            int mistakes = Integer.valueOf(preferencesLocal.getProperty(Constants.PREF_C6));
             mistakes = mistakes + error;
-            preferencesLocal.addProperty("PREF_C6", String.valueOf(mistakes), context);
+            preferencesLocal.addProperty(Constants.PREF_C6, String.valueOf(mistakes), context);
 
             if (res > 10) {
                 res = 10;
@@ -519,7 +520,7 @@ public class Algorithms {
         int mistakes;
 
         try {
-            mistakes = Integer.valueOf(preferencesLocal.getProperty("PREF_Z6"));
+            mistakes = Integer.valueOf(preferencesLocal.getProperty(Constants.PREF_Z6));
         } catch (Exception e) {
             mistakes = 0;
             e.printStackTrace();
@@ -538,7 +539,7 @@ public class Algorithms {
                 mistakes++;
             }
         }
-        preferencesLocal.addProperty("PREF_Z6", String.valueOf(mistakes), context);
+        preferencesLocal.addProperty(Constants.PREF_Z6, String.valueOf(mistakes), context);
         reloadMapNewFigure();
         return String.valueOf(sum);
     }

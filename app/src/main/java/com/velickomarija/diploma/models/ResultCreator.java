@@ -31,61 +31,61 @@ public class ResultCreator {
 
         StringBuffer stringBuffer = new StringBuffer();
         stringBuffer.append("Информация о тестируемом:")
-                .append(preferencesLocal.getProperty("PREF_NAME") + "/")
-                .append(preferencesLocal.getProperty("PREF_AGE") + "/")
-                .append(preferencesLocal.getProperty("PREF_MALE") + "/")
-                .append(preferencesLocal.getProperty("PREF_EDUCATION") + "/")
-                .append(preferencesLocal.getProperty("PREF_ETC_INFORMATION"))
+                .append(preferencesLocal.getProperty(Constants.PREF_NAME) + "/")
+                .append(preferencesLocal.getProperty(Constants.PREF_AGE) + "/")
+                .append(preferencesLocal.getProperty(Constants.PREF_MALE) + "/")
+                .append(preferencesLocal.getProperty(Constants.PREF_EDUCATION) + "/")
+                .append(preferencesLocal.getProperty(Constants.PREF_ETC_INFORMATION))
                 .append("\n\n");
 
         stringBuffer.append("Результаты тестирования слухоречевой памяти: \n")
                 .append("Параметр C1: ")
-                .append(preferencesLocal.getProperty("PREF_C1"))
+                .append(preferencesLocal.getProperty(Constants.PREF_C1))
                 .append("\n")
                 .append("Параметр C2: ")
-                .append(preferencesLocal.getProperty("PREF_C2"))
+                .append(preferencesLocal.getProperty(Constants.PREF_C2))
                 .append("\n")
                 .append("Параметр C4: ")
-                .append(preferencesLocal.getProperty("PREF_C4"))
+                .append(preferencesLocal.getProperty(Constants.PREF_C4))
                 .append("\n")
                 .append("Параметр C5: ")
-                .append(preferencesLocal.getProperty("PREF_C5"))
+                .append(preferencesLocal.getProperty(Constants.PREF_C5))
                 .append("\n")
                 .append("Параметр C6: ")
-                .append(preferencesLocal.getProperty("PREF_C6"))
+                .append(preferencesLocal.getProperty(Constants.PREF_C6))
                 .append("\n")
                 .append("Параметр C6(количество ошибок): ")
-                .append(preferencesLocal.getProperty("PREF_REAL_C6"))
+                .append(preferencesLocal.getProperty(Constants.PREF_REAL_C6))
                 .append("\n")
                 .append("Сумма: ")
-                .append(preferencesLocal.getProperty("PREF_TOTAL_SOUND"))
+                .append(preferencesLocal.getProperty(Constants.PREF_TOTAL_SOUND))
                 .append("\n\n");
 
         stringBuffer.append("Результаты тестирования зрительной памяти: \n")
                 .append("Параметр Z1: ")
-                .append(preferencesLocal.getProperty("PREF_Z1"))
+                .append(preferencesLocal.getProperty(Constants.PREF_Z1))
                 .append("\n")
                 .append("Параметр Z2: ")
-                .append(preferencesLocal.getProperty("PREF_Z2"))
+                .append(preferencesLocal.getProperty(Constants.PREF_Z2))
                 .append("\n")
                 .append("Параметр Z4: ")
-                .append(preferencesLocal.getProperty("PREF_Z4"))
+                .append(preferencesLocal.getProperty(Constants.PREF_Z4))
                 .append("\n")
                 .append("Параметр Z5: ")
-                .append(preferencesLocal.getProperty("PREF_Z5"))
+                .append(preferencesLocal.getProperty(Constants.PREF_Z5))
                 .append("\n")
                 .append("Параметр Z6: ")
-                .append(preferencesLocal.getProperty("PREF_Z6"))
+                .append(preferencesLocal.getProperty(Constants.PREF_Z6))
                 .append("\n")
                 .append("Параметр Z6(количество ошибок): ")
-                .append(preferencesLocal.getProperty("PREF_REAL_Z6"))
+                .append(preferencesLocal.getProperty(Constants.PREF_REAL_Z6))
                 .append("\n")
                 .append("Сумма: ")
-                .append(preferencesLocal.getProperty("PREF_TOTAL_IMAGE"))
+                .append(preferencesLocal.getProperty(Constants.PREF_TOTAL_IMAGE))
                 .append("\n\n");
 
         stringBuffer.append("Результаты тестирования: ")
-                .append(preferencesLocal.getProperty("PREF_TOTAL"));
+                .append(preferencesLocal.getProperty(Constants.PREF_TOTAL));
 
         return stringBuffer.toString();
     }
@@ -98,7 +98,8 @@ public class ResultCreator {
     private static String createNameFile() {
         StringBuffer stringBuffer = new StringBuffer();
         stringBuffer
-                .append(preferencesLocal.getProperty("PREF_NAME"))
+                .append(preferencesLocal.getProperty(Constants.PREF_NAME))
+                .append("_")
                 .append((int) (Math.random() * 10000))
                 .append(".txt");
 

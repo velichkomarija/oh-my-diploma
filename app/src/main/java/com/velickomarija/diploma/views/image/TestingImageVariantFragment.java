@@ -13,12 +13,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.velickomarija.diploma.INavigation;
 import com.velickomarija.diploma.R;
 import com.velickomarija.diploma.models.Algorithms;
+import com.velickomarija.diploma.models.Constants;
 import com.velickomarija.diploma.models.PreferencesLocal;
 import com.velickomarija.diploma.views.common.ResultFragment;
 import com.velickomarija.diploma.views.pause.QuestionEnter2Fragment;
@@ -645,15 +645,15 @@ public class TestingImageVariantFragment extends Fragment implements INavigation
 
         int res = algorithms.algorithmImageMemoryZ1(map, getContext());
         String resString = String.valueOf(res);
-        String numTesting = preferencesLocal.getProperty("PREF_NUM_IMAGE");
+        String numTesting = preferencesLocal.getProperty(Constants.PREF_NUM_IMAGE);
 
         if (numTesting.equals("2")) {
 
-            preferencesLocal.addProperty("PREF_Z1",
+            preferencesLocal.addProperty(Constants.PREF_Z1,
                     initResString(resString),
                     getContext());
 
-            preferencesLocal.addProperty("PREF_RESULTIMAGE1",
+            preferencesLocal.addProperty(Constants.PREF_RESULTIMAGE1,
                     resString,
                     getContext());
 
@@ -665,7 +665,7 @@ public class TestingImageVariantFragment extends Fragment implements INavigation
 
         } else if (numTesting.equals("3")) {
 
-            preferencesLocal.addProperty("PREF_RESULTIMAGE2",
+            preferencesLocal.addProperty(Constants.PREF_RESULTIMAGE2,
                     resString,
                     getContext());
 
@@ -677,16 +677,16 @@ public class TestingImageVariantFragment extends Fragment implements INavigation
 
         } else if (numTesting.equals("1")) {
 
-            preferencesLocal.addProperty("PREF_RESULTIMAGE3",
+            preferencesLocal.addProperty(Constants.PREF_RESULTIMAGE3,
                     resString,
                     getContext());
 
-            String par1 = preferencesLocal.getProperty("PREF_RESULTIMAGE1");
-            String par2 = preferencesLocal.getProperty("PREF_RESULTIMAGE2");
-            String par3 = preferencesLocal.getProperty("PREF_RESULTIMAGE3");
+            String par1 = preferencesLocal.getProperty(Constants.PREF_RESULTIMAGE1);
+            String par2 = preferencesLocal.getProperty(Constants.PREF_RESULTIMAGE2);
+            String par3 = preferencesLocal.getProperty(Constants.PREF_RESULTIMAGE3);
             String result = algorithms.algorithmSoundMemoryC2(par1, par2, par3);
 
-            preferencesLocal.addProperty("PREF_Z2",
+            preferencesLocal.addProperty(Constants.PREF_Z2,
                     result,
                     getContext());
             showDialogImage(getString(R.string.message_title),
@@ -696,10 +696,10 @@ public class TestingImageVariantFragment extends Fragment implements INavigation
 
         } else if (numTesting.equals("7")) {
 
-            preferencesLocal.addProperty("PREF_LASTIMAGERESULT2",
+            preferencesLocal.addProperty(Constants.PREF_LASTIMAGERESULT2,
                     resString,
                     getContext());
-            preferencesLocal.addProperty("PREF_Z5",
+            preferencesLocal.addProperty(Constants.PREF_Z5,
                     initResString(resString),
                     getContext());
             showDialogImage(getString(R.string.message_title),
@@ -710,7 +710,7 @@ public class TestingImageVariantFragment extends Fragment implements INavigation
 
         } else if (numTesting.equals("4")) {
 
-            preferencesLocal.addProperty("PREF_LASTIMAGERESULT1",
+            preferencesLocal.addProperty(Constants.PREF_LASTIMAGERESULT1,
                     resString,
                     getContext());
             showDialogImage(getString(R.string.message_title),
@@ -739,8 +739,7 @@ public class TestingImageVariantFragment extends Fragment implements INavigation
                 .setPositiveButton(getString(R.string.yes_go),
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
-                                PreferencesLocal preferencesLocal = new PreferencesLocal();
-                                preferencesLocal.addProperty("PREF_NUM_IMAGE",
+                                preferencesLocal.addProperty(Constants.PREF_NUM_IMAGE,
                                         num,
                                         getContext());
                                 replaceFragment(tag, fragment);

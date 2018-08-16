@@ -17,9 +17,9 @@ import android.widget.Toast;
 
 import com.velickomarija.diploma.INavigation;
 import com.velickomarija.diploma.R;
+import com.velickomarija.diploma.models.Constants;
 import com.velickomarija.diploma.models.Functions;
 import com.velickomarija.diploma.models.PreferencesLocal;
-import com.velickomarija.diploma.views.pause.ShulteFragment;
 import com.velickomarija.diploma.views.sound.TestingEnterSoundFragment;
 
 public class ProfileFragment extends Fragment implements INavigation {
@@ -80,7 +80,6 @@ public class ProfileFragment extends Fragment implements INavigation {
 
                 if (nameFlag == true && ageFlag == true) {
                     replaceFragment("TESTING_ENTER_SOUND", new TestingEnterSoundFragment());
-                    //    replaceFragment("SHULTE", new ShulteFragment());
                 }
             }
         });
@@ -94,45 +93,45 @@ public class ProfileFragment extends Fragment implements INavigation {
         Context context = getContext();
         PreferencesLocal preferencesLocal = new PreferencesLocal();
         //триггеры
-        preferencesLocal.addProperty("PREF_NUM_SOUND", "1", context);
-        preferencesLocal.addProperty("PREF_NUM_IMAGE", "none", context);
+        preferencesLocal.addProperty(Constants.PREF_NUM_SOUND, "1", context);
+        preferencesLocal.addProperty(Constants.PREF_NUM_IMAGE, "none", context);
         //данные о пользователе
-        preferencesLocal.addProperty("PREF_NAME", "none", context);
-        preferencesLocal.addProperty("PREF_AGE", "none", context);
-        preferencesLocal.addProperty("PREF_EDUCATION", "none", context);
-        preferencesLocal.addProperty("PREF_MALE", "Мужской", context);
-        preferencesLocal.addProperty("PREF_ETC_INFORMATION", "none", context);
+        preferencesLocal.addProperty(Constants.PREF_NAME, "none", context);
+        preferencesLocal.addProperty(Constants.PREF_AGE, "none", context);
+        preferencesLocal.addProperty(Constants.PREF_EDUCATION, "none", context);
+        preferencesLocal.addProperty(Constants.PREF_MALE, "Мужской", context);
+        preferencesLocal.addProperty(Constants.PREF_ETC_INFORMATION, "none", context);
         //результат первых трех проб в слуховой памяти
-        preferencesLocal.addProperty(" PREF_SOUNDRESULT1", "0", context);
-        preferencesLocal.addProperty(" PREF_SOUNDRESULT2", "0", context);
-        preferencesLocal.addProperty(" PREF_SOUNDRESULT3", "0", context);
+        preferencesLocal.addProperty(Constants.PREF_SOUNDRESULT1, "0", context);
+        preferencesLocal.addProperty(Constants.PREF_SOUNDRESULT2, "0", context);
+        preferencesLocal.addProperty(Constants.PREF_SOUNDRESULT3, "0", context);
         //результат первых проб зрительной памяти
-        preferencesLocal.addProperty("PREF_IMAGE1", "0", context);
-        preferencesLocal.addProperty("PREF_IMAGE2", "0", context);
-        preferencesLocal.addProperty("PREF_IMAGE3", "0", context);
+        preferencesLocal.addProperty(Constants.PREF_RESULTIMAGE1, "0", context);
+        preferencesLocal.addProperty(Constants.PREF_RESULTIMAGE2, "0", context);
+        preferencesLocal.addProperty(Constants.PREF_RESULTIMAGE3, "0", context);
         //результат C1,C2,C4,C6, Z1,Z2,Z4,Z6
-        preferencesLocal.addProperty("PREF_C1", "0", context);
-        preferencesLocal.addProperty("PREF_C2", "0", context);
-        preferencesLocal.addProperty("PREF_C4", "0", context);
-        preferencesLocal.addProperty("PREF_C6", "0", context);
-        preferencesLocal.addProperty("PREF_Z1", "0", context);
-        preferencesLocal.addProperty("PREF_Z2", "0", context);
-        preferencesLocal.addProperty("PREF_Z4", "0", context);
-        preferencesLocal.addProperty("PREF_Z6", "0", context);
+        preferencesLocal.addProperty(Constants.PREF_C1, "0", context);
+        preferencesLocal.addProperty(Constants.PREF_C2, "0", context);
+        preferencesLocal.addProperty(Constants.PREF_C4, "0", context);
+        preferencesLocal.addProperty(Constants.PREF_C6, "0", context);
+        preferencesLocal.addProperty(Constants.PREF_Z1, "0", context);
+        preferencesLocal.addProperty(Constants.PREF_Z2, "0", context);
+        preferencesLocal.addProperty(Constants.PREF_Z4, "0", context);
+        preferencesLocal.addProperty(Constants.PREF_Z6, "0", context);
         //Реальные
-        preferencesLocal.addProperty("PREF_REAL_Z6", "0", context);
-        preferencesLocal.addProperty("PREF_REAL_C6", "0", context);
+        preferencesLocal.addProperty(Constants.PREF_REAL_C6, "0", context);
+        preferencesLocal.addProperty(Constants.PREF_REAL_Z6, "0", context);
         //Отсроченные
-        preferencesLocal.addProperty("PREF_SOUNDLASTRESULT1", "0", context);
-        preferencesLocal.addProperty("PREF_С5", "0", context);
-        preferencesLocal.addProperty("PREF_LASTIMAGERESULT2", "0", context);
-        preferencesLocal.addProperty("PREF_SOUNDLASTRESULT2", "0", context);
-        preferencesLocal.addProperty("PREF_LASTIMAGERESULT1", "0", context);
-        preferencesLocal.addProperty("PREF_Z5", "0", context);
+        preferencesLocal.addProperty(Constants.PREF_SOUNDLASTRESULT1, "0", context);
+        preferencesLocal.addProperty(Constants.PREF_C5, "0", context);
+        preferencesLocal.addProperty(Constants.PREF_LASTIMAGERESULT2, "0", context);
+        preferencesLocal.addProperty(Constants.PREF_SOUNDLASTRESULT2, "0", context);
+        preferencesLocal.addProperty(Constants.PREF_LASTIMAGERESULT1, "0", context);
+        preferencesLocal.addProperty(Constants.PREF_Z5, "0", context);
         //Старые слова
-        preferencesLocal.addProperty("PREF_RESULTOLDWORDS", "0", context);
+        preferencesLocal.addProperty(Constants.PREF_RESULTOLDWORDS, "0", context);
         //узнавание
-        preferencesLocal.addProperty("PREF_FINDINGIMAGERESULT2", "0", getContext());
+        preferencesLocal.addProperty(Constants.PREF_FINDINGIMAGERESULT, "0", getContext());
     }
 
     /**
@@ -163,7 +162,7 @@ public class ProfileFragment extends Fragment implements INavigation {
                 throw new Exception();
             }
 
-            pref.addProperty("PREF_NAME",
+            pref.addProperty(Constants.PREF_NAME,
                     name,
                     getContext());
 
@@ -193,13 +192,13 @@ public class ProfileFragment extends Fragment implements INavigation {
         try {
             String etcInformation = etcInformationBox.getText().toString();
 
-            pref.addProperty("PREF_ETC_INFORMATION",
+            pref.addProperty(Constants.PREF_ETC_INFORMATION,
                     etcInformation,
                     getContext());
 
         } catch (Exception e) {
             pref.addProperty("PREF_ETC_INFORMATION",
-                    " ",
+                    "Нет",
                     getContext());
         }
     }
@@ -221,7 +220,7 @@ public class ProfileFragment extends Fragment implements INavigation {
             if (age <= 7 || age > 100) {
                 throw new Exception();
             }
-            pref.addProperty("PREF_AGE",
+            pref.addProperty(Constants.PREF_AGE,
                     stringAge,
                     getContext());
 
@@ -238,7 +237,7 @@ public class ProfileFragment extends Fragment implements INavigation {
     private void saveEducation() {
         //получаем образование
         String selected = spinner.getSelectedItem().toString();
-        pref.addProperty("PREF_EDUCATION",
+        pref.addProperty(Constants.PREF_EDUCATION,
                 selected,
                 getContext());
     }

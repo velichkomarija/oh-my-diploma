@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.velickomarija.diploma.INavigation;
 import com.velickomarija.diploma.R;
 import com.velickomarija.diploma.models.Algorithms;
+import com.velickomarija.diploma.models.Constants;
 import com.velickomarija.diploma.models.PreferencesLocal;
 
 public class TestingSoundNWordsFragment extends Fragment implements INavigation {
@@ -87,7 +88,7 @@ public class TestingSoundNWordsFragment extends Fragment implements INavigation 
             public void onFinish() {
                 String str = stringBuffer.toString();
                 String res = algorithms.algorithmFindOldWordsInNew(str, getContext());
-                preferencesLocal.addProperty("PREF_RESULTOLDWORDS",
+                preferencesLocal.addProperty(Constants.PREF_RESULTOLDWORDS,
                         res,
                         getContext());
                 replaceFragment("TESTING_SOUND", new TestingSoundFragment());

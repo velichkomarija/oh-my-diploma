@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.velickomarija.diploma.INavigation;
 import com.velickomarija.diploma.R;
 import com.velickomarija.diploma.models.Algorithms;
+import com.velickomarija.diploma.models.Constants;
 import com.velickomarija.diploma.models.PreferencesLocal;
 import com.velickomarija.diploma.views.image.TestingEnterImageFragment;
 import com.velickomarija.diploma.views.image.TestingImageVariantFragment;
@@ -45,11 +46,13 @@ public class TestingSoundFragment extends Fragment implements INavigation {
 
         button = (Button) view.findViewById(R.id.button_next);
 
-        if (preferencesLocal.getProperty("PREF_NUM_SOUND").equals("5")) {
+        String property = preferencesLocal.getProperty(Constants.PREF_NUM_SOUND);
+
+        if (property.equals("5")) {
             textView.setText(R.string.text_new_words);
         }
-        if (preferencesLocal.getProperty("PREF_NUM_SOUND").equals("4") ||
-                preferencesLocal.getProperty("PREF_NUM_SOUND").equals("6")) {
+        if (property.equals("4") ||
+                property.equals("6")) {
             textView.setText(R.string.text_sound_last);
         }
 
@@ -66,12 +69,12 @@ public class TestingSoundFragment extends Fragment implements INavigation {
 
         int numParam = 1;
 
-        if (!(preferencesLocal.getProperty("PREF_NUM_SOUND").equals("none"))) {
+        if (!(preferencesLocal.getProperty(Constants.PREF_NUM_SOUND).equals("none"))) {
             try {
-                numParam = Integer.parseInt(preferencesLocal.getProperty("PREF_NUM_SOUND"));
+                numParam = Integer.parseInt(preferencesLocal.getProperty(Constants.PREF_NUM_SOUND));
             } catch (Exception e) {
                 Toast toast = Toast.makeText(getContext(),
-                        preferencesLocal.getProperty("PREF_NUM_SOUND"),
+                        preferencesLocal.getProperty(Constants.PREF_NUM_SOUND),
                         Toast.LENGTH_LONG);
                 toast.show();
             }
@@ -83,11 +86,11 @@ public class TestingSoundFragment extends Fragment implements INavigation {
         String resString = String.valueOf(res);
 
         if (numParam == 6) {
-            preferencesLocal.addProperty("PREF_SOUNDLASTRESULT2",
+            preferencesLocal.addProperty(Constants.PREF_SOUNDLASTRESULT2,
                     resString,
                     getContext());
 
-            preferencesLocal.addProperty("PREF_C5",
+            preferencesLocal.addProperty(Constants.PREF_C5,
                     initResString(resString),
                     getContext());
 
@@ -104,7 +107,7 @@ public class TestingSoundFragment extends Fragment implements INavigation {
             if (resString.equals("11") || resString.equals("12")) {
                 resString = "10";
             }
-            preferencesLocal.addProperty("PREF_C4",
+            preferencesLocal.addProperty(Constants.PREF_C4,
                     resString,
                     getContext());
 
@@ -117,7 +120,7 @@ public class TestingSoundFragment extends Fragment implements INavigation {
 
         if (numParam == 4) {
 
-            preferencesLocal.addProperty("PREF_SOUNDLASTRESULT1",
+            preferencesLocal.addProperty(Constants.PREF_SOUNDLASTRESULT1,
                     resString,
                     getContext());
 
@@ -129,21 +132,21 @@ public class TestingSoundFragment extends Fragment implements INavigation {
         }
 
         if (numParam == 3) {
-            preferencesLocal.addProperty("PREF_SOUNDRESULT3",
+            preferencesLocal.addProperty(Constants.PREF_SOUNDRESULT3,
                     resString,
                     getContext());
 
-            String par1 = preferencesLocal.getProperty("PREF_SOUNDRESULT1");
-            String par2 = preferencesLocal.getProperty("PREF_SOUNDRESULT2");
-            String par3 = preferencesLocal.getProperty("PREF_SOUNDRESULT3");
+            String par1 = preferencesLocal.getProperty(Constants.PREF_SOUNDRESULT1);
+            String par2 = preferencesLocal.getProperty(Constants.PREF_SOUNDRESULT2);
+            String par3 = preferencesLocal.getProperty(Constants.PREF_SOUNDRESULT3);
 
             String result = algorithms.algorithmSoundMemoryC2(par1, par2, par3);
 
-            preferencesLocal.addProperty("PREF_C2",
+            preferencesLocal.addProperty(Constants.PREF_C2,
                     result,
                     getContext());
 
-            preferencesLocal.addProperty("PREF_NUM_IMAGE",
+            preferencesLocal.addProperty(Constants.PREF_NUM_IMAGE,
                     "2",
                     getContext());
 
@@ -156,7 +159,7 @@ public class TestingSoundFragment extends Fragment implements INavigation {
 
         if (numParam == 2) {
 
-            preferencesLocal.addProperty("PREF_SOUNDRESULT2",
+            preferencesLocal.addProperty(Constants.PREF_SOUNDRESULT2,
                     resString,
                     getContext());
 
@@ -169,11 +172,11 @@ public class TestingSoundFragment extends Fragment implements INavigation {
 
         if (numParam == 1) {
 
-            preferencesLocal.addProperty("PREF_C1",
+            preferencesLocal.addProperty(Constants.PREF_C1,
                     initResString(resString),
                     getContext());
 
-            preferencesLocal.addProperty("PREF_SOUNDRESULT1",
+            preferencesLocal.addProperty(Constants.PREF_SOUNDRESULT1,
                     resString,
                     getContext());
 
@@ -215,7 +218,7 @@ public class TestingSoundFragment extends Fragment implements INavigation {
                     public void onClick(DialogInterface dialog, int id) {
                         // dialog.cancel();
                         PreferencesLocal preferencesLocal = new PreferencesLocal();
-                        preferencesLocal.addProperty("PREF_NUM_SOUND",
+                        preferencesLocal.addProperty(Constants.PREF_NUM_SOUND,
                                 num,
                                 view.getContext());
                         replaceFragment(tag, fragment);
