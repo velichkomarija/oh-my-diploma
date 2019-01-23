@@ -24,6 +24,9 @@ import com.velickomarija.diploma.models.PreferencesLocal;
 import com.velickomarija.diploma.views.image.TestingEnterImageFragment;
 import com.velickomarija.diploma.views.image.TestingImageVariantFragment;
 
+/**
+ * Класс, отвечающий за отрисовку фрагмента тестирования слухоречевой памяти.
+ */
 public class TestingSoundFragment extends Fragment implements INavigation {
     private static final String TAG = "TESTING_SOUND";
 
@@ -33,9 +36,20 @@ public class TestingSoundFragment extends Fragment implements INavigation {
     private EditText editText;
     private Button button;
 
+    /**
+     * Конструктор класса.
+     */
     public TestingSoundFragment() {
     }
 
+    /**
+     * Метод, необходимый для связывания компонентов внутри фрагмента.
+     *
+     * @param inflater           объект класса LayoutInflater.
+     * @param container          объект класса ViewGroup.
+     * @param savedInstanceState объект класса Bundle.
+     * @return объект класса View.
+     */
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -65,6 +79,12 @@ public class TestingSoundFragment extends Fragment implements INavigation {
         return view;
     }
 
+    /**
+     * Метод-обработчик нажатия на кнопку "Продолжить".
+     * Осуществляет переход к следующемй этапу тестирования слухоречевой памяти.
+     *
+     * @param view объект класса View.
+     */
     private void onClickToGoTestingNextSound(View view) {
 
         int numParam = 1;
@@ -188,10 +208,19 @@ public class TestingSoundFragment extends Fragment implements INavigation {
         }
     }
 
+    /**
+     * Метод-обработчик нажатия на физическую кнопку "Назад".
+     */
     public void onBackPressed() {
         // do nothing
     }
 
+    /**
+     * Метод для корректировки первичного результата тестирования.
+     *
+     * @param res
+     * @return
+     */
     private String initResString(String res) {
         if (res.equals("11")) {
             return "10";
@@ -199,6 +228,12 @@ public class TestingSoundFragment extends Fragment implements INavigation {
         return res;
     }
 
+    /**
+     * Метод для обеспечения перехода между фрагментами.
+     *
+     * @param tag      тег фрагмента.
+     * @param fragment объект класса Fragment.
+     */
     @Override
     public void replaceFragment(String tag, Fragment fragment) {
         FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
@@ -207,6 +242,15 @@ public class TestingSoundFragment extends Fragment implements INavigation {
         fragmentTransaction.commitAllowingStateLoss();
     }
 
+    /**
+     * Метод, отображающий окно-подтверждение на действие пользователя при тестировании слухоречевой памяти.
+     *
+     * @param fragment объект класса Fragment.
+     * @param tag      тег франмента перехода.
+     * @param text     текст сообщения-подтверждения.
+     * @param view     объект класса View.
+     * @param num      идентификатор следующей пробы.
+     */
     public void showDialogSound(final Fragment fragment, final String tag, String text, final View view, final String num) {
         AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
         builder.setTitle(getString(R.string.important_message))

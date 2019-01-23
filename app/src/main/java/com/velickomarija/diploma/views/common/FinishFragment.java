@@ -10,9 +10,20 @@ import android.widget.Button;
 
 import com.velickomarija.diploma.R;
 
+/**
+ * Класс, отвечающий за отрисовку фрагмента заключительного экрана.
+ */
 public class FinishFragment extends Fragment {
     private static final String TAG = "FINISH_FRAGMENT";
 
+    /**
+     * Метод, необходимый для связывания компонентов внутри фрагмента.
+     *
+     * @param inflater           объект класса LayoutInflater.
+     * @param container          объект класса ViewGroup.
+     * @param savedInstanceState объект класса Bundle.
+     * @return объект класса View.
+     */
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

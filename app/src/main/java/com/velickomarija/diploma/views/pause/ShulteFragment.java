@@ -21,6 +21,9 @@ import com.velickomarija.diploma.views.sound.TestingSoundFragment;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * Класс, отвечающий за отрисовку фрагмента таблиц Шульте. Третья интерферирующая пауза.
+ */
 public class ShulteFragment extends Fragment implements INavigation {
     private static final String TAG = "SHULTE";
     private TextView digit1, digit2, digit3, digit4, digit5, digit6, digit7, digit8, digit9, digit10,
@@ -34,9 +37,20 @@ public class ShulteFragment extends Fragment implements INavigation {
     Button buttonNext;
     ArrayList<Integer> notShuffled;
 
+    /**
+     * Конструктор класса.
+     */
     public ShulteFragment() {
     }
 
+    /**
+     * Метод, необходимый для связывания компонентов внутри фрагмента.
+     *
+     * @param inflater           объект класса LayoutInflater.
+     * @param container          объект класса ViewGroup.
+     * @param savedInstanceState объект класса Bundle.
+     * @return объект класса View.
+     */
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -124,6 +138,12 @@ public class ShulteFragment extends Fragment implements INavigation {
         return view;
     }
 
+    /**
+     * Метод-обработчик нажатия на одну из ячеек таблицы Шульте.
+     * Предпалагает переход к новым таблицам Шульте.
+     *
+     * @param textView объект класса TextView.
+     */
     private void setClickListener(final TextView textView) {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -188,6 +208,12 @@ public class ShulteFragment extends Fragment implements INavigation {
         });
     }
 
+    /**
+     * Метод, отвечающий за время анимации при нажатии на ячейку таблицы Шульте.
+     *
+     * @param textView объект класса TextView.
+     * @param color    цвет окрашивания значения в ячейке таблицы.
+     */
     private void timing(final TextView textView, final int color) {
         final CountDownTimer start = new CountDownTimer(250, 50) {
             public void onTick(long milliesUntilFinished) {
@@ -200,6 +226,9 @@ public class ShulteFragment extends Fragment implements INavigation {
         }.start();
     }
 
+    /**
+     * Метод, осуществляющий смену значений в таблице Шульте при переходе к новому этапу тестирования.
+     */
     private void shuffleNumbers() {
         notShuffled = new ArrayList<Integer>();
         for (int i = 1; i <= 25; i++) {
@@ -234,6 +263,12 @@ public class ShulteFragment extends Fragment implements INavigation {
         digit25.setText(String.valueOf(notShuffled.get(24)));
     }
 
+    /**
+     * Метод для обеспечения перехода между фрагментами.
+     *
+     * @param tag      тег фрагмента.
+     * @param fragment объект класса Fragment.
+     */
     @Override
     public void replaceFragment(String tag, Fragment fragment) {
         FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();

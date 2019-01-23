@@ -4,6 +4,9 @@ import android.app.Application;
 
 import com.facebook.stetho.Stetho;
 
+/**
+ * Класс, необходимый для тестирования приложения с помощью инструмента Stetho.
+ */
 public class MyApplication extends Application {
     @Override
     public void onCreate() {

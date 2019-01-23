@@ -16,6 +16,9 @@ import com.velickomarija.diploma.R;
 import com.velickomarija.diploma.models.PreferencesLocal;
 import com.velickomarija.diploma.views.image.TestingNextImageFragment;
 
+/**
+ * Класс, отвечающий за ображение фрагмента с результатами второй интерферирующей паузы.
+ */
 public class ResultTwoQuestionFragment extends Fragment implements INavigation {
     private static final String TAG = "RESULT_TWO_QUESTION";
     private TextView textView;
@@ -23,6 +26,9 @@ public class ResultTwoQuestionFragment extends Fragment implements INavigation {
     private PreferencesLocal preferencesLocal = new PreferencesLocal();
     private Button button;
 
+    /**
+     * Конструктор класса.
+     */
     public ResultTwoQuestionFragment() {
 
     }
@@ -34,6 +40,14 @@ public class ResultTwoQuestionFragment extends Fragment implements INavigation {
         // do nothing
     }
 
+    /**
+     * Метод, необходимый для связывания компонентов внутри фрагмента.
+     *
+     * @param inflater           объект класса LayoutInflater.
+     * @param container          объект класса ViewGroup.
+     * @param savedInstanceState объект класса Bundle.
+     * @return объект класса View.
+     */
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -59,6 +73,12 @@ public class ResultTwoQuestionFragment extends Fragment implements INavigation {
         return view;
     }
 
+    /**
+     * Метод-обработчик нажатия на карточку с расшифтровкой результата.
+     *
+     * @param parent объект карточки-родителя.
+     * @param child  объект дочерней карточки.
+     */
     private void setClickListener(final CardView parent, final CardView child) {
         parent.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +92,12 @@ public class ResultTwoQuestionFragment extends Fragment implements INavigation {
         });
     }
 
+    /**
+     * Метод для обеспечения перехода между фрагментами.
+     *
+     * @param tag      тег фрагмента.
+     * @param fragment объект класса Fragment.
+     */
     @Override
     public void replaceFragment(String tag, Fragment fragment) {
         FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();

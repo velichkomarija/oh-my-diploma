@@ -20,6 +20,9 @@ import com.velickomarija.diploma.models.Constants;
 import com.velickomarija.diploma.models.PreferencesLocal;
 import com.velickomarija.diploma.models.ResultCreator;
 
+/**
+ * Класс, отвечающий за отрисовку фрагмента отображения рузультатов тестирования.
+ */
 public class ResultFragment extends Fragment implements INavigation {
     private final static String TAG = "RESULT_FRAGMENT";
     private PreferencesLocal preferencesLocal = new PreferencesLocal();
@@ -31,6 +34,14 @@ public class ResultFragment extends Fragment implements INavigation {
         // do nothing
     }
 
+    /**
+     * Метод, необходимый для связывания компонентов внутри фрагмента.
+     *
+     * @param inflater           объект класса LayoutInflater.
+     * @param container          объект класса ViewGroup.
+     * @param savedInstanceState объект класса Bundle.
+     * @return объект класса View.
+     */
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -150,6 +161,12 @@ public class ResultFragment extends Fragment implements INavigation {
         alert.show();
     }
 
+    /**
+     * Метод для обеспечения перехода между фрагментами.
+     *
+     * @param tag      тег фрагмента.
+     * @param fragment объект класса Fragment.
+     */
     @Override
     public void replaceFragment(String tag, Fragment fragment) {
         FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();

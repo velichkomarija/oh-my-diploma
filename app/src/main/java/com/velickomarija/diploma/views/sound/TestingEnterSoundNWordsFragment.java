@@ -16,10 +16,21 @@ import android.widget.TextView;
 import com.velickomarija.diploma.INavigation;
 import com.velickomarija.diploma.R;
 
+/**
+ * Класс, выполняющий отрисовку фрагмента узнавания новых слов. Тестирование слухоречевой памяти.
+ */
 public class TestingEnterSoundNWordsFragment extends Fragment implements INavigation {
     private Button button;
     private static final String TAG = "TESTING_SOUND_ENTER_N_WORDS";
 
+    /**
+     * Метод, необходимый для связывания компонентов внутри фрагмента.
+     *
+     * @param inflater           объект класса LayoutInflater.
+     * @param container          объект класса ViewGroup.
+     * @param savedInstanceState объект класса Bundle.
+     * @return объект класса View.
+     */
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -64,9 +75,18 @@ public class TestingEnterSoundNWordsFragment extends Fragment implements INaviga
         return view;
     }
 
+    /**
+     * Конструктор класса.
+     */
     public TestingEnterSoundNWordsFragment() {
     }
 
+    /**
+     * Метод для обеспечения перехода между фрагментами.
+     *
+     * @param tag      тег фрагмента.
+     * @param fragment объект класса Fragment.
+     */
     @Override
     public void replaceFragment(String tag, Fragment fragment) {
         FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();

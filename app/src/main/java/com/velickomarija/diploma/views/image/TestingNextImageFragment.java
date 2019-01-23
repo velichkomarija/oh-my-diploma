@@ -25,6 +25,9 @@ import com.velickomarija.diploma.views.pause.ShulteFragment;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Класс, отвечающий за отрисовку фрагмента вторичного тестирования зрительной памяти.
+ */
 public class TestingNextImageFragment extends Fragment implements INavigation {
 
     private static final String TAG = "TESTING_IMAGE_VARIANT_NEXT";
@@ -44,13 +47,27 @@ public class TestingNextImageFragment extends Fragment implements INavigation {
             btn15, btn16, btn17, btn18, btn19, btn20, btn21, btn22, btn23, btn24;
     private boolean[] btnArray = new boolean[24];
 
+    /**
+     * Метод-обработчик нажатия на физическую кнопку "Назад".
+     */
     public void onBackPressed() {
         // do nothing
     }
 
+    /**
+     * Конструктор класса.
+     */
     public TestingNextImageFragment() {
     }
 
+    /**
+     * Метод, необходимый для связывания компонентов внутри фрагмента.
+     *
+     * @param inflater           объект класса LayoutInflater.
+     * @param container          объект класса ViewGroup.
+     * @param savedInstanceState объект класса Bundle.
+     * @return объект класса View.
+     */
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -359,6 +376,9 @@ public class TestingNextImageFragment extends Fragment implements INavigation {
     }
 
 
+    /**
+     * Метод-обработчик нажатия на кнопку "Готово". Выполняет методы по подсчету результатов.
+     */
     public void onClickToGoNextTestingImage() {
 
         String resString = "";
@@ -389,6 +409,12 @@ public class TestingNextImageFragment extends Fragment implements INavigation {
         }
     }
 
+    /**
+     * Метод для обеспечения перехода между фрагментами.
+     *
+     * @param tag      тег фрагмента.
+     * @param fragment объект класса Fragment.
+     */
     @Override
     public void replaceFragment(String tag, Fragment fragment) {
         FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
@@ -397,6 +423,14 @@ public class TestingNextImageFragment extends Fragment implements INavigation {
         fragmentTransaction.commitAllowingStateLoss();
     }
 
+    /**
+     * Метод, отображающий окно-подтверждение на действие пользователя при тестировании зрительной памяти.
+     *
+     * @param text     текст сообщения-подтверждения.
+     * @param num      идентификатор следующей пробы.
+     * @param tag      тег перехода.
+     * @param fragment переходной фрагмент.
+     */
     public void showDialogImage(String text, final String num, final String tag, final Fragment fragment) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setTitle(R.string.important_message)

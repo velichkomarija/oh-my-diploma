@@ -18,6 +18,9 @@ import com.velickomarija.diploma.R;
 import com.velickomarija.diploma.models.Constants;
 import com.velickomarija.diploma.models.PreferencesLocal;
 
+/**
+ * Класс, отвечающий за отрисовку фрагмента инструкции к этапу тестирования слухоречевой памяти.
+ */
 public class TestingEnterSoundFragment extends Fragment implements INavigation {
     private static final String TAG = "TESTING_ENTER_SOUND";
 
@@ -27,9 +30,20 @@ public class TestingEnterSoundFragment extends Fragment implements INavigation {
     private PreferencesLocal preferencesLocal = new PreferencesLocal();
     private TextView textNotation;
 
+    /**
+     * Конструктор класса.
+     */
     public TestingEnterSoundFragment() {
     }
 
+    /**
+     * Метод, необходимый для связывания компонентов внутри фрагмента.
+     *
+     * @param inflater           объект класса LayoutInflater.
+     * @param container          объект класса ViewGroup.
+     * @param savedInstanceState объект класса Bundle.
+     * @return объект класса View.
+     */
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -66,6 +80,9 @@ public class TestingEnterSoundFragment extends Fragment implements INavigation {
         return view;
     }
 
+    /**
+     * Метод-обработчик нажатия на физическую кнопку "Назад".
+     */
     public void onBackPressed() {
         // do nothing
     }
@@ -106,6 +123,12 @@ public class TestingEnterSoundFragment extends Fragment implements INavigation {
         }.start();
     }
 
+    /**
+     * Метод для обеспечения перехода между фрагментами.
+     *
+     * @param tag      тег фрагмента.
+     * @param fragment объект класса Fragment.
+     */
     @Override
     public void replaceFragment(String tag, Fragment fragment) {
         FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();

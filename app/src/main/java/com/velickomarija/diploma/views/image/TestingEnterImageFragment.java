@@ -15,10 +15,21 @@ import com.velickomarija.diploma.R;
 import com.velickomarija.diploma.models.Constants;
 import com.velickomarija.diploma.models.PreferencesLocal;
 
+/**
+ * Класс, отвечающий за отрисовку фрагмента инструкции к тестированию зрительной памяти.
+ */
 public class TestingEnterImageFragment extends Fragment implements INavigation {
     private static final String TAG = "TESTING_ENTER_IMAGE";
     private PreferencesLocal preferencesLocal = new PreferencesLocal();
 
+    /**
+     * Метод, необходимый для связывания компонентов внутри фрагмента.
+     *
+     * @param inflater           объект класса LayoutInflater.
+     * @param container          объект класса ViewGroup.
+     * @param savedInstanceState объект класса Bundle.
+     * @return объект класса View.
+     */
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -27,7 +38,7 @@ public class TestingEnterImageFragment extends Fragment implements INavigation {
         TextView textView = (TextView) view.findViewById(R.id.start_text);
         if (preferencesLocal.getProperty(Constants.PREF_NUM_IMAGE).equals("2")) {
             textView.setText(getString(R.string.enter_testing_image_manifest));
-        }else{
+        } else {
             textView.setText(getString(R.string.enter_testing_image));
         }
 
@@ -43,6 +54,9 @@ public class TestingEnterImageFragment extends Fragment implements INavigation {
         return view;
     }
 
+    /**
+     * Конструктор класса.
+     */
     public TestingEnterImageFragment() {
 
     }
@@ -54,6 +68,12 @@ public class TestingEnterImageFragment extends Fragment implements INavigation {
         // do nothing
     }
 
+    /**
+     * Метод для обеспечения перехода между фрагментами.
+     *
+     * @param tag      тег фрагмента.
+     * @param fragment объект класса Fragment.
+     */
     @Override
     public void replaceFragment(String tag, Fragment fragment) {
         FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();

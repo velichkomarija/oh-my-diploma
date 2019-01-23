@@ -143,7 +143,7 @@ public class Algorithms {
     }
 
     /**
-     * Метод, отвечающий за переинициализацию ключевых слов.
+     * Метод, отвечающий за переинициализацию ассоциативного списка ключевых слов.
      */
     private void reloadMapWords() {
         generalWordsMap.clear();
@@ -161,7 +161,7 @@ public class Algorithms {
     }
 
     /**
-     * Метод, отвечающий за переинициализацию ключевых промежутков узнавания.
+     * Метод, отвечающий за переинициализацию ассоциативного списка ключевых промежутков узнавания.
      */
     private void reloadMapDigit() {
         generalImage.clear();
@@ -179,7 +179,9 @@ public class Algorithms {
         generalImage.put(12, 24);
     }
 
-
+    /**
+     * Метод, отвечающий за переиницеализацию ассоциативного списка ключевых фигур.
+     */
     private void reloadMapNewFigure() {
         newFigure.clear();
         newFigure.put(1, 2);

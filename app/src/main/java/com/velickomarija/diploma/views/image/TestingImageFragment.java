@@ -15,14 +15,29 @@ import com.velickomarija.diploma.R;
 import com.velickomarija.diploma.models.Constants;
 import com.velickomarija.diploma.models.PreferencesLocal;
 
+/**
+ * Класс, отвечающий за отрисовку фрагмента для проведения тестирования зрительной памяти.
+ */
 public class TestingImageFragment extends Fragment implements INavigation {
     private static final String TAG = "TESTING_IMAGE";
     private PreferencesLocal preferencesLocal = new PreferencesLocal();
 
+    /**
+     * Конструктор класса.
+     */
     public TestingImageFragment() {
 
     }
 
+
+    /**
+     * Метод, необходимый для связывания компонентов внутри фрагмента.
+     *
+     * @param inflater           объект класса LayoutInflater.
+     * @param container          объект класса ViewGroup.
+     * @param savedInstanceState объект класса Bundle.
+     * @return объект класса View.
+     */
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -32,10 +47,19 @@ public class TestingImageFragment extends Fragment implements INavigation {
         return view;
     }
 
+    /**
+     * Метод-обработчик нажатия на физическую кнопку "Назад".
+     */
     public void onBackPressed() {
         // do nothing
     }
 
+    /**
+     * Метод для обеспечения перехода между фрагментами.
+     *
+     * @param tag      тег фрагмента.
+     * @param fragment объект класса Fragment.
+     */
     @Override
     public void replaceFragment(String tag, Fragment fragment) {
         FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
@@ -44,6 +68,9 @@ public class TestingImageFragment extends Fragment implements INavigation {
         fragmentTransaction.commitAllowingStateLoss();
     }
 
+    /**
+     * Метод для расчета времени проведения теста.
+     */
     private void timingTest() {
         int numParam = 1;
 

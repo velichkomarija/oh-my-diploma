@@ -15,7 +15,7 @@ public class SplashActivity extends AppCompatActivity {
     /**
      * Метод, вызываемый перед началом работы активности.
      *
-     * @param savedInstanceState объект тпа Bundle, который может хранить состояние приложения
+     * @param savedInstanceState объект типа Bundle, который может хранить состояние приложения
      *                           при перерисовке активности.
      */
     @Override

@@ -18,6 +18,9 @@ import com.velickomarija.diploma.R;
 import com.velickomarija.diploma.models.Algorithms;
 import com.velickomarija.diploma.models.PreferencesLocal;
 
+/**
+ * Класс, отвечающий за отрисовку фрагмента второй интерферирующей паузы.
+ */
 public class QuestionTwoFragment extends Fragment implements INavigation {
     private TextView textView;
     private static final String TAG = "QUESTION_TWO";
@@ -36,16 +39,30 @@ public class QuestionTwoFragment extends Fragment implements INavigation {
         // do nothing
     }
 
+    /**
+     * Метод-обработчик нажатия на кнопку "+".
+     */
     public void onClickNextQuestionPlus() {
         arrayResult[countQuestions - 1] = 1;
         clk();
     }
 
+    /**
+     * Метод-обработчик нажатия на кнопку "-".
+     */
     public void onClickNextQuestionMinus() {
         arrayResult[countQuestions - 1] = 0;
         clk();
     }
 
+    /**
+     * Метод, необходимый для связывания компонентов внутри фрагмента.
+     *
+     * @param inflater           объект класса LayoutInflater.
+     * @param container          объект класса ViewGroup.
+     * @param savedInstanceState объект класса Bundle.
+     * @return объект класса View.
+     */
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -103,6 +120,9 @@ public class QuestionTwoFragment extends Fragment implements INavigation {
         }
     }
 
+    /**
+     * Метод, производящий обработку нажатия на одну из кнопок ("+" или "-").
+     */
     private void clk() {
         time();
         countQuestions++;
@@ -138,6 +158,12 @@ public class QuestionTwoFragment extends Fragment implements INavigation {
         }.start();
     }
 
+    /**
+     * Метод для обеспечения перехода между фрагментами.
+     *
+     * @param tag      тег фрагмента.
+     * @param fragment объект класса Fragment.
+     */
     @Override
     public void replaceFragment(String tag, Fragment fragment) {
         FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();

@@ -21,6 +21,9 @@ import com.velickomarija.diploma.models.Algorithms;
 import com.velickomarija.diploma.models.Constants;
 import com.velickomarija.diploma.models.PreferencesLocal;
 
+/**
+ * Класс, отвечающий за отрисовку фрагмента тестирования слухоречевой памяти с новыми словами.
+ */
 public class TestingSoundNWordsFragment extends Fragment implements INavigation {
     private static final String TAG = "TESTING_SOUND_N_WORDS";
     private TextView mTimer;
@@ -31,6 +34,14 @@ public class TestingSoundNWordsFragment extends Fragment implements INavigation 
     private Algorithms algorithms = new Algorithms();
     private PreferencesLocal preferencesLocal = new PreferencesLocal();
 
+    /**
+     * Метод, необходимый для связывания компонентов внутри фрагмента.
+     *
+     * @param inflater           объект класса LayoutInflater.
+     * @param container          объект класса ViewGroup.
+     * @param savedInstanceState объект класса Bundle.
+     * @return объект класса View.
+     */
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -50,6 +61,11 @@ public class TestingSoundNWordsFragment extends Fragment implements INavigation 
         return view;
     }
 
+    /**
+     * Метод, расичтывающий временной интервал тестирования.
+     *
+     * @param view объект класса View.
+     */
     private void timing(View view) {
         mTimer = (TextView) view.findViewById(R.id.text_view_time);
 
@@ -104,9 +120,18 @@ public class TestingSoundNWordsFragment extends Fragment implements INavigation 
         // do nothing
     }
 
+    /**
+     * Конструктор класса.
+     */
     public TestingSoundNWordsFragment() {
     }
 
+    /**
+     * Метод для обеспечения перехода между фрагментами.
+     *
+     * @param tag      тег фрагмента.
+     * @param fragment объект класса Fragment.
+     */
     @Override
     public void replaceFragment(String tag, Fragment fragment) {
         FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
